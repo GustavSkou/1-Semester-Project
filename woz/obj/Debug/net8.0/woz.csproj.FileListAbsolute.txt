@@ -1,0 +1,14 @@
+C:\Users\gusta\Desktop\woz\bin\Debug\net8.0\woz.exe
+C:\Users\gusta\Desktop\woz\bin\Debug\net8.0\woz.deps.json
+C:\Users\gusta\Desktop\woz\bin\Debug\net8.0\woz.runtimeconfig.json
+C:\Users\gusta\Desktop\woz\bin\Debug\net8.0\woz.dll
+C:\Users\gusta\Desktop\woz\bin\Debug\net8.0\woz.pdb
+C:\Users\gusta\Desktop\woz\obj\Debug\net8.0\woz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusta\Desktop\woz\obj\Debug\net8.0\woz.AssemblyInfoInputs.cache
+C:\Users\gusta\Desktop\woz\obj\Debug\net8.0\woz.AssemblyInfo.cs
+C:\Users\gusta\Desktop\woz\obj\Debug\net8.0\woz.csproj.CoreCompileInputs.cache
+C:\Users\gusta\Desktop\woz\obj\Debug\net8.0\woz.dll
+C:\Users\gusta\Desktop\woz\obj\Debug\net8.0\refint\woz.dll
+C:\Users\gusta\Desktop\woz\obj\Debug\net8.0\woz.pdb
+C:\Users\gusta\Desktop\woz\obj\Debug\net8.0\woz.genruntimeconfig.cache
+C:\Users\gusta\Desktop\woz\obj\Debug\net8.0\ref\woz.dll
