@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gusta\\Desktop\\woz\\woz.csproj": {}
+    "C:\\Users\\gusta\\Desktop\\1-Semester-Project\\woz.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gusta\\Desktop\\woz\\woz.csproj": {
+    "C:\\Users\\gusta\\Desktop\\1-Semester-Project\\woz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gusta\\Desktop\\woz\\woz.csproj",
+        "projectUniqueName": "C:\\Users\\gusta\\Desktop\\1-Semester-Project\\woz.csproj",
         "projectName": "woz",
-        "projectPath": "C:\\Users\\gusta\\Desktop\\woz\\woz.csproj",
+        "projectPath": "C:\\Users\\gusta\\Desktop\\1-Semester-Project\\woz.csproj",
         "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gusta\\Desktop\\woz\\obj\\",
+        "outputPath": "C:\\Users\\gusta\\Desktop\\1-Semester-Project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
