@@ -18,33 +18,6 @@ class World
         spaces = [savannah, city, beach, forest, farm];
 
         startSpace = SetStartSpace();
-        SetNextSpaces(startSpace);
-    }
-
-    public void SetNextSpaces(Space currentSpace)
-    {
-        string GetRandomPath(Space currentSpace)    
-        {
-            return currentSpace.GetPaths()[random.Next(0, currentSpace.GetPaths().Length)];
-        }
-
-        Space GetRandomSpace(Space currentSpace)    //Get random different space
-        {
-            Space[] differentSpaces = new Space[4];
-
-            for (int i = 0, n = 0; i < spaces.Length; i++)
-            {
-                if(spaces[i].GetType() == currentSpace.GetType())
-                {
-                    continue;
-                }
-                differentSpaces[n++] = spaces[i];
-            }
-
-            return differentSpaces[random.Next(0,differentSpaces.Length)];
-        }
-        
-        currentSpace.AddEdge(GetRandomPath(currentSpace), GetRandomSpace(currentSpace));
     }
 
     private Space SetStartSpace() // Set start space to a random space
@@ -55,6 +28,11 @@ class World
     public Space GetStartSpace()
     {
         return startSpace;
+    }
+
+    public Space[] GetSpaces()
+    {
+        return spaces;
     }
 }
 

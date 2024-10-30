@@ -18,6 +18,7 @@ class Context
 
     public void Transition(string direction)
     {
+        
         Space next = current.FollowEdge(direction);
         if (next == null)
         {
@@ -26,9 +27,11 @@ class Context
         else
         {
             current.Goodbye();
+            
             current = next;
             current.Welcome();
             current.Destription();
+            
             current.Exits();
         }
     }

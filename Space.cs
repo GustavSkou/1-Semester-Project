@@ -20,7 +20,7 @@ class Space : Node
         HashSet<string> exits = edges.Keys.ToHashSet();
         Print("Current exits are:");
 
-        foreach (String exit in exits)
+        foreach (string exit in exits)
         {
             Print($" - {exit}");
         }
@@ -29,6 +29,7 @@ class Space : Node
     public virtual void Destription()
     {
         Print(spaceDestription);
+        this.SetNextSpace();
     }
 
     public void Goodbye()
@@ -49,6 +50,40 @@ class Space : Node
     public override Space FollowEdge(string direction)
     {
         return (Space) base.FollowEdge(direction);
+    }
+
+    public void SetNextSpace()
+    {
+        Random random = new Random();
+
+        Space savannah = new Savannah("Savannah");
+        Space city = new City("City");
+        Space beach = new Beach("Beach");
+        Space forest = new Forest("Forest");
+        Space farm = new Farm("Farm");
+
+        Space[] spaces = [savannah, city, beach, forest, farm];
+
+        string GetRandomPath()    
+        {
+            return this.GetPaths()[random.Next(0, this.GetPaths().Length)];
+        }
+
+        Space GetRandomSpace()    //Get random different space
+        {
+            Space[] differentSpaces = new Space[4];
+
+            for (int i = 0, n = 0; i < spaces.Length; i++)
+            {
+                if(spaces[i].GetType() == this.GetType())
+                {
+                    continue;
+                }
+                differentSpaces[n++] = spaces[i];
+            }
+            return differentSpaces[random.Next(0,differentSpaces.Length)];
+        }
+        this.AddEdge(GetRandomPath(), GetRandomSpace());
     }
 
     protected void Print(string someString)
