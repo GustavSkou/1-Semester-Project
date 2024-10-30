@@ -9,13 +9,14 @@ class World
 
     public World()
     {
-        Space savannah = new Savannah("Savannah");
-        Space city = new City("City");
-        Space beach = new Beach("Beach");
-        Space forest = new Forest("Forest");
-        Space farm = new Farm("Farm");
-
-        spaces = [savannah, city, beach, forest, farm];
+        spaces = 
+        [
+            new Savannah("Savannah"), 
+            new City("City"), 
+            new Beach("Beach"), 
+            new Forest("Forest"), 
+            new Farm("Farm")
+        ];
 
         startSpace = SetStartSpace();
     }
@@ -28,11 +29,6 @@ class World
     public Space GetStartSpace()
     {
         return startSpace;
-    }
-
-    public Space[] GetSpaces()
-    {
-        return spaces;
     }
 }
 

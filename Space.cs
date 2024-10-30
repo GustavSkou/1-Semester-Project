@@ -3,9 +3,10 @@
 
 class Space : Node
 {
-    protected bool isDone = false;
+    
     protected string[] paths;
     protected string spaceDestription;
+    protected string spaceQuestion;
     public Space(String name) : base(name)
     {
     }
@@ -26,25 +27,18 @@ class Space : Node
         }
     }
 
-    public virtual void Destription()
+    public void Destription()
     {
         Print(spaceDestription);
-        this.SetNextSpace();
+        this.SetNextSpaces();
+    }
+    public void question()
+    {
+        Print(spaceQuestion);
     }
 
     public void Goodbye()
     {
-        this.isDone = true;
-    }
-
-    public virtual string[] GetPaths()
-    {
-        return paths;
-    }
-
-    public bool IsDone()
-    {
-        return isDone;
     }
 
     public override Space FollowEdge(string direction)
@@ -52,38 +46,48 @@ class Space : Node
         return (Space) base.FollowEdge(direction);
     }
 
-    public void SetNextSpace()
+    public void SetNextSpaces()
     {
         Random random = new Random();
+        Space[] differentSpaces = GetDifferentSpaces();
+        string[] paths = this.paths;
 
-        Space savannah = new Savannah("Savannah");
-        Space city = new City("City");
-        Space beach = new Beach("Beach");
-        Space forest = new Forest("Forest");
-        Space farm = new Farm("Farm");
-
-        Space[] spaces = [savannah, city, beach, forest, farm];
-
-        string GetRandomPath()    
+        for (int edges = 0; edges < 2; edges++)
         {
-            return this.GetPaths()[random.Next(0, this.GetPaths().Length)];
+            int pathIndex = random.Next(0, paths.Length);
+            int spaceIndex = random.Next(0, differentSpaces.Length);
+
+            this.AddEdge(paths[pathIndex], differentSpaces[spaceIndex]);
+
+            paths[pathIndex] = pathIndex < paths.Length-1 ? paths[pathIndex+1] : paths[pathIndex-1];
+            differentSpaces[spaceIndex] = spaceIndex < differentSpaces.Length-1 ? differentSpaces[spaceIndex+1] : differentSpaces[spaceIndex-1];  
         }
+    }
 
-        Space GetRandomSpace()    //Get random different space
+    private Space[] GetDifferentSpaces()
+    {
+        Space[] spaces = 
+        [
+            new Savannah("Savannah"), 
+            new City("City"), 
+            new Beach("Beach"), 
+            new Forest("Forest"), 
+            new Farm("Farm")
+        ];
+
+        Space[] differentSpaces = new Space[spaces.Length-1];
+
+        for (int i = 0, n = 0; i < spaces.Length; i++)
         {
-            Space[] differentSpaces = new Space[4];
-
-            for (int i = 0, n = 0; i < spaces.Length; i++)
+            if(spaces[i].GetType() == this.GetType())
             {
-                if(spaces[i].GetType() == this.GetType())
-                {
-                    continue;
-                }
-                differentSpaces[n++] = spaces[i];
+                continue;
             }
-            return differentSpaces[random.Next(0,differentSpaces.Length)];
+            differentSpaces[n++] = spaces[i];
         }
-        this.AddEdge(GetRandomPath(), GetRandomSpace());
+
+
+        return differentSpaces;
     }
 
     protected void Print(string someString)
@@ -91,7 +95,7 @@ class Space : Node
         foreach (char letter in someString)
         {
             Console.Write(letter);
-            Thread.Sleep(50);
+            Thread.Sleep(25);
         }
         Console.WriteLine();
     }

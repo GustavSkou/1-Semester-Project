@@ -11,7 +11,7 @@ class Node
         this.name = name;
     }
 
-    public String GetName()
+    public string GetName()
     {
         return name;
     }
