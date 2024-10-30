@@ -26,6 +26,7 @@ class Context {
       current = next;
       current.Welcome();
       current.Destription();
+      
     }
   }
   

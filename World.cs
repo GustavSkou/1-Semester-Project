@@ -3,7 +3,9 @@
 
 class World 
 {
-  Space start;
+  private Space startSpace;
+  private Space[] spaces;
+
   public World () 
   {
     Space savannah    = new Savannah("Savannah");
@@ -12,31 +14,25 @@ class World
     Space forest      = new Forest("Forest");
     Space farm        = new Farm("Farm");
     
-    /*savannah.AddEdge("Horisonten", beach);
-    savannah.AddEdge("Vandhullet", city);
-  
-    city.AddEdge("Træerne", forest);
-    city.AddEdge("Motorvej", farm);
-    
-    beach.AddEdge("north", city);
-    beach.AddEdge("south", forest);
-    
-    forest.AddEdge("door", farm);
-    forest.AddEdge("dsa", farm);
-    
-    farm.AddEdge("das", savannah);
-    farm.AddEdge("door", savannah);*/
-    
-    this.start = savannah;
+    spaces = [savannah, city, beach, forest, farm];
+
+    this.startSpace = SetStartSpace();
   }
   
-  public void SetNextSpace()
+  public void GetNextSpace(Space currentSpace)
   {
-
+    Random random = new Random();
+    currentSpace.AddEdge(currentSpace.GetPaths()[ random.Next(0, currentSpace.GetPaths().Length) ], spaces[ random.Next(0, spaces.Length) ]);
   }
 
-  public Space GetEntry () {
-    return start;
+  private Space SetStartSpace()
+  {
+    Random random = new Random();
+    return spaces[ random.Next(0, spaces.Length) ];
+  }
+
+  public Space GetStartSpace () {
+    return startSpace;
   }
 }
 

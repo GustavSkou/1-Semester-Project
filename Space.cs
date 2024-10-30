@@ -30,8 +30,9 @@ class Space : Node
   { 
   }
 
-  public virtual void SetPaths()
+  public virtual string[] GetPaths()
   {
+    return paths;
   }
 
   public bool IsDone()
