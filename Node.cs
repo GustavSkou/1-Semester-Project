@@ -18,6 +18,7 @@ class Node
 
     public void AddEdge(string name, Node node)
     {
+        name = name.ToLower();
         edges.Add(name, node);
     }
 

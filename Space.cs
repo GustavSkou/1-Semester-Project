@@ -5,29 +5,35 @@ class Space : Node
 {
     protected bool isDone = false;
     protected string[] paths;
+    protected string spaceDestription;
     public Space(String name) : base(name)
     {
     }
 
     public void Welcome()
     {
-        Console.WriteLine("You are now at " + name);
+        Print($"You are now at {name}");
+    }
+
+    public void Exits()
+    {
         HashSet<string> exits = edges.Keys.ToHashSet();
-        Console.WriteLine("Current exits are:");
+        Print("Current exits are:");
 
         foreach (String exit in exits)
         {
-            Console.WriteLine(" - " + exit);
+            Print($" - {exit}");
         }
+    }
+
+    public virtual void Destription()
+    {
+        Print(spaceDestription);
     }
 
     public void Goodbye()
     {
         this.isDone = true;
-    }
-
-    public virtual void Destription()
-    {
     }
 
     public virtual string[] GetPaths()
@@ -43,5 +49,15 @@ class Space : Node
     public override Space FollowEdge(string direction)
     {
         return (Space) base.FollowEdge(direction);
+    }
+
+    protected void Print(string someString)
+    {
+        foreach (char letter in someString)
+        {
+            Console.Write(letter);
+            Thread.Sleep(50);
+        }
+        Console.WriteLine();
     }
 }

@@ -25,6 +25,7 @@ class Game
         InitRegistry();
         context.GetCurrent().Welcome();
         context.GetCurrent().Destription();
+        context.GetCurrent().Exits();
 
         while (context.IsDone() == false)
         {

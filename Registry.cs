@@ -19,9 +19,10 @@ class Registry
         commands.Add(name, command);
     }
 
-    //deler ens command op i to
-    public void Dispatch(string line)
+    
+    public void Dispatch(string line) //tager i mod input
     {
+        line = line.ToLower();
         string[] elements = line.Split(" ");
         string command = elements[0];
         string[] parameters = GetParameters(elements);
