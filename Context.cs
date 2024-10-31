@@ -3,39 +3,49 @@
 
 class Context
 {
-    Space current;
+    Space currentSpace;
     bool done = false;
-    Dictionary<Space,bool> isSpaceComplete;
-    
+    Dictionary<Space,bool> completedSpaces;
+    Space[] spaces;
 
-    public Context(Space node)
+    public Context(Space startNode, Space[] spaces)
     {
-        current = node;
-        isSpaceComplete.Add(current, false);
-
+        this.spaces = spaces;
+        currentSpace = startNode;
+        completedSpaces = new Dictionary<Space, bool>();
+        foreach (Space space in spaces)
+        {
+            completedSpaces.Add(space, false);
+        }
     }
 
     public Space GetCurrent()
     {
-        return current;
+        return currentSpace;
     }
 
     public void Transition(string direction)
     {
-        Space next = current.FollowEdge(direction);
+        if(IsAllSpacesComplete())
+        {
+            MakeDone();
+        }
+
+        Space next = currentSpace.FollowEdge(direction);
         if (next == null)
         {
             Console.WriteLine("You are confused, and walk in a circle looking for '" + direction + "'. In the end you give up 😩");
         }
         else
         {
-            current.Goodbye();
-            isSpaceComplete[current] = true; // current.isSpaceComplete
-            current = next;
-            current.Welcome();
-            current.Destription();
-            
-            current.Exits();
+            SetSpaceComplete(currentSpace);
+
+            currentSpace.Goodbye();                         //gør ikke noget
+            currentSpace = next;
+            currentSpace.Welcome();
+            currentSpace.Destription();
+            currentSpace.SetNextSpaces(GetCompletedSpaces());
+            currentSpace.Exits();
         }
     }
 
@@ -48,5 +58,33 @@ class Context
     {
         return done;
     }
-}
 
+    public Dictionary<Space, bool> GetCompletedSpaces()
+    {
+        return completedSpaces;
+    }
+
+    public bool IsAllSpacesComplete()
+    {
+        foreach (Space space in spaces)
+        {
+            if (!completedSpaces[space])
+            {
+                return false; 
+            }
+        }
+        return true;
+    }
+
+    private void SetSpaceComplete(Space space)
+    {
+        if (completedSpaces.ContainsKey(space))
+        {
+            this.completedSpaces[space] = true;
+        }
+        else
+        {
+            return;
+        }
+    }
+}
