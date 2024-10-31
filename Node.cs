@@ -16,13 +16,13 @@ class Node
         return name;
     }
 
-    public void AddEdge(string name, Node node)
+    public void AddEdge(string name, Node node)         // Add egde that leades to some other Node object
     {
         name = name.ToLower();
         edges.Add(name, node);
     }
 
-    public virtual Node FollowEdge(string direction)
+    public virtual Node FollowEdge(string direction)    // Follow noe of this node object egdes to another node object
     {
         return edges[direction];
     }

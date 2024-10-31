@@ -33,7 +33,7 @@ class World
 
     public Space[] GetSpaces()
     {
-        return this.spaces;
+        return spaces;
     }
 }
 

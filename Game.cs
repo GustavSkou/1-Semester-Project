@@ -34,6 +34,6 @@ class Game
             string? line = Console.ReadLine();
             if (line != null) registry.Dispatch(line);
         }
-        Console.WriteLine("Game Over 😥");
+        Console.WriteLine("Game Over");
     }
 }

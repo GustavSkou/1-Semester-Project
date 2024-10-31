@@ -26,20 +26,21 @@ class Context
 
     public void Transition(string direction)
     {
+        SetSpaceComplete(currentSpace);
         if(IsAllSpacesComplete())
         {
             MakeDone();
+            currentSpace.Destription();
+            return;
         }
 
         Space next = currentSpace.FollowEdge(direction);
         if (next == null)
         {
-            Console.WriteLine("You are confused, and walk in a circle looking for '" + direction + "'. In the end you give up 😩");
+            Console.WriteLine($"You are confused, and walk in a circle looking for '{direction}'. In the end you give up 😩");
         }
         else
         {
-            SetSpaceComplete(currentSpace);
-
             currentSpace.Goodbye();                         //gør ikke noget
             currentSpace = next;
             currentSpace.Welcome();
@@ -68,11 +69,12 @@ class Context
     {
         foreach (Space space in spaces)
         {
-            if (!completedSpaces[space])
+            if (completedSpaces[space] == false)
             {
                 return false; 
             }
         }
+        
         return true;
     }
 
@@ -80,7 +82,7 @@ class Context
     {
         if (completedSpaces.ContainsKey(space))
         {
-            this.completedSpaces[space] = true;
+            completedSpaces[space] = true;
         }
         else
         {

@@ -2,10 +2,8 @@
 
 class Space : Node
 {
-    
     protected string[] paths;
-    protected string spaceDestription;
-    protected string spaceQuestion;
+    protected string spaceDestription, spaceQuestion;
     public Space(String name) : base(name)
     {
     }
@@ -30,6 +28,7 @@ class Space : Node
     {
         Print(spaceDestription);
     }
+    
     public void question()
     {
         Print(spaceQuestion);
@@ -52,14 +51,14 @@ class Space : Node
 
         if (differentSpaces.Length < 1)
         {
-            Console.WriteLine("All rooms complete");
+            AddEdge("Ending", new End("The end"));
             return;
         }
 
         if (differentSpaces.Length < 2)
         {
             int pathIndex = random.Next(0, paths.Length);
-            this.AddEdge(paths[pathIndex], differentSpaces[0]);
+            AddEdge(paths[pathIndex], differentSpaces[0]);
             return;
         }
 
@@ -68,10 +67,10 @@ class Space : Node
             int pathIndex = random.Next(0, paths.Length);
             int spaceIndex = random.Next(0, differentSpaces.Length);
 
-            this.AddEdge(paths[pathIndex], differentSpaces[spaceIndex]);
+            AddEdge(paths[pathIndex], differentSpaces[spaceIndex]);
 
-            paths[pathIndex]            = pathIndex     < paths.Length-1            ? paths[pathIndex+1]            : paths[pathIndex-1];
-            differentSpaces[spaceIndex] = spaceIndex    < differentSpaces.Length-1  ? differentSpaces[spaceIndex+1] : differentSpaces[spaceIndex-1];  
+            paths = paths.Where(path => path != paths[pathIndex]).ToArray();
+            differentSpaces = differentSpaces.Where(space => space != differentSpaces[spaceIndex]).ToArray();
         }
     }
 
