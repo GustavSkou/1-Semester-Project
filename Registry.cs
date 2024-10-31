@@ -1,5 +1,4 @@
-/* Command registry
- */
+/* Command registry */
 
 class Registry
 {
@@ -19,7 +18,6 @@ class Registry
         commands.Add(name, command);
     }
 
-    
     public void Dispatch(string line) //tager i mod input
     {
         line = line.ToLower();
@@ -48,7 +46,6 @@ class Registry
     }
 
     // helpers
-
     private string[] GetParameters(string[] input)
     {
         string[] output = new string[input.Length - 1];
@@ -60,4 +57,3 @@ class Registry
         return output;
     }
 }
-

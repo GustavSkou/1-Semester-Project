@@ -5,5 +5,4 @@ class Forest : Space
         paths = ["Horisonten", "VandHullet", "Stien", "Træerne"];
         spaceDestription = "someDestription";
     }
-
 }

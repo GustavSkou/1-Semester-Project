@@ -1,5 +1,4 @@
-/* Command for exiting program
- */
+/* Command for exiting program */
 
 class CommandExit : BaseCommand, ICommand
 {

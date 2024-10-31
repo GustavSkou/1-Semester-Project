@@ -1,5 +1,4 @@
-/* Help command
- */
+/* Help command */
 
 class CommandHelp : BaseCommand, ICommand
 {

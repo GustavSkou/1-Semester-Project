@@ -1,17 +1,20 @@
-/* Context class to hold all context relevant to a session.
- */
+/* Context class to hold all context relevant to a session. */
 
 class Context
 {
     Space currentSpace;
+    Space[] spaces;
+    World world;
     bool done = false;
     Dictionary<Space,bool> completedSpaces;
-    Space[] spaces;
-
-    public Context(Space startNode, Space[] spaces)
+    
+    public Context(World world)
     {
-        this.spaces = spaces;
-        currentSpace = startNode;
+        this.world = world;
+        
+        spaces = world.GetSpaces();
+        currentSpace = world.GetStartSpace();
+
         completedSpaces = new Dictionary<Space, bool>();
         foreach (Space space in spaces)
         {
@@ -30,7 +33,6 @@ class Context
         if(IsAllSpacesComplete())
         {
             MakeDone();
-            currentSpace.Destription();
             return;
         }
 
@@ -45,7 +47,7 @@ class Context
             currentSpace = next;
             currentSpace.Welcome();
             currentSpace.Destription();
-            currentSpace.SetNextSpaces(GetCompletedSpaces());
+            world.SetNextSpaces(currentSpace, GetCompletedSpaces());
             currentSpace.Exits();
         }
     }
@@ -74,7 +76,6 @@ class Context
                 return false; 
             }
         }
-        
         return true;
     }
 

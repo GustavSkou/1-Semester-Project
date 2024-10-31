@@ -1,5 +1,4 @@
-/* Fallback for when a command is not implemented
- */
+/* Fallback for when a command is not implemented */
 
 class CommandUnknown : BaseCommand, ICommand
 {

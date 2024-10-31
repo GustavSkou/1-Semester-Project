@@ -1,5 +1,4 @@
-/* Baseclass for commands
- */
+/* Baseclass for commands */
 
 class BaseCommand
 {
