@@ -30,5 +30,10 @@ class World
     {
         return startSpace;
     }
+
+    public Space[] GetSpaces()
+    {
+        return this.spaces;
+    }
 }
 

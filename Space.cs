@@ -1,5 +1,4 @@
-/* Space class for modeling spaces (rooms, caves, ...)
- */
+/* Space class for modeling spaces (rooms, caves, ...) */
 
 class Space : Node
 {
@@ -30,7 +29,6 @@ class Space : Node
     public void Destription()
     {
         Print(spaceDestription);
-        this.SetNextSpaces();
     }
     public void question()
     {
@@ -46,11 +44,24 @@ class Space : Node
         return (Space) base.FollowEdge(direction);
     }
 
-    public void SetNextSpaces()
+    public void SetNextSpaces(Dictionary<Space,bool> completedSpaces)
     {
         Random random = new Random();
-        Space[] differentSpaces = GetDifferentSpaces();
+        Space[] differentSpaces = GetDifferentNonCompletedSpaces(completedSpaces);
         string[] paths = this.paths;
+
+        if (differentSpaces.Length < 1)
+        {
+            Console.WriteLine("All rooms complete");
+            return;
+        }
+
+        if (differentSpaces.Length < 2)
+        {
+            int pathIndex = random.Next(0, paths.Length);
+            this.AddEdge(paths[pathIndex], differentSpaces[0]);
+            return;
+        }
 
         for (int edges = 0; edges < 2; edges++)
         {
@@ -59,35 +70,18 @@ class Space : Node
 
             this.AddEdge(paths[pathIndex], differentSpaces[spaceIndex]);
 
-            paths[pathIndex] = pathIndex < paths.Length-1 ? paths[pathIndex+1] : paths[pathIndex-1];
-            differentSpaces[spaceIndex] = spaceIndex < differentSpaces.Length-1 ? differentSpaces[spaceIndex+1] : differentSpaces[spaceIndex-1];  
+            paths[pathIndex]            = pathIndex     < paths.Length-1            ? paths[pathIndex+1]            : paths[pathIndex-1];
+            differentSpaces[spaceIndex] = spaceIndex    < differentSpaces.Length-1  ? differentSpaces[spaceIndex+1] : differentSpaces[spaceIndex-1];  
         }
     }
 
-    private Space[] GetDifferentSpaces()
+    private Space[] GetDifferentNonCompletedSpaces(Dictionary<Space,bool> completedSpaces)
     {
-        Space[] spaces = 
-        [
-            new Savannah("Savannah"), 
-            new City("City"), 
-            new Beach("Beach"), 
-            new Forest("Forest"), 
-            new Farm("Farm")
-        ];
+        Space[] spaces = completedSpaces.Keys.ToArray();
 
-        Space[] differentSpaces = new Space[spaces.Length-1];
-
-        for (int i = 0, n = 0; i < spaces.Length; i++)
-        {
-            if(spaces[i].GetType() == this.GetType())
-            {
-                continue;
-            }
-            differentSpaces[n++] = spaces[i];
-        }
-
-
-        return differentSpaces;
+        spaces = spaces.Where(space => space.GetType() != this.GetType() && !completedSpaces[space]).ToArray();
+    
+        return spaces;
     }
 
     protected void Print(string someString)

@@ -4,7 +4,7 @@
 class Game
 {
     static World world = new World();
-    static Context context = new Context(world.GetStartSpace());
+    static Context context = new Context(world.GetStartSpace(), world.GetSpaces());
     static ICommand fallback = new CommandUnknown();
     static Registry registry = new Registry(context, fallback);
 
@@ -25,6 +25,7 @@ class Game
         InitRegistry();
         context.GetCurrent().Welcome();
         context.GetCurrent().Destription();
+        context.GetCurrent().SetNextSpaces(context.GetCompletedSpaces());
         context.GetCurrent().Exits();
 
         while (context.IsDone() == false)
