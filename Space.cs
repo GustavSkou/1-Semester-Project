@@ -68,7 +68,7 @@ class Space : Node
             int spaceIndex = random.Next(0, differentSpaces.Length);
 
             AddEdge(paths[pathIndex], differentSpaces[spaceIndex]);
-
+            
             paths = paths.Where(path => path != paths[pathIndex]).ToArray();
             differentSpaces = differentSpaces.Where(space => space != differentSpaces[spaceIndex]).ToArray();
         }
