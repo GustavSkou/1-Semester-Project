@@ -1,6 +1,6 @@
 /* Space class for modeling spaces (rooms, caves, ...) */
 
-public class Space : Node, IPrint
+abstract public class Space : Node, IPrintable
 {
     protected string[] paths;
     public string[] Paths 
