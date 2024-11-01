@@ -2,7 +2,7 @@
 
 abstract class Space : Node
 {
-    protected string[] paths;
+    public string[] paths {get; set;}
     protected string spaceDestription, spaceQuestion;
     public Space(String name) : base(name)
     {
@@ -51,10 +51,5 @@ abstract class Space : Node
             Thread.Sleep(25);
         }
         Console.WriteLine();
-    }
-
-    public String[] GetPaths()
-    {
-        return paths;
     }
 }
