@@ -1,6 +1,6 @@
 /* Node class for modeling graphs */
 
-class Node
+abstract class Node
 {
     protected string name;
     protected Node parentNode;

@@ -1,6 +1,6 @@
 /* Space class for modeling spaces (rooms, caves, ...) */
 
-class Space : Node
+abstract class Space : Node
 {
     protected string[] paths;
     protected string spaceDestription, spaceQuestion;
