@@ -1,19 +1,19 @@
 /* Node class for modeling graphs */
 
-abstract class Node
+abstract public class Node
 {
     protected string name;
+    public string Name
+    {
+        get {return name;}
+    }
+    
     protected Node parentNode;
     protected Dictionary<string, Node> edges = new Dictionary<string, Node>();
 
     public Node(string name)
     {
         this.name = name;
-    }
-
-    public string GetName()
-    {
-        return name;
     }
 
     public void AddEdge(string name, Node node)         // Add egde that leades to some other Node object

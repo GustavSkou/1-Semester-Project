@@ -2,11 +2,23 @@
 
 class Context
 {
-    Space currentSpace;
-    Space[] spaces;
-    World world;
-    bool done = false;
-    Dictionary<Space,bool> completedSpaces;
+    private Space currentSpace;
+    public Space CurrentSpace
+    {
+        get {return currentSpace;}
+    }
+    private Space[] spaces;
+    private World world;
+    private bool done;
+    public bool Done 
+    {
+        get {return done;}
+    }
+    private Dictionary<Space,bool> completedSpaces;
+    public Dictionary<Space, bool> CompletedSpaces
+    {
+        get {return completedSpaces;}
+    }
     
     public Context(World world)
     {
@@ -14,57 +26,44 @@ class Context
         
         spaces = world.GetSpaces();
         currentSpace = world.GetStartSpace();
+        done = false;
 
         completedSpaces = new Dictionary<Space, bool>();
         foreach (Space space in spaces)
         {
-            completedSpaces.Add(space, false);
+            completedSpaces.Add(space, done);
         }
     }
 
-    public Space GetCurrent()
+    public void MakeDone()
     {
-        return currentSpace;
+        this.done = true;
     }
 
     public void Transition(string direction)
     {
         SetSpaceComplete(currentSpace);
+
         if(IsAllSpacesComplete())
         {
-            MakeDone();
+            done = true;
             return;
         }
 
-        Space next = currentSpace.FollowEdge(direction);
-        if (next == null)
+        Space nextSpace = currentSpace.FollowEdge(direction);
+        if (nextSpace == null)
         {
             Console.WriteLine($"You are confused, and walk in a circle looking for '{direction}'. In the end you give up 😩");
         }
         else
         {
             currentSpace.Goodbye();                         //gør ikke noget
-            currentSpace = next;
+            currentSpace = nextSpace;
             currentSpace.Welcome();
             currentSpace.Destription();
-            world.SetNextSpaces(currentSpace, GetCompletedSpaces());
+            world.SetNextSpaces(currentSpace, completedSpaces);
             currentSpace.Exits();
         }
-    }
-
-    public void MakeDone()
-    {
-        done = true;
-    }
-
-    public bool IsDone()
-    {
-        return done;
-    }
-
-    public Dictionary<Space, bool> GetCompletedSpaces()
-    {
-        return completedSpaces;
     }
 
     public bool IsAllSpacesComplete()

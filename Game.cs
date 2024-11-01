@@ -22,12 +22,13 @@ class Game
         Console.WriteLine("Welcome to the World of Zuul!\n");
 
         InitRegistry();
-        context.GetCurrent().Welcome();
-        context.GetCurrent().Destription();
-        world.SetNextSpaces(context.GetCurrent(), context.GetCompletedSpaces());
-        context.GetCurrent().Exits();
+        context.CurrentSpace.Welcome();
+        context.CurrentSpace.Destription();
+        world.SetNextSpaces(context.CurrentSpace, context.CompletedSpaces);
 
-        while (context.IsDone() == false)
+        context.CurrentSpace.Exits();
+
+        while (context.Done == false)
         {
             Console.Write("> ");
             string? line = Console.ReadLine();

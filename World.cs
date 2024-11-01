@@ -38,7 +38,7 @@ class World
     public void SetNextSpaces(Space currentSpace, Dictionary<Space,bool> completedSpaces)
     {
         Space[] differentSpaces = GetDifferentNonCompletedSpaces(currentSpace, completedSpaces);
-        string[] paths = currentSpace.GetPaths();
+        string[] paths = currentSpace.Paths;
 
         if (differentSpaces.Length < 1)
         {
