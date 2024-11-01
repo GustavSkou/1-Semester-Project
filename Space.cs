@@ -1,11 +1,19 @@
 /* Space class for modeling spaces (rooms, caves, ...) */
 
-abstract class Space : Node
+public class Space : Node, IPrint
 {
-    public string[] paths {get; set;}
+    protected string[] paths;
+    public string[] Paths 
+    {
+        get {return paths;}
+        set {paths = value;}
+    }
+    protected bool answer;
+
     protected string spaceDestription, spaceQuestion;
     public Space(String name) : base(name)
     {
+        answer = false;
     }
 
     public void Welcome()
@@ -29,7 +37,7 @@ abstract class Space : Node
         Print(spaceDestription);
     }
     
-    public void question()
+    public void Question()
     {
         Print(spaceQuestion);
     }
@@ -43,7 +51,7 @@ abstract class Space : Node
         return (Space) base.FollowEdge(direction);
     }
 
-    protected void Print(string someString)
+    public void Print(string someString)
     {
         foreach (char letter in someString)
         {
@@ -51,5 +59,5 @@ abstract class Space : Node
             Thread.Sleep(25);
         }
         Console.WriteLine();
-    }
+    } 
 }
