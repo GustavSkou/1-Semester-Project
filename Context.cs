@@ -13,6 +13,7 @@ class Context
     public bool Done 
     {
         get {return done;}
+        set {done = value;}
     }
     private Dictionary<Space,bool> completedSpaces;
     public Dictionary<Space, bool> CompletedSpaces
@@ -33,11 +34,6 @@ class Context
         {
             completedSpaces.Add(space, done);
         }
-    }
-
-    public void MakeDone()
-    {
-        this.done = true;
     }
 
     public void Transition(string direction)
