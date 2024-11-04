@@ -2,7 +2,7 @@ class City : Space
 {
     public City(string name) : base(name)
     {
-        paths = ["Horisonten", "VandHullet", "Stien", "Træerne"];
-        spaceDestription = "Urban populations consume vast amounts of food, water, and energy. \nTo meet these needs, forests are often cleared to make way for agricultural land, \nwhich can lead to habitat loss and biodiversity decline.";
+        paths = ["Highway", "Park", "Bikelane", "Alley"];
+        spaceDestription = "Urbanization leads to significant habitat loss and degradation through direct destruction,\n fragmentation, pollution, and the introduction of invasive species.\n This combination severely impacts ecosystems and threatens the survival of many native species.\n Although cities create green spaces to address this problem,\n these efforts do not adequately tackle the root issue of overconsumption.";
     }
 }
