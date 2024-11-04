@@ -49,11 +49,11 @@ class Context
         Space nextSpace = currentSpace.FollowEdge(direction);
         if (nextSpace == null)
         {
-            Console.WriteLine($"You are confused, and walk in a circle looking for '{direction}'. In the end you give up 😩");
+            Console.WriteLine($"You are confused, and walk in a circle looking for '{direction}'. In the end you give up");
         }
         else
         {
-            currentSpace.Goodbye();                         //gør ikke noget
+            currentSpace.Goodbye();
             currentSpace = nextSpace;
             currentSpace.Welcome();
             currentSpace.Destription();
