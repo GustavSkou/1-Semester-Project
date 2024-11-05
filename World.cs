@@ -25,14 +25,14 @@ class World
         return spaces[random.Next(0, spaces.Length)];
     }
 
-    public Space GetStartSpace()
+    public Space StartSpace
     {
-        return startSpace;
+        get {return startSpace;}
     }
 
-    public Space[] GetSpaces()
+    public Space[] Spaces
     {
-        return spaces;
+        get {return spaces;}
     }
 
     public void SetNextSpaces(Space currentSpace, Dictionary<Space,bool> completedSpaces)
@@ -48,11 +48,6 @@ class World
 
         for (int edges = 0; edges < 2; edges++)
         {
-            if (differentSpaces.Length < 2)
-            {
-                edges++;
-            }
-
             int pathIndex = random.Next(0, paths.Length);
             int spaceIndex = random.Next(0, differentSpaces.Length);
 
@@ -60,6 +55,11 @@ class World
             
             paths = paths.Where(path => path != paths[pathIndex]).ToArray();
             differentSpaces = differentSpaces.Where(space => space != differentSpaces[spaceIndex]).ToArray();
+
+            if (differentSpaces.Length < 1)
+            {
+                break;
+            }
         }
     }
 
