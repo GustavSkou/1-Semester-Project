@@ -1,4 +1,4 @@
-/* Space class for modeling spaces (rooms, caves, ...) */
+/* Space class for modeling spaces */
 
 abstract public class Space : Node, IPrintable
 {
@@ -23,7 +23,7 @@ abstract public class Space : Node, IPrintable
 
     public void Exits()
     {
-        HashSet<string> exits = edges.Keys.ToHashSet();
+        string[] exits = edges.Keys.ToArray();
         Print("Current exits are:");
 
         foreach (string exit in exits)
