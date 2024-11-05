@@ -7,15 +7,14 @@ class Context
     {
         get {return currentSpace;}
     }
-    private Space[] spaces;
     private World world;
-    private bool done;
+    private bool done = false;
     public bool Done 
     {
         get {return done;}
         set {done = value;}
     }
-    private Dictionary<Space,bool> completedSpaces;
+    private Dictionary<Space,bool> completedSpaces = [];
     public Dictionary<Space, bool> CompletedSpaces
     {
         get {return completedSpaces;}
@@ -24,13 +23,9 @@ class Context
     public Context(World world)
     {
         this.world = world;
-        
-        spaces = world.GetSpaces();
-        currentSpace = world.GetStartSpace();
-        done = false;
+        currentSpace = world.StartSpace;
 
-        completedSpaces = new Dictionary<Space, bool>();
-        foreach (Space space in spaces)
+        foreach (Space space in world.Spaces)
         {
             completedSpaces.Add(space, false);
         }
@@ -65,7 +60,7 @@ class Context
 
     public bool IsAllSpacesComplete()
     {
-        foreach (Space space in spaces)
+        foreach (Space space in world.Spaces)
         {
             if (completedSpaces[space] == false)
             {

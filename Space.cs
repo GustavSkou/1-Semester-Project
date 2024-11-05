@@ -56,7 +56,7 @@ abstract public class Space : Node, IPrintable
         foreach (char letter in someString)
         {
             Console.Write(letter);
-            Thread.Sleep(10);
+            Thread.Sleep(25);
         }
         Console.WriteLine();
     } 
