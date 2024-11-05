@@ -46,15 +46,13 @@ class World
             return;
         }
 
-        if (differentSpaces.Length < 2)
-        {
-            int pathIndex = random.Next(0, paths.Length);
-            currentSpace.AddEdge(paths[pathIndex], differentSpaces[0]);
-            return;
-        }
-
         for (int edges = 0; edges < 2; edges++)
         {
+            if (differentSpaces.Length < 2)
+            {
+                edges++;
+            }
+
             int pathIndex = random.Next(0, paths.Length);
             int spaceIndex = random.Next(0, differentSpaces.Length);
 
@@ -67,10 +65,8 @@ class World
 
     private Space[] GetDifferentNonCompletedSpaces(Space currentSpace, Dictionary<Space,bool> completedSpaces)
     {
-        Space[] spaces = completedSpaces.Keys.ToArray();
-
-        spaces = spaces.Where(space => space.GetType() != currentSpace.GetType() && !completedSpaces[space]).ToArray();
-    
-        return spaces;
+        return this.spaces.Where(space => 
+            space.GetType() != currentSpace.GetType() &&    // Picks spaces of different type from currentSpace
+            !completedSpaces[space]).ToArray();             // Picks spaces that are not complete
     }
 }
