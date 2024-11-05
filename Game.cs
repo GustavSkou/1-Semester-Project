@@ -22,6 +22,7 @@ class Game
         Console.WriteLine("Welcome to the World of Zuul!\n");
 
         InitRegistry();
+        context.Done = false;
         context.CurrentSpace.Welcome();
         context.CurrentSpace.Destription();
         world.SetNextSpaces(context.CurrentSpace, context.CompletedSpaces);

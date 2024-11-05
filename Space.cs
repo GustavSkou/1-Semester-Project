@@ -3,14 +3,17 @@
 abstract public class Space : Node, IPrintable
 {
     protected string[] paths;
+
+    protected string spaceDestription, spaceQuestion;
+
+    protected bool answer;
+
     public string[] Paths 
     {
         get {return paths;}
         set {paths = value;}
     }
-    protected bool answer;
 
-    protected string spaceDestription, spaceQuestion;
     public Space(String name) : base(name)
     {
         answer = false;
@@ -56,7 +59,7 @@ abstract public class Space : Node, IPrintable
         foreach (char letter in someString)
         {
             Console.Write(letter);
-            Thread.Sleep(25);
+            Thread.Sleep(0);
         }
         Console.WriteLine();
     } 
