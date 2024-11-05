@@ -1,7 +1,5 @@
 /* Command for transitioning between spaces */
 
-using System.Reflection.Metadata;
-
 class CommandGo : BaseCommand, ICommand
 {
     public CommandGo()
@@ -16,9 +14,13 @@ class CommandGo : BaseCommand, ICommand
             String parameter = String.Join(" ", parameters);
             context.Transition(parameter);
         }
-        catch
+        catch(KeyNotFoundException)
         {
-            Console.WriteLine("try a different path");
+            Console.WriteLine("Please try again");
+        }
+        catch(NodeException e)
+        {
+            Console.WriteLine(e.Message);
         }
     }
 }

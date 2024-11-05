@@ -3,18 +3,24 @@
 class Context
 {
     private Space currentSpace;
+
+    private World world;
+
+    private Dictionary<Space,bool> completedSpaces = [];
+
+    private bool done;
+
     public Space CurrentSpace
     {
         get {return currentSpace;}
     }
-    private World world;
-    private bool done = false;
+
     public bool Done 
     {
         get {return done;}
         set {done = value;}
     }
-    private Dictionary<Space,bool> completedSpaces = [];
+
     public Dictionary<Space, bool> CompletedSpaces
     {
         get {return completedSpaces;}
@@ -41,21 +47,21 @@ class Context
             return;
         }
 
+        /*if (currentSpace.FollowEdge(direction) == null)
+        {
+            throw new NodeException();
+        }*/
+
         Space nextSpace = currentSpace.FollowEdge(direction);
-        if (nextSpace == null)
-        {
-            Console.WriteLine($"You are confused, and walk in a circle looking for '{direction}'. In the end you give up");
-        }
-        else
-        {
-            Console.Clear();
-            currentSpace.Goodbye();
-            currentSpace = nextSpace;
-            currentSpace.Welcome();
-            currentSpace.Destription();
-            world.SetNextSpaces(currentSpace, completedSpaces);
-            currentSpace.Exits();
-        }
+        
+        Console.Clear();
+        currentSpace.Goodbye();
+        currentSpace = nextSpace;
+        currentSpace.Welcome();
+        currentSpace.Destription();
+        world.SetNextSpaces(currentSpace, completedSpaces);
+        currentSpace.Exits();
+        
     }
 
     public bool IsAllSpacesComplete()
