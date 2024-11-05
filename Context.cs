@@ -32,7 +32,7 @@ class Context
         completedSpaces = new Dictionary<Space, bool>();
         foreach (Space space in spaces)
         {
-            completedSpaces.Add(space, done);
+            completedSpaces.Add(space, false);
         }
     }
 
@@ -53,6 +53,7 @@ class Context
         }
         else
         {
+            Console.Clear();
             currentSpace.Goodbye();
             currentSpace = nextSpace;
             currentSpace.Welcome();

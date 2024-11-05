@@ -11,8 +11,14 @@ class CommandGo : BaseCommand, ICommand
 
     public void Execute(Context context, string command, string[] parameters)
     {
-        String parameter = String.Join(" ", parameters);
-        Console.Clear();
-        context.Transition(parameter);
+        try 
+        {
+            String parameter = String.Join(" ", parameters);
+            context.Transition(parameter);
+        }
+        catch
+        {
+            Console.WriteLine("try a different path");
+        }
     }
 }
