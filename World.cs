@@ -30,7 +30,7 @@ class World
         edges = 2;
         startSpace = SetStartSpace();
     }
-
+    
     private Space SetStartSpace() // Set start space to a random space
     {
         return spaces[2];

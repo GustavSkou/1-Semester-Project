@@ -18,9 +18,5 @@ class CommandGo : BaseCommand, ICommand
         {
             Console.WriteLine("Please try again");
         }
-        catch(NodeException e)
-        {
-            Console.WriteLine(e.Message);
-        }
     }
 }
