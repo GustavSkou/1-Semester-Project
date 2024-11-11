@@ -44,6 +44,7 @@ abstract public class Space : Node
     public void Destription()
     {
         Print(spaceDestription);
+        Console.WriteLine();
     }
     
     public void Question()
