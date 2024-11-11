@@ -16,7 +16,8 @@ class CommandGo : BaseCommand, ICommand
         }
         catch(KeyNotFoundException)
         {
-            Console.WriteLine("Please try again");
+            context.CurrentSpace.Print("Please try again");
+            context.CurrentSpace.Exits();
         }
     }
 }
