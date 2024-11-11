@@ -6,8 +6,6 @@ class CommandAnswer : BaseCommand, ICommand
     {
         description = "Answer a question";
     }
-    
-    //Answer 1
 
     public void Execute(Context context, string command, string[] parameters)
     {        
@@ -15,10 +13,9 @@ class CommandAnswer : BaseCommand, ICommand
         {
             context.AnswerQuestion(int.Parse(parameters[0])); // convert string number to interger
         }
-        catch(KeyNotFoundException)
+        catch(IndexOutOfRangeException)
         {
             Console.WriteLine("Please try again");
         }
-
     }
 }

@@ -1,10 +1,11 @@
 /* Space class for modeling spaces */
 
-abstract public class Space : Node
+abstract public class Space : Node, IPrintable
 {
     protected string[] paths;
 
     protected string spaceDestription, spaceQuestion;
+
     protected (string someAnswer, bool value)[] spaceAnswerChoices;
 
     protected bool answer;
@@ -33,7 +34,7 @@ abstract public class Space : Node
     public void Exits()
     {
         string[] exits = edges.Keys.ToArray();
-        Print("Current exits are:");
+        Print("Current paths are:");
 
         foreach (string exit in exits)
         {
@@ -53,7 +54,6 @@ abstract public class Space : Node
         int answerChoiceNumber = 0;
         foreach (string answerChoice in spaceAnswerChoices.Select(tuple => tuple.someAnswer).ToArray())
         {  
-            
             Print($"{answerChoiceNumber}. {answerChoice}");
             answerChoiceNumber++;
         }

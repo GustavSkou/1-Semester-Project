@@ -43,16 +43,16 @@ class Context
         {
             SetSpaceComplete(currentSpace);
             Console.WriteLine("correct answer");
+
+            if(IsAllSpacesComplete())
+            {
+                done = true;
+                return;
+            }
         }
         else
         {
             Console.WriteLine("sorry wrong answer");
-        }
-        
-        if(IsAllSpacesComplete())
-        {
-            done = true;
-            return;
         }
         
         world.SetNextSpaces(currentSpace, completedSpaces);

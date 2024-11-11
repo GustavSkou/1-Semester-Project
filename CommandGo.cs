@@ -4,14 +4,14 @@ class CommandGo : BaseCommand, ICommand
 {
     public CommandGo()
     {
-        description = "Follow an exit";
+        description = "Follow a path";
     }
 
     public void Execute(Context context, string command, string[] parameters)
     {
         try 
         {
-            String parameter = String.Join(" ", parameters);
+            string parameter = string.Join(" ", parameters);
             context.Transition(parameter);
         }
         catch(KeyNotFoundException)
