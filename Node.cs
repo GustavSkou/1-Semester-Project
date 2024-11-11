@@ -10,10 +10,18 @@ abstract public class Node
     
     protected Node parentNode;
     protected Dictionary<string, Node> edges = new Dictionary<string, Node>();
+    public Dictionary<string, Node> Edges
+    {
+        get{return edges;}
+    }
 
     public Node(string name)
     {
         this.name = name;
+    }
+    public void RemoveEdges()
+    {
+        edges = new Dictionary<string, Node>();
     }
 
     public void AddEdge(string name, Node node)         // Add egde that leades to some other Node object
