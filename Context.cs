@@ -3,12 +3,9 @@
 class Context
 {
     private Space currentSpace;
-
     private World world;
-
     private Dictionary<Space,bool> completedSpaces = [];
-
-    private bool done;
+    private bool done, inQuestion;
 
     public Space CurrentSpace
     {
@@ -19,6 +16,12 @@ class Context
     {
         get {return done;}
         set {done = value;}
+    }
+
+    public bool InQuestion
+    {
+        get {return inQuestion;}
+        set {inQuestion = value;}
     }
 
     public Dictionary<Space, bool> CompletedSpaces
@@ -42,7 +45,7 @@ class Context
         if (currentSpace.SpaceAnswerChoices[choiceNum].value)
         {
             SetSpaceComplete(currentSpace);
-            Console.WriteLine("correct answer");
+            Console.WriteLine("Correct answer");
 
             if(IsAllSpacesComplete())
             {
@@ -52,33 +55,32 @@ class Context
         }
         else
         {
-            Console.WriteLine("sorry wrong answer");
+            Console.WriteLine("Sorry wrong answer");
         }
         
+        inQuestion = false;
         world.SetNextSpaces(currentSpace, completedSpaces);
         currentSpace.Exits();
     }
 
     public void Transition(string direction)
     {
+        Console.Clear();
         Space nextSpace = currentSpace.FollowEdge(direction);
         
-        Console.Clear();
         currentSpace.Goodbye();
         currentSpace = nextSpace;
         currentSpace.Welcome();
         currentSpace.Destription();
         currentSpace.Question();
+        inQuestion = true;
     }
 
-    public bool IsAllSpacesComplete()
+    private bool IsAllSpacesComplete()
     {
-        foreach (Space space in world.Spaces)
+        if (completedSpaces.ContainsValue(false))
         {
-            if (completedSpaces[space] == false)
-            {
-                return false; 
-            }
+            return false;
         }
         return true;
     }
@@ -88,10 +90,6 @@ class Context
         if (completedSpaces.ContainsKey(space))
         {
             completedSpaces[space] = true;
-        }
-        else
-        {
-            return;
         }
     }
 }
