@@ -37,6 +37,14 @@ class Context
         }
     }
 
+    public void AnswerQuestion(int choiceNum)
+    {
+        if (currentSpace.SpaceAnswerChoices[choiceNum].value)
+        {
+            SetSpaceComplete(currentSpace);
+        }
+    }
+
     public void Transition(string direction)
     {
         SetSpaceComplete(currentSpace);
@@ -47,10 +55,7 @@ class Context
             return;
         }
 
-        /*if (currentSpace.FollowEdge(direction) == null)
-        {
-            throw new NodeException();
-        }*/
+
 
         Space nextSpace = currentSpace.FollowEdge(direction);
         
