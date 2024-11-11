@@ -42,21 +42,25 @@ class Context
         if (currentSpace.SpaceAnswerChoices[choiceNum].value)
         {
             SetSpaceComplete(currentSpace);
+            Console.WriteLine("correct answer");
         }
-    }
-
-    public void Transition(string direction)
-    {
-        SetSpaceComplete(currentSpace);
-
+        else
+        {
+            Console.WriteLine("sorry wrong answer");
+        }
+        
         if(IsAllSpacesComplete())
         {
             done = true;
             return;
         }
+        
+        world.SetNextSpaces(currentSpace, completedSpaces);
+        currentSpace.Exits();
+    }
 
-
-
+    public void Transition(string direction)
+    {
         Space nextSpace = currentSpace.FollowEdge(direction);
         
         Console.Clear();
@@ -64,9 +68,7 @@ class Context
         currentSpace = nextSpace;
         currentSpace.Welcome();
         currentSpace.Destription();
-        world.SetNextSpaces(currentSpace, completedSpaces);
-        currentSpace.Exits();
-        
+        currentSpace.Question();
     }
 
     public bool IsAllSpacesComplete()

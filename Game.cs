@@ -14,6 +14,7 @@ class Game
         registry.Register("quit", cmdExit);
         registry.Register("bye", cmdExit);
         registry.Register("go", new CommandGo());
+        registry.Register("answer", new CommandAnswer());
         registry.Register("help", new CommandHelp(registry));
     }
 
@@ -25,9 +26,8 @@ class Game
         context.Done = false;
         context.CurrentSpace.Welcome();
         context.CurrentSpace.Destription();
-        world.SetNextSpaces(context.CurrentSpace, context.CompletedSpaces);
+        context.CurrentSpace.Question();
 
-        context.CurrentSpace.Exits();
 
         while (context.Done == false)
         {

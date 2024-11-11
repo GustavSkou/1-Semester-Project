@@ -15,7 +15,7 @@ abstract public class Space : Node
         set {paths = value;}
     }
 
-    public (string someAnswer, bool value)[] SpaceAnswerChoices;
+    public (string someAnswer, bool value)[] SpaceAnswerChoices
     {
         get {return spaceAnswerChoices;}
     }
@@ -52,7 +52,9 @@ abstract public class Space : Node
         int answerChoiceNumber = 0;
         foreach (string answerChoice in spaceAnswerChoices.Select(tuple => tuple.someAnswer).ToArray())
         {  
+            
             Print($"{answerChoiceNumber}. {answerChoice}");
+            answerChoiceNumber++;
         }
     }
 
@@ -70,10 +72,8 @@ abstract public class Space : Node
         foreach (char letter in someString)
         {
             Console.Write(letter);
-            Thread.Sleep(25);
+            Thread.Sleep(0);
         }
         Console.WriteLine();
-    }
-
-    
+    }    
 }
