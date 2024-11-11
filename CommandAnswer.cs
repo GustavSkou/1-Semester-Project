@@ -8,14 +8,21 @@ class CommandAnswer : BaseCommand, ICommand
     }
 
     public void Execute(Context context, string command, string[] parameters)
-    {        
-        try 
-        {
-            context.AnswerQuestion(int.Parse(parameters[0])); // convert string number to interger
-        }
-        catch(IndexOutOfRangeException)
-        {
-            Console.WriteLine("Please try again");
-        }
+    {   
+        if (context.InQuestion)
+        {     
+            try 
+            {
+                context.AnswerQuestion(int.Parse(parameters[0])); // convert string number to interger
+                return;
+            }
+            catch(IndexOutOfRangeException)
+            {
+                context.CurrentSpace.Print("Please try again");
+                context.CurrentSpace.Question();
+                
+            }
+        }    
+        context.CurrentSpace.Print("No question to answer");    
     }
 }
