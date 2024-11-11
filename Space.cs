@@ -61,6 +61,7 @@ abstract public class Space : Node, IPrintable
 
     public void Goodbye()
     {
+        Print($"You left the {name}");
     }
 
     public override Space FollowEdge(string direction)
@@ -73,7 +74,7 @@ abstract public class Space : Node, IPrintable
         foreach (char letter in someString)
         {
             Console.Write(letter);
-            Thread.Sleep(0);
+            Thread.Sleep(10);
         }
         Console.WriteLine();
     }    
