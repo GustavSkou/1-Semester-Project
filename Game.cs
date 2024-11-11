@@ -27,6 +27,7 @@ class Game
         context.CurrentSpace.Welcome();
         context.CurrentSpace.Destription();
         context.CurrentSpace.Question();
+        context.InQuestion = true;
 
 
         while (context.Done == false)
