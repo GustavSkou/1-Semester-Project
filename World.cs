@@ -33,8 +33,7 @@ class World
     
     private Space SetStartSpace() // Set start space to a random space
     {
-        return spaces[2];
-        //spaces[random.Next(0, spaces.Length)];
+        return spaces[random.Next(0, spaces.Length)];
     }
 
     public void SetNextSpaces(Space currentSpace, Dictionary<Space,bool> completedSpaces)
@@ -46,12 +45,6 @@ class World
         
         Space[] differentSpaces = GetDifferentNonCompletedSpaces(currentSpace, completedSpaces);
         string[] paths = currentSpace.Paths;
-
-        if (differentSpaces.Length < 1)
-        {
-            currentSpace.AddEdge("Ending", null);
-            return;
-        }
 
         for (int edge = 0; edge < edges; edge++)
         {
