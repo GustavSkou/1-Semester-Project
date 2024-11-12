@@ -33,7 +33,7 @@ class World
     
     private Space SetStartSpace() // Set start space to a random space
     {
-        return spaces[0/*random.Next(0, spaces.Length)*/];
+        return spaces[3];
     }
 
     /*public void SetNextSpaces(Space currentSpace, Dictionary<Space,bool> completedSpaces)
