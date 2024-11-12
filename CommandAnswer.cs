@@ -14,7 +14,6 @@ class CommandAnswer : BaseCommand, ICommand
             try 
             {
                 context.AnswerQuestion(int.Parse(parameters[0]) - 1); // convert string number to interger
-                return;
             }
             catch(IndexOutOfRangeException)
             {

@@ -15,7 +15,6 @@ class CommandGo : BaseCommand, ICommand
             try 
             {
                 context.Transition(parameter);
-                return;
             }
             catch(KeyNotFoundException)
             {
