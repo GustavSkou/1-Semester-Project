@@ -8,7 +8,13 @@ abstract public class Space : Node, IPrintable
 
     protected (string answer, bool value)[] spaceAnswerChoices;
 
-    protected bool answer;
+    protected bool complete;
+
+    public bool Complete
+    {
+        get {return complete;}
+        set {complete = value;}
+    }
 
     public string[] Paths 
     {
@@ -28,8 +34,7 @@ abstract public class Space : Node, IPrintable
 
     public Space(String name) : base(name)
     {
-        answer = false;
-        spaceQuestion = "";
+        spaceQuestion = null;
     }
 
     public void Welcome()

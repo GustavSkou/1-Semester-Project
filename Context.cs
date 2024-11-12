@@ -59,7 +59,6 @@ class Context
         }
         
         inQuestion = false;
-        //world.SetNextSpaces(currentSpace, completedSpaces);
         Console.Clear();
         currentSpace.Exits();
     }
@@ -79,12 +78,13 @@ class Context
             currentSpace.Question();
             inQuestion = true;
         }
-        else{
+        else
+        {
             currentSpace.Exits();
         }
+
+        currentSpace.Complete = true;
         
-        //currentSpace.Question();
-        //inQuestion = true;
     }
 
     private bool IsAllSpacesComplete()
