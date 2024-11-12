@@ -38,6 +38,7 @@ class ShallowWaters : Space {
     public ShallowWaters (string name) : base(name) 
     {
         spaceDestription = "Skubdi doo";
+        spaceQuestion = null;
     }
 }
 
@@ -45,6 +46,7 @@ class SeaTurtleNestingSite : Space {
     public SeaTurtleNestingSite (string name) : base(name) 
     {
         spaceDestription = "bubidi doo";
+        spaceQuestion = null;
     }
 }
 
@@ -52,6 +54,7 @@ class SeagullNestingArea : Space {
     public SeagullNestingArea (string name) : base(name) 
     {
         spaceDestription = "flabbe flabbe";
+        spaceQuestion = null;
     }
 }
 
@@ -59,5 +62,6 @@ class TidePools : Space {
     public TidePools (string name) : base(name) 
     {
         spaceDestription = "Pooli pooli";
+        spaceQuestion = null;
     }
 }
