@@ -9,7 +9,7 @@ class City : Space
         spaceAnswerChoices =
         [
             ("Answer0", true),
-            ("Answer1", true),
+            ("Answer1", false),
             ("Answer2", false),
         ];
     }
