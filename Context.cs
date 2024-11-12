@@ -60,6 +60,7 @@ class Context
         
         inQuestion = false;
         world.SetNextSpaces(currentSpace, completedSpaces);
+        Console.Clear();
         currentSpace.Exits();
     }
 

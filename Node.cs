@@ -8,8 +8,8 @@ abstract public class Node
         get {return name;}
     }
     
-    protected Node parentNode;
-    protected Dictionary<string, Node> edges = new Dictionary<string, Node>();
+    protected Dictionary<string, Node> edges = [];
+
     public Dictionary<string, Node> Edges
     {
         get{return edges;}
@@ -24,24 +24,14 @@ abstract public class Node
         edges = new Dictionary<string, Node>();
     }
 
-    public void AddEdge(string name, Node node)         // Add egde that leades to some other Node object
+    public void AddEdge(string name, Node node)         // Add egde that lead to some other Node object
     {
         name = name.ToLower();
         edges.Add(name, node);
     }
 
-    public virtual Node FollowEdge(string direction)    // Follow noe of this node object egdes to another node object
+    public virtual Node FollowEdge(string direction)    // Follow egde of this node object node object
     {
         return edges[direction];
-    }
-
-    public virtual Node BacktrackEgde(string direction)
-    {
-        return parentNode;
-    }
-
-    protected virtual void SetParentNode(Node parentNode)
-    {
-        this.parentNode = parentNode;
     }
 }

@@ -6,7 +6,7 @@ abstract public class Space : Node, IPrintable
 
     protected string spaceDestription, spaceQuestion;
 
-    protected (string someAnswer, bool value)[] spaceAnswerChoices;
+    protected (string answer, bool value)[] spaceAnswerChoices;
 
     protected bool answer;
 
@@ -51,8 +51,8 @@ abstract public class Space : Node, IPrintable
     public void Question()
     {
         Print(spaceQuestion);
-        int answerChoiceNumber = 0;
-        foreach (string answerChoice in spaceAnswerChoices.Select(tuple => tuple.someAnswer).ToArray())
+        int answerChoiceNumber = 1;
+        foreach (string answerChoice in spaceAnswerChoices.Select(spaceAnswerChoices => spaceAnswerChoices.answer).ToArray())
         {  
             Print($"{answerChoiceNumber}. {answerChoice}");
             answerChoiceNumber++;
@@ -61,7 +61,7 @@ abstract public class Space : Node, IPrintable
 
     public void Goodbye()
     {
-        Print($"You left the {name}");
+        Print($"You left the {name}\n");
     }
 
     public override Space FollowEdge(string direction)
