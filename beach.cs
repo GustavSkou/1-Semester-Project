@@ -38,7 +38,12 @@ class ShallowWaters : Space {
     public ShallowWaters (string name) : base(name) 
     {
         spaceDestription = "Skubdi doo";
-        spaceQuestion = null;
+        spaceQuestion = "You have found a fish tangled in a plastic bag. What will you do?";
+        spaceAnswerChoices = [
+            ("Untangle the fish", true),
+            ("Ignore it", false),
+            ("Kill the fish", false)
+        ];
     }
 }
 
@@ -46,7 +51,13 @@ class SeaTurtleNestingSite : Space {
     public SeaTurtleNestingSite (string name) : base(name) 
     {
         spaceDestription = "bubidi doo";
-        spaceQuestion = null;
+        spaceQuestion = "You stumbled upon a sea turtle laying it's eggs. What will you do?";
+        spaceAnswerChoices = 
+        [
+            ("Get close and take some photos", false),
+            ("Ignore it", true),
+            ("Try to help it", false)
+        ];
     }
 }
 
@@ -54,7 +65,13 @@ class SeagullNestingArea : Space {
     public SeagullNestingArea (string name) : base(name) 
     {
         spaceDestription = "flabbe flabbe";
-        spaceQuestion = null;
+        spaceQuestion = "You see a flock of seagulls eating some trash by the trashcan. WHat will you do?";
+        spaceAnswerChoices = 
+        [
+            ("Attack them", false),
+            ("Scare them away and throw the trash in the bin", true),
+            ("Ignore it", false),
+        ];
     }
 }
 
@@ -62,6 +79,12 @@ class TidePools : Space {
     public TidePools (string name) : base(name) 
     {
         spaceDestription = "Pooli pooli";
-        spaceQuestion = null;
+        spaceQuestion = "You step into a tide pool. What will you do?";
+        spaceAnswerChoices = 
+        [
+            ("Do it again", false),
+            ("Be upset for weeks", false),
+            ("Make sure to be more aware next time", true),
+        ];
     }
 }
