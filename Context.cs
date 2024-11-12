@@ -59,7 +59,7 @@ class Context
         }
         
         inQuestion = false;
-        world.SetNextSpaces(currentSpace, completedSpaces);
+        //world.SetNextSpaces(currentSpace, completedSpaces);
         Console.Clear();
         currentSpace.Exits();
     }
@@ -73,8 +73,18 @@ class Context
         currentSpace = nextSpace;
         currentSpace.Welcome();
         currentSpace.Destription();
-        currentSpace.Question();
-        inQuestion = true;
+
+        if (currentSpace.SpaceQuestion != null) 
+        {
+            currentSpace.Question();
+            inQuestion = true;
+        }
+        else{
+            currentSpace.Exits();
+        }
+        
+        //currentSpace.Question();
+        //inQuestion = true;
     }
 
     private bool IsAllSpacesComplete()

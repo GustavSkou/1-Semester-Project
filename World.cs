@@ -33,10 +33,10 @@ class World
     
     private Space SetStartSpace() // Set start space to a random space
     {
-        return spaces[random.Next(0, spaces.Length)];
+        return spaces[0/*random.Next(0, spaces.Length)*/];
     }
 
-    public void SetNextSpaces(Space currentSpace, Dictionary<Space,bool> completedSpaces)
+    /*public void SetNextSpaces(Space currentSpace, Dictionary<Space,bool> completedSpaces)
     {
         if (currentSpace.Edges.Count > 0)
         {
@@ -68,5 +68,5 @@ class World
         return spaces.Where(space => 
             space.GetType() != currentSpace.GetType() &&    // Picks spaces of different type from currentSpace
             !completedSpaces[space]).ToArray();             // Picks spaces that are not complete
-    }
+    }*/
 }

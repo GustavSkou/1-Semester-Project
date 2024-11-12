@@ -4,7 +4,7 @@ abstract public class Space : Node, IPrintable
 {
     protected string[] paths;
 
-    protected string spaceDestription, spaceQuestion, infoCard;
+    protected string spaceDestription, spaceQuestion = null, infoCard;
 
     protected (string answer, bool value)[] spaceAnswerChoices;
 
@@ -21,9 +21,15 @@ abstract public class Space : Node, IPrintable
         get {return spaceAnswerChoices;}
     }
 
+    public string SpaceQuestion
+    {
+        get {return spaceQuestion;}
+    }
+
     public Space(String name) : base(name)
     {
         answer = false;
+        spaceQuestion = "";
     }
 
     public void Welcome()

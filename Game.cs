@@ -28,8 +28,9 @@ class Game
         context.Done = false;
         context.CurrentSpace.Welcome();
         context.CurrentSpace.Destription();
-        context.CurrentSpace.Question();
-        context.InQuestion = true;
+        context.CurrentSpace.Exits();
+        //context.CurrentSpace.Question();
+        //context.InQuestion = true;
 
 
         while (context.Done == false)
