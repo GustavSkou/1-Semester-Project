@@ -4,7 +4,7 @@ class CommandAnswer : BaseCommand, ICommand
 {
     public CommandAnswer()
     {
-        description = "Answer a question";
+        description = "Use: answer (number)";
     }
 
     public void Execute(Context context, string command, string[] parameters)
@@ -13,16 +13,18 @@ class CommandAnswer : BaseCommand, ICommand
         {     
             try 
             {
-                context.AnswerQuestion(int.Parse(parameters[0])); // convert string number to interger
+                context.AnswerQuestion(int.Parse(parameters[0]) - 1); // convert string number to interger
                 return;
             }
             catch(IndexOutOfRangeException)
             {
                 context.CurrentSpace.Print("Please try again");
                 context.CurrentSpace.Question();
-                
             }
         }    
-        context.CurrentSpace.Print("No question to answer");    
+        else
+        {
+            context.CurrentSpace.Print("No question to answer"); 
+        }   
     }
 }
