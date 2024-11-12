@@ -2,7 +2,7 @@ class Savannah : Space
 {
     public Savannah(string name) : base(name)
     {
-        paths = ["Hidden Water Hole", "Forgotten Path", "The Trees"];
+        
         Space vandhullet = new Vandhullet("vandhullet");
         Space busken = new Busken("busken");
 
@@ -32,7 +32,7 @@ class Vandhullet : Space
 }
 
 class Busken : Space
-{
+{   
     public Busken(string name) : base(name)
     {
         spaceDestription = "ikke noget her inde";
