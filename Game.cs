@@ -10,10 +10,12 @@ class Game
     private static void InitRegistry()
     {
         ICommand cmdExit = new CommandExit();
+        ICommand cmdGo = new CommandGo();
         registry.Register("exit", cmdExit);
         registry.Register("quit", cmdExit);
         registry.Register("bye", cmdExit);
-        registry.Register("go", new CommandGo());
+        registry.Register("go", cmdGo);
+        registry.Register("goto", cmdGo);
         registry.Register("answer", new CommandAnswer());
         registry.Register("help", new CommandHelp(registry));
     }
