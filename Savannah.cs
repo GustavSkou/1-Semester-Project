@@ -13,13 +13,9 @@ class Savannah : Biome
             vandhullet
         ];
 
-        SetupEgdes();
         entrySpace = spaces[2];
         exitSpace = spaces[1];
-    }
 
-    private void SetupEgdes()
-    {
         busken.AddEdge(træet.Name, træet);
         træet.AddEdge(vandhullet.Name, vandhullet);
         vandhullet.AddEdge(busken.Name, busken);

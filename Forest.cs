@@ -15,19 +15,15 @@ class Forest : Biome
 			distanthorizon
         ];
 		
-		SetupEgdes();
-        entrySpace = spaces[0];
-        exitSpace = spaces[2];
+        entrySpace = hiddenwaterhole;
+        exitSpace = forgottenpath;
 
-       //spaceDestription = "Deforestation is the large-scale removal and destruction of forests, often to make way for agricultural development, urbanization, and industrial activities. Forests, which cover around 31% of the Earth's land area, play a vital role in maintaining the balance of the planet's ecosystems. They provide habitats for wildlife, help regulate the climate, purify air and water, and maintain the water cycle.";
-    }
-	
-	private void SetupEgdes()
-    {
-		hiddenwaterhole.AddEdge(trees.Name, trees);
+        hiddenwaterhole.AddEdge(trees.Name, trees);
 		trees.AddEdge(forgottenpath.Name, forgottenpath);
 		forgottenpath.AddEdge(distanthorizon.Name, distanthorizon);
-		distanthorizon.AddEdge(hiddenwaterhole.Name, hiddenwaterhole);		
+		distanthorizon.AddEdge(hiddenwaterhole.Name, hiddenwaterhole);	
+
+       //spaceDestription = "Deforestation is the large-scale removal and destruction of forests, often to make way for agricultural development, urbanization, and industrial activities. Forests, which cover around 31% of the Earth's land area, play a vital role in maintaining the balance of the planet's ecosystems. They provide habitats for wildlife, help regulate the climate, purify air and water, and maintain the water cycle.";
     }
 }
 
@@ -35,7 +31,7 @@ class HiddenWaterHole : Space
 {
     public HiddenWaterHole (string name) : base(name)
     {
-         spaceDestription ="";
+        spaceDestription ="";
         spaceQuestion = " You've found a hidden water hole deep in the forest, and you notice that animals come here to drink. However, there's some trash around the water. What should you do to help protect this water source?";
         spaceAnswerChoices =
         [

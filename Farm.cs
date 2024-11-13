@@ -2,9 +2,9 @@ class Farm : Biome
 {
     public Farm(string name) : base(name)
     {
-		Space busken = new Busken("busken"),
-		Space træet = new Træet("træet"),
-		Space vandhullet = new Vandhullet("vandhullet")
+		Space busken = new Busken("busken");
+		Space træet = new Træet("træet");
+		Space vandhullet = new Vandhullet("vandhullet");
 	
         spaces =
         [
@@ -13,16 +13,12 @@ class Farm : Biome
             vandhullet
         ];
 
-        SetupEgdes();
-        entrySpace = spaces[0];
-        exitSpace = spaces[2];
-    }
-
-    private void SetupEgdes()
-    {
         busken.AddEdge(træet.Name, træet);
         træet.AddEdge(vandhullet.Name, vandhullet);
-        vandhullet.AddEdge(busken.Name, busken;
+        vandhullet.AddEdge(busken.Name, busken);
+
+        entrySpace = busken;
+        exitSpace = vandhullet;
     }
 }
 
