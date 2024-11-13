@@ -3,8 +3,12 @@
 class Context
 {
     private Space currentSpace;
+    private Biome currentBiome;
     private World world;
-    private Dictionary<Space,bool> completedSpaces = [];
+
+    private HashSet<Space> completedSpaces = [];
+    private HashSet<Biome> completedBiomes = [];    
+
     private bool done, inQuestion;
 
     public Space CurrentSpace
@@ -24,7 +28,7 @@ class Context
         set {inQuestion = value;}
     }
 
-    public Dictionary<Space, bool> CompletedSpaces
+    public HashSet<Space> CompletedSpaces
     {
         get {return completedSpaces;}
     }
@@ -33,14 +37,10 @@ class Context
     {
         this.world = world;
         currentSpace = world.StartSpace;
-
-        foreach (Space space in world.Spaces)
-        {
-            completedSpaces.Add(space, false);
-        }
+        currentBiome = world.StartBiome;
     }
 
-    public void AnswerQuestion(int choiceNum)
+    /*public void AnswerQuestion(int choiceNum)
     {
         if (currentSpace.SpaceAnswerChoices[choiceNum].value)
         {
@@ -59,10 +59,9 @@ class Context
         }
         
         inQuestion = false;
-        world.SetNextSpaces(currentSpace, completedSpaces);
         Console.Clear();
         currentSpace.Exits();
-    }
+    }*/
 
     public void Transition(string direction)
     {
@@ -72,25 +71,18 @@ class Context
         currentSpace.Goodbye();
         currentSpace = nextSpace;
         currentSpace.Welcome();
-        currentSpace.Destription();
-        currentSpace.Question();
-        inQuestion = true;
-    }
+        
+        if (currentSpace.SpaceDestription != null) currentSpace.Destription();
 
-    private bool IsAllSpacesComplete()
-    {
-        if (completedSpaces.ContainsValue(false))
+        if (currentSpace.SpaceQuestion != null) 
         {
-            return false;
+            currentSpace.Question();
+            inQuestion = true;
         }
-        return true;
-    }
-
-    private void SetSpaceComplete(Space space)
-    {
-        if (completedSpaces.ContainsKey(space))
+        else
         {
-            completedSpaces[space] = true;
+            currentSpace.Exits();
         }
+        currentSpace.Complete = true;
     }
 }

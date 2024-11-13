@@ -1,16 +1,52 @@
-class Savannah : Space
+class Savannah : Biome
 {
     public Savannah(string name) : base(name)
     {
-        paths = ["Distant Horizon", "Hidden Water Hole", "Forgotten Path", "The Trees"];
-        spaceDestription = "Land of endless horizons packed with incredible wildlife, and home to the King of the jungle.\nUnfortuanlty, through out the decades, the number of endagereded species has risen due to mass hunting by poachers.\nIn addition, human induced fires during the dry season make the habit for the animals of the savanna incredely difficult to withstand and live in. Help us save the animals and maintain the savanna for the sake of our planet!";
-            
-        spaceQuestion = "someQuestion";
-        spaceAnswerChoices =
-        [
-            ("Answer0", true),
-            ("Answer1", false),
-            ("Answer2", false),
-        ];
+        spaces = new Space[]
+        {
+            new Busken("busken"),
+            new Træet("træet"),
+            new Vandhullet("vandhullet")
+        };
+
+        SetupEgdes();
+    }
+
+    private void SetupEgdes()
+    {
+        spaces[0].AddEdge(spaces[1].Name, spaces[1]);
+        spaces[1].AddEdge(spaces[2].Name, spaces[2]);
+        spaces[2].AddEdge(spaces[0].Name, spaces[0]);
     }
 }
+
+class Busken : Space
+{
+    public Busken(string name) : base(name)
+    {
+        spaceDestription = $"you are in {name}";
+    }
+}
+
+class Træet : Space
+{
+    public Træet(string name) : base(name)
+    {
+        spaceDestription = $"you are in {name}";
+    }
+}
+
+class Vandhullet : Space
+{
+    public Vandhullet(string name) : base(name)
+    {
+        spaceDestription = $"you are in {name}";
+    }
+}
+
+/*
+ind i et nyt biome (savannah)
+savannah har et masse forskellige spaces (vandhullet, træet, busken)
+
+
+*/

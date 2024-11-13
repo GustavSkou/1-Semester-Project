@@ -1,14 +1,32 @@
 /* Space class for modeling spaces */
 
-abstract public class Space : Node, IPrintable
+abstract class Space : Node, IPrintable
 {
     protected string[] paths;
 
-    protected string spaceDestription, spaceQuestion;
+    protected string spaceDestription, spaceQuestion, infoCard;
 
     protected (string answer, bool value)[] spaceAnswerChoices;
 
-    protected bool answer;
+    protected bool complete;
+
+    protected Space[] subSpaces;
+
+    public Space[] SubSpaces
+    {
+        get {return subSpaces;}
+    }
+
+    public string SpaceDestription
+    {
+        get {return spaceDestription;}
+    }
+
+    public bool Complete
+    {
+        get {return complete;}
+        set {complete = value;}
+    }
 
     public string[] Paths 
     {
@@ -21,9 +39,14 @@ abstract public class Space : Node, IPrintable
         get {return spaceAnswerChoices;}
     }
 
+    public string SpaceQuestion
+    {
+        get {return spaceQuestion;}
+    }
+
     public Space(String name) : base(name)
     {
-        answer = false;
+        spaceQuestion = null;
     }
 
     public void Welcome()
@@ -71,10 +94,17 @@ abstract public class Space : Node, IPrintable
 
     public void Print(string someString)
     {
+        int index = 0;
         foreach (char letter in someString)
         {
             Console.Write(letter);
             Thread.Sleep(10);
+            index++;
+
+            if (index > 50 && letter == ' ' || index > 30 && letter == '.') {
+                Console.WriteLine();
+                index = 0;
+            }
         }
         Console.WriteLine();
     }    
