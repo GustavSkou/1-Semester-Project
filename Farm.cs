@@ -2,22 +2,26 @@ class Farm : Biome
 {
     public Farm(string name) : base(name)
     {
+		Space busken = new Busken("busken");
+		Space træet = new Træet("træet");
+		Space vandhullet = new Vandhullet("vandhullet");
+	
         spaces =
         [
-            new Busken("busken"),
-            new Træet("træet"),
-            new Vandhullet("vandhullet")
+            busken,
+            træet,
+            vandhullet
         ];
 
-        SetupEgdes();
-        entrySpace = spaces[0];
-        exitSpace = spaces[2];
-    }
+        busken.AddEdge(træet.Name, træet);
+        træet.AddEdge(vandhullet.Name, vandhullet);
+        vandhullet.AddEdge(busken.Name, busken);
 
-    private void SetupEgdes()
-    {
-        spaces[0].AddEdge(spaces[1].Name, spaces[1]);
-        spaces[1].AddEdge(spaces[2].Name, spaces[2]);
-        spaces[2].AddEdge(spaces[0].Name, spaces[0]);
+        entrySpace = busken;
+        exitSpace = vandhullet;
     }
 }
+
+
+//paths = ["Distant Horizon", "Hidden Water Hole", "Forgotten Path", "The Trees"];
+//spaceDestription = "Intensive farming has damaged the soil's health. Repeated pesticide use and growing only one crop type remove important nutrients, making the soil less productive. Over time, the soil becomes harder to farm and harms animals and insects that need a healthy environment";            

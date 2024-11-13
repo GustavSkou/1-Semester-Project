@@ -2,24 +2,25 @@ class Savannah : Biome
 {
     public Savannah(string name) : base(name)
     {
+		Space busken = new Busken("busken");
+		Space træet = new Træet("træet");
+		Space vandhullet = new Vandhullet("vandhullet");
+	
         spaces =
         [
-            new Busken("busken"),
-            new Træet("træet"),
-            new Vandhullet("vandhullet")
+            busken,
+            træet,
+            vandhullet
         ];
 
-        SetupEgdes();
         entrySpace = spaces[2];
         exitSpace = spaces[1];
-    }
 
-    private void SetupEgdes()
-    {
-        spaces[0].AddEdge(spaces[1].Name, spaces[1]);
-        spaces[1].AddEdge(spaces[2].Name, spaces[2]);
-        spaces[2].AddEdge(spaces[0].Name, spaces[0]);
+        busken.AddEdge(træet.Name, træet);
+        træet.AddEdge(vandhullet.Name, vandhullet);
+        vandhullet.AddEdge(busken.Name, busken);
     }
+	//"Land of endless horizons packed with incredible wildlife, and home to the King of the jungle.\nUnfortuanlty, through out the decades, the number of endagereded species has risen due to mass hunting by poachers.\nIn addition, human induced fires during the dry season make the habit for the animals of the savanna incredely difficult to withstand and live in. Help us save the animals and maintain the savanna for the sake of our planet!";
 }
 
 class Busken : Space

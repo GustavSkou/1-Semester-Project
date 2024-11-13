@@ -2,20 +2,11 @@
 
 abstract class Space : Node, IPrintable
 {
-    protected string[] paths;
-
     protected string spaceDestription, spaceQuestion, infoCard;
 
     protected (string answer, bool value)[] spaceAnswerChoices;
 
     protected bool complete;
-
-    protected Space[] subSpaces;
-
-    public Space[] SubSpaces
-    {
-        get {return subSpaces;}
-    }
 
     public string SpaceDestription
     {
@@ -26,12 +17,6 @@ abstract class Space : Node, IPrintable
     {
         get {return complete;}
         set {complete = value;}
-    }
-
-    public string[] Paths 
-    {
-        get {return paths;}
-        set {paths = value;}
     }
 
     public (string someAnswer, bool value)[] SpaceAnswerChoices
@@ -98,7 +83,7 @@ abstract class Space : Node, IPrintable
         foreach (char letter in someString)
         {
             Console.Write(letter);
-            Thread.Sleep(0);
+            Thread.Sleep(10);
             index++;
 
             if (index > 50 && letter == ' ' || index > 30 && letter == '.') {

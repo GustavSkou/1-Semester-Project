@@ -45,6 +45,7 @@ class Context
         }
         
         inQuestion = false;
+
         currentSpace.Exits();
     }
 
@@ -73,11 +74,13 @@ class Context
         currentSpace.Goodbye();
         currentSpace = nextSpace;
         currentSpace.Welcome();
+
         if (currentSpace.SpaceDestription != null) currentSpace.Destription();
 
         if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) 
         {
             currentSpace.Question();   
+
             inQuestion = true;
         }
         else
