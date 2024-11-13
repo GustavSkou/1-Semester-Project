@@ -1,25 +1,22 @@
 /* Space class for modeling spaces */
 
-abstract public class Space : Node, IPrintable
+abstract class Space : Node, IPrintable
 {
-    protected string[] paths;
-
-    protected string spaceDestription, spaceQuestion = null, infoCard;
+    protected string spaceDestription, spaceQuestion, infoCard;
 
     protected (string answer, bool value)[] spaceAnswerChoices;
 
     protected bool complete;
 
+    public string SpaceDestription
+    {
+        get {return spaceDestription;}
+    }
+
     public bool Complete
     {
         get {return complete;}
         set {complete = value;}
-    }
-
-    public string[] Paths 
-    {
-        get {return paths;}
-        set {paths = value;}
     }
 
     public (string someAnswer, bool value)[] SpaceAnswerChoices

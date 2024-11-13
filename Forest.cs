@@ -1,34 +1,35 @@
-class Forest : Space
+class Forest : Biome
 {
     public Forest(string name) : base(name)
     {
-        paths = [ "Hidden Water Hole", "The Trees", "Forgotten Path", "Distant Horizon"];
-
         Space hiddenwaterhole = new HiddenWaterHole("Hidden Water Hole");
-        Space trees= new TheTrees("The Trees");
+        Space trees = new TheTrees("The Trees");
         Space forgottenpath = new ForgottenPath("Forgotten Path");
         Space distanthorizon = new DistantHorizon ("Distant horizon");
 
-        AddEdge("hidden water hole", hiddenwaterhole);
-        hiddenwaterhole.AddEdge(this.Name, this);
+		spaces =
+        [
+            hiddenwaterhole,
+			trees,
+			forgottenpath,
+			distanthorizon
+        ];
+		
+		SetupEgdes();
+        entrySpace = spaces[0];
+        exitSpace = spaces[2];
 
-        AddEdge("the trees", trees);
-        trees.AddEdge(this.Name, this);
-
-        AddEdge("forgotten path", forgottenpath);
-        forgottenpath.AddEdge(this.name,this);
-
-        AddEdge("distant horizon", distanthorizon);
-        distanthorizon.AddEdge(this.Name,this);
-
-
-
-       spaceDestription = "Deforestation is the large-scale removal and destruction of forests, often to make way for agricultural development, urbanization, and industrial activities. Forests, which cover around 31% of the Earth's land area, play a vital role in maintaining the balance of the planet's ecosystems. They provide habitats for wildlife, help regulate the climate, purify air and water, and maintain the water cycle.";
-       spaceQuestion = null;
+       //spaceDestription = "Deforestation is the large-scale removal and destruction of forests, often to make way for agricultural development, urbanization, and industrial activities. Forests, which cover around 31% of the Earth's land area, play a vital role in maintaining the balance of the planet's ecosystems. They provide habitats for wildlife, help regulate the climate, purify air and water, and maintain the water cycle.";
     }
-        
+	
+	private void SetupEgdes()
+    {
+		hiddenwaterhole.AddEdge(trees.Name, trees);
+		trees.AddEdge(forgottenpath.Name, forgottenpath);
+		forgottenpath.AddEdge(distanthorizon.Name, distanthorizon);
+		distanthorizon.AddEdge(hiddenwaterhole.Name, hiddenwaterhole);		
     }
-
+}
 
 class HiddenWaterHole : Space
 {
@@ -45,7 +46,6 @@ class HiddenWaterHole : Space
     }
 }
 
-
 class TheTrees: Space
 {
     public TheTrees(string name) : base(name)
@@ -56,10 +56,10 @@ class TheTrees: Space
         [
             ("Plant new trees to replace the ones that were cut down.", true),
             ("Build a road through the forest for easier access.", false),
-            ("Clear more land to make space for new buildings.", false),
+            ("Clear more land to make space for new buildings.", false)
         ];
-    
     }
+}
 
 class ForgottenPath : Space
 {
@@ -71,9 +71,8 @@ class ForgottenPath : Space
         [
             ("Deforestation is destroying their homes, leaving them with nowhere to live and find food.", true),
             ("The animals are migrating to other forests for a change of scenery.", false),
-            ("Animals are becoming less active during the day because they prefer cooler temperatures.", false),
+            ("Animals are becoming less active during the day because they prefer cooler temperatures.", false)
         ];
-    
     }
 }
 
@@ -87,9 +86,8 @@ class DistantHorizon : Space
         [
             ("Try to guide the deer toward the nearest town for help.", false),
             ("Feed the deer some food you have with you to help it regain strength.", false),
-            ("Support efforts to restore water sources, so animals have a place to drink.", true),
-        ];
-    }
-
- }
+            ("Support efforts to restore water sources, so animals have a place to drink.", true)
+		];
+	}
 }
+			

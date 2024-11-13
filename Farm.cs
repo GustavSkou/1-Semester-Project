@@ -1,16 +1,31 @@
-class Farm : Space
+class Farm : Biome
 {
     public Farm(string name) : base(name)
     {
-        paths = ["Distant Horizon", "Hidden Water Hole", "Forgotten Path", "The Trees"];
-        spaceDestription = "Intensive farming has damaged the soil's health. Repeated pesticide use and growing only one crop type remove important nutrients, making the soil less productive. Over time, the soil becomes harder to farm and harms animals and insects that need a healthy environment";
-            
-        spaceQuestion = "someQuestion";
-        spaceAnswerChoices =
+		Space busken = new Busken("busken"),
+		Space træet = new Træet("træet"),
+		Space vandhullet = new Vandhullet("vandhullet")
+	
+        spaces =
         [
-            ("Answer0", true),
-            ("Answer1", false),
-            ("Answer2", false),
+            busken,
+            træet,
+            vandhullet
         ];
+
+        SetupEgdes();
+        entrySpace = spaces[0];
+        exitSpace = spaces[2];
+    }
+
+    private void SetupEgdes()
+    {
+        busken.AddEdge(træet.Name, træet);
+        træet.AddEdge(vandhullet.Name, vandhullet);
+        vandhullet.AddEdge(busken.Name, busken;
     }
 }
+
+
+//paths = ["Distant Horizon", "Hidden Water Hole", "Forgotten Path", "The Trees"];
+//spaceDestription = "Intensive farming has damaged the soil's health. Repeated pesticide use and growing only one crop type remove important nutrients, making the soil less productive. Over time, the soil becomes harder to farm and harms animals and insects that need a healthy environment";            
