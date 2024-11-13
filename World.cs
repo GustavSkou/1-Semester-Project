@@ -6,13 +6,12 @@ class World
     private Biome startBiome;
     private Biome[] biomes;
     private Random random = new Random();
-    private readonly int edges;
 
     public Space StartSpace
     {
         get {return startSpace;}
     }
-    public Space StartBiome
+    public Biome StartBiome
     {
         get {return startBiome;}
     }
@@ -26,13 +25,12 @@ class World
     {
         biomes = 
         [
-            new Savannah("Savannah"), 
-            /*new City("City"), 
-            new Beach("Beach"), 
-            new Forest("Forest"), 
-            new Farm("Farm")*/
+            new Savannah("savannah"), 
+            new City("city"), 
+            new Beach("beach"), 
+            new Forest("forest"), 
+            new Farm("farm")
         ];
-        edges = 1;
         startBiome = SetStartBiome();
         startSpace = SetStartSpace();
     }
@@ -47,34 +45,19 @@ class World
         return startBiome.Spaces[0];
     }
 
-    /*public void SetNextSpaces(Space currentSpace, Dictionary<Space,bool> completedSpaces)
-    {
-        if (currentSpace.Edges.Count > 0)
-        {
-            currentSpace.RemoveEdges();
-        }
-        
-        Space[] differentSpaces = GetDifferentNonCompletedSpaces(currentSpace, completedSpaces);
+    public Biome SetNextBiome(Biome currentBiome)
+    {        
+        Biome[] differentBiomes = GetDifferentNonCompletedBiome(currentBiome);
 
-        for (int edge = 0; edge < edges; edge++)
-        {
-            int spaceIndex = random.Next(0, differentSpaces.Length);
-
-            currentSpace.AddEdge(differentSpaces[spaceIndex].Name, differentSpaces[spaceIndex]);
-            
-            differentSpaces = differentSpaces.Where(space => space != differentSpaces[spaceIndex]).ToArray();
-
-            if (differentSpaces.Length < 1)
-            {
-                break;
-            }
-        }
+        int i = random.Next(0, differentBiomes.Length);
+        currentBiome.ExitSpace.AddEdge(differentBiomes[i].Name, differentBiomes[i].EntrySpace);
+        return differentBiomes[i];        
     }
 
-    private Space[] GetDifferentNonCompletedSpaces(Space currentSpace, Dictionary<Space,bool> completedSpaces)
+    private Biome[] GetDifferentNonCompletedBiome(Biome currentBiome)
     {
-        return spaces.Where(space => 
-            space.GetType() != currentSpace.GetType() &&    // Picks spaces of different type from currentSpace
-            !completedSpaces[space]).ToArray();             // Picks spaces that are not complete
-    }*/
+        return biomes.Where(biome => 
+            biome.GetType() != currentBiome.GetType() &&    // Picks biomes of different type from currentSpace
+            !biome.Complete).ToArray();                     // Picks biomes that are not complete
+    }
 }

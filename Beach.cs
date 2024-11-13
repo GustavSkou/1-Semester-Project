@@ -1,16 +1,23 @@
-class Beach : Space
+class Beach : Biome
 {
     public Beach(string name) : base(name)
     {
-        paths = ["Shallow Waters", "Sea Turtle Nesting Site", "Seagull Nesting Area", "Tide Pools"];
-        spaceDestription = "Plastic pollution is a major threat to coastal ecosystems.\nLitter on the beach disrupts habitats and endangers local wildlife.\nSea turtles struggle to nest among the debris, and marine animals often mistake plastic for food, which can be fatal.\nCleaning up the beach will help restore this habitat, allowing animals to live and thrive in a safer environment.";
-        
-        spaceQuestion = "someQuestion";
-        spaceAnswerChoices =
+        spaces =
         [
-            ("Answer0", true),
-            ("Answer1", false),
-            ("Answer2", false),
+            new Busken("busken"),
+            new Træet("træet"),
+            new Vandhullet("vandhullet")
         ];
+
+        SetupEgdes();
+        entrySpace = spaces[0];
+        exitSpace = spaces[2];
+    }
+
+    private void SetupEgdes()
+    {
+        spaces[0].AddEdge(spaces[1].Name, spaces[1]);
+        spaces[1].AddEdge(spaces[2].Name, spaces[2]);
+        spaces[2].AddEdge(spaces[0].Name, spaces[0]);
     }
 }

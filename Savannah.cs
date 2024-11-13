@@ -2,14 +2,16 @@ class Savannah : Biome
 {
     public Savannah(string name) : base(name)
     {
-        spaces = new Space[]
-        {
+        spaces =
+        [
             new Busken("busken"),
             new Træet("træet"),
             new Vandhullet("vandhullet")
-        };
+        ];
 
         SetupEgdes();
+        entrySpace = spaces[2];
+        exitSpace = spaces[1];
     }
 
     private void SetupEgdes()
@@ -25,6 +27,13 @@ class Busken : Space
     public Busken(string name) : base(name)
     {
         spaceDestription = $"you are in {name}";
+        spaceQuestion = "hvad er 1 + 1?";
+        spaceAnswerChoices = 
+        [
+            ("2",true),
+            ("1",false),
+            ("3",false),
+        ];
     }
 }
 
@@ -33,6 +42,13 @@ class Træet : Space
     public Træet(string name) : base(name)
     {
         spaceDestription = $"you are in {name}";
+        spaceQuestion = "hvad er 1 + 1?";
+        spaceAnswerChoices = 
+        [
+            ("2",true),
+            ("1",false),
+            ("3",false),
+        ];
     }
 }
 
@@ -41,12 +57,12 @@ class Vandhullet : Space
     public Vandhullet(string name) : base(name)
     {
         spaceDestription = $"you are in {name}";
+        spaceQuestion = "hvad er 1 + 1?";
+        spaceAnswerChoices = 
+        [
+            ("2",true),
+            ("1",false),
+            ("3",false),
+        ];
     }
 }
-
-/*
-ind i et nyt biome (savannah)
-savannah har et masse forskellige spaces (vandhullet, træet, busken)
-
-
-*/
