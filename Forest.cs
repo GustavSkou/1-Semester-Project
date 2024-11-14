@@ -2,10 +2,10 @@ class Forest : Biome
 {
     public Forest(string name) : base(name)
     {
-        Space hiddenwaterhole = new HiddenWaterHole("Hidden Water Hole");
-        Space trees = new TheTrees("The Trees");
-        Space forgottenpath = new ForgottenPath("Forgotten Path");
-        Space distanthorizon = new DistantHorizon ("Distant horizon");
+        Space hiddenwaterhole = new HiddenWaterHole("Hidden Water Hole", this);
+        Space trees = new TheTrees("The Trees", this);
+        Space forgottenpath = new ForgottenPath("Forgotten Path", this);
+        Space distanthorizon = new DistantHorizon ("Distant horizon", this);
 
 		spaces =
         [
@@ -29,7 +29,7 @@ class Forest : Biome
 
 class HiddenWaterHole : Space
 {
-    public HiddenWaterHole (string name) : base(name)
+    public HiddenWaterHole (string name, Biome biome) : base(name, biome)
     {
         spaceDestription ="";
         spaceQuestion = " You've found a hidden water hole deep in the forest, and you notice that animals come here to drink. However, there's some trash around the water. What should you do to help protect this water source?";
@@ -44,7 +44,7 @@ class HiddenWaterHole : Space
 
 class TheTrees: Space
 {
-    public TheTrees(string name) : base(name)
+    public TheTrees (string name, Biome biome) : base(name, biome)
     {
         spaceDestription ="";
         spaceQuestion = "While exploring the forest, you notice that many trees have been cut down, and the ground is bare. What is the best action to help restore this part of the forest?";
@@ -59,7 +59,7 @@ class TheTrees: Space
 
 class ForgottenPath : Space
 {
-    public ForgottenPath(string name) : base(name)
+    public ForgottenPath (string name, Biome biome) : base(name, biome)
     {
         spaceDestription ="";
         spaceQuestion = "As you walk along the forgotten path, you notice fewer animals and hear less birdsong than usual. Why might animals be disappearing from this area of the forest?";
@@ -74,7 +74,7 @@ class ForgottenPath : Space
 
 class DistantHorizon : Space
 {
-    public DistantHorizon (string name) : base(name)
+    public DistantHorizon (string name, Biome biome) : base(name, biome)
     {
         spaceDestription ="";
         spaceQuestion = "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. What can you do to help animals like this deer survive in a changing environment?";
@@ -86,4 +86,3 @@ class DistantHorizon : Space
 		];
 	}
 }
-			

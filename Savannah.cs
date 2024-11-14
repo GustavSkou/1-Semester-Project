@@ -2,9 +2,9 @@ class Savannah : Biome
 {
     public Savannah(string name) : base(name)
     {
-		Space busken = new Busken("busken");
-		Space træet = new Træet("træet");
-		Space vandhullet = new Vandhullet("vandhullet");
+		Space busken = new Busken("busken", this);
+		Space træet = new Træet("træet", this);
+		Space vandhullet = new Vandhullet("vandhullet", this);
 	
         spaces =
         [
@@ -25,7 +25,7 @@ class Savannah : Biome
 
 class Busken : Space
 {
-    public Busken(string name) : base(name)
+    public Busken(string name, Biome biome) : base(name, biome)
     {
         spaceDestription = $"you are in {name}";
         spaceQuestion = "hvad er 1 + 1?";
@@ -40,7 +40,7 @@ class Busken : Space
 
 class Træet : Space
 {
-    public Træet(string name) : base(name)
+    public Træet(string name, Biome biome) : base(name, biome)
     {
         spaceDestription = $"you are in {name}";
         spaceQuestion = "hvad er 1 + 1?";
@@ -55,7 +55,7 @@ class Træet : Space
 
 class Vandhullet : Space
 {
-    public Vandhullet(string name) : base(name)
+    public Vandhullet(string name, Biome biome) : base(name, biome)
     {
         spaceDestription = $"you are in {name}";
         spaceQuestion = "hvad er 1 + 1?";

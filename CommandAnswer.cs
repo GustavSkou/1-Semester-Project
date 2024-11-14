@@ -18,7 +18,7 @@ class CommandAnswer : BaseCommand, ICommand
             catch(IndexOutOfRangeException)
             {
                 context.CurrentSpace.Print("Please try again");
-                context.CurrentSpace.Question();
+                context.CurrentSpace.Question(context);
             }
         }    
         else

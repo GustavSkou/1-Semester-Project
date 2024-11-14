@@ -64,30 +64,23 @@ class Context
         }
         
         Space nextSpace = currentSpace.FollowEdge(direction);
-        if (IsDirectionToNewBiome(direction)) //world.Biomes.Any(biome => biome.Name == direction)
-        {
-            Console.WriteLine("you are now in a new biome");
-            currentBiome = nextBiome;
-        }
-        
 
+        if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
+
+        //if (IsDirectionToNewBiome(direction)) currentBiome = nextBiome; //Check om vi går mod et nyt "biome"
+        //world.Biomes.Any(biome => biome.Name == direction)
+        
         currentSpace.Goodbye();
         currentSpace = nextSpace;
         currentSpace.Welcome();
-
         if (currentSpace.SpaceDestription != null) currentSpace.Destription();
-
-        if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) 
-        {
-            currentSpace.Question();   
-
-            inQuestion = true;
-        }
-        else
+        if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.Question(this);   
+        if (!inQuestion) 
         {
             currentSpace.Exits();
             currentSpace.Complete = true;
         }
+        
     }
 
     private bool IsAllSpacesComplete()
@@ -123,3 +116,4 @@ class Context
         return;
     }
 }
+

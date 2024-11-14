@@ -2,9 +2,9 @@ class Farm : Biome
 {
     public Farm(string name) : base(name)
     {
-		Space busken = new Busken("busken");
-		Space træet = new Træet("træet");
-		Space vandhullet = new Vandhullet("vandhullet");
+		Space busken = new Busken("busken", this);
+		Space træet = new Træet("træet", this);
+		Space vandhullet = new Vandhullet("vandhullet", this);
 	
         spaces =
         [

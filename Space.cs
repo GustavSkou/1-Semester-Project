@@ -8,6 +8,8 @@ abstract class Space : Node, IPrintable
 
     protected bool complete;
 
+    protected Biome biome;
+
     public string SpaceDestription
     {
         get {return spaceDestription;}
@@ -29,14 +31,20 @@ abstract class Space : Node, IPrintable
         get {return spaceQuestion;}
     }
 
-    public Space(String name) : base(name)
+    public Biome Biome
+    {
+        get {return biome;}
+    }
+
+    public Space(String name, Biome biome) : base(name)
     {
         spaceQuestion = null;
+        this.biome = biome;
     }
 
     public void Welcome()
     {
-        Print($"You are now at {name}");
+        Print($"You are now at {name} in {biome.Name}");
     }
 
     public void Exits()
@@ -56,8 +64,10 @@ abstract class Space : Node, IPrintable
         Console.WriteLine();
     }
     
-    public void Question()
+    public void Question(Context context)
     {
+        context.InQuestion = true;
+        
         Print(spaceQuestion);
         int answerChoiceNumber = 1;
         foreach (string answerChoice in spaceAnswerChoices.Select(spaceAnswerChoices => spaceAnswerChoices.answer).ToArray())
@@ -65,6 +75,7 @@ abstract class Space : Node, IPrintable
             Print($"{answerChoiceNumber}. {answerChoice}");
             answerChoiceNumber++;
         }
+
     }
 
     public void Goodbye()

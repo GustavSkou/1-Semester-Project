@@ -4,9 +4,9 @@ class City : Biome
     {
         spaces =
         [
-            new Busken("busken"),
-            new Træet("træet"),
-            new Vandhullet("vandhullet")
+            new Busken("busken", this),
+            new Træet("træet", this),
+            new Vandhullet("vandhullet", this)
         ];
         
         entrySpace = spaces[0];

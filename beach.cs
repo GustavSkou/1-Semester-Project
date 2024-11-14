@@ -2,10 +2,10 @@ class Beach : Biome
 {
     public Beach(string name) : base(name)
     {
-        Space shallowWaters = new ShallowWaters("Shallow Waters");
-        Space seaTurtleNestingSite = new SeaTurtleNestingSite("Sea Turtle Nesting Site");
-        Space seagullNestingArea = new SeagullNestingArea("Seagull Nesting Area");
-        Space tidePools = new TidePools("Tide Pools");
+        Space shallowWaters = new ShallowWaters("Shallow Waters", this);
+        Space seaTurtleNestingSite = new SeaTurtleNestingSite("Sea Turtle Nesting Site", this);
+        Space seagullNestingArea = new SeagullNestingArea("Seagull Nesting Area", this);
+        Space tidePools = new TidePools("Tide Pools", this);
     
         spaces =
         [
@@ -30,7 +30,7 @@ class Beach : Biome
 
 class ShallowWaters : Space 
 {
-    public ShallowWaters (string name) : base(name) 
+    public ShallowWaters (string name, Biome biome) : base(name, biome)
     {
         spaceDestription = "Skubdi doo";
         spaceQuestion = "You have found a fish tangled in a plastic bag. What will you do?";
@@ -44,7 +44,7 @@ class ShallowWaters : Space
 
 class SeaTurtleNestingSite : Space 
 {
-    public SeaTurtleNestingSite (string name) : base(name) 
+    public SeaTurtleNestingSite (string name, Biome biome) : base(name, biome)
     {
         spaceDestription = "bubidi doo";
         spaceQuestion = "You stumbled upon a sea turtle laying it's eggs. What will you do?";
@@ -59,7 +59,7 @@ class SeaTurtleNestingSite : Space
 
 class SeagullNestingArea : Space 
 {
-    public SeagullNestingArea (string name) : base(name) 
+    public SeagullNestingArea (string name, Biome biome) : base(name, biome)
     {
         spaceDestription = "flabbe flabbe";
         spaceQuestion = "You see a flock of seagulls eating some trash by the trashcan. WHat will you do?";
@@ -74,7 +74,7 @@ class SeagullNestingArea : Space
 
 class TidePools : Space 
 {
-    public TidePools (string name) : base(name) 
+    public TidePools (string name, Biome biome) : base(name, biome)
     {
         spaceDestription = "Pooli pooli";
         spaceQuestion = "You step into a tide pool. What will you do?";
