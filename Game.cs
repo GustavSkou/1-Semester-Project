@@ -22,6 +22,9 @@ class Game
 
     static void Main(string[] args)
     {
+        
+
+
         Console.WriteLine("Welcome to the World of Zuul!\n");
 
         InitRegistry();
@@ -31,7 +34,7 @@ class Game
         if (context.CurrentSpace.SpaceDestription != null) context.CurrentSpace.Destription();
         if (context.CurrentSpace.SpaceQuestion != null) 
         {
-            context.CurrentSpace.Question();
+            context.CurrentSpace.Question(context);
             context.InQuestion = true;
         }
         else
