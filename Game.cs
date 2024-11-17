@@ -22,9 +22,6 @@ class Game
 
     static void Main(string[] args)
     {
-        
-
-
         Console.WriteLine("Welcome to the World of Zuul!\n");
 
         InitRegistry();

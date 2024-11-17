@@ -34,7 +34,7 @@ class Context
 
     public void AnswerQuestion(int choiceNum)
     {
-        if (currentSpace.SpaceAnswerChoices[choiceNum].value)
+        if (currentSpace.SpaceAnswerChoices[choiceNum].IsCorrect)
         {
             Console.WriteLine("Correct answer");
             currentSpace.Complete = true;
@@ -57,6 +57,7 @@ class Context
         {
             if (!currentBiome.Complete)
             {
+                Console.WriteLine($"complete {currentBiome}");
                 currentBiome.Complete = true;
                 if (IsAllBiomesComplete()) Quit();
                 nextBiome = world.SetNextBiome(currentBiome);
@@ -73,8 +74,8 @@ class Context
         currentSpace.Goodbye();
         currentSpace = nextSpace;
         currentSpace.Welcome();
-        if (currentSpace.SpaceDestription != null) currentSpace.Destription();
-        if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.Question(this);   
+        //if (currentSpace.SpaceDestription != null) currentSpace.Destription();
+        //if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.Question(this);   
         if (!inQuestion) 
         {
             currentSpace.Exits();
@@ -85,7 +86,7 @@ class Context
 
     private bool IsAllSpacesComplete()
     {
-        foreach (Space space in currentBiome.Spaces)
+        foreach (Space space in currentBiome.Spaces.Values)
         {
             if (space.Complete == false) return false;
         }

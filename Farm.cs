@@ -1,26 +1,10 @@
-class Farm : Biome
+/*class Farm : Biome
 {
-    public Farm(string name) : base(name)
+    public Farm(string name, Dictionary<string, Space> spaces) : base(name, spaces)
     {
-		Space busken = new Busken("busken", this);
-		Space træet = new Træet("træet", this);
-		Space vandhullet = new Vandhullet("vandhullet", this);
-	
-        spaces =
-        [
-            busken,
-            træet,
-            vandhullet
-        ];
 
-        busken.AddEdge(træet.Name, træet);
-        træet.AddEdge(vandhullet.Name, vandhullet);
-        vandhullet.AddEdge(busken.Name, busken);
-
-        entrySpace = busken;
-        exitSpace = vandhullet;
     }
-}
+}*/
 
 
 //paths = ["Distant Horizon", "Hidden Water Hole", "Forgotten Path", "The Trees"];

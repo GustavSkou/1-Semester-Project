@@ -1,18 +1,19 @@
 /* Space class for modeling spaces */
 
-abstract class Space : Node, IPrintable
+class Space : Node, IPrintable
 {
     protected string spaceDestription, spaceQuestion, infoCard;
 
-    protected (string answer, bool value)[] spaceAnswerChoices;
+    protected AnswerChoice[] spaceAnswerChoices;
 
     protected bool complete;
 
-    protected Biome biome;
+    protected string biome;
 
     public string SpaceDestription
     {
         get {return spaceDestription;}
+        set {spaceDestription = value;}
     }
 
     public bool Complete
@@ -21,30 +22,30 @@ abstract class Space : Node, IPrintable
         set {complete = value;}
     }
 
-    public (string someAnswer, bool value)[] SpaceAnswerChoices
-    {
+    public AnswerChoice[] SpaceAnswerChoices {
         get {return spaceAnswerChoices;}
+        set {spaceAnswerChoices = value;}
     }
 
-    public string SpaceQuestion
+    public string SpaceQuestion 
     {
         get {return spaceQuestion;}
+        set {spaceQuestion = value;}
     }
 
-    public Biome Biome
+    public string Biome
     {
         get {return biome;}
+        set {biome = value;}
     }
 
-    public Space(String name, Biome biome) : base(name)
+    public Space()
     {
-        spaceQuestion = null;
-        this.biome = biome;
     }
 
     public void Welcome()
     {
-        Print($"You are now at {name} in {biome.Name}");
+        Print($"You are now at {name} in {biome}");
     }
 
     public void Exits()
@@ -70,7 +71,7 @@ abstract class Space : Node, IPrintable
         
         Print(spaceQuestion);
         int answerChoiceNumber = 1;
-        foreach (string answerChoice in spaceAnswerChoices.Select(spaceAnswerChoices => spaceAnswerChoices.answer).ToArray())
+        foreach (string answerChoice in spaceAnswerChoices.Select(spaceAnswerChoices => spaceAnswerChoices.Answer).ToArray())
         {  
             Print($"{answerChoiceNumber}. {answerChoice}");
             answerChoiceNumber++;
@@ -104,4 +105,10 @@ abstract class Space : Node, IPrintable
         }
         Console.WriteLine();
     }    
+}
+
+class AnswerChoice 
+{
+    public string Answer {get; set;}
+    public bool IsCorrect {get; set;}
 }
