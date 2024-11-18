@@ -39,7 +39,6 @@ x64/
 *_p.c
 *.ilk
 *.meta
-*.Content
 *.obj
 *.pch
 *.pdb
@@ -102,16 +101,6 @@ DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
 
-
-# Specific build output location
-Content/net8.0/
-Content/net8.0/**
-**/Content/net8.0/
-
-# Build artifacts in that location
-Content/net8.0/woz.exe
-Content/net8.0/*.dll
-Content/net8.0/*.pdb
 
 # Click-Once directory
 publish/
