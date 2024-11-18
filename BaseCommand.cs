@@ -2,7 +2,7 @@
 
 class BaseCommand
 {
-    protected string description = "Undocumenteddsdad";
+    protected string description = "Undocument";
 
     protected bool GuardEq(string[] parameters, int bound)
     {
