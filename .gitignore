@@ -108,7 +108,7 @@ Content/net8.0/**
 **/Content/net8.0/
 
 # Build artifacts in that location
-Content/net8.0/*.exe
+Content/net8.0/woz.exe
 Content/net8.0/*.dll
 Content/net8.0/*.pdb
 
