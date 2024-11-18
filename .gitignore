@@ -101,12 +101,16 @@ DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
 
-# .NET specific
-*.exe
-*.dll
-*.pdb
-*.cache
-*.log
+
+# Specific build output location
+Content/net8.0/
+Content/net8.0/**
+**/Content/net8.0/
+
+# Build artifacts in that location
+Content/net8.0/*.exe
+Content/net8.0/*.dll
+Content/net8.0/*.pdb
 
 # Click-Once directory
 publish/
