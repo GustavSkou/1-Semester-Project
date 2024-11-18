@@ -60,7 +60,7 @@ class Context
 
     public void Transition(string direction)
     {
-        //Console.Clear();
+        Console.Clear();
         
         if (IsAllSpacesComplete()) 
         {
@@ -86,7 +86,6 @@ class Context
             currentSpace.Exits();
             currentSpace.Complete = true;
         }
-        
     }
 
     private bool IsAllSpacesComplete()
