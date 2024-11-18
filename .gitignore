@@ -101,11 +101,15 @@ DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
 
+# .NET specific
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
 # Click-Once directory
 publish/
-
-Content/net8.0/*.exe
-Content/net8.0/*.dll
 
 # Publish Web Output
 *.Publish.xml

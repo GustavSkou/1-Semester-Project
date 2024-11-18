@@ -55,7 +55,6 @@ class Context
                 nextBiome = world.SetNextBiome(currentBiome, currentSpace);
             }
         }
-
         currentSpace.Exits();
     }
 
