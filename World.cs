@@ -74,7 +74,7 @@ class World
     {
         try 
         {
-            string jsonString = File.ReadAllText("C:\\Users\\gusta\\Documents\\GitHub\\1-Semester-Project\\spaces.json");
+            string jsonString = File.ReadAllText("spaces.json");
             Dictionary<string, Space> spaces = JsonSerializer.Deserialize<Dictionary<string, Space>>(jsonString);
             return spaces;
         }
