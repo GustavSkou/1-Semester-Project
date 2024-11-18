@@ -104,8 +104,8 @@ DocProject/Help/html
 # Click-Once directory
 publish/
 
-Content/*.exe
-Content/*.dll
+Content/net8.0/*.exe
+Content/net8.0/*.dll
 
 # Publish Web Output
 *.Publish.xml
