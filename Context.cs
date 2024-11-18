@@ -46,6 +46,15 @@ class Context
         
         inQuestion = false;
 
+        if (IsAllSpacesComplete()) 
+        {
+            if (!currentBiome.Complete)
+            {
+                currentBiome.Complete = true;
+                if (IsAllBiomesComplete()) QuitGame();
+                nextBiome = world.SetNextBiome(currentBiome, currentSpace);
+            }
+        }
         currentSpace.Exits();
     }
 
@@ -59,7 +68,7 @@ class Context
             {
                 currentBiome.Complete = true;
                 if (IsAllBiomesComplete()) QuitGame();
-                nextBiome = world.SetNextBiome(currentBiome);
+                nextBiome = world.SetNextBiome(currentBiome, currentSpace);
             }
         }
         

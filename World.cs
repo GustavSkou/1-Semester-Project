@@ -55,11 +55,11 @@ class World
         return startBiome.EntrySpace;
     }
 
-    public Biome SetNextBiome(Biome currentBiome)
+    public Biome SetNextBiome(Biome currentBiome, Space currentSpace)
     {   
         Biome[] differentBiomes = GetDifferentNonCompletedBiome(currentBiome);
         int i = random.Next(0, differentBiomes.Length);
-        currentBiome.ExitSpace.AddEdge(differentBiomes[i].Name, differentBiomes[i].EntrySpace);
+        currentSpace.AddEdge(differentBiomes[i].Name, differentBiomes[i].EntrySpace);
         return differentBiomes[i];   
     }
 

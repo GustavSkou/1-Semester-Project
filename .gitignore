@@ -34,10 +34,12 @@ x64/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
+*
 *_i.c
 *_p.c
 *.ilk
 *.meta
+*.Content
 *.obj
 *.pch
 *.pdb
@@ -99,6 +101,17 @@ DocProject/Help/*.hhk
 DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
+
+
+# Specific build output location
+Content/net8.0/
+Content/net8.0/**
+**/Content/net8.0/
+
+# Build artifacts in that location
+Content/net8.0/woz.exe
+Content/net8.0/*.dll
+Content/net8.0/*.pdb
 
 # Click-Once directory
 publish/
@@ -224,3 +237,5 @@ AppPackages/
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
+*.exe
+*.dll
