@@ -32,13 +32,13 @@ class World
         [
             new Savannah("Savannah", spacesDict.Where(space => space.Value.Biome == "Savannah").ToDictionary()),
 
-            //new City("City", spacesDict.Where(space => space.Value.Biome == "City").ToDictionary()), 
+            new City("City", spacesDict.Where(space => space.Value.Biome == "City").ToDictionary()), 
 
             new Beach("Beach", spacesDict.Where(space => space.Value.Biome == "Beach").ToDictionary()), 
 
-            //new Forest("Forest", spacesDict.Where(space => space.Value.Biome == "Forest").ToDictionary()), 
+            new Forest("Forest", spacesDict.Where(space => space.Value.Biome == "Forest").ToDictionary()), 
 
-            //new Farm("Farm", spacesDict.Where(space => space.Value.Biome == "Farm").ToDictionary())
+            new Farm("Farm", spacesDict.Where(space => space.Value.Biome == "Farm").ToDictionary())
         ];
 
         startBiome = SetStartBiome();
