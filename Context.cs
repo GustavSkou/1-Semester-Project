@@ -57,9 +57,8 @@ class Context
         {
             if (!currentBiome.Complete)
             {
-                Console.WriteLine($"complete {currentBiome}");
                 currentBiome.Complete = true;
-                if (IsAllBiomesComplete()) Quit();
+                if (IsAllBiomesComplete()) QuitGame();
                 nextBiome = world.SetNextBiome(currentBiome);
             }
         }
@@ -68,14 +67,11 @@ class Context
 
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
 
-        //if (IsDirectionToNewBiome(direction)) currentBiome = nextBiome; //Check om vi går mod et nyt "biome"
-        //world.Biomes.Any(biome => biome.Name == direction)
-        
         currentSpace.Goodbye();
         currentSpace = nextSpace;
         currentSpace.Welcome();
-        //if (currentSpace.SpaceDestription != null) currentSpace.Destription();
-        //if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.Question(this);   
+        if (currentSpace.SpaceDestription != null) currentSpace.Destription();
+        if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.Question(this);   
         if (!inQuestion) 
         {
             currentSpace.Exits();
@@ -102,19 +98,9 @@ class Context
         return true;
     }
 
-    private bool IsDirectionToNewBiome(string direction)
-    {
-        foreach (Biome biome in world.Biomes)
-        {
-            if (biome.Name == direction) return true;
-        }
-        return false;
-    }
-
-    private void Quit()
+    private void QuitGame()
     {
         done = true;
         return;
     }
 }
-
