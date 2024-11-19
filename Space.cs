@@ -68,6 +68,7 @@ class Space : Node, IPrintable
     public void Question(Context context)
     {
         context.InQuestion = true;
+        context.CurrentQuestionType = Context.QuestionType.numerical;
         
         Print(spaceQuestion);
         int answerChoiceNumber = 1;
@@ -85,7 +86,9 @@ class Space : Node, IPrintable
 
     public void TryAgain(Context context)
     {
-        
+        context.CurrentQuestionType = Context.QuestionType.boolean;
+        Print("Would you like to try again?");
+        Print(" - Yes\n - No");
     }
 
     public override Space FollowEdge(string direction)
@@ -106,6 +109,16 @@ class Space : Node, IPrintable
                 Console.WriteLine();
                 index = 0;
             }
+        }
+        Console.WriteLine();
+    }
+
+    public void Print(string someString, bool autoNewLine)
+    {
+        foreach (char letter in someString)
+        {
+            Console.Write(letter);
+            Thread.Sleep(10);
         }
         Console.WriteLine();
     }    

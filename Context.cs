@@ -6,7 +6,9 @@ class Context
     private Biome currentBiome, nextBiome;
     private World world;
 
-    private bool done, inSpaceQuestion;
+    private QuestionType currentQuestionType;
+
+    private bool done, inQuestion;
 
     public Space CurrentSpace
     {
@@ -19,10 +21,28 @@ class Context
         set {done = value;}
     }
 
-    public bool InSpaceQuestion
+    public bool InQuestion
     {
-        get {return inSpaceQuestion;}
-        set {inSpaceQuestion = value;}
+        get {return inQuestion;}
+        set {inQuestion = value;}
+    }
+
+    public QuestionType CurrentQuestionType
+    {
+        get {return currentQuestionType;}
+        set {currentQuestionType = value;}
+    }
+
+    public enum YesNo
+    {
+        yes = 0,
+        no = 1
+    }
+
+    public enum QuestionType
+    {
+        boolean,
+        numerical
     }
     
     public Context(World world)
@@ -38,15 +58,15 @@ class Context
         {
             Console.WriteLine("Correct answer");
             currentSpace.Complete = true;
+            inQuestion = false;
+            currentSpace.Exits();
         }
         else
         {
-            currentSpace.Print("Sorry wrong answer\n Would you like to try again?");
-            CurrentSpace.Print(" - Yes\n - No");
+            currentSpace.Print("Sorry wrong answer");
+            currentSpace.TryAgain(this);
         }
         
-        inSpaceQuestion = false;
-
         if (IsAllSpacesComplete()) 
         {
             if (!currentBiome.Complete)
@@ -56,7 +76,23 @@ class Context
                 nextBiome = world.SetNextBiome(currentBiome, currentSpace);
             }
         }
-        currentSpace.Exits();
+    }
+
+    public void AnswerQuestion(YesNo answer)
+    {
+        if (answer == YesNo.yes)
+        {
+            currentSpace.Question(this);
+        }
+        else if (answer == YesNo.no)
+        {
+            currentSpace.Exits();
+            
+        }
+        else
+        {
+            throw new Exception($"{answer} is not part of YesNo enum");
+        }
     }
 
     public void Transition(string direction)
@@ -82,7 +118,7 @@ class Context
         currentSpace.Welcome();
         if (currentSpace.SpaceDestription != null) currentSpace.Destription();
         if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.Question(this);   
-        if (!inSpaceQuestion) 
+        if (!inQuestion) 
         {
             currentSpace.Exits();
             currentSpace.Complete = true;
