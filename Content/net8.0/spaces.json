@@ -1,234 +1,249 @@
 {
-    "The WaterHole":
-    {
+    "The WaterHole": {
         "Name": "The WaterHole",
         "Biome": "Savannah",
-        "SpaceDestription": "you are in The WaterHole",
-        "SpaceQuestion": "Water scarcity is a significant challenge in the savannah. What is one solution to ensure there's enough water for people and wildlife?",
-        "SpaceAnswerChoices": 
-        [
-            {"Answer": "Build water storage systems like dams or reservoirs.", "IsCorrect":true},
-            {"Answer": "Rely solely on rainfall for water.", "IsCorrect":false},
-            {"Answer": "Divert all water resources to farming only.", "IsCorrect":false}
-        ]
+        "Description": "you are in The WaterHole",
+        "Question": {
+            "Description": "Water scarcity is a significant challenge in the savannah. What is one solution to ensure there's enough water for people and wildlife?",
+            "Answers": [
+                {"Answer": "Build water storage systems like dams or reservoirs.", "IsCorrect": true},
+                {"Answer": "Rely solely on rainfall for water.", "IsCorrect": false},
+                {"Answer": "Divert all water resources to farming only.", "IsCorrect": false}
+            ]
+        }
     },
-    "Trees":
-    {
+    "Trees": {
         "Name": "Trees",
         "Biome": "Savannah",
-        "SpaceDestription": "you are in The Trees",
-        "SpaceQuestion": "Wildfires are common in savannahs and can destroy vegetation and harm wildlife. How can people reduce the risk of wildfires?",
-        "SpaceAnswerChoices": 
-        [
-            {"Answer": "Create controlled burns to manage dry vegetation ", "IsCorrect":true},
-            {"Answer": "Avoid clearing dry grass or debris", "IsCorrect":false},
-            {"Answer": "Light campfires without supervision", "IsCorrect":false}
-        ]
+        "Description": "you are in The Trees",
+        "Question": {
+            "Description": "Wildfires are common in savannahs and can destroy vegetation and harm wildlife. How can people reduce the risk of wildfires?",
+            "Answers": [
+                {"Answer": "Create controlled burns to manage dry vegetation ", "IsCorrect": true},
+                {"Answer": "Avoid clearing dry grass or debris", "IsCorrect": false},
+                {"Answer": "Light campfires without supervision", "IsCorrect": false}
+            ]
+        }
     },
-    
-    "Sunset Ridge":
-    {
+    "Sunset Ridge": {
         "Name": "Sunset Ridge",
         "Biome": "Savannah",
-        "SpaceDestription": "you are in Sunset Ridge",
-        "SpaceQuestion": "What do zebras use their stripes for in the savannah?",
-        "SpaceAnswerChoices": 
-        [
-            {"Answer": "To help them climb trees", "IsCorrect":false},
-            {"Answer": "To confuse predators and regulate body temperature", "IsCorrect":true},
-            {"Answer": "To scare other zebras", "IsCorrect":false}
-        ]
+        "Description": "you are in Sunset Ridge",
+        "Question": {
+            "Description": "What do zebras use their stripes for in the savannah?",
+            "Answers": [
+                {"Answer": "To help them climb trees", "IsCorrect": false},
+                {"Answer": "To confuse predators and regulate body temperature", "IsCorrect": true},
+                {"Answer": "To scare other zebras", "IsCorrect": false}
+            ]
+        }
     },
-    "Hidden WaterHole": 
-    {
+    "Hidden WaterHole": {
         "Name": "Hidden WaterHole",
         "Biome": "Forest",
-        "SpaceDestription": "",
-        "SpaceQuestion": "You've found a hidden water hole deep in the forest, and you notice that animals come here to drink. However, there's some trash around the water. What should you do to help protect this water source?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Leave the trash as it is so you don't disturb the area.", "IsCorrect": false },
-            { "Answer": "Clean up the trash to keep the water safe for animals.", "IsCorrect": true },
-            { "Answer": "Add more signs to show other people where the water hole is located.", "IsCorrect": false }
-        ]
+        "Description": "",
+        "Question": {
+            "Description": "You've found a hidden water hole deep in the forest, and you notice that animals come here to drink. However, there's some trash around the water. What should you do to help protect this water source?",
+            "Answers": [
+                {"Answer": "Leave the trash as it is so you don't disturb the area.", "IsCorrect": false},
+                {"Answer": "Clean up the trash to keep the water safe for animals.", "IsCorrect": true},
+                {"Answer": "Add more signs to show other people where the water hole is located.", "IsCorrect": false}
+            ]
+        }
     },
-    "The Trees": 
-    {
+    "The Trees": {
         "Name": "The Trees",
         "Biome": "Forest",
-        "SpaceDestription": "",
-        "SpaceQuestion": "While exploring the forest, you notice that many trees have been cut down, and the ground is bare. What is the best action to help restore this part of the forest?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Plant new trees to replace the ones that were cut down.", "IsCorrect": true },
-            { "Answer": "Build a road through the forest for easier access.", "IsCorrect": false },
-            { "Answer": "Clear more land to make space for new buildings.", "IsCorrect": false }
-        ]
+        "Description": "",
+        "Question": {
+            "Description": "While exploring the forest, you notice that many trees have been cut down, and the ground is bare. What is the best action to help restore this part of the forest?",
+            "Answers": [
+                {"Answer": "Plant new trees to replace the ones that were cut down.", "IsCorrect": true},
+                {"Answer": "Build a road through the forest for easier access.", "IsCorrect": false},
+                {"Answer": "Clear more land to make space for new buildings.", "IsCorrect": false}
+            ]
+        }
     },
-    "Forgotten Path": 
-    {
+    "Forgotten Path": {
         "Name": "Forgotten Path",
         "Biome": "Forest",
-        "SpaceDestription": "",
-        "SpaceQuestion": "As you walk along the forgotten path, you notice fewer animals and hear less birdsong than usual. Why might animals be disappearing from this area of the forest?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Deforestation is destroying their homes, leaving them with nowhere to live and find food.", "IsCorrect": true },
-            { "Answer": "The animals are migrating to other forests for a change of scenery.", "IsCorrect": false },
-            { "Answer": "Animals are becoming less active during the day because they prefer cooler temperatures.", "IsCorrect": false }
-        ]
+        "Description": "",
+        "Question": {
+            "Description": "As you walk along the forgotten path, you notice fewer animals and hear less birdsong than usual. Why might animals be disappearing from this area of the forest?",
+            "Answers": [
+                {"Answer": "Deforestation is destroying their homes, leaving them with nowhere to live and find food.", "IsCorrect": true},
+                {"Answer": "The animals are migrating to other forests for a change of scenery.", "IsCorrect": false},
+                {"Answer": "Animals are becoming less active during the day because they prefer cooler temperatures.", "IsCorrect": false}
+            ]
+        }
     },
-    "Distant Horizon": 
-    {
+    "Distant Horizon": {
         "Name": "Distant Horizon",
         "Biome": "Forest",
-        "SpaceDestription": "",
-        "SpaceQuestion": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. What can you do to help animals like this deer survive in a changing environment?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Try to guide the deer toward the nearest town for help.", "IsCorrect": false },
-            { "Answer": "Feed the deer some food you have with you to help it regain strength.", "IsCorrect": false },
-            { "Answer": "Support efforts to restore water sources, so animals have a place to drink.", "IsCorrect": true }
-        ]
+        "Description": "",
+        "Question": {
+            "Description": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. What can you do to help animals like this deer survive in a changing environment?",
+            "Answers": [
+                {"Answer": "Try to guide the deer toward the nearest town for help.", "IsCorrect": false},
+                {"Answer": "Feed the deer some food you have with you to help it regain strength.", "IsCorrect": false},
+                {"Answer": "Support efforts to restore water sources, so animals have a place to drink.", "IsCorrect": true}
+            ]
+        }
     },
-    "Shallow Waters": 
-    {
+    "Shallow Waters": {
         "Name": "Shallow Waters",
         "Biome": "Beach",
-        "SpaceDestription": "Skubdi doo",
-        "SpaceQuestion": "You have found a fish tangled in a plastic bag. What will you do?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Untangle the fish", "IsCorrect": true },
-            { "Answer": "Ignore it", "IsCorrect": false },
-            { "Answer": "Kill the fish", "IsCorrect": false }
-        ]
+        "Description": "Skubdi doo",
+        "Question": {
+            "Description": "You have found a fish tangled in a plastic bag. What will you do?",
+            "Answers": [
+                {"Answer": "Untangle the fish", "IsCorrect": true},
+                {"Answer": "Ignore it", "IsCorrect": false},
+                {"Answer": "Kill the fish", "IsCorrect": false}
+            ]
+        }
     },
-    "Sea Turtle NestingSite": 
-    {
+    "Sea Turtle NestingSite": {
         "Name": "Sea Turtle NestingSite",
         "Biome": "Beach",
-        "SpaceDestription": "bubidi doo",
-        "SpaceQuestion": "You stumbled upon a sea turtle laying its eggs. What will you do?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Get close and take some photos", "IsCorrect": false },
-            { "Answer": "Ignore it", "IsCorrect": true },
-            { "Answer": "Try to help it", "IsCorrect": false }
-        ]
+        "Description": "bubidi doo",
+        "Question": {
+            "Description": "You stumbled upon a sea turtle laying its eggs. What will you do?",
+            "Answers": [
+                {"Answer": "Get close and take some photos", "IsCorrect": false},
+                {"Answer": "Ignore it", "IsCorrect": true},
+                {"Answer": "Try to help it", "IsCorrect": false}
+            ]
+        }
     },
-    "Seagull NestingArea": 
-    {
+    "Seagull NestingArea": {
         "Name": "Seagull NestingArea",
         "Biome": "Beach",
-        "SpaceDestription": "flabbe flabbe",
-        "SpaceQuestion": "You see a flock of seagulls eating some trash by the trashcan. What will you do?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Attack them", "IsCorrect": false },
-            { "Answer": "Scare them away and throw the trash in the bin", "IsCorrect": true },
-            { "Answer": "Ignore it", "IsCorrect": false }
-        ]
+        "Description": "flabbe flabbe",
+        "Question": {
+            "Description": "You see a flock of seagulls eating some trash by the trashcan. What will you do?",
+            "Answers": [
+                {"Answer": "Attack them", "IsCorrect": false},
+                {"Answer": "Scare them away and throw the trash in the bin", "IsCorrect": true},
+                {"Answer": "Ignore it", "IsCorrect": false}
+            ]
+        }
     },
-    "TidePools": 
-    {
+    "TidePools": {
         "Name": "TidePools",
         "Biome": "Beach",
-        "SpaceDestription": "Pooli pooli",
-        "SpaceQuestion": "You step into a tide pool. What will you do?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Do it again", "IsCorrect": false },
-            { "Answer": "Be upset for weeks", "IsCorrect": false },
-            { "Answer": "Make sure to be more aware next time", "IsCorrect": true }
-        ]
+        "Description": "Pooli pooli",
+        "Question": {
+            "Description": "You step into a tide pool. What will you do?",
+            "Answers": [
+                {"Answer": "Do it again", "IsCorrect": false},
+                {"Answer": "Be upset for weeks", "IsCorrect": false},
+                {"Answer": "Make sure to be more aware next time", "IsCorrect": true}
+            ]
+        }
     },
-    "The Barn":
-    {
+    "The Barn": {
         "Name": "The Barn",
         "Biome": "Farm",
-        "SpaceDescription": "A cozy barn filled with livestock and tools for farming.",
-        "SpaceQuestion": "You notice some cows looking unwell. What should you do?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Provide fresh water and call a vet.", "IsCorrect": true },
-            { "Answer": "Ignore the cows; they will recover on their own.", "IsCorrect": false },
-            { "Answer": "Sell the cows to avoid extra costs.", "IsCorrect": false }
-        ]
+        "Description": "A cozy barn filled with livestock and tools for farming.",
+        "Question": {
+            "Description": "You notice some cows looking unwell. What should you do?",
+            "Answers": [
+                {"Answer": "Provide fresh water and call a vet", "IsCorrect": true},
+                {"Answer": "Ignore the cows; they will recover on their own", "IsCorrect": false},
+                {"Answer": "Sell the cows to avoid extra costs", "IsCorrect": false}
+            ]
+        }
     },
-    "Pond":
-    {
+    "Pond": {
         "Name": "Pond",
         "Biome": "Farm",
-        "SpaceDescription": "A small pond providing water for animals and crops.",
-        "SpaceQuestion": "The pond is polluted with trash. What will you do?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Add more water to dilute the pollution.", "IsCorrect": false },
-            { "Answer": "Ignore it, nature will fix itself.", "IsCorrect": false },
-            { "Answer": "Clean the pond and add plants to filter the water.", "IsCorrect": true }
-        ]
+        "Description": "A small pond providing water for animals and crops.",
+        "Question": {
+            "Description": "The pond is polluted with trash. What will you do?",
+            "Answers": [
+                {"Answer": "Add more water to dilute the pollution", "IsCorrect": false},
+                {"Answer": "Ignore it, nature will fix itself", "IsCorrect": false},
+                {"Answer": "Clean the pond and add plants to filter the water", "IsCorrect": true}
+            ]
+        }
     },
-    "Crop Field":
-    {
+    "Crop Field": {
         "Name": "Crop Field",
         "Biome": "Farm",
-        "SpaceDescription": "A field used for growing crops, but the soil looks dry and cracked.",
-        "SpaceQuestion": "What is the best method to restore soil health?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Use chemical fertilizers.", "IsCorrect": false },
-            { "Answer": "Add compost and practice crop rotation.", "IsCorrect": true },
-            { "Answer": "Leave the soil as it is.", "IsCorrect": false }
-        ]
+        "Description": "A field used for growing crops, but the soil looks dry and cracked.",
+        "Question": {
+            "Description": "What is the best method to restore soil health?",
+            "Answers": [
+                {"Answer": "Use chemical fertilizers", "IsCorrect": false},
+                {"Answer": "Add compost and practice crop rotation", "IsCorrect": true},
+                {"Answer": "Leave the soil as it is", "IsCorrect": false}
+            ]
+        }
     },
-    "The Stable":
-    {
+    "The Stable": {
         "Name": "The Stable",
         "Biome": "Farm",
-        "SpaceDescription": "A stable for horses and other animals. It's peaceful, but something needs attention.",
-        "SpaceQuestion": "The stable floor is dirty, and the animals seem uncomfortable. What will you do?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Clean the floor and add fresh bedding.", "IsCorrect": true },
-            { "Answer": "Leave it the animals will manage.", "IsCorrect": false },
-            { "Answer": "Move the animals outside permanently.", "IsCorrect": false }
-        ]
+        "Description": "A stable for horses and other animals. It's peaceful, but something needs attention.",
+        "Question": {
+            "Description": "The stable floor is dirty, and the animals seem uncomfortable. What will you do?",
+            "Answers": [
+                {"Answer": "Clean the floor and add fresh bedding", "IsCorrect": true},
+                {"Answer": "Leave it the animals will manage", "IsCorrect": false},
+                {"Answer": "Move the animals outside permanently", "IsCorrect": false}
+            ]
+        }
     },
-    "Highway":
-    {
+    "Highway": {
         "Name": "Highway",
         "Biome": "City",
-        "SpaceDestription": "Woosh woosh",
-        "SpaceQuestion": "You are on the Highway and see 3 big bags of plastic on the side of the road. What do you do?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Stop up in a safe manner and pick it up", "IsCorrect": true },
-            { "Asnwer": "Ignore it", "IsCorrect": false },        
-            { "Answer": "You stop up and add another bag of trash on the pile","IsCorrect": false }
-        ]
+        "Description": "Woosh woosh",
+        "Question": {
+            "Description": "You are on the Highway and see 3 big bags of plastic on the side of the road. What do you do?",
+            "Answers": [
+                {"Answer": "Stop up in a safe manner and pick it up", "IsCorrect": true},
+                {"Answer": "Ignore it", "IsCorrect": false},
+                {"Answer": "You stop up and add another bag of trash on the pile", "IsCorrect": false}
+            ]
+        }
     },
-    "Park":
-    {
+    "Park": {
         "Name": "Park",
         "Biome": "City",
-        "SpaceDestription": "Central Park",
-        "SpaceQuestion": "You now spot plastic straws from people who've had milkshakes.\n What's the right thing to do?",
-        "SpaceAnswerChoices": [
-            { "Answer": "You pick them up and throw them in the trash", "IsCorrect": true },
-            { "Asnwer": "Picking up 3 straws won't make a difference, so you leave it", "IsCorrect": false },        
-            { "Answer": "You simply take another route. The sight of trash in the nature ruins your walk", "IsCorrect": false }
-        ]
+        "Description": "Central Park",
+        "Question": {
+            "Description": "You now spot plastic straws from people who've had milkshakes. What's the right thing to do?",
+            "Answers": [
+                {"Answer": "You pick them up and throw them in the trash", "IsCorrect": true},
+                {"Answer": "Picking up 3 straws won't make a difference, so you leave it", "IsCorrect": false},
+                {"Answer": "You simply take another route. The sight of trash in the nature ruins your walk", "IsCorrect": false}
+            ]
+        }
     },
-    "Bikelane":
-    {
+    "Bikelane": {
         "Name": "Bikelane",
         "Biome": "City",
-        "SpaceDestription": "Your favorite bikelane",
-        "SpaceQuestion": "You're on your way to school and see shards of glass on the lane. What do you do?", 
-        "SpaceAnswerQuestions": [
-            { "Answer": "You prioritize your deck and bike as much around it as possible", "IsCorrect": false },
-            { "Answer": "You kick it further away"},
-            { "Answer": "You put it to the side and contact the authorities", "IsCorrect": true}
-        ]
+        "Description": "Your favorite bikelane",
+        "Question": {
+            "Description": "You're on your way to school and see shards of glass on the lane. What do you do?",
+            "Answers": [
+                {"Answer": "You prioritize your deck and bike as much around it as possible", "IsCorrect": false},
+                {"Answer": "You kick it further away", "IsCorrect": false},
+                {"Answer": "You put it to the side and contact the authorities", "IsCorrect": true}
+            ]
+        }
     },
-    "Alley":
-    {
+    "Alley": {
         "Name": "Alley",
         "Biome": "City",
-        "SpaceDestription": "Windy day",
-        "SpaceQuestion": "You see an open trash bag on a windy day. Not only is it attracting rats, but the plastic also flies out.\n What do you do?", 
-        "SpaceAnswerQuestions": [
-            { "Answer": "You cover your nose with your hand and say \"Whats that foul smell?!\"", "IsCorrect": false },
-            { "Answer": "You ignore it since you don't want trash juice on you", "IsCorrect": false },
-            { "Answer": "You try to clean up what you can", "IsCorrect": true}
-        ]
+        "Description": "Windy day",
+        "Question": {
+            "Description": "You see an open trash bag on a windy day. Not only is it attracting rats, but the plastic also flies out. What do you do?",
+            "Answers": [
+                {"Answer": "You cover your nose with your hand and say \"Whats that foul smell?!\"", "IsCorrect": false},
+                {"Answer": "You ignore it since you don't want trash juice on you", "IsCorrect": false},
+                {"Answer": "You try to clean up what you can", "IsCorrect": true}
+            ]
+        }
     }
 }

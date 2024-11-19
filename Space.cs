@@ -2,18 +2,23 @@
 
 class Space : Node, IPrintable
 {
-    protected string spaceDestription, spaceQuestion, infoCard;
-
-    protected AnswerChoice[] spaceAnswerChoices;
+    protected string description, infoCard;
+    protected Quest <string, bool> question;
 
     protected bool complete;
 
     protected string biome;
 
-    public string SpaceDestription
+    public Quest <string, bool> Question
     {
-        get {return spaceDestription;}
-        set {spaceDestription = value;}
+        get {return question;}
+        set {question = value;}
+    }
+
+    public string Description
+    {
+        get {return description;}
+        set {description = value;}
     }
 
     public bool Complete
@@ -22,15 +27,14 @@ class Space : Node, IPrintable
         set {complete = value;}
     }
 
-    public AnswerChoice[] SpaceAnswerChoices {
-        get {return spaceAnswerChoices;}
-        set {spaceAnswerChoices = value;}
+    public string QuestionDescription
+    {
+        set {question.Description = value;}
     }
 
-    public string SpaceQuestion 
+    public QuestAnswers <string, bool> [] QuestionAnswers 
     {
-        get {return spaceQuestion;}
-        set {spaceQuestion = value;}
+        set {question.Answers = value;}
     }
 
     public string Biome
@@ -43,43 +47,45 @@ class Space : Node, IPrintable
     {
     }
 
-    public void Welcome()
+    public void DisplayWelcome()
     {
         Print($"You are now at {name} in {biome}");
     }
 
-    public void Exits()
+    public void DisplayExits()
     {
         string[] exits = edges.Keys.ToArray();
         Print("Current paths are:");
 
         foreach (string exit in exits)
         {
+            
             Print($" - {exit}");
         }
     }
 
-    public void Destription()
+    public void DisplayDescription()
     {
-        Print(spaceDestription);
+        Print(description);
         Console.WriteLine();
     }
     
-    public void Question(Context context)
+    public void DisplayQuestion(Context context)
     {
+
         context.InQuestion = true;
         context.CurrentQuestionType = Context.QuestionType.numerical;
         
-        Print(spaceQuestion);
+        Print(question.Description);
         int answerChoiceNumber = 1;
-        foreach (string answerChoice in spaceAnswerChoices.Select(spaceAnswerChoices => spaceAnswerChoices.Answer).ToArray())
+        foreach (string answerChoice in question.Answers.Select(spaceAnswerChoices => spaceAnswerChoices.Answer).ToArray())
         {  
             Print($"{answerChoiceNumber}. {answerChoice}");
             answerChoiceNumber++;
         }
     }
 
-    public void Goodbye()
+    public void DisplayGoodbye()
     {
         Print($"You left the {name}\n");
     }
@@ -124,8 +130,8 @@ class Space : Node, IPrintable
     }    
 }
 
-class AnswerChoice 
+/*class AnswerChoice 
 {
     public string Answer {get; set;}
     public bool IsCorrect {get; set;}
-}
+}*/

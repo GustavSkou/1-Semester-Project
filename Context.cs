@@ -54,12 +54,12 @@ class Context
 
     public void AnswerQuestion(int choiceNum)
     {
-        if (currentSpace.SpaceAnswerChoices[choiceNum].IsCorrect)
+        if (currentSpace.Question.Answers[choiceNum].IsCorrect)
         {
             Console.WriteLine("Correct answer");
             currentSpace.Complete = true;
             inQuestion = false;
-            currentSpace.Exits();
+            currentSpace.DisplayExits();
         }
         else
         {
@@ -80,14 +80,13 @@ class Context
 
     public void AnswerQuestion(YesNo answer)
     {
-        if (answer == YesNo.yes)
+        if (answer == YesNo.yes) 
         {
-            currentSpace.Question(this);
+            currentSpace.DisplayQuestion(this);
         }
         else if (answer == YesNo.no)
         {
-            currentSpace.Exits();
-            
+            currentSpace.DisplayExits(); 
         }
         else
         {
@@ -113,14 +112,14 @@ class Context
 
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
 
-        currentSpace.Goodbye();
+        currentSpace.DisplayGoodbye();
         currentSpace = nextSpace;
-        currentSpace.Welcome();
-        if (currentSpace.SpaceDestription != null) currentSpace.Destription();
-        if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.Question(this);   
+        currentSpace.DisplayWelcome();
+        if (currentSpace.Description != null) currentSpace.DisplayDescription();
+        if (currentSpace.Question != null && !currentSpace.Complete) currentSpace.DisplayQuestion(this);   
         if (!inQuestion) 
         {
-            currentSpace.Exits();
+            currentSpace.DisplayExits();
             currentSpace.Complete = true;
         }
     }

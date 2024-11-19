@@ -79,7 +79,8 @@ class World
         }
         catch(Exception e)
         {
-            Console.WriteLine("Json did not load");
+            Console.WriteLine(e.Message);
+            
             return [];
         }
     }
