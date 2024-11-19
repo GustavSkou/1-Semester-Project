@@ -226,5 +226,14 @@ AppPackages/
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
+
+# Build outputs
+Content/
+Content/net8.0/
+Content/net8.0/**/*
+!Content/net8.0/.gitkeep
+
+# Specific files
 *.exe
 *.dll
+*.pdb
