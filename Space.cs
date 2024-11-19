@@ -76,7 +76,6 @@ class Space : Node, IPrintable
             Print($"{answerChoiceNumber}. {answerChoice}");
             answerChoiceNumber++;
         }
-
     }
 
     public void Goodbye()

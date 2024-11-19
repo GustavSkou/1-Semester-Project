@@ -1,10 +1,10 @@
-/*class Farm : Biome
+class Farm : Biome
 {
     public Farm(string name, Dictionary<string, Space> spaces) : base(name, spaces)
     {
 
     }
-}*/
+}
 
 
 //paths = ["Distant Horizon", "Hidden Water Hole", "Forgotten Path", "The Trees"];

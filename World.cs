@@ -1,5 +1,4 @@
 /* World class for modeling the entire in-game world */
-
 using System.Text.Json;
 
 class World
@@ -38,7 +37,7 @@ class World
 
             new Forest("Forest", spacesDict.Where(space => space.Value.Biome == "Forest").ToDictionary()), 
 
-            //new Farm("Farm", spacesDict.Where(space => space.Value.Biome == "Farm").ToDictionary())
+            new Farm("Farm", spacesDict.Where(space => space.Value.Biome == "Farm").ToDictionary())
         ];
 
         startBiome = SetStartBiome();
