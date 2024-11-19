@@ -11,11 +11,13 @@ class Game
     {
         ICommand cmdExit = new CommandExit();
         ICommand cmdGo = new CommandGo();
+        ICommand cmdTryAgain = new CommandTryAgain();
         registry.Register("exit", cmdExit);
         registry.Register("quit", cmdExit);
         registry.Register("bye", cmdExit);
         registry.Register("go", cmdGo);
         registry.Register("goto", cmdGo);
+        registry.Register("try", cmdTryAgain);
         registry.Register("answer", new CommandAnswer());
         registry.Register("help", new CommandHelp(registry));
     }
@@ -38,7 +40,6 @@ class Game
         {
             context.CurrentSpace.Exits();
         }
-        context.CurrentSpace.Complete = true;
 
         while (context.Done == false)
         {

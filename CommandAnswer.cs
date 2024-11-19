@@ -4,7 +4,7 @@ class CommandAnswer : BaseCommand, ICommand
 {
     public CommandAnswer()
     {
-        description = "Use: answerhfdt (number)";
+        description = "Use: answer (number)";
     }
 
     public void Execute(Context context, string command, string[] parameters)
