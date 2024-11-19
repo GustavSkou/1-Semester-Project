@@ -1,41 +1,42 @@
 {
-    "Busken":
+    "The WaterHole":
     {
-        "Name": "Busken",
+        "Name": "The WaterHole",
         "Biome": "Savannah",
-        "SpaceDestription": "you are in Busken",
-        "SpaceQuestion": "hvad er 1 + 1?",
+        "SpaceDestription": "you are in The WaterHole",
+        "SpaceQuestion": "Water scarcity is a significant challenge in the savannah. What is one solution to ensure there's enough water for people and wildlife?",
         "SpaceAnswerChoices": 
         [
-            {"Answer": "2", "IsCorrect":true},
-            {"Answer": "3", "IsCorrect":false},
-            {"Answer": "1", "IsCorrect":false}
+            {"Answer": "Build water storage systems like dams or reservoirs.", "IsCorrect":true},
+            {"Answer": "Rely solely on rainfall for water.", "IsCorrect":false},
+            {"Answer": "Divert all water resources to farming only.", "IsCorrect":false}
         ]
     },
-    "Træet":
+    "Trees:"
     {
-        "Name": "Træet",
+        "Name": "Trees",
         "Biome": "Savannah",
-        "SpaceDestription": "you are in Træet",
-        "SpaceQuestion": "hvad er 1 + 1?",
+        "SpaceDestription": "you are in The Trees",
+        "SpaceQuestion": "Wildfires are common in savannahs and can destroy vegetation and harm wildlife. How can people reduce the risk of wildfires?",
         "SpaceAnswerChoices": 
         [
-            {"Answer": "2", "IsCorrect":true},
-            {"Answer": "3", "IsCorrect":false},
-            {"Answer": "1", "IsCorrect":false}
+            {"Answer": "Create controlled burns to manage dry vegetation ", "IsCorrect":true},
+            {"Answer": "Avoid clearing dry grass or debris", "IsCorrect":false},
+            {"Answer": "Light campfires without supervision", "IsCorrect":false}
         ]
     },
-    "Vandhullet":
+    
+    "Sunset Ridge":
     {
-        "Name": "Vandhullet",
+        "Name": "Sunset Ridge",
         "Biome": "Savannah",
-        "SpaceDestription": "you are in Vandhullet",
-        "SpaceQuestion": "hvad er 1 + 1?",
+        "SpaceDestription": "you are in Sunset Ridge",
+        "SpaceQuestion": "What do zebras use their stripes for in the savannah?",
         "SpaceAnswerChoices": 
         [
-            {"Answer": "2", "IsCorrect":true},
-            {"Answer": "3", "IsCorrect":false},
-            {"Answer": "1", "IsCorrect":false}
+            {"Answer": "To help them climb trees", "IsCorrect":false},
+            {"Answer": "To confuse predators and regulate body temperature", "IsCorrect":true},
+            {"Answer": "To scare other zebras", "IsCorrect":false}
         ]
     },
     "Hidden WaterHole": 
@@ -154,7 +155,7 @@
         "SpaceQuestion": "The pond is polluted with trash. What will you do?",
         "SpaceAnswerChoices": [
             { "Answer": "Add more water to dilute the pollution.", "IsCorrect": false },
-            { "Answer": "Ignore it nature will fix itself.", "IsCorrect": false },
+            { "Answer": "Ignore it; nature will fix itself.", "IsCorrect": false },
             { "Answer": "Clean the pond and add plants to filter the water.", "IsCorrect": true }
         ]
     },
@@ -178,56 +179,8 @@
         "SpaceQuestion": "The stable floor is dirty, and the animals seem uncomfortable. What will you do?",
         "SpaceAnswerChoices": [
             { "Answer": "Clean the floor and add fresh bedding.", "IsCorrect": true },
-            { "Answer": "Leave it the animals will manage.", "IsCorrect": false },
+            { "Answer": "Leave it; the animals will manage.", "IsCorrect": false },
             { "Answer": "Move the animals outside permanently.", "IsCorrect": false }
-        ]
-    },
-    "HighWay":
-    {
-        "Name": "HighWay",
-        "Biome": "City",
-        "SpaceDestription": "Woosh woosh",
-        "SpaceQuestion": "You are on the Highway and see 3 big bags of plastic on the side of the road. What do you do?",
-        "SpaceAnswerChoices": [
-            { "Answer": "Stop up in a safe manner and pick it up", "IsCorrect": true },
-            { "Asnwer": "Ignore it", "IsCorrect": false },        
-            { "Answer": "You stop up and add another bag of trash on the pile","IsCorrect": false }
-        ]
-    },
-    "Park":
-    {
-        "Name": "Park",
-        "Biome": "City",
-        "SpaceDestription": "Central Park",
-        "SpaceQuestion": "You now spot plastic straws from people who've had milkshakes.\n What's the right thing to do?",
-        "SpaceAnswerChoices": [
-            { "Answer": "You pick them up and throw them in the trash", "IsCorrect": true },
-            { "Asnwer": "Picking up 3 straws won't make a difference, so you leave it", "IsCorrect": false },        
-            { "Answer": "You simply take another route. The sight of trash in the nature ruins your walk", "IsCorrect": false }
-        ]
-    },
-    "BikeLane":
-    {
-        "Name": "BikeLane",
-        "Biome": "City",
-        "SpaceDestription": "Your favorite bikelane",
-        "SpaceQuestion": "You're on your way to school and see shards of glass on the lane. What do you do?", 
-        "SpaceAnswerQuestions": [
-            { "Answer": "You prioritize your deck and bike as much around it as possible", "IsCorrect": false },
-            { "Answer": "You kick it further away"},
-            { "Answer": "You put it to the side and contact the authorities", "IsCorrect": true}
-        ]
-    },
-    "Alley":
-    {
-        "Name": "Alley",
-        "Biome": "City",
-        "SpaceDestription": "Windy day",
-        "SpaceQuestion": "You see an open trash bag on a windy day. Not only is it attracting rats, but the plastic also flies out.\n What do you do?", 
-        "SpaceAnswerQuestions": [
-            { "Answer": "You cover your nose with your hand and say \"Whats that foul smell?!\"", "IsCorrect": false },
-            { "Answer": "You ignore it since you don't want trash juice on you", "IsCorrect": false },
-            { "Answer": "You try to clean up what you can", "IsCorrect": true}
         ]
     }
 }
