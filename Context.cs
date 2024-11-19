@@ -41,7 +41,8 @@ class Context
         }
         else
         {
-            Console.WriteLine("Sorry wrong answer, try again?");
+            currentSpace.Print("Sorry wrong answer\n Would you like to try again?");
+            CurrentSpace.Print("- Yes\n - No");
         }
         
         inQuestion = false;
