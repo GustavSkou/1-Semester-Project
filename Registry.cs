@@ -22,6 +22,7 @@ class Registry
     {
         line = line.ToLower();
         string[] elements = line.Split(" ");
+        elements = elements.Where(element => element != "").ToArray();
         string command = elements[0];
         string[] parameters = GetParameters(elements);
 
@@ -55,5 +56,10 @@ class Registry
             output[i] = input[i + 1];
         }
         return output;
+    }
+
+    private string[] CleanUp(string[] elements)
+    {        
+        return elements = elements.Where(element => element != "").ToArray();
     }
 }

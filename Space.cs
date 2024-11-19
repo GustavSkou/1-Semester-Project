@@ -1,34 +1,51 @@
 /* Space class for modeling spaces */
 
-abstract public class Space : Node, IPrintable
+class Space : Node, IPrintable
 {
-    protected string[] paths;
-
     protected string spaceDestription, spaceQuestion, infoCard;
 
-    protected (string answer, bool value)[] spaceAnswerChoices;
+    protected AnswerChoice[] spaceAnswerChoices;
 
-    protected bool answer;
+    protected bool complete;
 
-    public string[] Paths 
+    protected string biome;
+
+    public string SpaceDestription
     {
-        get {return paths;}
-        set {paths = value;}
+        get {return spaceDestription;}
+        set {spaceDestription = value;}
     }
 
-    public (string someAnswer, bool value)[] SpaceAnswerChoices
+    public bool Complete
     {
+        get {return complete;}
+        set {complete = value;}
+    }
+
+    public AnswerChoice[] SpaceAnswerChoices {
         get {return spaceAnswerChoices;}
+        set {spaceAnswerChoices = value;}
     }
 
-    public Space(String name) : base(name)
+    public string SpaceQuestion 
     {
-        answer = false;
+        get {return spaceQuestion;}
+        set {spaceQuestion = value;}
+    }
+
+    public string Biome
+    {
+        get {return biome;}
+        set {biome = value;}
+    }
+
+    public Space()
+    {
     }
 
     public void Welcome()
     {
-        Print($"You are now at {name}");
+        Print($"You are now at {name} in {biome}");
     }
 
     public void Exits()
@@ -48,11 +65,13 @@ abstract public class Space : Node, IPrintable
         Console.WriteLine();
     }
     
-    public void Question()
+    public void Question(Context context)
     {
+        context.InQuestion = true;
+        
         Print(spaceQuestion);
         int answerChoiceNumber = 1;
-        foreach (string answerChoice in spaceAnswerChoices.Select(spaceAnswerChoices => spaceAnswerChoices.answer).ToArray())
+        foreach (string answerChoice in spaceAnswerChoices.Select(spaceAnswerChoices => spaceAnswerChoices.Answer).ToArray())
         {  
             Print($"{answerChoiceNumber}. {answerChoice}");
             answerChoiceNumber++;
@@ -85,4 +104,10 @@ abstract public class Space : Node, IPrintable
         }
         Console.WriteLine();
     }    
+}
+
+class AnswerChoice 
+{
+    public string Answer {get; set;}
+    public bool IsCorrect {get; set;}
 }

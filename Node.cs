@@ -6,6 +6,7 @@ abstract public class Node
     public string Name
     {
         get {return name;}
+        set {name = value;}
     }
     
     protected Dictionary<string, Node> edges = [];
@@ -15,9 +16,8 @@ abstract public class Node
         get{return edges;}
     }
 
-    public Node(string name)
+    public Node()
     {
-        this.name = name;
     }
     public void RemoveEdges()
     {

@@ -9,9 +9,10 @@ class CommandGo : BaseCommand, ICommand
 
     public void Execute(Context context, string command, string[] parameters)
     {
-        if (!context.InQuestion)
+        if (!context.InQuestion)    //check if player is in a question
         {
             string parameter = string.Join(" ", parameters);
+            
             try 
             {
                 context.Transition(parameter);

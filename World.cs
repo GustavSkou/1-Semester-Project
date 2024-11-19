@@ -1,72 +1,86 @@
 /* World class for modeling the entire in-game world */
+using System.Text.Json;
 
 class World
 {
     private Space startSpace;
-    private Space[] spaces;
+    private Biome startBiome;
+    private Biome[] biomes;
     private Random random = new Random();
-    private readonly int edges;
 
     public Space StartSpace
     {
         get {return startSpace;}
     }
-
-    public Space[] Spaces
+    public Biome StartBiome
     {
-        get {return spaces;}
+        get {return startBiome;}
+    }
+
+    public Biome[] Biomes
+    {
+        get {return biomes;}
     }
 
     public World()
     {
-        spaces = 
+        Dictionary<string, Space> spacesDict = LoadSpaces();
+        Space[] allSpaces = spacesDict.Values.ToArray();
+
+        biomes = 
         [
-            new Savannah("Savannah"), 
-            new City("City"), 
-            new Beach("Beach"), 
-            new Forest("Forest"), 
-            new Farm("Farm")
+            new Savannah("Savannah", spacesDict.Where(space => space.Value.Biome == "Savannah").ToDictionary()),
+
+            new City("City", spacesDict.Where(space => space.Value.Biome == "City").ToDictionary()), 
+
+            new Beach("Beach", spacesDict.Where(space => space.Value.Biome == "Beach").ToDictionary()), 
+
+            new Forest("Forest", spacesDict.Where(space => space.Value.Biome == "Forest").ToDictionary()), 
+
+            new Farm("Farm", spacesDict.Where(space => space.Value.Biome == "Farm").ToDictionary())
         ];
-        edges = 2;
+
+        startBiome = SetStartBiome();
         startSpace = SetStartSpace();
     }
     
+    private Biome SetStartBiome()
+    {
+        return biomes[0];
+    }
+
     private Space SetStartSpace() // Set start space to a random space
     {
-        return spaces[random.Next(0, spaces.Length)];
+        return startBiome.EntrySpace;
     }
 
-    public void SetNextSpaces(Space currentSpace, Dictionary<Space,bool> completedSpaces)
-    {
-        if (currentSpace.Edges.Count > 0)
-        {
-            currentSpace.RemoveEdges();
-        }
-        
-        Space[] differentSpaces = GetDifferentNonCompletedSpaces(currentSpace, completedSpaces);
-        string[] paths = currentSpace.Paths;
-
-        for (int edge = 0; edge < edges; edge++)
-        {
-            int pathIndex = random.Next(0, paths.Length);
-            int spaceIndex = random.Next(0, differentSpaces.Length);
-
-            currentSpace.AddEdge(paths[pathIndex], differentSpaces[spaceIndex]);
-            
-            paths = paths.Where(path => path != paths[pathIndex]).ToArray();
-            differentSpaces = differentSpaces.Where(space => space != differentSpaces[spaceIndex]).ToArray();
-
-            if (differentSpaces.Length < 1)
-            {
-                break;
-            }
-        }
+    public Biome SetNextBiome(Biome currentBiome, Space currentSpace)
+    {   
+        Biome[] differentBiomes = GetDifferentNonCompletedBiome(currentBiome);
+        int i = random.Next(0, differentBiomes.Length);
+        currentSpace.AddEdge(differentBiomes[i].Name, differentBiomes[i].EntrySpace);
+        return differentBiomes[i];   
     }
 
-    private Space[] GetDifferentNonCompletedSpaces(Space currentSpace, Dictionary<Space,bool> completedSpaces)
+    private Biome[] GetDifferentNonCompletedBiome(Biome currentBiome)
     {
-        return spaces.Where(space => 
-            space.GetType() != currentSpace.GetType() &&    // Picks spaces of different type from currentSpace
-            !completedSpaces[space]).ToArray();             // Picks spaces that are not complete
+        return biomes.Where(biome => 
+            biome.GetType() != currentBiome.GetType() &&    // Picks biomes of different type from currentSpace
+            !biome.Complete).ToArray();                     // Picks biomes that are not complete
+    }
+
+    private Dictionary<string, Space> LoadSpaces()
+    {
+        try 
+        {
+            string jsonString = File.ReadAllText("spaces.json");
+            Dictionary<string, Space> spaces = JsonSerializer.Deserialize<Dictionary<string, Space>>(jsonString);
+            return spaces;
+        }
+        catch(Exception e)
+        {
+            Console.WriteLine("Json did not load");
+            return [];
+        }
     }
 }
