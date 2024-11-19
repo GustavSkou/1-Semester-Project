@@ -18,6 +18,7 @@ class Game
         registry.Register("go", cmdGo);
         registry.Register("goto", cmdGo);
         registry.Register("try", cmdTryAgain);
+        registry.Register("tryagain", cmdTryAgain);        
         registry.Register("answer", new CommandAnswer());
         registry.Register("help", new CommandHelp(registry));
     }

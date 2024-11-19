@@ -83,6 +83,11 @@ class Space : Node, IPrintable
         Print($"You left the {name}\n");
     }
 
+    public void TryAgain(Context context)
+    {
+        
+    }
+
     public override Space FollowEdge(string direction)
     {
         return (Space) base.FollowEdge(direction);
