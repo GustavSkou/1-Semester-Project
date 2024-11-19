@@ -12,7 +12,7 @@
             {"Answer": "Divert all water resources to farming only.", "IsCorrect":false}
         ]
     },
-    "Trees:"
+    "Trees":
     {
         "Name": "Trees",
         "Biome": "Savannah",
