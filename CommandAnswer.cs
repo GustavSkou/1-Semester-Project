@@ -10,7 +10,7 @@ class CommandAnswer : BaseCommand, ICommand
     public void Execute(Context context, string command, string[] parameters)
     {   
         if (context.InQuestion)
-        {     
+        {   
             try 
             {
                 context.AnswerQuestion(int.Parse(parameters[0]) - 1); // convert string number to interger
