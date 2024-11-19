@@ -26,11 +26,19 @@ class Game
 
         InitRegistry();
         context.Done = false;
-        context.CurrentSpace.Welcome();
-        context.CurrentSpace.Destription();
-        context.CurrentSpace.Question();
-        context.InQuestion = true;
 
+        context.CurrentSpace.Welcome();
+        if (context.CurrentSpace.SpaceDestription != null) context.CurrentSpace.Destription();
+        if (context.CurrentSpace.SpaceQuestion != null) 
+        {
+            context.CurrentSpace.Question(context);
+            context.InQuestion = true;
+        }
+        else
+        {
+            context.CurrentSpace.Exits();
+        }
+        context.CurrentSpace.Complete = true;
 
         while (context.Done == false)
         {

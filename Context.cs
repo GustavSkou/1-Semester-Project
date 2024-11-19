@@ -3,8 +3,9 @@
 class Context
 {
     private Space currentSpace;
+    private Biome currentBiome, nextBiome;
     private World world;
-    private Dictionary<Space,bool> completedSpaces = [];
+
     private bool done, inQuestion;
 
     public Space CurrentSpace
@@ -23,35 +24,20 @@ class Context
         get {return inQuestion;}
         set {inQuestion = value;}
     }
-
-    public Dictionary<Space, bool> CompletedSpaces
-    {
-        get {return completedSpaces;}
-    }
     
     public Context(World world)
     {
         this.world = world;
         currentSpace = world.StartSpace;
-
-        foreach (Space space in world.Spaces)
-        {
-            completedSpaces.Add(space, false);
-        }
+        currentBiome = world.StartBiome;
     }
 
     public void AnswerQuestion(int choiceNum)
     {
-        if (currentSpace.SpaceAnswerChoices[choiceNum].value)
+        if (currentSpace.SpaceAnswerChoices[choiceNum].IsCorrect)
         {
-            SetSpaceComplete(currentSpace);
             Console.WriteLine("Correct answer");
-
-            if(IsAllSpacesComplete())
-            {
-                done = true;
-                return;
-            }
+            currentSpace.Complete = true;
         }
         else
         {
@@ -59,38 +45,70 @@ class Context
         }
         
         inQuestion = false;
-        world.SetNextSpaces(currentSpace, completedSpaces);
-        Console.Clear();
+
+        if (IsAllSpacesComplete()) 
+        {
+            if (!currentBiome.Complete)
+            {
+                currentBiome.Complete = true;
+                if (IsAllBiomesComplete()) QuitGame();
+                nextBiome = world.SetNextBiome(currentBiome, currentSpace);
+            }
+        }
         currentSpace.Exits();
     }
 
     public void Transition(string direction)
     {
         Console.Clear();
-        Space nextSpace = currentSpace.FollowEdge(direction);
         
+        if (IsAllSpacesComplete()) 
+        {
+            if (!currentBiome.Complete)
+            {
+                currentBiome.Complete = true;
+                if (IsAllBiomesComplete()) QuitGame();
+                nextBiome = world.SetNextBiome(currentBiome, currentSpace);
+            }
+        }
+        
+        Space nextSpace = currentSpace.FollowEdge(direction);
+
+        if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
+
         currentSpace.Goodbye();
         currentSpace = nextSpace;
         currentSpace.Welcome();
-        currentSpace.Destription();
-        currentSpace.Question();
-        inQuestion = true;
+        if (currentSpace.SpaceDestription != null) currentSpace.Destription();
+        if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.Question(this);   
+        if (!inQuestion) 
+        {
+            currentSpace.Exits();
+            currentSpace.Complete = true;
+        }
     }
 
     private bool IsAllSpacesComplete()
     {
-        if (completedSpaces.ContainsValue(false))
+        foreach (Space space in currentBiome.Spaces.Values)
         {
-            return false;
+            if (space.Complete == false) return false;
         }
         return true;
     }
 
-    private void SetSpaceComplete(Space space)
+    private bool IsAllBiomesComplete()
     {
-        if (completedSpaces.ContainsKey(space))
+        foreach (Biome biome in world.Biomes)
         {
-            completedSpaces[space] = true;
+            if (biome.Complete == false) return false;
         }
+        return true;
+    }
+
+    private void QuitGame()
+    {
+        done = true;
+        return;
     }
 }

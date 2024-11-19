@@ -4,7 +4,7 @@ class CommandAnswer : BaseCommand, ICommand
 {
     public CommandAnswer()
     {
-        description = "Use: answer (number)";
+        description = "Use: answerhfdt (number)";
     }
 
     public void Execute(Context context, string command, string[] parameters)
@@ -18,7 +18,7 @@ class CommandAnswer : BaseCommand, ICommand
             catch(IndexOutOfRangeException)
             {
                 context.CurrentSpace.Print("Please try again");
-                context.CurrentSpace.Question();
+                context.CurrentSpace.Question(context);
             }
         }    
         else
