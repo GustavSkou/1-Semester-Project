@@ -41,7 +41,7 @@ class Context
         }
         else
         {
-            Console.WriteLine("Sorry wrong answer");
+            Console.WriteLine("Sorry wrong answer, try again?");
         }
         
         inQuestion = false;
