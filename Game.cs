@@ -36,7 +36,7 @@ class Game
         if (context.CurrentSpace.SpaceQuestion != null) 
         {
             context.CurrentSpace.Question(context);
-            context.InQuestion = true;
+            context.InSpaceQuestion = true;
         }
         else
         {

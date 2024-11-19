@@ -6,7 +6,7 @@ class Context
     private Biome currentBiome, nextBiome;
     private World world;
 
-    private bool done, inQuestion;
+    private bool done, inSpaceQuestion;
 
     public Space CurrentSpace
     {
@@ -19,10 +19,10 @@ class Context
         set {done = value;}
     }
 
-    public bool InQuestion
+    public bool InSpaceQuestion
     {
-        get {return inQuestion;}
-        set {inQuestion = value;}
+        get {return inSpaceQuestion;}
+        set {inSpaceQuestion = value;}
     }
     
     public Context(World world)
@@ -42,10 +42,10 @@ class Context
         else
         {
             currentSpace.Print("Sorry wrong answer\n Would you like to try again?");
-            CurrentSpace.Print("- Yes\n - No");
+            CurrentSpace.Print(" - Yes\n - No");
         }
         
-        inQuestion = false;
+        inSpaceQuestion = false;
 
         if (IsAllSpacesComplete()) 
         {
@@ -82,7 +82,7 @@ class Context
         currentSpace.Welcome();
         if (currentSpace.SpaceDestription != null) currentSpace.Destription();
         if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.Question(this);   
-        if (!inQuestion) 
+        if (!inSpaceQuestion) 
         {
             currentSpace.Exits();
             currentSpace.Complete = true;
