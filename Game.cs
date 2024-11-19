@@ -26,6 +26,7 @@ class Game
     static void Main(string[] args)
     {
         Console.WriteLine("Welcome to the World of Zuul!\n");
+        Console.WriteLine("Before you begin, there are some commands that are nice to know:)\n 1) To go to a room, write \"go\" and then the room\n2) To answer a question, write \"answer\" followed by your choice of answer\n 3) When in eed for help simply write \"help\"\n\n Enjoy:)");
 
         InitRegistry();
         context.Done = false;
