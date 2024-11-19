@@ -1,4 +1,4 @@
-class CommandTryAgain : BaseCommand, ICommand
+/*class CommandTryAgain : BaseCommand, ICommand
 {
     public CommandTryAgain()
     {
@@ -23,4 +23,4 @@ class CommandTryAgain : BaseCommand, ICommand
 
         context.CurrentSpace.Question(context);
     }
-}
+}*/

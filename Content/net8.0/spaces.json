@@ -183,9 +183,9 @@
             { "Answer": "Move the animals outside permanently.", "IsCorrect": false }
         ]
     },
-    "HighWay":
+    "Highway":
     {
-        "Name": "HighWay",
+        "Name": "Highway",
         "Biome": "City",
         "SpaceDestription": "Woosh woosh",
         "SpaceQuestion": "You are on the Highway and see 3 big bags of plastic on the side of the road. What do you do?",
@@ -207,9 +207,9 @@
             { "Answer": "You simply take another route. The sight of trash in the nature ruins your walk", "IsCorrect": false }
         ]
     },
-    "BikeLane":
+    "Bikelane":
     {
-        "Name": "BikeLane",
+        "Name": "Bikelane",
         "Biome": "City",
         "SpaceDestription": "Your favorite bikelane",
         "SpaceQuestion": "You're on your way to school and see shards of glass on the lane. What do you do?", 
@@ -232,4 +232,3 @@
         ]
     }
 }
-
