@@ -133,5 +133,54 @@
             { "Answer": "Be upset for weeks", "IsCorrect": false },
             { "Answer": "Make sure to be more aware next time", "IsCorrect": true }
         ]
+    },
+    "The Barn":
+    {
+        "Name": "The Barn",
+        "Biome": "Farm",
+        "SpaceDescription": "A cozy barn filled with livestock and tools for farming.",
+        "SpaceQuestion": "You notice some cows looking unwell. What should you do?",
+        "SpaceAnswerChoices": [
+            { "Answer": "Provide fresh water and call a vet.", "IsCorrect": true },
+            { "Answer": "Ignore the cows; they will recover on their own.", "IsCorrect": false },
+            { "Answer": "Sell the cows to avoid extra costs.", "IsCorrect": false }
+        ]
+    },
+    "Pond":
+    {
+        "Name": "Pond",
+        "Biome": "Farm",
+        "SpaceDescription": "A small pond providing water for animals and crops.",
+        "SpaceQuestion": "The pond is polluted with trash. What will you do?",
+        "SpaceAnswerChoices": [
+            { "Answer": "Add more water to dilute the pollution.", "IsCorrect": false },
+            { "Answer": "Ignore it; nature will fix itself.", "IsCorrect": false },
+            { "Answer": "Clean the pond and add plants to filter the water.", "IsCorrect": true }
+        ]
+    },
+    "Crop Field":
+    {
+        "Name": "Crop Field",
+        "Biome": "Farm",
+        "SpaceDescription": "A field used for growing crops, but the soil looks dry and cracked.",
+        "SpaceQuestion": "What is the best method to restore soil health?",
+        "SpaceAnswerChoices": [
+            { "Answer": "Use chemical fertilizers.", "IsCorrect": false },
+            { "Answer": "Add compost and practice crop rotation.", "IsCorrect": true },
+            { "Answer": "Leave the soil as it is.", "IsCorrect": false }
+        ]
+    },
+    "The Stable":
+    {
+        "Name": "The Stable",
+        "Biome": "Farm",
+        "SpaceDescription": "A stable for horses and other animals. It's peaceful, but something needs attention.",
+        "SpaceQuestion": "The stable floor is dirty, and the animals seem uncomfortable. What will you do?",
+        "SpaceAnswerChoices": [
+            { "Answer": "Clean the floor and add fresh bedding.", "IsCorrect": true },
+            { "Answer": "Leave it; the animals will manage.", "IsCorrect": false },
+            { "Answer": "Move the animals outside permanently.", "IsCorrect": false }
+        ]
     }
 }
+
