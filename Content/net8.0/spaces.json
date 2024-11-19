@@ -154,7 +154,7 @@
         "SpaceQuestion": "The pond is polluted with trash. What will you do?",
         "SpaceAnswerChoices": [
             { "Answer": "Add more water to dilute the pollution.", "IsCorrect": false },
-            { "Answer": "Ignore it; nature will fix itself.", "IsCorrect": false },
+            { "Answer": "Ignore it nature will fix itself.", "IsCorrect": false },
             { "Answer": "Clean the pond and add plants to filter the water.", "IsCorrect": true }
         ]
     },
@@ -178,7 +178,7 @@
         "SpaceQuestion": "The stable floor is dirty, and the animals seem uncomfortable. What will you do?",
         "SpaceAnswerChoices": [
             { "Answer": "Clean the floor and add fresh bedding.", "IsCorrect": true },
-            { "Answer": "Leave it; the animals will manage.", "IsCorrect": false },
+            { "Answer": "Leave it the animals will manage.", "IsCorrect": false },
             { "Answer": "Move the animals outside permanently.", "IsCorrect": false }
         ]
     },
