@@ -4,11 +4,6 @@ class Farm : Biome
     {
         entrySpace = spaces["The Barn"];
         exitSpace = spaces["The Stable"];
-
-        spaces["The Barn"].AddEdge(spaces["Pond"].Name, spaces["Pond"]);
-        spaces["Pond"].AddEdge(spaces["Crop Field"].Name, spaces["Crop Field"]);
-        spaces["Crop Field"].AddEdge(spaces["The Stable"].Name, spaces["The Stable"]);
-        spaces["The Stable"].AddEdge(spaces["The Barn"].Name, spaces["The Barn"]);
     }
 }
 

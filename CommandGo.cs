@@ -20,7 +20,7 @@ class CommandGo : BaseCommand, ICommand
             catch(KeyNotFoundException)
             {
                 context.CurrentSpace.Print($"You seach for the path {parameter}, but you could not find it");
-                context.CurrentSpace.Exits();
+                context.CurrentSpace.DisplayExits();
             }
         }
         else

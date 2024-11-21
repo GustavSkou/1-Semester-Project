@@ -59,12 +59,12 @@ class Context
             Console.WriteLine("Correct answer");
             currentSpace.Complete = true;
             inQuestion = false;
-            currentSpace.Exits();
         }
         else
         {
             currentSpace.Print("Sorry wrong answer");
             currentSpace.TryAgain(this);
+            return;
         }
         
         if (IsAllSpacesComplete()) 
@@ -75,19 +75,22 @@ class Context
                 if (IsAllBiomesComplete()) QuitGame();
                 nextBiome = world.SetNextBiome(currentBiome, currentSpace);
             }
+            DisplayContext();
+            return;
         }
+        currentBiome.NextSpace(currentSpace);
+        DisplayContext();
     }
 
     public void AnswerQuestion(YesNo answer)
     {
         if (answer == YesNo.yes)
         {
-            currentSpace.Question(this);
+            currentSpace.DisplayQuestion(this);
         }
         else if (answer == YesNo.no)
         {
-            currentSpace.Exits();
-            
+            currentSpace.DisplayExits();
         }
         else
         {
@@ -98,7 +101,9 @@ class Context
     public void Transition(string direction)
     {
         Console.Clear();
+        currentSpace.DisplayGoodbye();
         
+        Space nextSpace = currentSpace.FollowEdge(direction);
         if (IsAllSpacesComplete()) 
         {
             if (!currentBiome.Complete)
@@ -108,20 +113,23 @@ class Context
                 nextBiome = world.SetNextBiome(currentBiome, currentSpace);
             }
         }
-        
-        Space nextSpace = currentSpace.FollowEdge(direction);
-
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
-
-        currentSpace.Goodbye();
         currentSpace = nextSpace;
-        currentSpace.Welcome();
-        if (currentSpace.SpaceDestription != null) currentSpace.Destription();
-        if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.Question(this);   
+
+        currentSpace.DisplayWelcome();
+        DisplayContext();        
+    }
+
+    public void DisplayContext()
+    {
+        if (currentSpace.SpaceDestription != null) currentSpace.DisplayDestription();
+        //if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.DisplayQuestion(this);   
         if (!inQuestion) 
         {
-            currentSpace.Exits();
             currentSpace.Complete = true;
+            currentBiome.NextSpace(currentSpace);
+            
+            currentSpace.DisplayExits();
         }
     }
 

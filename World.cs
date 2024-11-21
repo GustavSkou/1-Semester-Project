@@ -46,7 +46,7 @@ class World
     
     private Biome SetStartBiome()
     {
-        return biomes[4];
+        return biomes[0];
     }
 
     private Space SetStartSpace() // Set start space to a random space

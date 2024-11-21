@@ -40,4 +40,17 @@ abstract class Biome : Node
         complete = false;
         this.spaces = spaces;
     }
+
+    public Space NextSpace(Space currentSpace)
+    {
+        Random random = new Random();
+        Space[] nonCompletedSpaces = spaces.Values.Where
+        (
+            space => space.Complete == false
+        ).ToArray();
+
+        Space nextSpace = nonCompletedSpaces[random.Next(0,nonCompletedSpaces.Length)];
+        currentSpace.AddEdge(nextSpace.Name, nextSpace);
+        return nextSpace;
+    }
 }

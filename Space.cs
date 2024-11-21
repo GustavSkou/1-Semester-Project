@@ -43,12 +43,12 @@ class Space : Node, IPrintable
     {
     }
 
-    public void Welcome()
+    public void DisplayWelcome()
     {
         Print($"You are now at {name} in {biome}");
     }
 
-    public void Exits()
+    public void DisplayExits()
     {
         string[] exits = edges.Keys.ToArray();
         Print("Current paths are:");
@@ -59,13 +59,13 @@ class Space : Node, IPrintable
         }
     }
 
-    public void Destription()
+    public void DisplayDestription()
     {
         Print(spaceDestription);
         Console.WriteLine();
     }
     
-    public void Question(Context context)
+    public void DisplayQuestion(Context context)
     {
         context.InQuestion = true;
         context.CurrentQuestionType = Context.QuestionType.numerical;
@@ -79,7 +79,7 @@ class Space : Node, IPrintable
         }
     }
 
-    public void Goodbye()
+    public void DisplayGoodbye()
     {
         Print($"You left the {name}\n");
     }
@@ -102,7 +102,7 @@ class Space : Node, IPrintable
         foreach (char letter in someString)
         {
             Console.Write(letter);
-            Thread.Sleep(10);
+            Thread.Sleep(0);
             index++;
 
             if (index > 50 && letter == ' ' || index > 30 && letter == '.') {
@@ -118,7 +118,7 @@ class Space : Node, IPrintable
         foreach (char letter in someString)
         {
             Console.Write(letter);
-            Thread.Sleep(10);
+            Thread.Sleep(0);
         }
         Console.WriteLine();
     }    

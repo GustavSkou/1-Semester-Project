@@ -34,12 +34,12 @@ class CommandAnswer : BaseCommand, ICommand
                 catch(IndexOutOfRangeException)
                 {
                     context.CurrentSpace.Print("Please try again");
-                    context.CurrentSpace.Question(context);
+                    context.CurrentSpace.DisplayQuestion(context);
                 }
                 catch(FormatException)
                 {
                     context.CurrentSpace.Print("Please try again");
-                    context.CurrentSpace.Question(context);
+                    context.CurrentSpace.DisplayQuestion(context);
                 }
             }
         }    
