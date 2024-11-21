@@ -5,7 +5,7 @@ class World
 {
     private Space startSpace;
     private Biome startBiome;
-    private Biome[] biomes;
+    private Dictionary<string, Biome> biomesSet = [];
     private Random random = new Random();
 
     public Space StartSpace
@@ -17,28 +17,20 @@ class World
         get {return startBiome;}
     }
 
-    public Biome[] Biomes
+    public Dictionary<string, Biome> BiomesSet
     {
-        get {return biomes;}
+        get {return biomesSet;}
     }
 
     public World()
     {
         Dictionary<string, Space> spacesDict = LoadSpaces();
-        Space[] allSpaces = spacesDict.Values.ToArray();
 
-        biomes = 
-        [
-            new Savannah("Savannah", spacesDict.Where(space => space.Value.Biome == "Savannah").ToDictionary()),
-
-            new City("City", spacesDict.Where(space => space.Value.Biome == "City").ToDictionary()), 
-
-            new Beach("Beach", spacesDict.Where(space => space.Value.Biome == "Beach").ToDictionary()), 
-
-            new Forest("Forest", spacesDict.Where(space => space.Value.Biome == "Forest").ToDictionary()), 
-
-            new Farm("Farm", spacesDict.Where(space => space.Value.Biome == "Farm").ToDictionary())
-        ];
+        biomesSet.Add("Savannah",   new Savannah(   "Savannah", spacesDict.Where(space => space.Value.Biome == "Savannah"). ToDictionary()));
+        biomesSet.Add("City",       new City(       "City",     spacesDict.Where(space => space.Value.Biome == "City").     ToDictionary()));
+        biomesSet.Add("Beach",      new Beach(      "Beach",    spacesDict.Where(space => space.Value.Biome == "Beach").    ToDictionary()));
+        biomesSet.Add("Forest",     new Forest(     "Forest",   spacesDict.Where(space => space.Value.Biome == "Forest").   ToDictionary()));
+        biomesSet.Add("Farm",       new Farm(       "Farm",     spacesDict.Where(space => space.Value.Biome == "Farm").     ToDictionary()));
 
         startBiome = SetStartBiome();
         startSpace = SetStartSpace();
@@ -46,25 +38,27 @@ class World
     
     private Biome SetStartBiome()
     {
-        return biomes[0];
+        return biomesSet.Values.ToArray()[random.Next(0, biomesSet.Count)];
     }
 
     private Space SetStartSpace() // Set start space to a random space
     {
-        return startBiome.EntrySpace;
+        startSpace = startBiome.Spaces.Values.ToArray()[random.Next(0, startBiome.Spaces.Count)];
+        //startBiome.SetNextSpace(startSpace);
+        return startSpace;
     }
 
     public Biome SetNextBiome(Biome currentBiome, Space currentSpace)
     {   
         Biome[] differentBiomes = GetDifferentNonCompletedBiome(currentBiome);
         int i = random.Next(0, differentBiomes.Length);
-        currentSpace.AddEdge(differentBiomes[i].Name, differentBiomes[i].EntrySpace);
+        currentSpace.AddEdge(differentBiomes[i].Name, differentBiomes[i].Spaces.Values.ToArray()[random.Next(0, startBiome.Spaces.Count)]);
         return differentBiomes[i];   
     }
 
     private Biome[] GetDifferentNonCompletedBiome(Biome currentBiome)
     {
-        return biomes.Where(biome => 
+        return biomesSet.Values.Where(biome => 
             biome.GetType() != currentBiome.GetType() &&    // Picks biomes of different type from currentSpace
             !biome.Complete).ToArray();                     // Picks biomes that are not complete
     }
