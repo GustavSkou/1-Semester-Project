@@ -2,8 +2,8 @@ class Farm : Biome
 {
     public Farm(string name, Dictionary<string, Space> spaces) : base(name, spaces)
     {
-        entrySpace = spaces["The Barn"];
-        exitSpace = spaces["The Stable"];
+        //entrySpace = spaces["The Barn"];
+        //exitSpace = spaces["The Stable"];
     }
 }
 

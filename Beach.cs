@@ -4,7 +4,7 @@ class Beach : Biome
     {
         // Shallow Waters   Sea Turtle NestingSite      Seagull NestingArea     TidePools
 
-        entrySpace = spaces["Shallow Waters"];
-        exitSpace = spaces["Seagull NestingArea"];
+        //entrySpace = spaces["Shallow Waters"];
+        //exitSpace = spaces["Seagull NestingArea"];
     }
 }
