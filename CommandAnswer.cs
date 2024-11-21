@@ -9,8 +9,8 @@ class CommandAnswer : BaseCommand, ICommand
 
     public void Execute(Context context, string command, string[] parameters)
     {   
-        if (context.InQuestion)
-        {   
+        if (!context.InQuestion) context.CurrentSpace.Print("No question to answer"); 
+        else {
             if (context.CurrentQuestionType == Context.QuestionType.boolean)
             {
                 try
@@ -43,9 +43,5 @@ class CommandAnswer : BaseCommand, ICommand
                 }
             }
         }    
-        else
-        {
-            context.CurrentSpace.Print("No question to answer"); 
-        }   
     }
 }

@@ -33,7 +33,6 @@ class Game
 
         context.CurrentSpace.DisplayWelcome();
         context.DisplayContext();
-
         while (context.Done == false)
         {
             Console.Write("> ");

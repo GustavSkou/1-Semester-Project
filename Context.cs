@@ -5,32 +5,30 @@ class Context
     private Space currentSpace;
     private Biome currentBiome, nextBiome;
     private World world;
-
     private QuestionType currentQuestionType;
-
     private bool done, inQuestion;
 
     public Space CurrentSpace
     {
-        get {return currentSpace;}
+        get { return currentSpace; }
     }
 
-    public bool Done 
+    public bool Done
     {
-        get {return done;}
-        set {done = value;}
+        get { return done; }
+        set { done = value; }
     }
 
     public bool InQuestion
     {
-        get {return inQuestion;}
-        set {inQuestion = value;}
+        get { return inQuestion; }
+        set { inQuestion = value; }
     }
 
     public QuestionType CurrentQuestionType
     {
-        get {return currentQuestionType;}
-        set {currentQuestionType = value;}
+        get { return currentQuestionType; }
+        set { currentQuestionType = value; }
     }
 
     public enum YesNo
@@ -44,7 +42,7 @@ class Context
         boolean,
         numerical
     }
-    
+
     public Context(World world)
     {
         this.world = world;
@@ -54,32 +52,30 @@ class Context
 
     public void AnswerQuestion(int choiceNum)
     {
-        if (currentSpace.SpaceAnswerChoices[choiceNum].IsCorrect)
+        if (currentSpace.Quest.Choices[choiceNum].Correct)
         {
             Console.WriteLine("Correct answer");
-            currentSpace.Complete = true;
+            currentBiome.Spaces[currentSpace.Name].Complete = true;
+
             inQuestion = false;
-        }
-        else
-        {
-            currentSpace.Print("Sorry wrong answer");
-            currentSpace.TryAgain(this);
-            return;
-        }
-        
-        if (IsAllSpacesComplete()) 
-        {
-            if (!currentBiome.Complete)
+            if (IsAllSpacesComplete())            
             {
-                currentBiome.Complete = true;
-                if (IsAllBiomesComplete()) QuitGame();
-                nextBiome = world.SetNextBiome(currentBiome, currentSpace);
+                if (!currentBiome.Complete)
+                {      
+                    world.BiomesSet[currentBiome.Name].Complete = true;
+                    if (IsAllBiomesComplete()) QuitGame();
+                    nextBiome = world.SetNextBiome(currentBiome, currentSpace);                    
+                }
+            }
+            else {
+                currentBiome.SetNextSpace(currentSpace);
             }
             DisplayContext();
-            return;
         }
-        currentBiome.NextSpace(currentSpace);
-        DisplayContext();
+        else {
+            currentSpace.Print("Sorry wrong answer");
+            currentSpace.TryAgain(this);
+        }
     }
 
     public void AnswerQuestion(YesNo answer)
@@ -90,6 +86,7 @@ class Context
         }
         else if (answer == YesNo.no)
         {
+            if (currentBiome.Spaces.Values.Where(space => space.Complete == false).Count() > 1) currentBiome.SetNextSpace(currentSpace);
             currentSpace.DisplayExits();
         }
         else
@@ -102,35 +99,34 @@ class Context
     {
         Console.Clear();
         currentSpace.DisplayGoodbye();
-        
+
         Space nextSpace = currentSpace.FollowEdge(direction);
-        if (IsAllSpacesComplete()) 
+
+        if (IsAllSpacesComplete())
         {
             if (!currentBiome.Complete)
             {
-                currentBiome.Complete = true;
+                world.BiomesSet[currentBiome.Name].Complete = true;
                 if (IsAllBiomesComplete()) QuitGame();
                 nextBiome = world.SetNextBiome(currentBiome, currentSpace);
             }
         }
+
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
         currentSpace = nextSpace;
-
         currentSpace.DisplayWelcome();
         DisplayContext();        
     }
 
     public void DisplayContext()
     {
-        if (currentSpace.SpaceDestription != null) currentSpace.DisplayDestription();
-        //if (currentSpace.SpaceQuestion != null && !currentSpace.Complete) currentSpace.DisplayQuestion(this);   
-        if (!inQuestion) 
+        if (currentSpace.Description != null) currentSpace.DisplayDestription();
+        if (currentSpace.Quest != null && !currentSpace.Complete) currentSpace.DisplayQuestion(this);
+        if (!inQuestion)
         {
-            currentSpace.Complete = true;
-            currentBiome.NextSpace(currentSpace);
-            
             currentSpace.DisplayExits();
         }
+        return;
     }
 
     private bool IsAllSpacesComplete()
@@ -144,7 +140,7 @@ class Context
 
     private bool IsAllBiomesComplete()
     {
-        foreach (Biome biome in world.Biomes)
+        foreach (Biome biome in world.BiomesSet.Values)
         {
             if (biome.Complete == false) return false;
         }

@@ -21,8 +21,8 @@ class Registry
     public void Dispatch(string line) //tager i mod input
     {
         line = line.ToLower();
-        string[] elements = line.Split(" ");
-        elements = elements.Where(element => element != "").ToArray();
+        string[] elements = line.Split(" ");                            // Player's input pliver spillet op for hvert " " og lagt i array
+        elements = elements.Where(element => element != "").ToArray();  // Fjerne "" fra array af elements
         string command = elements[0];
         string[] parameters = GetParameters(elements);
 
@@ -56,10 +56,5 @@ class Registry
             output[i] = input[i + 1];
         }
         return output;
-    }
-
-    private string[] CleanUp(string[] elements)
-    {        
-        return elements = elements.Where(element => element != "").ToArray();
     }
 }
