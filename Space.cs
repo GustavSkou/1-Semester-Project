@@ -21,7 +21,39 @@ class Space : Node, IPrintable
     public Question Quest 
     {
         get {return quest;}
-        set {quest = value;}
+        set {
+            quest = value;
+        
+            foreach (var choice in quest.Choices)
+            {
+                choice.Action = choice.Correct ? CorrectAnswer : WrongAnswer;
+            }
+        }
+    }
+
+    public void CorrectAnswer()
+    {
+        Console.WriteLine("Correct answer");
+        /*this.complete = true;
+
+        inQuestion = false;
+        if (IsAllSpacesComplete())            
+        {
+            if (!currentBiome.Complete)
+            {      
+                world.BiomesSet[currentBiome.Name].Complete = true;
+                if (IsAllBiomesComplete()) QuitGame();
+                nextBiome = world.SetNextBiome(currentBiome, currentSpace);                    
+            }
+        }
+        else {
+            currentBiome.SetNextSpace(currentSpace);
+        }
+        DisplayContext();*/
+    }
+    public void WrongAnswer()
+    {
+        Console.WriteLine("Wrong answer");
     }
 
     public string Biome
@@ -55,7 +87,7 @@ class Space : Node, IPrintable
     public void DisplayQuestion(Context context)
     {
         context.InQuestion = true;
-        context.CurrentQuestionType = Context.QuestionType.numerical;
+        context.CurrentQuestion = quest;
         
         Print(quest.QuestionPromt);
         int choiceNumber = 1;
@@ -73,7 +105,6 @@ class Space : Node, IPrintable
 
     public void TryAgain(Context context)
     {
-        context.CurrentQuestionType = Context.QuestionType.boolean;
         Print("Would you like to try again?");
         Print(" - Yes\n - No");
     }

@@ -32,6 +32,7 @@ class Game
         context.CurrentSpace.Print("Before you begin, there are some commands that are nice to know:)\n 1) To go to a room, write \"go\" and then the room\n 2) To answer a question, write \"answer\" followed by your choice of answer\n 3) When in need for help simply write \"help\"\n Do you understand\n - Yes \n - No", false);
 
         context.CurrentSpace.DisplayWelcome();
+        context.CurrentQuestion = context.CurrentSpace.Quest;
         context.DisplayContext();
         while (context.Done == false)
         {
