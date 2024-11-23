@@ -56,7 +56,7 @@ class Context
         currentBiome = world.StartBiome;
     }
 
-    public void AnswerQuestion(int choice)
+    public void AnswerQuestion(string choice)
     {
         currentQuestion.Choices[choice].Action.Invoke(this);
 
