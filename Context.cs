@@ -5,12 +5,18 @@ class Context
     private Space currentSpace;
     private Biome currentBiome, nextBiome;
     private World world;
-    private QuestionType currentQuestionType;
+    private Question currentQuestion;
     private bool done, inQuestion;
 
     public Space CurrentSpace
     {
         get { return currentSpace; }
+    }
+
+    public Question CurrentQuestion
+    {
+        get {return currentQuestion;}
+        set {currentQuestion = value;}
     }
 
     public bool Done
@@ -25,24 +31,6 @@ class Context
         set { inQuestion = value; }
     }
 
-    public QuestionType CurrentQuestionType
-    {
-        get { return currentQuestionType; }
-        set { currentQuestionType = value; }
-    }
-
-    public enum YesNo
-    {
-        yes = 0,
-        no = 1
-    }
-
-    public enum QuestionType
-    {
-        boolean,
-        numerical
-    }
-
     public Context(World world)
     {
         this.world = world;
@@ -50,9 +38,14 @@ class Context
         currentBiome = world.StartBiome;
     }
 
-    public void AnswerQuestion(int choiceNum)
+    public void AnswerQuestion(int choice)
     {
-        if (currentSpace.Quest.Choices[choiceNum].Correct)
+        currentQuestion.Choices[choice].Action.Invoke();
+
+
+
+
+        /*if (currentSpace.Quest.Choices[choice].Correct)
         {
             Console.WriteLine("Correct answer");
             currentBiome.Spaces[currentSpace.Name].Complete = true;
@@ -75,24 +68,7 @@ class Context
         else {
             currentSpace.Print("Sorry wrong answer");
             currentSpace.TryAgain(this);
-        }
-    }
-
-    public void AnswerQuestion(YesNo answer)
-    {
-        if (answer == YesNo.yes)
-        {
-            currentSpace.DisplayQuestion(this);
-        }
-        else if (answer == YesNo.no)
-        {
-            if (currentBiome.Spaces.Values.Where(space => space.Complete == false).Count() > 1) currentBiome.SetNextSpace(currentSpace);
-            currentSpace.DisplayExits();
-        }
-        else
-        {
-            throw new Exception($"{answer} is not part of YesNo enum");
-        }
+        }*/
     }
 
     public void Transition(string direction)
@@ -121,7 +97,11 @@ class Context
     public void DisplayContext()
     {
         if (currentSpace.Description != null) currentSpace.DisplayDestription();
-        if (currentSpace.Quest != null && !currentSpace.Complete) currentSpace.DisplayQuestion(this);
+        if (currentSpace.Quest != null && !currentSpace.Complete)
+        {
+            currentSpace.DisplayQuestion(this);
+            
+        } 
         if (!inQuestion)
         {
             currentSpace.DisplayExits();

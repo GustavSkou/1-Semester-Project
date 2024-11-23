@@ -11,7 +11,9 @@ class CommandAnswer : BaseCommand, ICommand
     {   
         if (!context.InQuestion) context.CurrentSpace.Print("No question to answer"); 
         else {
-            if (context.CurrentQuestionType == Context.QuestionType.boolean)
+            context.AnswerQuestion(int.Parse(parameters[0]) - 1);
+
+            /*if (context.CurrentQuestionType == Context.QuestionType.boolean)
             {
                 try
                 {
@@ -41,7 +43,7 @@ class CommandAnswer : BaseCommand, ICommand
                     context.CurrentSpace.Print("Please try again");
                     context.CurrentSpace.DisplayQuestion(context);
                 }
-            }
+            }*/
         }    
     }
 }
