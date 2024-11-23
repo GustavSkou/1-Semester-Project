@@ -44,7 +44,6 @@ class World
     private Space SetStartSpace() // Set start space to a random space
     {
         startSpace = startBiome.Spaces.Values.ToArray()[random.Next(0, startBiome.Spaces.Count)];
-        //startBiome.SetNextSpace(startSpace);
         return startSpace;
     }
 
@@ -73,7 +72,7 @@ class World
         }
         catch(Exception e)
         {
-            Console.WriteLine("Json did not load");
+            Console.WriteLine($"--- Json did not load --- \n{e}");
             return [];
         }
     }

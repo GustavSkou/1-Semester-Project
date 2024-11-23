@@ -59,34 +59,6 @@ class Context
     public void AnswerQuestion(string choice)
     {
         currentQuestion.Choices[choice].Action.Invoke(this);
-
-
-
-
-        /*if (currentSpace.Quest.Choices[choice].Correct)
-        {
-            Console.WriteLine("Correct answer");
-            currentBiome.Spaces[currentSpace.Name].Complete = true;
-
-            inQuestion = false;
-            if (IsAllSpacesComplete())            
-            {
-                if (!currentBiome.Complete)
-                {      
-                    world.BiomesSet[currentBiome.Name].Complete = true;
-                    if (IsAllBiomesComplete()) QuitGame();
-                    nextBiome = world.SetNextBiome(currentBiome, currentSpace);                    
-                }
-            }
-            else {
-                currentBiome.SetNextSpace(currentSpace);
-            }
-            DisplayContext();
-        }
-        else {
-            currentSpace.Print("Sorry wrong answer");
-            currentSpace.TryAgain(this);
-        }*/
     }
 
     public void Transition(string direction)
