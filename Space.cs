@@ -26,7 +26,7 @@ class Space : Node, IPrintable
         
             foreach (var choice in quest.Choices)
             {
-                choice.Action = choice.Correct ? CorrectAnswer : WrongAnswer;
+                choice.Value.Action = choice.Value.Correct ? CorrectAnswer : WrongAnswer;
             }
         }
     }
@@ -92,7 +92,7 @@ class Space : Node, IPrintable
         
         Print(quest.QuestionPromt);
         int choiceNumber = 1;
-        foreach (string choice in quest.Choices.Select(spaceAnswerChoices => spaceAnswerChoices.Choice).ToArray())
+        foreach (string choice in quest.Choices.Select(spaceAnswerChoices => spaceAnswerChoices.Value.Choice).ToArray())
         {  
             Print($"{choiceNumber}. {choice}");
             choiceNumber++;
