@@ -11,7 +11,7 @@ class CommandAnswer : BaseCommand, ICommand
     {   
         if (!context.InQuestion) context.CurrentSpace.Print("No question to answer"); 
         else {
-            context.AnswerQuestion(int.Parse(parameters[0]) - 1);
+            context.AnswerQuestion(parameters[0]);
 
             /*if (context.CurrentQuestionType == Context.QuestionType.boolean)
             {

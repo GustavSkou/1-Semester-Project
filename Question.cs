@@ -1,7 +1,7 @@
 class Question
 {
    public string QuestionPromt {get; set;}
-   public AnswerChoice[] Choices {get; set;}
+   public Dictionary<string, AnswerChoice> Choices {get; set;}
 }
 
 class AnswerChoice 
