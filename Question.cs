@@ -8,5 +8,5 @@ class AnswerChoice
 {
     public string Choice {get; set;}
     public bool Correct {get; set;}
-    public Action Action {get; set;}
+    public Action<Context> Action {get; set;}
 }

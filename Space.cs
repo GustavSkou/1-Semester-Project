@@ -31,29 +31,30 @@ class Space : Node, IPrintable
         }
     }
 
-    public void CorrectAnswer()
+    public void CorrectAnswer(Context context)
     {
         Console.WriteLine("Correct answer");
-        /*this.complete = true;
+        context.CurrentBiome.Spaces[name].complete = true;
+        context.InQuestion = false;
 
-        inQuestion = false;
-        if (IsAllSpacesComplete())            
+        if (context.IsAllSpacesComplete())            
         {
-            if (!currentBiome.Complete)
+            if (!context.CurrentBiome.Complete)
             {      
-                world.BiomesSet[currentBiome.Name].Complete = true;
-                if (IsAllBiomesComplete()) QuitGame();
-                nextBiome = world.SetNextBiome(currentBiome, currentSpace);                    
+                context.World.BiomesSet[context.CurrentBiome.Name].Complete = true;
+                if (context.IsAllBiomesComplete()) context.QuitGame();
+                context.NextBiome = context.World.SetNextBiome(context.CurrentBiome, context.CurrentSpace);                    
             }
         }
         else {
-            currentBiome.SetNextSpace(currentSpace);
+            context.CurrentBiome.SetNextSpace(context.CurrentSpace);
         }
-        DisplayContext();*/
+        context.DisplayContext();
     }
-    public void WrongAnswer()
+    public void WrongAnswer(Context context)
     {
-        Console.WriteLine("Wrong answer");
+        Print("Sorry wrong answer");
+        TryAgain();
     }
 
     public string Biome
@@ -103,7 +104,7 @@ class Space : Node, IPrintable
         Print($"You left the {name}\n");
     }
 
-    public void TryAgain(Context context)
+    public void TryAgain()
     {
         Print("Would you like to try again?");
         Print(" - Yes\n - No");

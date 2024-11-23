@@ -31,6 +31,24 @@ class Context
         set { inQuestion = value; }
     }
 
+    public Biome CurrentBiome
+    {
+        get { return currentBiome; }
+        set { currentBiome = value; }
+    }
+
+    public Biome NextBiome
+    {
+        get { return nextBiome; }
+        set { nextBiome = value; }
+    }
+
+    public World World
+    {
+        get { return world; }
+        set { world = value; }
+    }
+
     public Context(World world)
     {
         this.world = world;
@@ -40,7 +58,7 @@ class Context
 
     public void AnswerQuestion(int choice)
     {
-        currentQuestion.Choices[choice].Action.Invoke();
+        currentQuestion.Choices[choice].Action.Invoke(this);
 
 
 
@@ -109,7 +127,7 @@ class Context
         return;
     }
 
-    private bool IsAllSpacesComplete()
+    public bool IsAllSpacesComplete()
     {
         foreach (Space space in currentBiome.Spaces.Values)
         {
@@ -118,7 +136,7 @@ class Context
         return true;
     }
 
-    private bool IsAllBiomesComplete()
+    public bool IsAllBiomesComplete()
     {
         foreach (Biome biome in world.BiomesSet.Values)
         {
@@ -127,7 +145,7 @@ class Context
         return true;
     }
 
-    private void QuitGame()
+    public void QuitGame()
     {
         done = true;
         return;
