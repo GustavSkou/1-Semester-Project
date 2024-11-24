@@ -51,10 +51,11 @@ class Space : Node, IPrintable
         }
         context.DisplayContext();
     }
+
     public void WrongAnswer(Context context)
     {
         Print("Sorry wrong answer");
-        TryAgain();
+        TryAgain(context);
     }
 
     public string Biome
@@ -104,10 +105,45 @@ class Space : Node, IPrintable
         Print($"You left the {name}\n");
     }
 
-    public void TryAgain()
+    public void TryAgain(Context context)
     {
-        Print("Would you like to try again?");
-        Print(" - Yes\n - No");
+        AnswerChoice yes = new AnswerChoice()
+        {
+            Choice = "yes",
+            Action = AnswerYes
+        };
+        AnswerChoice no = new AnswerChoice()
+        {
+            Choice = "No",
+            Action = AnswerNo
+        };
+        Question question = new Question()
+        {
+            QuestionPromt = "Would you like to try again\n - Yes\n - No",
+            Choices = new Dictionary<string, AnswerChoice>()
+            {
+                { "yes", yes },
+                { "no", no }
+            }
+        };
+
+        context.CurrentQuestion = question;
+        context.InQuestion = true;
+
+    }
+    
+    private void AnswerYes(Context context)
+    {
+        context.CurrentQuestion = quest;
+        context.InQuestion = true;
+        context.DisplayContext();
+    }
+
+    private void AnswerNo(Context context)
+    {
+        context.CurrentQuestion = null;
+        context.InQuestion = false;
+        context.DisplayContext();
     }
 
     public override Space FollowEdge(string direction)
