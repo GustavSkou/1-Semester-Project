@@ -120,8 +120,8 @@ class Context
     public void QuitGame()
     {
         done = true;
-        
-
+        GameSave gameSave = new GameSave();
+        gameSave.Save(this);
         return;
     }
 }
