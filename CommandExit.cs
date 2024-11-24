@@ -9,6 +9,8 @@ class CommandExit : BaseCommand, ICommand
 
     public void Execute(Context context, string command, string[] parameters)
     {
+        GameSave gameSave = new GameSave();
+        gameSave.Save(context);
         context.Done = true;
     }
 }
