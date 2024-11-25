@@ -36,6 +36,7 @@ public class Space : Node, IPrintable
     {
         get {return infoCard;}
         set {infoCard = value;}
+    }
     public string Biome
     {
         get {return biome;}
