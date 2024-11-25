@@ -21,7 +21,42 @@ public class Space : Node, IPrintable
     public Question Quest 
     {
         get {return quest;}
-        set {quest = value;}
+        set 
+        {
+            quest = value;        
+            foreach (var choice in quest.Choices)
+            {
+                choice.Value.Action = choice.Value.Correct ? CorrectAnswer : WrongAnswer;
+            }
+        }
+    }
+
+    public void CorrectAnswer(Context context)
+    {
+        Console.WriteLine("Correct answer");
+        context.CurrentBiome.Spaces[name].complete = true;
+        context.InQuestion = false;
+
+        if (context.IsAllSpacesComplete())            
+        {
+            if (!context.CurrentBiome.Complete)
+            {      
+                context.World.BiomesSet[context.CurrentBiome.Name].Complete = true;
+                if (context.IsAllBiomesComplete()) context.QuitGame();
+                context.NextBiome = context.World.SetNextBiome(context.CurrentBiome, context.CurrentSpace);                    
+            }
+        }
+        else {
+            context.CurrentBiome.SetNextSpace(context.CurrentSpace);
+        }
+        context.DisplayContext();
+    }
+
+    public void WrongAnswer(Context context)
+    {
+        Print("Sorry wrong answer");
+        TryAgain(context);
+        Print(context.CurrentQuestion.QuestionPromt);
     }
 
     public string Biome
@@ -55,11 +90,11 @@ public class Space : Node, IPrintable
     public void DisplayQuestion(Context context)
     {
         context.InQuestion = true;
-        context.CurrentQuestionType = Context.QuestionType.numerical;
+        context.CurrentQuestion = quest;
         
         Print(quest.QuestionPromt);
         int choiceNumber = 1;
-        foreach (string choice in quest.Choices.Select(spaceAnswerChoices => spaceAnswerChoices.Choice).ToArray())
+        foreach (string choice in quest.Choices.Select(spaceAnswerChoices => spaceAnswerChoices.Value.Choice).ToArray())
         {  
             Print($"{choiceNumber}. {choice}");
             choiceNumber++;
@@ -73,9 +108,42 @@ public class Space : Node, IPrintable
 
     public void TryAgain(Context context)
     {
-        context.CurrentQuestionType = Context.QuestionType.boolean;
-        Print("Would you like to try again?");
-        Print(" - Yes\n - No");
+        AnswerChoice yes = new AnswerChoice()
+        {
+            Choice = "yes",
+            Action = AnswerYes
+        };
+        AnswerChoice no = new AnswerChoice()
+        {
+            Choice = "no",
+            Action = AnswerNo
+        };
+        Question question = new Question()
+        {
+            QuestionPromt = "Would you like to try again\n - Yes\n - No",
+            Choices = new Dictionary<string, AnswerChoice>()
+            {
+                { yes.Choice, yes },
+                { no.Choice, no }
+            }
+        };
+        context.CurrentQuestion = question;
+        context.InQuestion = true;
+    }
+    
+    private void AnswerYes(Context context)
+    {
+        context.CurrentQuestion = quest;
+        context.InQuestion = true;
+        context.DisplayContext();
+    }
+
+    private void AnswerNo(Context context)
+    {
+        context.CurrentQuestion = null;
+        context.InQuestion = false;
+        context.CurrentBiome.SetNextSpace(context.CurrentSpace);
+        context.DisplayContext();
     }
 
     public override Space FollowEdge(string direction)
@@ -110,4 +178,3 @@ public class Space : Node, IPrintable
         Console.WriteLine();
     }    
 }
-

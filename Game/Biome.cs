@@ -25,7 +25,8 @@ public abstract class Biome : Node
     {
         Random random = new Random();
         Space[] nonCompletedSpaces = spaces.Values.Where (
-            space => space.Complete == false ).ToArray();
+            space => space.Complete == false ).Where (
+            space => space != currentSpace).ToArray();
 
         Space nextSpace = nonCompletedSpaces [
             random.Next(0, nonCompletedSpaces.Length) ];

@@ -4,12 +4,18 @@ public class Context
     private Space currentSpace;
     private Biome currentBiome, nextBiome;
     private World world;
-    private QuestionType currentQuestionType;
+    private Question currentQuestion;
     private bool done, inQuestion;
 
     public Space CurrentSpace
     {
         get { return currentSpace; }
+    }
+
+    public Question CurrentQuestion
+    {
+        get {return currentQuestion;}
+        set {currentQuestion = value;}
     }
 
     public bool Done
@@ -24,22 +30,22 @@ public class Context
         set { inQuestion = value; }
     }
 
-    public QuestionType CurrentQuestionType
+    public Biome CurrentBiome
     {
-        get { return currentQuestionType; }
-        set { currentQuestionType = value; }
+        get { return currentBiome; }
+        set { currentBiome = value; }
     }
 
-    public enum YesNo
+    public Biome NextBiome
     {
-        yes = 0,
-        no = 1
+        get { return nextBiome; }
+        set { nextBiome = value; }
     }
 
-    public enum QuestionType
+    public World World
     {
-        boolean,
-        numerical
+        get { return world; }
+        set { world = value; }
     }
 
     public Context(World world)
@@ -49,49 +55,9 @@ public class Context
         currentBiome = world.StartBiome;
     }
 
-    public void AnswerQuestion(int choiceNum)
+    public void AnswerQuestion(string choice)
     {
-        if (currentSpace.Quest.Choices[choiceNum].Correct)
-        {
-            Console.WriteLine("Correct answer");
-            currentBiome.Spaces[currentSpace.Name].Complete = true;
-
-            inQuestion = false;
-            if (IsAllSpacesComplete())            
-            {
-                if (!currentBiome.Complete)
-                {      
-                    world.BiomesSet[currentBiome.Name].Complete = true;
-                    if (IsAllBiomesComplete()) QuitGame();
-                    nextBiome = world.SetNextBiome(currentBiome, currentSpace);                    
-                }
-            }
-            else {
-                currentBiome.SetNextSpace(currentSpace);
-            }
-            DisplayContext();
-        }
-        else {
-            currentSpace.Print("Sorry wrong answer");
-            currentSpace.TryAgain(this);
-        }
-    }
-
-    public void AnswerQuestion(YesNo answer)
-    {
-        if (answer == YesNo.yes)
-        {
-            currentSpace.DisplayQuestion(this);
-        }
-        else if (answer == YesNo.no)
-        {
-            if (currentBiome.Spaces.Values.Where(space => space.Complete == false).Count() > 1) currentBiome.SetNextSpace(currentSpace);
-            currentSpace.DisplayExits();
-        }
-        else
-        {
-            throw new Exception($"{answer} is not part of YesNo enum");
-        }
+        currentQuestion.Choices[choice].Action.Invoke(this);
     }
 
     public void Transition(string direction)
@@ -113,6 +79,7 @@ public class Context
 
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
         currentSpace = nextSpace;
+        currentQuestion = currentSpace.Quest;
         currentSpace.DisplayWelcome();
         DisplayContext();        
     }
@@ -120,7 +87,11 @@ public class Context
     public void DisplayContext()
     {
         if (currentSpace.Description != null) currentSpace.DisplayDestription();
-        if (currentSpace.Quest != null && !currentSpace.Complete) currentSpace.DisplayQuestion(this);
+        if (currentQuestion != null && !currentSpace.Complete)
+        {
+            currentSpace.DisplayQuestion(this);
+            
+        } 
         if (!inQuestion)
         {
             currentSpace.DisplayExits();
@@ -128,7 +99,7 @@ public class Context
         return;
     }
 
-    private bool IsAllSpacesComplete()
+    public bool IsAllSpacesComplete()
     {
         foreach (Space space in currentBiome.Spaces.Values)
         {
@@ -137,7 +108,7 @@ public class Context
         return true;
     }
 
-    private bool IsAllBiomesComplete()
+    public bool IsAllBiomesComplete()
     {
         foreach (Biome biome in world.BiomesSet.Values)
         {
@@ -146,9 +117,11 @@ public class Context
         return true;
     }
 
-    private void QuitGame()
+    public void QuitGame()
     {
         done = true;
+        GameSave gameSave = new GameSave();
+        gameSave.Save(this);
         return;
     }
 }
