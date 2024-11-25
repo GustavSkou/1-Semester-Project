@@ -68,6 +68,7 @@ class Game
     {
         Console.Clear();
         context.CurrentSpace.DisplayWelcome();
+        Console.WriteLine("Here!");
         context.CurrentQuestion = context.CurrentSpace.Quest;
         context.InQuestion = false;
         context.DisplayContext();

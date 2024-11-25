@@ -90,7 +90,6 @@ class Context
         if (currentSpace.Quest != null && !currentSpace.Complete)
         {
             currentSpace.DisplayQuestion(this);
-            
         } 
         if (!inQuestion)
         {
