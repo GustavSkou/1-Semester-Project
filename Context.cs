@@ -91,7 +91,6 @@ class Context
         if (currentQuestion != null && !currentSpace.Complete)
         {
             currentSpace.DisplayQuestion(this);
-            
         } 
         if (!inQuestion)
         {
