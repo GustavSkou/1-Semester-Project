@@ -31,6 +31,12 @@ public class Space : Node, IPrintable
         }
     }
 
+    public string Biome
+    {
+        get {return biome;}
+        set {biome = value;}
+    }
+
     public void CorrectAnswer(Context context)
     {
         Console.WriteLine("Correct answer");
@@ -57,12 +63,6 @@ public class Space : Node, IPrintable
         Print("Sorry wrong answer");
         TryAgain(context);
         Print(context.CurrentQuestion.QuestionPromt);
-    }
-
-    public string Biome
-    {
-        get {return biome;}
-        set {biome = value;}
     }
 
     public void DisplayWelcome()

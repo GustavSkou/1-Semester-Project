@@ -66,13 +66,20 @@ using System.Text.Json;
         {
             try 
             {
-                string jsonString = File.ReadAllText("spaces.json");
+                string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "spaces.json");
+                if (!File.Exists(jsonFilePath))
+                {
+                    Console.WriteLine("JSON file not found: " + jsonFilePath);
+                }
+                else {Console.WriteLine("JSON did load");}
+
+                string jsonString = File.ReadAllText(jsonFilePath);
                 Dictionary<string, Space> spaces = JsonSerializer.Deserialize<Dictionary<string, Space>>(jsonString);
                 return spaces;
             }
             catch(Exception e)
             {
-                Console.WriteLine("Json did not load");
+                Console.WriteLine("Json did not load"+ e.Message);
                 return [];
             }
         }
