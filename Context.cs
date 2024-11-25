@@ -80,6 +80,7 @@ class Context
 
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
         currentSpace = nextSpace;
+        currentQuestion = currentSpace.Quest;
         currentSpace.DisplayWelcome();
         DisplayContext();        
     }
@@ -87,7 +88,7 @@ class Context
     public void DisplayContext()
     {
         if (currentSpace.Description != null) currentSpace.DisplayDestription();
-        if (currentSpace.Quest != null && !currentSpace.Complete)
+        if (currentQuestion != null && !currentSpace.Complete)
         {
             currentSpace.DisplayQuestion(this);
             

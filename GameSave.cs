@@ -36,11 +36,11 @@ class GameSave
         completedBiomes = SaveBiomes(context);
         completedSpaces = SaveSpaces(context);
 
-        string jsonString = JsonSerializer.Serialize(this);
-        File.WriteAllText("savefile.json", jsonString);
+        string gameSaveString = JsonSerializer.Serialize(this);
+        File.WriteAllText("savefile.json", gameSaveString);
     }
 
-    private string[] SaveSpaces(Context context)
+    private static string[] SaveSpaces(Context context)
     {
         List<string> completedSpaces = new List<string>();
         foreach (Biome biome in context.World.BiomesSet.Values) 
@@ -53,7 +53,7 @@ class GameSave
         return completedSpaces.ToArray();
     }
 
-    private string[] SaveBiomes(Context context)
+    private static string[] SaveBiomes(Context context)
     {
         return context.World.BiomesSet
             .Where(biome => biome.Value.Complete == true)

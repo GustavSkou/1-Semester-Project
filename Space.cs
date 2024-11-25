@@ -21,9 +21,9 @@ class Space : Node, IPrintable
     public Question Quest 
     {
         get {return quest;}
-        set {
-            quest = value;
-        
+        set 
+        {
+            quest = value;        
             foreach (var choice in quest.Choices)
             {
                 choice.Value.Action = choice.Value.Correct ? CorrectAnswer : WrongAnswer;
@@ -56,6 +56,7 @@ class Space : Node, IPrintable
     {
         Print("Sorry wrong answer");
         TryAgain(context);
+        Print(context.CurrentQuestion.QuestionPromt);
     }
 
     public string Biome
@@ -114,7 +115,7 @@ class Space : Node, IPrintable
         };
         AnswerChoice no = new AnswerChoice()
         {
-            Choice = "No",
+            Choice = "no",
             Action = AnswerNo
         };
         Question question = new Question()
@@ -122,14 +123,12 @@ class Space : Node, IPrintable
             QuestionPromt = "Would you like to try again\n - Yes\n - No",
             Choices = new Dictionary<string, AnswerChoice>()
             {
-                { "yes", yes },
-                { "no", no }
+                { yes.Choice, yes },
+                { no.Choice, no }
             }
         };
-
         context.CurrentQuestion = question;
         context.InQuestion = true;
-
     }
     
     private void AnswerYes(Context context)
@@ -143,6 +142,7 @@ class Space : Node, IPrintable
     {
         context.CurrentQuestion = null;
         context.InQuestion = false;
+        context.CurrentBiome.SetNextSpace(context.CurrentSpace);
         context.DisplayContext();
     }
 

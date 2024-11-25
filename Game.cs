@@ -43,12 +43,12 @@ class Game
         AnswerChoice yes = new AnswerChoice()
         {
             Choice = "yes",
-            Action = (context) => AnswerYes(context)
+            Action = AnswerYes
         };
         AnswerChoice no = new AnswerChoice()
         {
-            Choice = "No",
-            Action = (context) => AnswerNo(context)
+            Choice = "no",
+            Action = AnswerNo
         };
         Question question = new Question()
         {
