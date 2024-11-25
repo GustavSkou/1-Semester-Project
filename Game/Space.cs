@@ -1,6 +1,6 @@
 /* Space class for modeling spaces */
 
-class Space : Node, IPrintable
+public class Space : Node, IPrintable
 {
     private string description, biome;
     private Question quest;
@@ -36,6 +36,10 @@ class Space : Node, IPrintable
     {
         get {return infoCard;}
         set {infoCard = value;}
+    public string Biome
+    {
+        get {return biome;}
+        set {biome = value;}
     }
 
     public void CorrectAnswer(Context context)
@@ -65,12 +69,6 @@ class Space : Node, IPrintable
         Print("Sorry wrong answer");
         TryAgain(context);
         Print(context.CurrentQuestion.QuestionPromt);
-    }
-
-    public string Biome
-    {
-        get {return biome;}
-        set {biome = value;}
     }
 
     public void DisplayWelcome()

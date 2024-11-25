@@ -1,6 +1,5 @@
 /* Context class to hold all context relevant to a session. */
-
-class Context
+public class Context
 {
     private Space currentSpace;
     private Biome currentBiome, nextBiome;
@@ -120,8 +119,8 @@ class Context
     public void QuitGame()
     {
         done = true;
-        GameSave gameSave = new GameSave();
-        gameSave.Save(this);
+        //GameSave gameSave = new GameSave();
+        //gameSave.Save(this);
         return;
     }
 }

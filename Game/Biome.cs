@@ -1,4 +1,4 @@
-abstract class Biome : Node
+public abstract class Biome : Node
 {
     protected Dictionary<string, Space> spaces;
     protected bool complete;
