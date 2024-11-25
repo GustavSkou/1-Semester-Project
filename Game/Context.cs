@@ -102,7 +102,7 @@ public class Context
     {
         foreach (Space space in currentBiome.Spaces.Values)
         {
-            if (space.Complete == false) return false;
+            if (!space.Complete) return false;
         }
         return true;
     }
@@ -111,7 +111,7 @@ public class Context
     {
         foreach (Biome biome in world.BiomesSet.Values)
         {
-            if (biome.Complete == false) return false;
+            if (!biome.Complete) return false;
         }
         return true;
     }

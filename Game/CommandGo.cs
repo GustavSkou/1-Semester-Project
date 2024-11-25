@@ -1,6 +1,6 @@
 /* Command for transitioning between spaces */
 
-class CommandGo : BaseCommand, ICommand
+public class CommandGo : BaseCommand, ICommand
 {
     public CommandGo()
     {

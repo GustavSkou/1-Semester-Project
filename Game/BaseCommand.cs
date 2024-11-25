@@ -1,6 +1,6 @@
 /* Baseclass for commands */
 
-class BaseCommand
+public class BaseCommand
 {
     protected string description = "Undocument";
 
