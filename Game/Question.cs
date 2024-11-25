@@ -1,10 +1,10 @@
-class Question
+public class Question
 {
    public string QuestionPromt {get; set;}
    public AnswerChoice[] Choices {get; set;}
 }
 
-class AnswerChoice 
+public class AnswerChoice 
 {
     public string Choice {get; set;}
     public bool Correct {get; set;}

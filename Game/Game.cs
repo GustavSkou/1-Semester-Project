@@ -1,5 +1,4 @@
 /* Main class for launching the game */
-
 class Game
 {
     static World world = new World();

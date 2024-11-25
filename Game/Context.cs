@@ -1,6 +1,5 @@
 /* Context class to hold all context relevant to a session. */
-
-class Context
+public class Context
 {
     private Space currentSpace;
     private Biome currentBiome, nextBiome;

@@ -1,6 +1,6 @@
 /* Space class for modeling spaces */
 
-class Space : Node, IPrintable
+public class Space : Node, IPrintable
 {
     private string description, infoCard, biome;
     private Question quest;
