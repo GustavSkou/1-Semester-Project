@@ -62,7 +62,7 @@ public class World
             !biome.Complete).ToArray();                     // Picks biomes that are not complete
     }
 
-    private Dictionary<string, Space> LoadSpaces()
+    public Dictionary<string, Space> LoadSpaces()
     {
         try 
         {
