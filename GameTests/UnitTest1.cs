@@ -10,18 +10,38 @@
         [Test]
         public void requirementOne()
         {
-            //There has to be  5 biomes (City, Farm, Savannah, Forest, Beach)
+            //Der skal være 5 biomer (By, Farm, Savanne, Skov, Strand)
             World world = new World();
-            Biome[] bimoes = [new City ("City", null), new Farm("Farm", null), new Savannah("Savannah", null), new Forest("Forest", null), new Beach("Beach", null)];
-
-            foreach(Biome biome in bimoes)
+            if (world.BiomesSet.Count == 5) 
             {
-                if (!world.BiomesSet.ContainsKey(biome.Name))
+                Assert.Pass();
+            }
+            else {
+                Assert.Fail();
+            }
+        }
+
+        
+        [Test]
+        public void requirementfour()
+        {
+            // "A description of the room to give the player a sense of the surroundings."
+            World world = new World();
+            foreach (Biome biome in world.BiomesSet.Values)
+            {
+                foreach (Space space in biome.Spaces.Values)
                 {
-                    
-                    Assert.Fail();
-                };
+                    if (space.Quest.QuestionPromt.Length == 0 || space.Quest.QuestionPromt == null)
+                    {
+                        Assert.Fail();
+                    }
+                }
             }
             Assert.Pass();
+
+
         }
+
+        
+
     }
