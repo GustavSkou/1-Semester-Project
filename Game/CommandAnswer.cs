@@ -9,10 +9,17 @@ class CommandAnswer : BaseCommand, ICommand
 
     public void Execute(Context context, string command, string[] parameters)
     {   
+        
         if (!context.InQuestion) context.CurrentSpace.Print("No question to answer"); 
         else 
         {
-            context.AnswerQuestion(parameters[0]);
+            try {
+                context.AnswerQuestion(parameters[0]);
+            }
+            catch (KeyNotFoundException)
+            {
+                Console.WriteLine("Try again");
+            }
         }    
     }
 }

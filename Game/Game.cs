@@ -25,7 +25,7 @@ class Game
         IntroQuestion(context);
         context.Done = false;
 
-        Console.WriteLine("Welcome to the World of Zuul!\n");
+        Console.WriteLine("Welcome to the World of EcoQuest!\n");
         Console.WriteLine(context.CurrentQuestion.QuestionPromt);
 
         while (context.Done == false)

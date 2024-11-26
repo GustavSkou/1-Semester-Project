@@ -80,23 +80,25 @@ class Tests
             }
         }
         Assert.Pass();
+    }
 
-        [Test]
-        public void requirementEight()
+    [Test]
+    public void req()
+    {
+        World world = new World();
+        Context context = new Context(world);
+        foreach (Biome biome in world.BiomesSet.Values)
         {
-            //The game is done when all spaceses are completed
-
-            foreach (Biome biome in Game.world.BiomesSet.Values)
+            foreach (Space space in biome.Spaces.Values)
             {
-                foreach (Space space in biome.Spaces.Values)
+                space.WrongAnswer(context);
+                if (space.Complete)
                 {
-                    space.Complete = true;
+                    Assert.Fail();
                 }
             }
-
-            if (Game.Main([]) == 0) Assert.Pass();
-            else Assert.Fail();
         }
+        Assert.Pass();            
     }
 
     [Test]

@@ -55,8 +55,13 @@ public class Space : Node, IPrintable
             if (!context.CurrentBiome.Complete)
             {      
                 context.World.BiomesSet[context.CurrentBiome.Name].Complete = true;
-                if (context.IsAllBiomesComplete()) context.QuitGame();
-                context.NextBiome = context.World.SetNextBiome(context.CurrentBiome, context.CurrentSpace);                    
+                if (context.IsAllBiomesComplete()) 
+                {
+                    context.QuitGame();
+                }
+                else {
+                    context.NextBiome = context.World.SetNextBiome(context.CurrentBiome, context.CurrentSpace);                    
+                }
             }
         }
         else {
