@@ -1,8 +1,4 @@
 # Build outputs
-Content/
-Content/net8.0/
-Content/net8.0/**/*
-!Content/net8.0/.gitkeep
 
 # Specific files
 *.exe

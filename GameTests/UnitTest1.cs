@@ -10,16 +10,18 @@
         [Test]
         public void requirementOne()
         {
-            //Der skal være 5 biomer (By, Farm, Savanne, Skov, Strand)
+            //There has to be  5 biomes (City, Farm, Savannah, Forest, Beach)
             World world = new World();
-            if (world.BiomesSet.Count == 5) 
-            {
-                Assert.Pass();
-            }
-            else {
-                Assert.Fail();
-            }
-        }
+            Biome[] bimoes = [new City ("City", null), new Farm("Farm", null), new Savannah("Savannah", null), new Forest("Forest", null), new Beach("Beach", null)];
 
-        
+            foreach(Biome biome in bimoes)
+            {
+                if (!world.BiomesSet.ContainsKey(biome.Name))
+                {
+                    
+                    Assert.Fail();
+                };
+            }
+            Assert.Pass();
+        }
     }
