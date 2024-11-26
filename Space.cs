@@ -5,8 +5,6 @@ class Space : Node, IPrintable
     private string description, biome;
     private Question quest;
     private bool complete;
-    private InfoCard infoCard;
-
     public string Description
     {
         get {return description;}
@@ -31,19 +29,15 @@ class Space : Node, IPrintable
             }
         }
     }
-
-    public InfoCard InfoCard 
-    {
-        get {return infoCard;}
-        set {infoCard = value;}
-    }
-
     public void CorrectAnswer(Context context)
-    {
+    {        
         Console.WriteLine("Correct answer");
-        //infoCard.FindShard();
+
         context.CurrentBiome.Spaces[name].complete = true;
         context.InQuestion = false;
+
+        context.CurrentBiome.InfoCard.FindShard();
+
 
         if (context.IsAllSpacesComplete())            
         {
