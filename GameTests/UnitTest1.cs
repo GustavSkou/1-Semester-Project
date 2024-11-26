@@ -1,6 +1,8 @@
 
-    class Tests
-    {
+using System.Runtime.CompilerServices;
+
+class Tests
+{
         [SetUp]
         public void Setup()
         {
@@ -17,11 +19,55 @@
             foreach(Biome biome in bimoes)
             {
                 if (!world.BiomesSet.ContainsKey(biome.Name))
-                {
-                    
+                {        
                     Assert.Fail();
-                };
+                }
             }
             Assert.Pass();
         }
+
+        [Test]
+        public void requirementTwoRooms()
+        {
+            //Each biome has 4 rooms 
+
+          World world = new World();
+          Dictionary<string, Space> spacesDict = world.LoadSpaces();
+        
+           foreach(Biome bio in world.BiomesSet.Values)
+          {
+
+             if (bio.Spaces.Count < 3)
+          {
+              Assert.Fail();
+            
+          }
+
+            else 
+          {
+            Assert.Pass();
+          }
+          }
+        }
+    
+    [Test]
+    public void requirementTwoQuest()
+    {
+        //you are asked a question in each room.
+        World world = new World();
+     
+     foreach(Biome biome in world.BiomesSet.Values)
+     {
+        foreach(Space space in biome.Spaces.Values)
+        {
+
+            if(space.Quest == null)
+            {
+                Assert.Fail();
+            }
+        }
+     }
+    Assert.Pass();
+
     }
+}    
