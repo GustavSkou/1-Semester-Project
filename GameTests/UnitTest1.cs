@@ -1,8 +1,5 @@
-
-using System.Runtime.CompilerServices;
-
-class Tests
-{
+    class Tests
+    {
         [SetUp]
         public void Setup()
         {
@@ -12,47 +9,38 @@ class Tests
         [Test]
         public void requirementOne()
         {
-            //Der skal være 5 biomer (By, Farm, Savanne, Skov, Strand)
+            //There has to be  5 biomes (City, Farm, Savannah, Forest, Beach)
             World world = new World();
-            if (world.BiomesSet.Count == 5) 
-            {
-<<<<<<< HEAD
-                Assert.Pass();
-            }
-            else {
-                Assert.Fail();
-            }
-        }
+            Biome[] bimoes = [new City ("City", null), new Farm("Farm", null), new Savannah("Savannah", null), new Forest("Forest", null), new Beach("Beach", null)];
 
-        
-        [Test]
-        public void requirementfour()
-        {
-            // "A description of the room to give the player a sense of the surroundings."
-            World world = new World();
-            foreach (Biome biome in world.BiomesSet.Values)
+            foreach(Biome biome in bimoes)
             {
-                foreach (Space space in biome.Spaces.Values)
-                {
-                    if (space.Quest.QuestionPromt.Length == 0 || space.Quest.QuestionPromt == null)
-                    {
-                        Assert.Fail();
-                    }
-=======
                 if (!world.BiomesSet.ContainsKey(biome.Name))
                 {        
                     Assert.Fail();
->>>>>>> 5ec03b03d0aa280afbb1cc630a05e51e34efacf0
                 }
             }
             Assert.Pass();
-
-
+        }
+        
+    [Test]
+    public void requirementfour()
+    {
+        // "A description of the room to give the player a sense of the surroundings."
+        World world = new World();
+        foreach (Biome biome in world.BiomesSet.Values)
+        {
+            foreach (Space space in biome.Spaces.Values)
+            {
+                if (space.Quest.QuestionPromt.Length == 0 || space.Quest.QuestionPromt == null)
+                {
+                    Assert.Fail();
+                }
+            }
+        }
+        Assert.Pass();
         }
 
-<<<<<<< HEAD
-        
-=======
         [Test]
         public void requirementTwoRooms()
         {
@@ -69,7 +57,6 @@ class Tests
               Assert.Fail();
             
           }
-
             else 
           {
             Assert.Pass();
@@ -95,7 +82,6 @@ class Tests
         }
      }
     Assert.Pass();
->>>>>>> 5ec03b03d0aa280afbb1cc630a05e51e34efacf0
 
     }
 }    
