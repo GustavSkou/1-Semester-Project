@@ -1,4 +1,4 @@
-/* Command for transitioning between spaces */
+/* Command for answering questions */
 
 class CommandAnswer : BaseCommand, ICommand
 {

@@ -17,6 +17,9 @@ class Game
         registry.Register("go", cmdGo);
         registry.Register("goto", cmdGo);
         registry.Register("answer", new CommandAnswer());
+        registry.Register("pickup", new CommandPickUp());
+        registry.Register("assemble", new CommandAssemble());
+        registry.Register("read", new CommandRead());
         registry.Register("help", new CommandHelp(registry));
     }
 

@@ -20,4 +20,18 @@ public class InfoCard {
             Console.WriteLine(InfoCardDescription);
         }
     }
+
+    public void ViewInfoCard(Context context)
+    {
+        if (context.CurrentBiome.IsInfoCardUnlocked())
+        {
+            Console.WriteLine($"InfoCard for {context.CurrentBiome.Name}:");
+            Console.WriteLine(context.CurrentBiome.InfoCard.InfoCardDescription);
+        }
+        else
+        {
+            Console.WriteLine($"You have not unlocked the InfoCard for {context.CurrentBiome.Name} yet.");
+        }
+    }
+
 }

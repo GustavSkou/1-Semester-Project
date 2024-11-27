@@ -23,18 +23,38 @@ class World
     }
 
     public World()
-    {
-        Dictionary<string, Space> spacesDict = LoadSpaces();
+{
+    Dictionary<string, Space> spacesDict = LoadSpaces();
 
-        biomesSet.Add("Savannah",   new Savannah(   "Savannah", spacesDict.Where(space => space.Value.Biome == "Savannah"). ToDictionary()));
-        biomesSet.Add("City",       new City(       "City",     spacesDict.Where(space => space.Value.Biome == "City").     ToDictionary()));
-        biomesSet.Add("Beach",      new Beach(      "Beach",    spacesDict.Where(space => space.Value.Biome == "Beach").    ToDictionary()));
-        biomesSet.Add("Forest",     new Forest(     "Forest",   spacesDict.Where(space => space.Value.Biome == "Forest").   ToDictionary()));
-        biomesSet.Add("Farm",       new Farm(       "Farm",     spacesDict.Where(space => space.Value.Biome == "Farm").     ToDictionary()));
+    biomesSet.Add("Savannah", new Savannah("Savannah",
+        spacesDict.Where(space => space.Value.Biome == "Savannah").ToDictionary(),
+        new InfoCard("infocard1", "The savannah is home to diverse wildlife and ecosystems.")
+    ));
 
-        startBiome = SetStartBiome();
-        startSpace = SetStartSpace();
-    }
+    biomesSet.Add("City", new City("City",
+        spacesDict.Where(space => space.Value.Biome == "City").ToDictionary(),
+        new InfoCard("infocard2", "Cities are centers of innovation and culture.")
+    ));
+
+    biomesSet.Add("Beach", new Beach("Beach",
+        spacesDict.Where(space => space.Value.Biome == "Beach").ToDictionary(),
+        new InfoCard("infocard3", "Beaches are crucial for coastal ecosystems.")
+    ));
+
+    biomesSet.Add("Forest", new Forest("Forest",
+        spacesDict.Where(space => space.Value.Biome == "Forest").ToDictionary(),
+        new InfoCard("infocard4", "Forests are vital for biodiversity and oxygen.")
+    ));
+
+    biomesSet.Add("Farm", new Farm("Farm",
+        spacesDict.Where(space => space.Value.Biome == "Farm").ToDictionary(),
+        new InfoCard("infocard5", "Farms are essential for food production.")
+    ));
+
+    startBiome = SetStartBiome();
+    startSpace = SetStartSpace();
+}
+
     
     private Biome SetStartBiome()
     {

@@ -30,6 +30,7 @@ class Space : Node, IPrintable
         }
     }
     public void CorrectAnswer(Context context)
+<<<<<<< Updated upstream:Space.cs
     {        
         Console.WriteLine("Correct answer");
 
@@ -40,19 +41,42 @@ class Space : Node, IPrintable
 
 
         if (context.IsAllSpacesComplete())            
+=======
+{
+    ICommand fallback = new CommandUnknown();
+    Registry registry = new Registry(context, fallback);
+    Console.WriteLine("Correct answer");
+
+    // Mark space as complete
+    context.CurrentBiome.Spaces[name].Complete = true;
+
+    Console.WriteLine("You have found a shard!");
+
+    Console.Write("> ");
+    string? shardInput = Console.ReadLine();
+    if (shardInput != null) registry.Dispatch(shardInput);
+    context.PickUpShard(context);
+
+    if (context.IsAllSpacesComplete())
+    {
+        if (!context.CurrentBiome.Complete)
+>>>>>>> Stashed changes:Game/Space.cs
         {
-            if (!context.CurrentBiome.Complete)
-            {      
-                context.World.BiomesSet[context.CurrentBiome.Name].Complete = true;
-                if (context.IsAllBiomesComplete()) context.QuitGame();
-                context.NextBiome = context.World.SetNextBiome(context.CurrentBiome, context.CurrentSpace);                    
-            }
+            context.World.BiomesSet[context.CurrentBiome.Name].Complete = true;
+            if (context.IsAllBiomesComplete()) context.QuitGame();
+            context.NextBiome = context.World.SetNextBiome(context.CurrentBiome, context.CurrentSpace);
         }
-        else {
-            context.CurrentBiome.SetNextSpace(context.CurrentSpace);
-        }
-        context.DisplayContext();
     }
+    else
+    {
+        context.CurrentBiome.SetNextSpace(context.CurrentSpace);
+    }
+
+    context.DisplayContext();
+}
+
+
+
 
     public void WrongAnswer(Context context)
     {

@@ -123,4 +123,53 @@ class Context
         gameSave.Save(this);
         return;
     }
+
+    public void PickUpShard(Context context)
+    {
+        ICommand fallback = new CommandUnknown();
+        Registry registry = new Registry(context, fallback);
+        if (!CurrentBiome.IsInfoCardUnlocked())
+        {
+            CurrentBiome.ShardsCollected++;
+            Console.WriteLine($"You have collected a shard ({CurrentBiome.ShardsCollected}/{CurrentBiome.Spaces.Count}).");
+
+            if (CurrentBiome.IsInfoCardUnlocked())
+            {
+                Console.WriteLine($"You have collected all the shards for {CurrentBiome.InfoCard.InfoCardName}!");
+                Console.WriteLine($"Would you like to assemble it? Type 'assemble {CurrentBiome.InfoCard.InfoCardName}'.");
+
+                Console.Write(">");
+                string? line = Console.ReadLine();
+                if (line != null) registry.Dispatch(line);
+            }
+        }
+        else
+        {
+            Console.WriteLine($"You already have all shards for {CurrentBiome.InfoCard.InfoCardName}.");
+        }
+    }
+
+    public void AssembleInfoCard(string infoCardName)
+    {
+        if (CurrentBiome.IsInfoCardUnlocked() && CurrentBiome.InfoCard.InfoCardName == infoCardName)
+        {
+            Console.WriteLine($"You have successfully assembled the {infoCardName}!");
+        }
+        else
+        {
+            Console.WriteLine($"You cannot assemble {infoCardName}. Either you don't have all the shards or it's the wrong name.");
+        }
+    }
+
+    public void ReadInfoCard(string infoCardName)
+    {
+        if (CurrentBiome.IsInfoCardUnlocked() && CurrentBiome.InfoCard.InfoCardName == infoCardName)
+        {
+            Console.WriteLine(CurrentBiome.InfoCard.InfoCardDescription);
+        }
+        else
+        {
+            Console.WriteLine($"You have not assembled the {infoCardName} yet or the name is incorrect.");
+        }
+    }
 }
