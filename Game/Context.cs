@@ -2,9 +2,10 @@
 public class Context
 {
     private Space currentSpace;
-    private Biome currentBiome, nextBiome;
+    private Biome currentBiome;
+    private Biome? nextBiome;
     private World world;
-    private Question currentQuestion;
+    private Question? currentQuestion;
     private bool done, inQuestion;
 
     public Space CurrentSpace
@@ -12,7 +13,7 @@ public class Context
         get { return currentSpace; }
     }
 
-    public Question CurrentQuestion
+    public Question? CurrentQuestion
     {
         get {return currentQuestion;}
         set {currentQuestion = value;}
@@ -36,7 +37,7 @@ public class Context
         set { currentBiome = value; }
     }
 
-    public Biome NextBiome
+    public Biome? NextBiome
     {
         get { return nextBiome; }
         set { nextBiome = value; }
@@ -53,11 +54,13 @@ public class Context
         this.world = world;
         currentSpace = world.StartSpace;
         currentBiome = world.StartBiome;
+        nextBiome = null;
+        currentQuestion = new Question();
     }
 
     public void AnswerQuestion(string choice)
     {
-        currentQuestion.Choices[choice].Action.Invoke(this);
+        if (currentQuestion != null) currentQuestion.Choices[choice].Action.Invoke(this);
     }
 
     public void Transition(string direction)
@@ -67,17 +70,8 @@ public class Context
 
         Space nextSpace = currentSpace.FollowEdge(direction);
 
-        if (IsAllSpacesComplete())
-        {
-            if (!currentBiome.Complete)
-            {
-                world.BiomesSet[currentBiome.Name].Complete = true;
-                if (IsAllBiomesComplete()) QuitGame();
-                nextBiome = world.SetNextBiome(currentBiome, currentSpace);
-            }
-        }
-
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
+
         currentSpace = nextSpace;
         currentQuestion = currentSpace.Quest;
         currentSpace.DisplayWelcome();

@@ -67,16 +67,25 @@ public class World
 
     public Dictionary<string, Space> LoadSpaces()
     {
-        try 
+        string jsonString = File.ReadAllText("spaces.json");
+        Dictionary<string, Space> spaces = new Dictionary<string, Space>();
+        
+        try
         {
-            string jsonString = File.ReadAllText("spaces.json");
-            Dictionary<string, Space> spaces = JsonSerializer.Deserialize<Dictionary<string, Space>>(jsonString);
-            return spaces;
+            spaces = JsonSerializer.Deserialize<Dictionary<string, Space>>(jsonString) 
+                ?? new Dictionary<string, Space>();
+
         }
-        catch(Exception e)
+        catch (JsonException jsonEx)
         {
-            Console.WriteLine("Json did not load"+ e.Message);
-            return [];
+            Console.WriteLine($"JSON Deserialization Error: {jsonEx.Message}");
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"General Error: {ex.Message}");
+        }
+        
+        return spaces;
     }
+
 }

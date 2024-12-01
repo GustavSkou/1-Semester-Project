@@ -22,10 +22,11 @@ class Game
     static void Main(string[] args)
     {
         InitRegistry();
-        IntroQuestion(context);
         context.Done = false;
 
         Console.WriteLine("Welcome to the World of EcoQuest!\n");
+        context.CurrentQuestion = IntroQuestion.Question(context);
+        context.InQuestion = true;
         Console.WriteLine(context.CurrentQuestion.QuestionPromt);
 
         while (context.Done == false)
@@ -35,46 +36,5 @@ class Game
             if (line != null) registry.Dispatch(line);
         }
         Console.WriteLine("Congrats! You made it through the jungle of eco quests and have now reached with end.\nAlthough not all questions had one specific solution, your decision making helped solve issues regarding life on land.\nThank you for playing.");
-    }
-
-    private static void IntroQuestion(Context context)
-    {
-        AnswerChoice yes = new AnswerChoice()
-        {
-            Description = "yes",
-            Action = AnswerYes
-        };
-        AnswerChoice no = new AnswerChoice()
-        {
-            Description = "no",
-            Action = AnswerNo
-        };
-        Question question = new Question()
-        {
-            QuestionPromt = "Before you begin, there are some commands that are nice to know:)\n 1) To go to a room, write \"go\" and then the room\n 2) To answer a question, write \"answer\" followed by your choice of answer\n 3) When in need for help simply write \"help\"\n Do you understand\n - Yes\n - No",
-            Choices = new Dictionary<string, AnswerChoice>()
-            {
-                { "yes", yes },
-                { "no", no }
-            }
-        };
-
-        context.CurrentQuestion = question;
-        context.InQuestion = true;
-    }
-
-    private static void AnswerYes(Context context)
-    {
-        Console.Clear();
-        context.CurrentSpace.DisplayWelcome();
-        Console.WriteLine("Here!");
-        context.CurrentQuestion = context.CurrentSpace.Quest;
-        context.InQuestion = false;
-        context.DisplayContext();
-    }
-
-    private static void AnswerNo(Context context)
-    {
-        Console.WriteLine(context.CurrentQuestion.QuestionPromt);
     }
 }
