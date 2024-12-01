@@ -32,5 +32,11 @@ public abstract class Biome : Node
             random.Next(0, nonCompletedSpaces.Length) ];
 
         currentSpace.AddEdge(nextSpace.Name, nextSpace);
+        SetPreviousSpace(currentSpace, nextSpace);
+    }
+
+    private void SetPreviousSpace(Space currentSpace, Space nextSpace)
+    {
+        nextSpace.AddEdge(currentSpace.Name, currentSpace);
     }
 }

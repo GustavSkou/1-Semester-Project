@@ -52,12 +52,12 @@ public class Space : Node, IPrintable
 
     public void DisplayExits()
     {
-        string[] exits = edges.Keys.ToArray();
         Print("Current paths are:");
 
-        foreach (string exit in exits)
+        foreach (var edge in edges)
         {
-            Print($" - {exit}");
+            string edgeComplete = ((Space) edge.Value).Complete ? "Completed" : "Not complete";            
+            Print($" - [{edgeComplete}] {edge.Key}");
         }
     }
 

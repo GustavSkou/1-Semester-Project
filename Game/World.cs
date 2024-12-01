@@ -51,7 +51,10 @@ public class World
     {   
         Biome[] differentBiomes = GetDifferentNonCompletedBiome(currentBiome);
         int i = random.Next(0, differentBiomes.Length);
-        currentSpace.AddEdge(differentBiomes[i].Name, differentBiomes[i].Spaces.Values.ToArray()[random.Next(0, startBiome.Spaces.Count)]);
+        
+        currentSpace.AddEdge( differentBiomes[i].Name, 
+            differentBiomes[i].Spaces.Values.ToArray()[random.Next(0, startBiome.Spaces.Count)]);
+        
         return differentBiomes[i];   
     }
 
