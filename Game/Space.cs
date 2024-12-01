@@ -74,7 +74,7 @@ public class Space : Node, IPrintable
         
         Print(quest.QuestionPromt);
         int choiceNumber = 1;
-        foreach (string choice in quest.Choices.Select(spaceAnswerChoices => spaceAnswerChoices.Value.Choice).ToArray())
+        foreach (string choice in quest.Choices.Select(spaceAnswerChoices => spaceAnswerChoices.Value.Description).ToArray())
         {  
             Print($"{choiceNumber}. {choice}");
             choiceNumber++;

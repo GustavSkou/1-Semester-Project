@@ -41,12 +41,12 @@ class Game
     {
         AnswerChoice yes = new AnswerChoice()
         {
-            Choice = "yes",
+            Description = "yes",
             Action = AnswerYes
         };
         AnswerChoice no = new AnswerChoice()
         {
-            Choice = "no",
+            Description = "no",
             Action = AnswerNo
         };
         Question question = new Question()
