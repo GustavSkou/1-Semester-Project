@@ -6,6 +6,7 @@ public class Space : Node, IPrintable
     private Question quest;
     private bool complete;
     private InfoCard infoCard;
+    private SpaceQuestion spaceQuestion = new SpaceQuestion();
 
     public string Description
     {
@@ -27,13 +28,14 @@ public class Space : Node, IPrintable
             quest = value;        
             foreach (var choice in quest.Choices)
             {
-                choice.Value.Action = choice.Value.Correct ? CorrectAnswer : WrongAnswer;
+                choice.Value.Action = choice.Value.Correct ? spaceQuestion.CorrectAnswer : spaceQuestion.WrongAnswer;
             }
         }
     }
 
     public InfoCard InfoCard 
     {
+
         get {return infoCard;}
         set {infoCard = value;}
     }
@@ -41,41 +43,6 @@ public class Space : Node, IPrintable
     {
         get {return biome;}
         set {biome = value;}
-    }
-
-    public void CorrectAnswer(Context context)
-    {
-        Console.WriteLine("Correct answer");
-        //infoCard.FindShard();
-        context.CurrentBiome.Spaces[name].complete = true;
-        context.InQuestion = false;
-
-        if (context.IsAllSpacesComplete())            
-        {
-            if (!context.CurrentBiome.Complete)
-            {      
-                context.World.BiomesSet[context.CurrentBiome.Name].Complete = true;
-                if (context.IsAllBiomesComplete()) 
-                {
-                    context.QuitGame();
-                    return;
-                }
-                else {
-                    context.NextBiome = context.World.SetNextBiome(context.CurrentBiome, context.CurrentSpace);                    
-                }
-            }
-        }
-        else {
-            context.CurrentBiome.SetNextSpace(context.CurrentSpace);
-        }
-        context.DisplayContext();
-    }
-
-    public void WrongAnswer(Context context)
-    {
-        Print("Sorry wrong answer");
-        TryAgain(context);
-        Print(context.CurrentQuestion.QuestionPromt);
     }
 
     public void DisplayWelcome()
@@ -119,46 +86,6 @@ public class Space : Node, IPrintable
         Print($"You left the {name}\n");
     }
 
-    public void TryAgain(Context context)
-    {
-        AnswerChoice yes = new AnswerChoice()
-        {
-            Choice = "yes",
-            Action = AnswerYes
-        };
-        AnswerChoice no = new AnswerChoice()
-        {
-            Choice = "no",
-            Action = AnswerNo
-        };
-        Question question = new Question()
-        {
-            QuestionPromt = "Would you like to try again\n - Yes\n - No",
-            Choices = new Dictionary<string, AnswerChoice>()
-            {
-                { yes.Choice, yes },
-                { no.Choice, no }
-            }
-        };
-        context.CurrentQuestion = question;
-        context.InQuestion = true;
-    }
-    
-    private void AnswerYes(Context context)
-    {
-        context.CurrentQuestion = quest;
-        context.InQuestion = true;
-        context.DisplayContext();
-    }
-
-    private void AnswerNo(Context context)
-    {
-        context.CurrentQuestion = null;
-        context.InQuestion = false;
-        context.CurrentBiome.SetNextSpace(context.CurrentSpace);
-        context.DisplayContext();
-    }
-
     public override Space FollowEdge(string direction)
     {
         return (Space) base.FollowEdge(direction);
@@ -180,14 +107,4 @@ public class Space : Node, IPrintable
         }
         Console.WriteLine();
     }
-
-    public void Print(string someString, bool autoNewLine)
-    {
-        foreach (char letter in someString)
-        {
-            Console.Write(letter);
-            Thread.Sleep(0);
-        }
-        Console.WriteLine();
-    }    
 }

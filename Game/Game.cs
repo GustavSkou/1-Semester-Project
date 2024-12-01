@@ -4,7 +4,7 @@ class Game
     static World world = new World();
     static Context context = new Context(world);
     static ICommand fallback = new CommandUnknown();
-    static Registry registry = new Registry(context, fallback);
+    static Registry registry = new Registry(context, fallback); 
 
     private static void InitRegistry()
     {
