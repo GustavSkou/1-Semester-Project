@@ -15,8 +15,8 @@ public class Context
 
     public Question? CurrentQuestion
     {
-        get {return currentQuestion;}
-        set {currentQuestion = value;}
+        get { return currentQuestion; }
+        set { currentQuestion = value; }
     }
 
     public bool Done
@@ -69,22 +69,21 @@ public class Context
         currentSpace.DisplayGoodbye();
 
         Space nextSpace = currentSpace.FollowEdge(direction);
-
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
 
         currentSpace = nextSpace;
         currentQuestion = currentSpace.Quest;
         currentSpace.DisplayWelcome();
-        DisplayContext();        
+        DisplayContext();
     }
 
     public void DisplayContext()
     {
-        if (currentSpace.Description != null) currentSpace.DisplayDestription();
+        if (currentSpace.Description != null) currentSpace.DisplayDescription();
         if (currentQuestion != null && !currentSpace.Complete)
         {
             currentSpace.DisplayQuestion(this);
-        } 
+        }
         if (!inQuestion)
         {
             currentSpace.DisplayExits();
@@ -94,7 +93,7 @@ public class Context
 
     public bool IsAllSpacesComplete()
     {
-        foreach (Space space in currentBiome.Spaces.Values)
+        foreach (Space space in currentBiome.SpacesDict.Values)
         {
             if (!space.Complete) return false;
         }

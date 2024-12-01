@@ -5,28 +5,28 @@ class GameSave
     private string currentBiome, currentSpace;
     private string[] completedBiomes, completedSpaces;
 
-    public string CurrentBiome 
+    public string CurrentBiome
     {
-        get {return currentBiome;} 
-        set {currentBiome = value;}
+        get { return currentBiome; }
+        set { currentBiome = value; }
     }
 
     public string CurrentSpace
     {
-        get {return currentSpace;} 
-        set {currentSpace = value;}
+        get { return currentSpace; }
+        set { currentSpace = value; }
     }
 
     public string[] CompletedBiomes
     {
-        get {return completedBiomes;} 
-        set {completedBiomes = value;}
+        get { return completedBiomes; }
+        set { completedBiomes = value; }
     }
 
     public string[] CompletedSpaces
     {
-        get {return completedSpaces;} 
-        set {completedSpaces = value;}
+        get { return completedSpaces; }
+        set { completedSpaces = value; }
     }
 
     public void Save(Context context)
@@ -43,9 +43,9 @@ class GameSave
     private static string[] SaveSpaces(Context context)
     {
         List<string> completedSpaces = new List<string>();
-        foreach (Biome biome in context.World.BiomesSet.Values) 
+        foreach (Biome biome in context.World.BiomesSet.Values)
         {
-            foreach (Space space in biome.Spaces.Values) 
+            foreach (Space space in biome.SpacesDict.Values)
             {
                 if (space.Complete) completedSpaces.Add(space.Name);
             }

@@ -18,7 +18,7 @@ class Registry
         commands.Add(name, command);
     }
 
-    public void Dispatch(string line) //tager i mod input
+    public void Dispatch(string line)
     {
         line = line.ToLower();
         string[] elements = line.Split(" ");                            // Player's input pliver spillet op for hvert " " og lagt i array

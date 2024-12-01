@@ -61,7 +61,7 @@ public class Space : Node, IPrintable
         }
     }
 
-    public void DisplayDestription()
+    public void DisplayDescription()
     {
         Print(description);
         Console.WriteLine();

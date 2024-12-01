@@ -28,7 +28,7 @@ class Tests
         World world = new World();
         foreach (Biome biome in world.BiomesSet.Values)
         {
-            foreach (Space space in biome.Spaces.Values)
+            foreach (Space space in biome.SpacesDict.Values)
             {
                 if (space.Quest.QuestionPromt.Length == 0 || space.Quest.QuestionPromt == null)
                 {
@@ -50,7 +50,7 @@ class Tests
         foreach (Biome bio in world.BiomesSet.Values)
         {
 
-            if (bio.Spaces.Count < 3)
+            if (bio.SpacesDict.Count < 3)
             {
                 Assert.Fail();
 
@@ -70,7 +70,7 @@ class Tests
 
         foreach (Biome biome in world.BiomesSet.Values)
         {
-            foreach (Space space in biome.Spaces.Values)
+            foreach (Space space in biome.SpacesDict.Values)
             {
 
                 if (space.Quest == null)
@@ -89,7 +89,7 @@ class Tests
         Context context = new Context(world);
         foreach (Biome biome in world.BiomesSet.Values)
         {
-            foreach (Space space in biome.Spaces.Values)
+            foreach (Space space in biome.SpacesDict.Values)
             {
                 space.WrongAnswer(context);
                 if (space.Complete)
@@ -98,7 +98,7 @@ class Tests
                 }
             }
         }
-        Assert.Pass();            
+        Assert.Pass();
     }
 
     [Test]

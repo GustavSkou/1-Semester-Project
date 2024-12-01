@@ -4,25 +4,27 @@ public class SpaceQuestion
     {
         Console.WriteLine("Correct answer");
         //infoCard.FindShard();
-        context.CurrentBiome.Spaces[context.CurrentSpace.Name].Complete = true;
+        context.CurrentBiome.SpacesDict[context.CurrentSpace.Name].Complete = true;
         context.InQuestion = false;
 
-        if (context.IsAllSpacesComplete())            
+        if (context.IsAllSpacesComplete())
         {
             if (!context.CurrentBiome.Complete)
-            {      
+            {
                 context.World.BiomesSet[context.CurrentBiome.Name].Complete = true;
-                if (context.IsAllBiomesComplete()) 
+                if (context.IsAllBiomesComplete())
                 {
                     context.QuitGame();
                     return;
                 }
-                else {
-                    context.NextBiome = context.World.SetNextBiome(context.CurrentBiome, context.CurrentSpace);                    
+                else
+                {
+                    context.NextBiome = context.World.SetNextBiome(context.CurrentBiome, context.CurrentSpace);
                 }
             }
         }
-        else {
+        else
+        {
             context.CurrentBiome.SetNextSpace(context.CurrentSpace);
         }
         context.DisplayContext();
@@ -59,7 +61,7 @@ public class SpaceQuestion
         context.CurrentQuestion = question;
         context.InQuestion = true;
     }
-    
+
     private static void AnswerYes(Context context)
     {
         context.CurrentQuestion = context.CurrentSpace.Quest;

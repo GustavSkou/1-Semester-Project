@@ -1,35 +1,35 @@
 public abstract class Biome : Node
 {
-    protected Dictionary<string, Space> spaces;
+    protected Dictionary<string, Space> spacesDict;
     protected bool complete;
-    
-    public Dictionary<string, Space> Spaces
+
+    public Dictionary<string, Space> SpacesDict
     {
-        get {return spaces;}
+        get { return spacesDict; }
     }
 
     public bool Complete
     {
-        get {return complete;}
-        set {complete = value;}
+        get { return complete; }
+        set { complete = value; }
     }
 
-    public Biome(string name, Dictionary<string, Space> spaces)
+    public Biome(string name, Dictionary<string, Space> spacesDict)
     {
         this.name = name;
         complete = false;
-        this.spaces = spaces;
+        this.spacesDict = spacesDict;
     }
 
     public void SetNextSpace(Space currentSpace)
     {
         Random random = new Random();
-        Space[] nonCompletedSpaces = spaces.Values.Where (
-            space => space.Complete == false ).Where (
+        Space[] nonCompletedSpaces = spacesDict.Values.Where(
+            space => space.Complete == false).Where(
             space => space != currentSpace).ToArray();
 
-        Space nextSpace = nonCompletedSpaces [
-            random.Next(0, nonCompletedSpaces.Length) ];
+        Space nextSpace = nonCompletedSpaces[
+            random.Next(0, nonCompletedSpaces.Length)];
 
         currentSpace.AddEdge(nextSpace.Name, nextSpace);
         SetPreviousSpace(currentSpace, nextSpace);
