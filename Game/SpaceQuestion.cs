@@ -4,7 +4,7 @@ public class SpaceQuestion
     {
         Console.WriteLine("Correct answer");
         //infoCard.FindShard();
-        context.CurrentBiome.Spaces[name].complete = true;
+        context.CurrentBiome.Spaces[context.CurrentSpace.Name].Complete = true;
         context.InQuestion = false;
 
         if (context.IsAllSpacesComplete())            
@@ -30,9 +30,9 @@ public class SpaceQuestion
 
     public static void WrongAnswer(Context context)
     {
-        Print("Sorry wrong answer");
+        context.CurrentSpace.Print("Sorry wrong answer");
         TryAgain(context);
-        Print(context.CurrentQuestion.QuestionPromt);
+        context.CurrentSpace.Print(context.CurrentQuestion.QuestionPromt);
     }
 
     public static void TryAgain(Context context)
@@ -62,7 +62,7 @@ public class SpaceQuestion
     
     private static void AnswerYes(Context context)
     {
-        context.CurrentQuestion = quest;
+        context.CurrentQuestion = context.CurrentSpace.Quest;
         context.InQuestion = true;
         context.DisplayContext();
     }

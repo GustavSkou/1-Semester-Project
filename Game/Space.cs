@@ -28,7 +28,7 @@ public class Space : Node, IPrintable
             quest = value;        
             foreach (var choice in quest.Choices)
             {
-                choice.Value.Action = choice.Value.Correct ? spaceQuestion.CorrectAnswer : spaceQuestion.WrongAnswer;
+                choice.Value.Action = choice.Value.Correct ? SpaceQuestion.CorrectAnswer : SpaceQuestion.WrongAnswer;
             }
         }
     }
