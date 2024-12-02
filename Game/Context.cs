@@ -9,13 +9,19 @@ class Context
     private Question? currentQuestion;
     private bool done, inQuestion;
     private int health, karma;
-    public int Health { get { return health; } set { health = value; } }
-    public int Karma { get { return karma; } set { karma = value; } }
-    public IReadOnlyList<string> Items => items;
-
     private List<string> items; // Keeps items private for internal management
 
-
+    public int Health
+    {
+        get { return health; }
+        set { health = value; }
+    }
+    public int Karma
+    {
+        get { return karma; }
+        set { karma = value; }
+    }
+    public IReadOnlyList<string> Items => items;
 
     public Space CurrentSpace
     {
@@ -83,8 +89,6 @@ class Context
 
     public void DisplayContext()
     {
-
-
         /*if (currentSpace.Description != null) currentSpace.DisplayDescription();
         if (currentQuestion != null && !currentSpace.Complete)
         {
