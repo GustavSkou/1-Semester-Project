@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Victo\\Desktop\\MyProject\\MyProject.csproj": {}
+    "C:\\Users\\gusta\\Documents\\GitHub\\1-Semester-Project\\Game\\MyProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Victo\\Desktop\\MyProject\\MyProject.csproj": {
+    "C:\\Users\\gusta\\Documents\\GitHub\\1-Semester-Project\\Game\\MyProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Victo\\Desktop\\MyProject\\MyProject.csproj",
+        "projectUniqueName": "C:\\Users\\gusta\\Documents\\GitHub\\1-Semester-Project\\Game\\MyProject.csproj",
         "projectName": "MyProject",
-        "projectPath": "C:\\Users\\Victo\\Desktop\\MyProject\\MyProject.csproj",
-        "packagesPath": "C:\\Users\\Victo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Victo\\Desktop\\MyProject\\obj\\",
+        "projectPath": "C:\\Users\\gusta\\Documents\\GitHub\\1-Semester-Project\\Game\\MyProject.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gusta\\Documents\\GitHub\\1-Semester-Project\\Game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -66,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
