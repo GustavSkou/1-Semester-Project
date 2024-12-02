@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 class CommandRegistry
 {
     private readonly Dictionary<string, ICommand> commands;

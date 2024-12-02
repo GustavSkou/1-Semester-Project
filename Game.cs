@@ -10,7 +10,7 @@ class Game
     {
         Player player = new Player();
         context = new Context(player);
-        context.LoadBiomes("data.json"); // Use data.json
+        context.LoadBiomes("data.json");
         commandRegistry = new CommandRegistry();
         startScreen = new StartScreen();
     }
@@ -36,6 +36,8 @@ class Game
             string input = Console.ReadLine()?.Trim().ToLower();
 
             if (string.IsNullOrEmpty(input)) continue;
+
+            Console.WriteLine("Here");
 
             if (input == "quit")
             {

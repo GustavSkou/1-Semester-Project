@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 class Biome
 {
     public string Name { get; }
@@ -14,5 +12,14 @@ class Biome
     public void AddRoom(Room room)
     {
         Rooms.Add(room);
+    }
+
+    public void ListRooms() {
+        int index = 1;
+        foreach (Room room in Rooms) {
+            Console.WriteLine($"{index}. {room.Name}");
+            index++;
+        }
+        Console.WriteLine();
     }
 }

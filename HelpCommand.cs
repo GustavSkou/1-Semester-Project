@@ -23,7 +23,6 @@ class HelpCommand : BaseCommand, ICommand
         {
             // Biome-specific commands
             Console.WriteLine("- explore: Explore the current biome.");
-            Console.WriteLine("- go [room]: Enter a specific room.");
         }
         else
         {

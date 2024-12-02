@@ -25,7 +25,7 @@ class ExploreCommand : BaseCommand, ICommand
             return;
         }
 
-        string roomName = string.Join(" ", parameters); // Handle multi-word room names
+        string roomName = string.Join(" ", parameters);
         var roomToExplore = context.CurrentBiome.Rooms.Find(room => room.Name.Equals(roomName, StringComparison.OrdinalIgnoreCase));
 
         if (roomToExplore == null)

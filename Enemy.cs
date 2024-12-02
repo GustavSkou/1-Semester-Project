@@ -1,5 +1,3 @@
-using System;
-
 class Enemy
 {
     public string Name { get; private set; }
