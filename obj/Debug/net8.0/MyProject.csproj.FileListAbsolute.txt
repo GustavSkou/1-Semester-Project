@@ -1,0 +1,17 @@
+C:\Users\Victo\Desktop\MyProject\obj\Debug\net8.0\MyProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Victo\Desktop\MyProject\obj\Debug\net8.0\MyProject.AssemblyInfoInputs.cache
+C:\Users\Victo\Desktop\MyProject\obj\Debug\net8.0\MyProject.AssemblyInfo.cs
+C:\Users\Victo\Desktop\MyProject\obj\Debug\net8.0\MyProject.csproj.CoreCompileInputs.cache
+C:\Users\Victo\Desktop\MyProject\bin\Debug\net8.0\MyProject.exe
+C:\Users\Victo\Desktop\MyProject\bin\Debug\net8.0\MyProject.deps.json
+C:\Users\Victo\Desktop\MyProject\bin\Debug\net8.0\MyProject.runtimeconfig.json
+C:\Users\Victo\Desktop\MyProject\bin\Debug\net8.0\MyProject.dll
+C:\Users\Victo\Desktop\MyProject\bin\Debug\net8.0\MyProject.pdb
+C:\Users\Victo\Desktop\MyProject\obj\Debug\net8.0\MyProject.dll
+C:\Users\Victo\Desktop\MyProject\obj\Debug\net8.0\refint\MyProject.dll
+C:\Users\Victo\Desktop\MyProject\obj\Debug\net8.0\MyProject.pdb
+C:\Users\Victo\Desktop\MyProject\obj\Debug\net8.0\MyProject.genruntimeconfig.cache
+C:\Users\Victo\Desktop\MyProject\obj\Debug\net8.0\ref\MyProject.dll
+C:\Users\Victo\Desktop\MyProject\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Victo\Desktop\MyProject\obj\Debug\net8.0\MyProject.csproj.AssemblyReference.cache
+C:\Users\Victo\Desktop\MyProject\obj\Debug\net8.0\MyProject.csproj.Up2Date
