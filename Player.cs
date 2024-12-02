@@ -9,6 +9,8 @@ class Player
 
     private List<string> items; // Keeps items private for internal management
 
+    public Enemy Enemy = new Enemy("The Mighty Gorilla Spirit");
+
     public Player()
     {
         Health = 100;

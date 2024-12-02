@@ -38,15 +38,12 @@ class ExploreCommand : BaseCommand, ICommand
         context.CurrentRoom = roomToExplore;
         roomToExplore.Explore();
 
-        if (roomToExplore.RoomQuest != null)
-        {
-            Console.WriteLine("This room has a challenge or a task! Use 'interact task' to engage.");
-        }
-
         if (roomToExplore.RoomNpc != null)
         {
             Console.WriteLine($"You see {roomToExplore.RoomNpc.Name} here.");
         }
+
+        Console.WriteLine("You can interact with:\nNpc | Task");
 
         roomToExplore.MarkAsCleared();
     }

@@ -22,6 +22,7 @@ class GoCommand : BaseCommand, ICommand
             context.CurrentBiome = biome;
             context.CurrentRoom = null; // Reset room when switching biome
             Console.WriteLine($"You enter the {biome.Name} biome.");
+            context.CurrentBiome.ListRooms();
             return;
         }
 

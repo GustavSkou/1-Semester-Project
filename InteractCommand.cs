@@ -55,6 +55,7 @@ class InteractCommand : BaseCommand, ICommand
             else
             {
                 Console.WriteLine("Wrong answer! You face consequences.");
+                context.Player.Enemy.Attack(context.Player);
             }
             return;
         }
