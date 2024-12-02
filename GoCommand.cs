@@ -28,6 +28,8 @@ class GoCommand : BaseCommand, ICommand
         // Check for room (if already in a biome)
         if (context.CurrentBiome != null)
         {
+            context.CurrentBiome.ListRooms();
+
             var room = context.CurrentBiome.Rooms.Find(r => r.Name.ToLower() == target);
             if (room != null)
             {

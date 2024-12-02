@@ -37,8 +37,6 @@ class Game
 
             if (string.IsNullOrEmpty(input)) continue;
 
-            Console.WriteLine("Here");
-
             if (input == "quit")
             {
                 isRunning = false;
@@ -56,7 +54,7 @@ class Game
     private void ShowAvailableBiomes()
     {
         Console.WriteLine("Available Biomes:");
-        foreach (var biome in context.Biomes)
+        foreach (Biome biome in context.Biomes)
         {
             Console.WriteLine($"- {biome.Name}");
         }

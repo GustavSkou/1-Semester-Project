@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Victo\\Desktop\\MyProject\\MyProject.csproj": {}
+    "C:\\Users\\Victo\\Documents\\GitHub\\1-Semester-Project\\MyProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Victo\\Desktop\\MyProject\\MyProject.csproj": {
+    "C:\\Users\\Victo\\Documents\\GitHub\\1-Semester-Project\\MyProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Victo\\Desktop\\MyProject\\MyProject.csproj",
+        "projectUniqueName": "C:\\Users\\Victo\\Documents\\GitHub\\1-Semester-Project\\MyProject.csproj",
         "projectName": "MyProject",
-        "projectPath": "C:\\Users\\Victo\\Desktop\\MyProject\\MyProject.csproj",
+        "projectPath": "C:\\Users\\Victo\\Documents\\GitHub\\1-Semester-Project\\MyProject.csproj",
         "packagesPath": "C:\\Users\\Victo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Victo\\Desktop\\MyProject\\obj\\",
+        "outputPath": "C:\\Users\\Victo\\Documents\\GitHub\\1-Semester-Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
