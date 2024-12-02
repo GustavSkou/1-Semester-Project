@@ -1,4 +1,5 @@
 /* World class for modeling the entire in-game world */
+
 using System.Text.Json;
 
 public class World
@@ -38,13 +39,14 @@ public class World
 
     private Biome SetStartBiome()
     {
-        return biomesSet.Values.ToArray()[random.Next(0, biomesSet.Count)];
+        return biomesSet.Values.ToArray()[
+            random.Next(0, biomesSet.Count)];
     }
 
-    private Space SetStartSpace() // Set start space to a random space
+    private Space SetStartSpace()
     {
-        startSpace = startBiome.SpacesDict.Values.ToArray()[random.Next(0, startBiome.SpacesDict.Count)];
-        return startSpace;
+        return startBiome.SpacesDict.Values.ToArray()[
+            random.Next(0, startBiome.SpacesDict.Count)];
     }
 
     public Biome SetNextBiome(Biome currentBiome, Space currentSpace)
@@ -69,8 +71,7 @@ public class World
             !biome.Complete).ToArray();
 
         /* To return an array of biomes that are different from the current biome and are not completed, we have to sort out all the biomes that would fit those two criteria.
-        This is done by using the linq operator Where, this will return an IEnumerable that satisfies our conditions. By doing this we can comperes the biomes in biomesSet.Values to the current biome, using getype to insure it is not the same type and by making use of the Complete property from biome to insure it is not complete.
-        */
+        This is done by using the linq operator Where, this will return an IEnumerable that satisfies our conditions. By doing this we can comperes the biomes in biomesSet.Values to the current biome, using getype to insure it is not the same type and by making use of the Complete property from biome to insure it is not complete. */
     }
 
     public Dictionary<string, Space> LoadSpaces()
@@ -85,9 +86,9 @@ public class World
             spaces = JsonSerializer.Deserialize<Dictionary<string, Space>>(jsonString)
                 ?? new Dictionary<string, Space>();
 
-            /* This is done by making use of the JsonSerializer class. By doing this we can Deserialize the json file into data type that represents the way our json file is formatted. Since we have formatted ours like a dictionary with strings as keys and spaces as values, we have deserialized ours json file into this.
-            By doing to 
-            */
+            /* This is done by making use of the JsonSerializer class. By doing this we can Deserialize the json file into a data type that represents the way our json file is formatted. Since we have formatted ours like a dictionary with strings as keys and spaces as values, we have deserialized ours json file into this.
+            By doing to */
+
 
         }
         catch (JsonException jsonEx)

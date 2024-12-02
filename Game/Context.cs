@@ -58,11 +58,6 @@ public class Context
         currentQuestion = new Question();
     }
 
-    public void AnswerQuestion(string choice)
-    {
-        if (currentQuestion != null) currentQuestion.Choices[choice].Action.Invoke(this);
-    }
-
     public void Transition(string direction)
     {
         Console.Clear();

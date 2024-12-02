@@ -28,7 +28,7 @@ public abstract class Biome : Node
             space => space.Complete == false).Where(
             space => space != currentSpace).ToArray();
 
-        Space nextSpace = nonCompletedSpaces [
+        Space nextSpace = nonCompletedSpaces[
             random.Next(0, nonCompletedSpaces.Length)];
 
         currentSpace.AddEdge(nextSpace.Name, nextSpace);
