@@ -10,9 +10,9 @@ class StatusCommand : BaseCommand, ICommand
         if (GuardEq(parameters, 0))
         {
             Console.WriteLine("Player Status:");
-            Console.WriteLine($"- Health: {context.Player.Health}");
-            Console.WriteLine($"- Karma: {context.Player.Karma}");
-            Console.WriteLine($"- Items: {string.Join(", ", context.Player.Items)}");
+            Console.WriteLine($"- Health: {context.Health}");
+            Console.WriteLine($"- Karma: {context.Karma}");
+            Console.WriteLine($"- Items: {string.Join(", ", context.Items)}");
         }
         else
         {

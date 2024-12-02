@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-class Context
+public class Context
 {
     private Space currentSpace;
     private Biome currentBiome;
@@ -10,6 +10,9 @@ class Context
     private bool done, inQuestion;
     private int health, karma;
     private List<string> items; // Keeps items private for internal management
+
+    // New: Message Queue
+    private readonly Queue<string> messages = new Queue<string>();
 
     public int Health
     {
@@ -76,29 +79,14 @@ class Context
     public void Transition(string direction)
     {
         Console.Clear();
-        currentSpace.DisplayGoodbye();
+        currentSpace.DisplayGoodbye(this);
 
         Space nextSpace = currentSpace.FollowEdge(direction);
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
 
         currentSpace = nextSpace;
         currentQuestion = currentSpace.Quest;
-        currentSpace.DisplayWelcome();
-        DisplayContext();
-    }
-
-    public void DisplayContext()
-    {
-        /*if (currentSpace.Description != null) currentSpace.DisplayDescription();
-        if (currentQuestion != null && !currentSpace.Complete)
-        {
-            currentSpace.DisplayQuestion(this);
-        }
-        if (!inQuestion)
-        {
-            currentSpace.DisplayExits();
-        }
-        return;*/
+        currentSpace.DisplayWelcome(this);
     }
 
     public bool IsAllSpacesComplete()
@@ -129,27 +117,27 @@ class Context
     {
         health -= damage;
         if (health < 0) Health = 0;
-        Console.WriteLine($"You took {damage} damage. Remaining health: {health}");
+        AddMessage($"You took {damage} damage. Remaining health: {health}");
     }
 
     public void Heal(int amount)
     {
         health += amount;
         if (health > 100) health = 100;
-        Console.WriteLine($"You healed {amount} health. Current health: {health}");
+        AddMessage($"You healed {amount} health. Current health: {health}");
     }
 
     public void AddKarma(int points)
     {
         karma += points;
-        Console.WriteLine($"You earned {points} karma. Total karma: {karma}");
+        AddMessage($"You earned {points} karma. Total karma: {karma}");
     }
 
     public void DeductKarma(int points)
     {
         karma -= points;
         if (karma < 0) karma = 0;
-        Console.WriteLine($"You lost {points} karma. Total karma: {karma}");
+        AddMessage($"You lost {points} karma. Total karma: {karma}");
     }
 
     public bool HasItem(string item)
@@ -162,18 +150,24 @@ class Context
         if (!items.Contains(item))
         {
             items.Add(item);
-            Console.WriteLine($"You picked up {item}!");
+            AddMessage($"You picked up {item}!");
         }
         else
         {
-            Console.WriteLine($"You already have {item}.");
+            AddMessage($"You already have {item}.");
         }
     }
 
-    public void ShowStatus()
+    public void AddMessage(string message)
     {
-        Console.WriteLine($"Health: {health}");
-        Console.WriteLine($"Karma: {karma}");
-        Console.WriteLine("Items: " + (items.Count > 0 ? string.Join(", ", items) : "None"));
+        messages.Enqueue(message);
+    }
+
+    public IEnumerable<string> GetAllMessages()
+    {
+        while (messages.Count > 0)
+        {
+            yield return messages.Dequeue();
+        }
     }
 }

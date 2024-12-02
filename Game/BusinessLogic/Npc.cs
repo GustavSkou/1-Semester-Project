@@ -13,14 +13,8 @@ public class Npc
         set { dialogue = value; }
     }
 
-    public Npc(string name, string dialogue)
-    {
-        Name = name;
-        Dialogue = dialogue;
-    }
-
     public void PromtDialogue(Context context)
     {
-        Console.WriteLine(dialogue);
+        context.AddMessage(dialogue);
     }
 }

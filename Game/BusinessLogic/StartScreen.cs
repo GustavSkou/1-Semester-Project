@@ -1,4 +1,4 @@
-using System;
+/*using System;
 
 class StartScreen
 {
@@ -65,4 +65,4 @@ class StartScreen
         Console.WriteLine("Your goal is to explore all rooms and survive!");
         Utility.PressEnterToContinue();
     }
-}
+}*/

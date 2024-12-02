@@ -13,20 +13,20 @@ class TalkCommand : BaseCommand, ICommand
             return;
         }
 
-        if (context.CurrentRoom == null)
+        if (context.CurrentSpace == null)
         {
             Console.WriteLine("There's no one to talk to here.");
             return;
         }
 
-        if (context.CurrentRoom.RoomNpc == null)
+        if (context.CurrentSpace.Npc == null)
         {
             Console.WriteLine("There's no one to talk to in this room.");
         }
         else
         {
-            Console.WriteLine($"You talk to {context.CurrentRoom.RoomNpc.Name}.");
-            Console.WriteLine(context.CurrentRoom.RoomNpc.Dialogue);
+            Console.WriteLine($"You talk to {context.CurrentSpace.Npc.Name}.");
+            Console.WriteLine(context.CurrentSpace.Npc.Dialogue);
         }
     }
 }

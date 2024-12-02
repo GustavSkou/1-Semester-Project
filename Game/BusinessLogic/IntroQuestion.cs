@@ -28,13 +28,13 @@ public class IntroQuestion
     private static void AnswerYes(Context context)
     {
         //Console.Clear();
-        context.CurrentSpace.DisplayWelcome();
+        context.CurrentSpace.DisplayWelcome(context);
         context.CurrentQuestion = context.CurrentSpace.Quest;
         context.InQuestion = false;
     }
 
     private static void AnswerNo(Context context)
     {
-        Console.WriteLine(context.CurrentQuestion.QuestionPromt);
+        context.AddMessage(context.CurrentQuestion.QuestionPromt);
     }
 }

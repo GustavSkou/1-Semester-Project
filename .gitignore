@@ -1,0 +1,23 @@
+# VS Code
+.vscode/
+*.code-workspace
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+
+# .NET
+*.dll
+*.exe
+*.pdb
+*.user
+*.cache
+
+# IDE
+.vs/
+*.suo
+*.userprefs
+*.idea

@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NVshIQwtIH4=",
+  "dgSpecHash": "4RGoGuSXJeU=",
   "success": true,
   "projectFilePath": "C:\\Users\\gusta\\Documents\\GitHub\\1-Semester-Project\\Game\\MyProject.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\gusta\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

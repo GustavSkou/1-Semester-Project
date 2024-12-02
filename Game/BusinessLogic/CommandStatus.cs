@@ -7,9 +7,9 @@ public class CommandStatus : BaseCommand, ICommand
 
     public void Execute(Context context, string command, string[] parameters)
     {
-        Console.WriteLine("Player Status:");
-        Console.WriteLine($"- Health: {context.Health}");
-        Console.WriteLine($"- Karma: {context.Karma}");
-        Console.WriteLine($"- Items: {string.Join(", ", context.Items)}");
+        context.AddMessage("Player Status:");
+        context.AddMessage($"- Health: {context.Health}");
+        context.AddMessage($"- Karma: {context.Karma}");
+        context.AddMessage($"- Items: {string.Join(", ", context.Items)}");
     }
 }
