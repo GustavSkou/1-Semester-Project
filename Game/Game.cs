@@ -1,63 +1,45 @@
 using System;
 
-class Game
+public class Game
 {
-    private readonly Context context;
-    private readonly CommandRegistry commandRegistry;
-    private readonly StartScreen startScreen;
+    static World world = new World();
+    static Context context = new Context(world);
+    static ICommand fallback = new CommandUnknown();
+    static Registry registry = new Registry(context, fallback);
 
-    public Game()
+    private static void InitRegistry()
     {
-        Player player = new Player();
-        context = new Context(player);
-        context.LoadBiomes("data.json"); // Use data.json
-        commandRegistry = new CommandRegistry();
-        startScreen = new StartScreen();
+        ICommand cmdExit = new CommandExit();
+        ICommand cmdGo = new CommandGo();
+        registry.Register("exit", cmdExit);
+        registry.Register("quit", cmdExit);
+        registry.Register("bye", cmdExit);
+        registry.Register("go", cmdGo);
+        registry.Register("goto", cmdGo);
+        registry.Register("answer", new CommandAnswer());
+        registry.Register("help", new CommandHelp(registry));
+        registry.Register("status", new CommandStatus());
+        registry.Register("talk", new CommandTalk());
+        registry.Register("explore", new CommandExplore());
+        registry.Register("quest", new CommandQuest());
     }
 
     public void Run()
     {
-        startScreen.Show();
+        InitRegistry();
+        context.Done = false;
 
-        Console.Clear();
-        Console.WriteLine("Welcome to EcoQuest: Life on Land!");
-        Console.WriteLine("Type 'help' to list commands.");
-        Console.WriteLine();
+        Console.WriteLine("Welcome to the World of EcoQuest!\n");
+        context.CurrentQuestion = IntroQuestion.Question(context);
+        context.InQuestion = true;
+        Console.WriteLine(context.CurrentQuestion.QuestionPromt);
 
-        bool isRunning = true;
-        while (isRunning)
+        while (context.Done == false)
         {
-            if (context.CurrentBiome == null)
-            {
-                ShowAvailableBiomes();
-            }
-
             Console.Write("> ");
-            string input = Console.ReadLine()?.Trim().ToLower();
-
-            if (string.IsNullOrEmpty(input)) continue;
-
-            if (input == "quit")
-            {
-                isRunning = false;
-                Console.WriteLine("Goodbye!");
-                break;
-            }
-
-            if (!commandRegistry.ExecuteCommand(context, input))
-            {
-                Console.WriteLine("Invalid command. Type 'help' for a list of valid commands.");
-            }
+            string? line = Console.ReadLine();
+            if (line != null) registry.Dispatch(line);
         }
-    }
-
-    private void ShowAvailableBiomes()
-    {
-        Console.WriteLine("Available Biomes:");
-        foreach (var biome in context.Biomes)
-        {
-            Console.WriteLine($"- {biome.Name}");
-        }
-        Console.WriteLine("Type 'go [biome]' to explore a biome.");
+        Console.WriteLine("Congrats! You made it through the jungle of eco quests and have now reached with end.\nAlthough not all questions had one specific solution, your decision making helped solve issues regarding life on land.\nThank you for playing.");
     }
 }

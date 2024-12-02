@@ -1,11 +1,26 @@
-class Npc
+public class Npc
 {
-    public string Name { get; private set; }
-    public string Dialogue { get; private set; }
+    private string name, dialogue;
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+    public string Dialogue
+    {
+        get { return dialogue; }
+        set { dialogue = value; }
+    }
 
     public Npc(string name, string dialogue)
     {
         Name = name;
         Dialogue = dialogue;
+    }
+
+    public void PromtDialogue(Context context)
+    {
+        Console.WriteLine(dialogue);
     }
 }

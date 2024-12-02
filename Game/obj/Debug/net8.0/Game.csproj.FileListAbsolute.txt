@@ -1,0 +1,15 @@
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\Content\net8.0\Game.exe
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\Content\net8.0\Game.deps.json
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\Content\net8.0\Game.runtimeconfig.json
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\Content\net8.0\Game.dll
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\Content\net8.0\Game.pdb
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\obj\Debug\net8.0\Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\obj\Debug\net8.0\Game.AssemblyInfoInputs.cache
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\obj\Debug\net8.0\Game.AssemblyInfo.cs
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\obj\Debug\net8.0\Game.csproj.CoreCompileInputs.cache
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\obj\Debug\net8.0\Game.sourcelink.json
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\obj\Debug\net8.0\Game.dll
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\obj\Debug\net8.0\refint\Game.dll
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\obj\Debug\net8.0\Game.pdb
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\obj\Debug\net8.0\Game.genruntimeconfig.cache
+C:\Users\gusta\Documents\GitHub\1-Semester-Project\Game\obj\Debug\net8.0\ref\Game.dll
