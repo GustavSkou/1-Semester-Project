@@ -11,6 +11,9 @@ class Player
 
     public Enemy Enemy = new Enemy("The Mighty Gorilla Spirit");
 
+    private List<string> possibleItems = new List<string> {"Running Shoes", "Shield"};
+    Random random;
+
     public Player()
     {
         Health = 100;
@@ -48,6 +51,15 @@ class Player
     public bool HasItem(string item)
     {
         return items.Contains(item);
+    }
+
+    public void ChanceForItem() {
+        int chance = random.Next(0, 100);
+
+        if (chance < 100) {
+            int index = random.Next(0, possibleItems.Count);
+            AddItem(possibleItems[index]);
+        }
     }
 
     public void AddItem(string item)

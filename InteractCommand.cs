@@ -50,6 +50,7 @@ class InteractCommand : BaseCommand, ICommand
             if (currentRoom.RoomQuest.IsCorrectChoice(input))
             {
                 Console.WriteLine("Correct! You solved the challenge.");
+                context.Player.AddItem("Running Shoes");
                 currentRoom.MarkAsCleared();
             }
             else
