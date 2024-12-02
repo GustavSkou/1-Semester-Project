@@ -20,11 +20,17 @@ class Registry
 
     public void Dispatch(string line)
     {
+        /* Dispatch method take in a string as a parameter, this string is from the players input. Here it is impotent to parse the input to make it homogeneous, this should insure us that all input are handled the correct way */
+
         line = line.ToLower();
-        string[] elements = line.Split(" ");                            // Player's input pliver spillet op for hvert " " og lagt i array
-        elements = elements.Where(element => element != "").ToArray();  // Fjerne "" fra array af elements
+        string[] elements = line.Split(" ");
+        elements = elements.Where(element => element != "").ToArray();
         string command = elements[0];
         string[] parameters = GetParameters(elements);
+
+        /* This is achieved by,
+         1. setting the string the lowercase
+         2. we spilt the string  */
 
         if (commands.ContainsKey(command))
         {
