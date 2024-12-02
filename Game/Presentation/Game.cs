@@ -7,8 +7,6 @@ public class Game
 
     static UIHandler uiHandler;
 
-
-
     static void Main()
     {
         Ui ui = new Ui();
