@@ -12,9 +12,4 @@ public class Npc
         get { return dialogue; }
         set { dialogue = value; }
     }
-
-    public void PromtDialogue(Context context)
-    {
-        context.AddMessage(dialogue);
-    }
 }

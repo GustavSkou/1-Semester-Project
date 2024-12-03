@@ -28,11 +28,13 @@ public class Biome : Node
             space => space.Complete == false).Where(
             space => space != currentSpace).ToArray();
 
-        Space nextSpace = nonCompletedSpaces[
-            random.Next(0, nonCompletedSpaces.Length)];
-
-        currentSpace.AddEdge(nextSpace.Name, nextSpace);
-        SetPreviousSpace(currentSpace, nextSpace);
+        if (nonCompletedSpaces.Length > 0)
+        {
+            Space nextSpace = nonCompletedSpaces[
+                random.Next(0, nonCompletedSpaces.Length)];
+            currentSpace.AddEdge(nextSpace.Name, nextSpace);
+            SetPreviousSpace(currentSpace, nextSpace);
+        }
     }
 
     private void SetPreviousSpace(Space currentSpace, Space nextSpace)

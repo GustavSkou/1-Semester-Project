@@ -11,6 +11,7 @@ public class CommandQuest : BaseCommand, ICommand
         else
         {
             context.AddMessage(context.CurrentQuestion.QuestionPromt);
+
             foreach (var choice in context.CurrentQuestion.Choices)
             {
                 context.AddMessage($" - {choice.Key} {choice.Value.Description}");

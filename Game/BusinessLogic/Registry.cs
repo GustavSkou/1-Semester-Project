@@ -24,7 +24,6 @@ class Registry
         Register("goto", cmdGo);
         Register("answer", new CommandAnswer());
         Register("help", new CommandHelp(this));
-        Register("status", new CommandStatus());
         Register("talk", new CommandTalk());
         Register("explore", new CommandExplore());
         Register("quest", new CommandQuest());
@@ -47,8 +46,9 @@ class Registry
         string[] parameters = GetParameters(elements);
 
         /* This is achieved by,
-         1. setting the string the lowercase
-         2. we spilt the string  */
+         1. Setting the string the lowercase
+         2. We spilt the string into a array by its spaces, by doing this we spilt up the command from the parameters, making handling the command easier.
+         3. */
 
         if (commands.ContainsKey(command))
         {

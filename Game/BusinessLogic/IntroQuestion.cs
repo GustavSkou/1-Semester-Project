@@ -31,6 +31,7 @@ public class IntroQuestion
         context.CurrentSpace.DisplayWelcome(context);
         context.CurrentQuestion = context.CurrentSpace.Quest;
         context.InQuestion = false;
+        context.CurrentQuestion = null;
     }
 
     private static void AnswerNo(Context context)

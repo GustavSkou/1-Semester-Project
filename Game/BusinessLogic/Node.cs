@@ -16,9 +16,6 @@ abstract public class Node
         get { return edges; }
     }
 
-    public Node()
-    {
-    }
     public void RemoveEdges()
     {
         edges = new Dictionary<string, Node>();

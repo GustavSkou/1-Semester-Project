@@ -5,6 +5,7 @@ public class SpaceQuestion
         Console.WriteLine("Correct answer");
         context.CurrentBiome.SpacesDict[context.CurrentSpace.Name].Complete = true;
         context.InQuestion = false;
+        context.CurrentQuestion = null;
 
         if (context.IsAllSpacesComplete())
         {
@@ -13,6 +14,7 @@ public class SpaceQuestion
                 context.World.BiomesSet[context.CurrentBiome.Name].Complete = true;
                 if (context.IsAllBiomesComplete())
                 {
+                    context.AddMessage("Congrats! You made it through the jungle of eco quests and have now reached the end.\nAlthough not all questions had one specific solution, your decision - making helped solve issues regarding life on land.");
                     context.QuitGame();
                     return;
                 }

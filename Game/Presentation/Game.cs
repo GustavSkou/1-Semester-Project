@@ -4,33 +4,29 @@ public class Game
     static Context context = new Context(world);
     static ICommand fallback = new CommandUnknown();
     static Registry registry = new Registry(context, fallback);
-
-    static UIHandler uiHandler;
+    static UiHandler uiHandler = new UiHandler();
 
     static void Main()
     {
-        Ui ui = new Ui();
-
         context.Done = false;
 
-        ui.DisplayWelcome();
+        WelcomeAndExitMessage.DisplayWelcome();
+
         context.CurrentQuestion = IntroQuestion.Question(context);
         context.InQuestion = true;
-        Console.WriteLine(context.CurrentQuestion.QuestionPromt);
+        uiHandler.DisplayMessage(context.CurrentQuestion.QuestionPromt);
 
         while (context.Done == false)
         {
-            Console.Write("> ");
-            string? line = Console.ReadLine();
+            string? line = uiHandler.GetUserInput();
             if (line != null) registry.Dispatch(line);
             DisplayPendingMessages();
         }
-        ui.DisplayFinalMessage();
+        WelcomeAndExitMessage.DisplayFinalMessage();
     }
 
     private static void DisplayPendingMessages()
     {
-        uiHandler = new UIHandler();
         foreach (var message in context.GetAllMessages())
         {
             uiHandler.DisplayMessage(message);
