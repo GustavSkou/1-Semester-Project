@@ -14,7 +14,7 @@ public class IntroQuestion
         };
         Question question = new Question()
         {
-            QuestionPromt = "Before you begin, there are some commands that are nice to know:)\n 1) To go to a room, write \"go\" and then the room\n 2) To explore a room, write \"explore\" to explore the room\n 3) To answer a question, write \"answer\" followed by your choice of answer\n 3) When in need for help simply write \"help\"\n Do you understand\n - answer Yes\n - answer No",
+            QuestionPromt = "Before you begin, there are some commands that are nice to know:)\n1) To go to a room, write \"go\" and then the room\n2) To explore a room, write \"explore\" to explore the room\n 3) To answer a question, write \"answer\" followed by your choice of answer\n3) When in need for help simply write \"help\"\n Do you understand\n - answer Yes\n - answer No",
             Choices = new Dictionary<string, AnswerChoice>()
             {
                 { "yes", yes },

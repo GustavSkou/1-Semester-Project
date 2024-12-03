@@ -1,0 +1,4 @@
+interface IUiCommand
+{
+    void Execute();
+}

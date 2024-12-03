@@ -62,7 +62,10 @@ public class Context
         currentSpace = world.StartSpace;
         currentBiome = world.StartBiome;
         nextBiome = null;
-        currentQuestion = new Question();
+
+        currentQuestion = IntroQuestion.Question(this);
+        inQuestion = true;
+        AddMessage(currentQuestion.QuestionPromt);
     }
 
     public void Transition(string direction)

@@ -31,7 +31,6 @@ public class SpaceQuestion
     {
         context.AddMessage("Sorry wrong answer");
         TryAgain(context);
-        context.AddMessage(context.CurrentQuestion.QuestionPromt);
     }
 
     public static void TryAgain(Context context)
@@ -57,6 +56,7 @@ public class SpaceQuestion
         };
         context.CurrentQuestion = question;
         context.InQuestion = true;
+        context.AddMessage(context.CurrentQuestion.QuestionPromt);
     }
 
     private static void AnswerYes(Context context)
