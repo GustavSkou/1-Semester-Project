@@ -52,6 +52,7 @@ public class Space : Node
         {
             string edgeComplete = ((Space)edge.Value).Complete ? "Completed" : "Not complete";
             context.AddMessage($" - [{edgeComplete}] {edge.Key}");
+            
         }
     }
 
