@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "MyProject/1.0.0": {
+      "Game/1.0.0": {
         "runtime": {
-          "MyProject.dll": {}
+          "Game.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "MyProject/1.0.0": {
+    "Game/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

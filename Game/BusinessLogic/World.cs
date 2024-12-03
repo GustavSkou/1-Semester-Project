@@ -26,7 +26,7 @@ public class World
 
     public World()
     {
-        dataHandler();
+        DataHandler();
 
         biomesSet.Add("Savannah", new Biome("Savannah", spacesDict.Where(space => space.Value.Biome == "Savannah").ToDictionary()));
         biomesSet.Add("City", new Biome("City", spacesDict.Where(space => space.Value.Biome == "City").ToDictionary()));
@@ -75,7 +75,7 @@ public class World
         This is done by using the linq operator Where, this will return an IEnumerable that satisfies our conditions. By doing this we can comperes the biomes in biomesSet.Values to the current biome, using Biome's Name property to insure it is not the same Biome and by making use of the Complete property to insure it has not been completed. */
     }
 
-    private void dataHandler()
+    private void DataHandler()
     {
         spacesDict = dataLoader.LoadSpaces();
     }
