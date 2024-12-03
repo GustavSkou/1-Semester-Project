@@ -7,12 +7,13 @@ public class CommandExplore : BaseCommand, ICommand
 
     public void Execute(Context context, string command, string[] parameters)
     {
+
         context.AddMessage($"Exploring the space: {context.CurrentSpace.Name}");
-        context.CurrentSpace.DisplayExplore(context);
+        context.CurrentSpace.DisplayDescription(context);
 
         List<string> options = [];
 
-        if (context.CurrentSpace.Edges.Count == 0) context.CurrentBiome.SetNextSpace(context.CurrentSpace);
+        if (context.CurrentSpace.Edges.Count < 2) context.CurrentBiome.SetNextSpace(context.CurrentSpace);
 
         if (context.CurrentSpace.Quest != null)
         {
@@ -27,9 +28,10 @@ public class CommandExplore : BaseCommand, ICommand
             options.Add("talk");
         }
 
-        foreach (var egde in context.CurrentSpace.Edges)
+        foreach (var edge in context.CurrentSpace.Edges)
         {
-            options.Add($"go {egde.Key}");
+            string edgeComplete = ((Space)edge.Value).Complete ? "Completed" : "Not complete";
+            options.Add($"go {edge.Key} [{edgeComplete}]");
         }
 
         if (options.Count > 0)

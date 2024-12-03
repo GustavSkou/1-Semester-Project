@@ -16,8 +16,6 @@ public class DataLoader
 
             /* This is done by making use of the JsonSerializer class. By doing this we can Deserialize the json file into a data type that represents the way our json file is formatted. Since we have formatted ours like a dictionary with strings as keys and spaces as values, we have deserialized ours json file into this.
             By doing to */
-
-
         }
         catch (JsonException jsonEx)
         {
@@ -27,7 +25,6 @@ public class DataLoader
         {
             Console.WriteLine($"General Error: {ex.Message}");
         }
-
         return spaces;
     }
 }

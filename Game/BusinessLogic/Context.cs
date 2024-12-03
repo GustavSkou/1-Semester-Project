@@ -78,7 +78,6 @@ public class Context
 
     public void Transition(string direction)
     {
-        Console.Clear();
         currentSpace.DisplayGoodbye(this);
 
         Space nextSpace = currentSpace.FollowEdge(direction);

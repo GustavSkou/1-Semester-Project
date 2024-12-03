@@ -5,6 +5,7 @@ public class SpaceQuestion
         Console.WriteLine("Correct answer");
         context.CurrentBiome.SpacesDict[context.CurrentSpace.Name].Complete = true;
         context.InQuestion = false;
+        context.CurrentQuestion = null;
 
         if (context.IsAllSpacesComplete())
         {

@@ -57,7 +57,7 @@ public class World
         currentSpace.AddEdge(
             differentBiomes[i].Name,
             differentBiomes[i].SpacesDict.Values.ToArray()
-                [random.Next(0, currentBiome.SpacesDict.Count)]);
+                [random.Next(0, differentBiomes[i].SpacesDict.Count)]);
 
         /* The SetNextBiome method makes used of the "GetDifferentNonCompletedBiome" method and the Random class to return biome that is both different not completed of randomly selected */
 
@@ -67,7 +67,7 @@ public class World
     private Biome[] GetDifferentNonCompletedBiome(Biome currentBiome)
     {
         return biomesSet.Values.Where(biome =>
-            biome.GetType() != currentBiome.GetType() &&
+            biome.Name != currentBiome.Name &&
             !biome.Complete).ToArray();
 
         /* To return an array of biomes that are different from the current biome and are not completed, we have to sort out all the biomes that would fit those two criteria.

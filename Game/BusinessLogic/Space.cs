@@ -51,29 +51,13 @@ public class Space : Node
         foreach (var edge in edges)
         {
             string edgeComplete = ((Space)edge.Value).Complete ? "Completed" : "Not complete";
-            context.AddMessage($" - [{edgeComplete}] {edge.Key}");
+            context.AddMessage($" - go {edge.Key} [{edgeComplete}]");
         }
     }
 
     public void DisplayDescription(Context context)
     {
         context.AddMessage(description);
-    }
-
-    public void DisplayExplore(Context context)
-    {
-        context.AddMessage($"You are in {name}: {description}");
-    }
-
-    public void DisplayQuestion(Context context)
-    {
-        context.AddMessage(context.CurrentQuestion.QuestionPromt);
-        int choiceNumber = 1;
-        foreach (string choice in context.CurrentQuestion.Choices.Select(spaceAnswerChoices => spaceAnswerChoices.Value.Description).ToArray())
-        {
-            context.AddMessage($"{choiceNumber}. {choice}");
-            choiceNumber++;
-        }
     }
 
     public void DisplayGoodbye(Context context)
