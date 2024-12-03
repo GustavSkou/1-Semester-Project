@@ -88,6 +88,10 @@ public class Context
         currentSpace.DisplayWelcome(this);
     }
 
+    public void ShowAllBiomes() {
+        
+    }
+
     public bool IsAllSpacesComplete()
     {
         foreach (Space space in currentBiome.SpacesDict.Values)
