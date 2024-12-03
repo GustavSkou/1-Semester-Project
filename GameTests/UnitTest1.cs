@@ -29,7 +29,7 @@ class Tests
         Assert.Pass();
     }
 
-    /*[Test]
+    [Test]
     public void RequirementFour()
     {
         // "A description of the room to give the player a sense of the surroundings."
@@ -50,81 +50,40 @@ class Tests
     [Test]
     public void RequirementTwoRooms()
     {
-        //Each biome has 4 rooms 
+        //Each biome has 4 spaces
 
         World world = new World();
-        Space[] biomes = world.BiomesSet.Values.Select(
-            biome => biome).ToArray().Select(biome => biome.SpacesDict.Values).Select(space => space.Value)
+        List<string> failedBiomes = new List<string>();
 
-
-        foreach (Biome bio in world.BiomesSet.Values)
+        foreach (Biome biome in world.BiomesSet.Values)
         {
-
-            if (bio.SpacesDict.Count < 3)
+            int count = 0;
+            foreach (Space space in biome.SpacesDict.Values)
             {
-                Assert.Fail();
-
+                count = count + 1;
             }
-            else
-            {
-                Assert.Pass();
-            }
+            if (count < 4) failedBiomes.Add($"{biome.Name}: {count}, ");
         }
+
+        if (failedBiomes.Count > 0) Assert.Fail($"{string.Join(" ", failedBiomes)}");
+
+        Assert.Pass();
     }
 
     [Test]
     public void RequirementTwoQuest()
     {
-        //you are asked a question in each room.
+        // These is a question in each room.
+
         World world = new World();
 
         foreach (Biome biome in world.BiomesSet.Values)
         {
             foreach (Space space in biome.SpacesDict.Values)
             {
-
-                if (space.Quest == null)
-                {
-                    Assert.Fail();
-                }
+                if (space.Quest == null) Assert.Fail($"Room {space.Name} has no quest");
             }
         }
         Assert.Pass();
     }
-
-[Test]
-public void req()
-{
-    World world = new World();
-    Context context = new Context(world);
-    foreach (Biome biome in world.BiomesSet.Values)
-    {
-        foreach (Space space in biome.SpacesDict.Values)
-        {
-            space.WrongAnswer(context);
-            if (space.Complete)
-            {
-                Assert.Fail();
-            }
-        }
-    }
-    Assert.Pass();
-}
-
-[Test]
-public void requirementFive()
-{
-    World world = new World();
-    Dictionary<string, Space> spacesDict = world.LoadSpaces(); //Vil gerne have alle spaces.
-
-    foreach (Space space in spacesDict.Values) //forreach loop. Kigger på hvert space i space dictionaryet.
-    {
-        if (space.Quest == null) //"space.Value" går ind i space objectet i the current dictionary entry. ".Quest" checker om der er en quest i det space.
-        {
-            Assert.Fail($"Room {space.Name} has no quest"); //Efter at have gået ind og tjekket om der er en quest på linje 45, skriver den dette, hvis der ikke er en quest.
-        };
-    }
-    Assert.Pass();
-}*/
-
 }

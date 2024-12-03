@@ -363,5 +363,135 @@
             "Name": "Community Volunteer",
             "Dialogue": "Parks are shared spaces for all living beings. A small effort can make a huge difference!"
         }
+    },
+    "Bikelane": {
+        "Name": "Bikelane",
+        "Biome": "City",
+        "Description": "Your favorite bikelane",
+        "Quest": {
+            "QuestionPromt": "You're on your way to school and see shards of glass on the lane. What do you do?",
+            "Choices": {
+                "1": {
+                    "Description": "You prioritize your deck and bike as much around it as possible",
+                    "Correct": false
+                },
+                "2": {
+                    "Description": "You kick it further away",
+                    "Correct": false
+                },
+                "3": {
+                    "Description": "You put it to the side and contact the authorities",
+                    "Correct": true
+                }
+            },
+            "Npc": {
+                "Name": "",
+                "Dialogue": ""
+            }
+        }
+    },
+    "Alley": {
+        "Name": "Alley",
+        "Biome": "City",
+        "Description": "Windy day",
+        "Quest": {
+            "QuestionPromt": "You see an open trash bag on a windy day. Not only is it attracting rats, but the plastic also flies out.\n What do you do?",
+            "Choices": {
+                "1": {
+                    "Description": "You cover your nose with your hand and say \"Whats that foul smell?!\"",
+                    "Correct": false
+                },
+                "2": {
+                    "Description": "You ignore it since you don't want trash juice on you",
+                    "Correct": false
+                },
+                "3": {
+                    "Description": "You try to clean up what you can",
+                    "Correct": true
+                }
+            }
+        },
+        "Npc": {
+            "Name": "",
+            "Dialogue": ""
+        }
+    },
+    "Pond": {
+        "Name": "Pond",
+        "Biome": "Farm",
+        "Description": "A small pond providing water for animals and crops.",
+        "Quest": {
+            "QuestionPromt": "The pond is polluted with trash. What will you do?",
+            "Choices": {
+                "1": {
+                    "Description": "Add more water to dilute the pollution.",
+                    "Correct": false
+                },
+                "2": {
+                    "Description": "Ignore it, nature will fix itself.",
+                    "Correct": false
+                },
+                "3": {
+                    "Description": "Clean the pond and add plants to filter the water.",
+                    "Correct": true
+                }
+            }
+        },
+        "Npc": {
+            "Name": "",
+            "Dialogue": ""
+        }
+    },
+    "The Stable": {
+        "Name": "The Stable",
+        "Biome": "Farm",
+        "Description": "A stable for horses and other animals. It's peaceful, but something needs attention.",
+        "Quest": {
+            "QuestionPromt": "The stable floor is dirty, and the animals seem uncomfortable. What will you do?",
+            "Choices": {
+                "1": {
+                    "Description": "Clean the floor and add fresh bedding.",
+                    "Correct": true
+                },
+                "2": {
+                    "Description": "Leave it the animals will manage.",
+                    "Correct": false
+                },
+                "3": {
+                    "Description": "Move the animals outside permanently.",
+                    "Correct": false
+                }
+            }
+        },
+        "Npc": {
+            "Name": "",
+            "Dialogue": ""
+        }
+    },
+    "Distant Horizon": {
+        "Name": "Distant Horizon",
+        "Biome": "Forest",
+        "Description": "",
+        "Quest": {
+            "QuestionPromt": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. What can you do to help animals like this deer survive in a changing environment?",
+            "Choices": {
+                "1": {
+                    "Choice": "Try to guide the deer toward the nearest town for help.",
+                    "Correct": false
+                },
+                "2": {
+                    "Choice": "Feed the deer some food you have with you to help it regain strength.",
+                    "Correct": false
+                },
+                "3": {
+                    "Choice": "Support efforts to restore water sources, so animals have a place to drink.",
+                    "Correct": true
+                }
+            }
+        },
+        "Npc": {
+            "Name": "",
+            "Dialogue": ""
+        }
     }
 }
