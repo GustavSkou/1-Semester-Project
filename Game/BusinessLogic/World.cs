@@ -2,7 +2,7 @@
 
 public class World
 {
-    private static readonly DataLoader dataLoader = new DataLoader();
+    private readonly DataLoader dataLoader = new DataLoader();
     public Space startSpace;
     private Biome startBiome;
     private Dictionary<string, Biome> biomesSet = [];

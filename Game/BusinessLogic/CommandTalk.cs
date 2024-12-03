@@ -11,8 +11,10 @@ public class CommandTalk : BaseCommand, ICommand
         {
             if (context.CurrentNpc != null)
             {
+                context.AddMessage("(CONSOLE_CLEAR)");
                 context.AddMessage($"You talk to {context.CurrentNpc.Name}.");
                 context.AddMessage(context.CurrentNpc.Dialogue);
+                context.AddMessage("");
             }
             else
             {

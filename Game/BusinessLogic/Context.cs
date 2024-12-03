@@ -108,6 +108,8 @@ public class Context
 
     public string[] GetAllMessages()
     {
-        return messages.ToArray();
+        string[] messages = this.messages.ToArray();
+        this.messages.Clear();
+        return messages;
     }
 }

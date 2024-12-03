@@ -7,6 +7,7 @@ public class CommandExplore : BaseCommand, ICommand
 
     public void Execute(Context context, string command, string[] parameters)
     {
+        context.AddMessage("(CONSOLE_CLEAR)");
 
         context.AddMessage($"Exploring the space: {context.CurrentSpace.Name}");
         context.CurrentSpace.DisplayDescription(context);

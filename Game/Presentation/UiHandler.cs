@@ -2,7 +2,9 @@ public class UiHandler
 {
     public void DisplayMessage(string message)
     {
-        PrettyPrint.Print(message);
+        if (message == "(CONSOLE_CLEAR)") Console.Clear();
+
+        else PrettyPrint.Print(message);
     }
 
     public string? GetUserInput()

@@ -2,7 +2,7 @@ using System.Text.Json;
 
 public class DataLoader
 {
-    static public Dictionary<string, Space> LoadSpaces()
+    public Dictionary<string, Space> LoadSpaces()
     {
         /* Since all our spaces are stored in a json file, we need to deserialize this json file in space object so that we can access them */
 
