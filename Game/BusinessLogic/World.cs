@@ -1,13 +1,14 @@
 /* World class for modeling the entire in-game world */
 
-using System.Text.Json;
-
 public class World
 {
+    private static readonly DataLoader dataLoader = new DataLoader();
     public Space startSpace;
     private Biome startBiome;
     private Dictionary<string, Biome> biomesSet = [];
     private Random random = new Random();
+
+    private Dictionary<string, Space> spacesDict = [];
 
     public Space StartSpace
     {
@@ -25,7 +26,7 @@ public class World
 
     public World()
     {
-        Dictionary<string, Space> spacesDict = DataLoader.LoadSpaces();
+        dataHandler();
 
         biomesSet.Add("Savannah", new Biome("Savannah", spacesDict.Where(space => space.Value.Biome == "Savannah").ToDictionary()));
         biomesSet.Add("City", new Biome("City", spacesDict.Where(space => space.Value.Biome == "City").ToDictionary()));
@@ -71,6 +72,11 @@ public class World
             !biome.Complete).ToArray();
 
         /* To return an array of biomes that are different from the current biome and are not completed, we have to sort out all the biomes that would fit those two criteria.
-        This is done by using the linq operator Where, this will return an IEnumerable that satisfies our conditions. By doing this we can comperes the biomes in biomesSet.Values to the current biome, using getype to insure it is not the same type and by making use of the Complete property from biome to insure it is not complete. */
+        This is done by using the linq operator Where, this will return an IEnumerable that satisfies our conditions. By doing this we can comperes the biomes in biomesSet.Values to the current biome, using Biome's Name property to insure it is not the same Biome and by making use of the Complete property to insure it has not been completed. */
+    }
+
+    private void dataHandler()
+    {
+        spacesDict = dataLoader.LoadSpaces();
     }
 }

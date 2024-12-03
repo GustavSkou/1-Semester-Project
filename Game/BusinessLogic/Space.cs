@@ -5,7 +5,6 @@ public class Space : Node
     private string description, biome;
     private Question quest;
     private bool complete;
-    private SpaceQuestion spaceQuestion = new SpaceQuestion();
     private Npc? npc;
 
     public string Description
@@ -39,6 +38,12 @@ public class Space : Node
         }
     }
 
+    public string Biome
+    {
+        get { return biome; }
+        set { biome = value; }
+    }
+
     public void DisplayWelcome(Context context)
     {
         context.AddMessage($"You are now at {name} in {biome}");
@@ -63,12 +68,6 @@ public class Space : Node
     public void DisplayGoodbye(Context context)
     {
         context.AddMessage($"You left the {name}\n");
-    }
-
-    public string Biome
-    {
-        get { return biome; }
-        set { biome = value; }
     }
 
     public override Space FollowEdge(string direction)

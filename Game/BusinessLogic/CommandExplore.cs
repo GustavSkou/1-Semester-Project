@@ -25,6 +25,7 @@ public class CommandExplore : BaseCommand, ICommand
         if (context.CurrentSpace.Npc != null)
         {
             context.AddMessage($"You see {context.CurrentSpace.Npc.Name} here.");
+            context.CurrentNpc = context.CurrentSpace.Npc;
             options.Add("talk");
         }
 

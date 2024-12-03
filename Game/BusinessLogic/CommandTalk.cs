@@ -7,14 +7,21 @@ public class CommandTalk : BaseCommand, ICommand
 
     public void Execute(Context context, string command, string[] parameters)
     {
-        if (context.CurrentSpace.Npc == null)
+        if (!context.InQuestion)
         {
-            context.AddMessage("There's no one to talk to in this room.");
+            if (context.CurrentNpc != null)
+            {
+                context.AddMessage($"You talk to {context.CurrentNpc.Name}.");
+                context.AddMessage(context.CurrentNpc.Dialogue);
+            }
+            else
+            {
+                context.AddMessage("There's no one to talk to.");
+            }
         }
         else
         {
-            context.AddMessage($"You talk to {context.CurrentSpace.Npc.Name}.");
-            context.AddMessage(context.CurrentSpace.Npc.Dialogue);
+            context.AddMessage("Please answer the question");
         }
     }
 }
