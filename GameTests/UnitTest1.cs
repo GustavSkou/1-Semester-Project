@@ -5,7 +5,6 @@ class Tests
     {
     }
 
-
     [Test]
     public void RequirementOne()
     {
@@ -13,13 +12,13 @@ class Tests
         World world = new World();
 
         Biome[] biomes =
-        [
+        {
             new Biome("City", []),
             new Biome("Farm", []),
             new Biome("Savannah", []),
             new Biome("Forest", []),
             new Biome("Beach", [])
-        ];
+        };
 
         foreach (Biome biome in biomes)
         {
@@ -32,16 +31,15 @@ class Tests
     [Test]
     public void RequirementFour()
     {
-        // "A description of the room to give the player a sense of the surroundings."
+        /* A description of the room to give the player a sense of the surroundings. */
+
         World world = new World();
+
         foreach (Biome biome in world.BiomesSet.Values)
         {
             foreach (Space space in biome.SpacesDict.Values)
             {
-                if (space.Quest.QuestionPromt.Length == 0 || space.Quest.QuestionPromt == null)
-                {
-                    Assert.Fail();
-                }
+                if (space.Quest.QuestionPromt == null || space.Quest.QuestionPromt.Length == 0) Assert.Fail();
             }
         }
         Assert.Pass();
@@ -76,14 +74,17 @@ class Tests
         // These is a question in each room.
 
         World world = new World();
+        List<string> failedSpaces = new List<string>();
 
         foreach (Biome biome in world.BiomesSet.Values)
         {
             foreach (Space space in biome.SpacesDict.Values)
             {
-                if (space.Quest == null) Assert.Fail($"Room {space.Name} has no quest");
+                if (space.Quest == null) failedSpaces.Add($"{space.Name}, ");
             }
         }
+        if (failedSpaces.Count > 0) Assert.Fail($"Contains no question: {string.Join(" ", failedSpaces)}");
+
         Assert.Pass();
     }
 }
