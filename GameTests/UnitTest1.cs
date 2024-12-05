@@ -39,7 +39,7 @@ class Tests
         {
             foreach (Space space in biome.SpacesDict.Values)
             {
-                if (space.Quest.QuestionPromt == null || space.Quest.QuestionPromt.Length == 0) Assert.Fail();
+                if (space.Quest.QuestionPrompt == null || space.Quest.QuestionPrompt.Length == 0) Assert.Fail();
             }
         }
         Assert.Pass();

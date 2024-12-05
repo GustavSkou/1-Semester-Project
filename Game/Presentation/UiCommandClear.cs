@@ -1,4 +1,4 @@
-class UiClear : IUiCommand
+class UiCommandClear : IUiCommand
 {
     public void Execute()
     {

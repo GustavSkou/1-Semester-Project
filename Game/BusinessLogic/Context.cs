@@ -63,21 +63,21 @@ public class Context
         currentBiome = world.StartBiome;
         nextBiome = null;
 
-        currentQuestion = IntroQuestion.Question(this);
+        currentQuestion = IntroQuestion.Question();
         inQuestion = true;
-        AddMessage(currentQuestion.QuestionPromt);
+        AddMessage(currentQuestion.QuestionPrompt);
     }
 
     public void Transition(string direction)
     {
-        currentSpace.DisplayGoodbye(this);
+        currentSpace.GoodbyeMessage(this);
 
         Space nextSpace = currentSpace.FollowEdge(direction);
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
 
         currentSpace = nextSpace;
         currentQuestion = currentSpace.Quest;
-        currentSpace.DisplayWelcome(this);
+        currentSpace.WelcomeMessage(this);
     }
 
     public bool IsAllSpacesComplete()

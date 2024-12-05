@@ -10,7 +10,7 @@ public class CommandQuest : BaseCommand, ICommand
         if (context.CurrentQuestion == null) context.AddMessage("No questions available");
         else
         {
-            context.AddMessage(context.CurrentQuestion.QuestionPromt);
+            context.AddMessage(context.CurrentQuestion.QuestionPrompt);
 
             foreach (var choice in context.CurrentQuestion.Choices)
             {

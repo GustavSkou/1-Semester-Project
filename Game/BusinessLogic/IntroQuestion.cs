@@ -1,6 +1,7 @@
 public class IntroQuestion
 {
-    public static Question Question(Context context)
+
+    public static Question Question()
     {
         AnswerChoice yes = new AnswerChoice()
         {
@@ -14,7 +15,7 @@ public class IntroQuestion
         };
         Question question = new Question()
         {
-            QuestionPromt = "Before you begin, there are some commands that are nice to know:)\n1) To go to a room, write \"go\" and then the room\n2) To explore a room, write \"explore\" to explore the room\n 3) To answer a question, write \"answer\" followed by your choice of answer\n3) When in need for help simply write \"help\"\n Do you understand\n - answer Yes\n - answer No",
+            QuestionPrompt = "Before you begin, there are some commands that are nice to know:)\n1) To go to a room, write \"go\" and then the room\n2) To explore a room, write \"explore\" to explore the room\n 3) To answer a question, write \"answer\" followed by your choice of answer\n3) When in need for help simply write \"help\"\n Do you understand\n - answer Yes\n - answer No",
             Choices = new Dictionary<string, AnswerChoice>()
             {
                 { "yes", yes },
@@ -28,7 +29,7 @@ public class IntroQuestion
     private static void AnswerYes(Context context)
     {
         context.AddMessage("(CONSOLE_CLEAR)");
-        context.CurrentSpace.DisplayWelcome(context);
+        context.CurrentSpace.WelcomeMessage(context);
         context.CurrentQuestion = context.CurrentSpace.Quest;
         context.InQuestion = false;
         context.CurrentQuestion = null;
@@ -37,6 +38,6 @@ public class IntroQuestion
     private static void AnswerNo(Context context)
     {
         context.AddMessage("(CONSOLE_CLEAR)");
-        context.AddMessage(context.CurrentQuestion.QuestionPromt);
+        context.AddMessage(context.CurrentQuestion.QuestionPrompt);
     }
 }

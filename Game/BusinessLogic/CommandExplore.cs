@@ -10,7 +10,7 @@ public class CommandExplore : BaseCommand, ICommand
         context.AddMessage("(CONSOLE_CLEAR)");
 
         context.AddMessage($"Exploring the space: {context.CurrentSpace.Name}");
-        context.CurrentSpace.DisplayDescription(context);
+        context.CurrentSpace.DescriptionMessage(context);
 
         List<string> options = [];
 

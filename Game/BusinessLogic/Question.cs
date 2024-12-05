@@ -1,18 +1,7 @@
 public class Question
 {
-    private string questionPromt;
-    private Dictionary<string, AnswerChoice> choices;
-
-    public string QuestionPromt
-    {
-        get { return questionPromt; }
-        set { questionPromt = value; }
-    }
-    public Dictionary<string, AnswerChoice> Choices
-    {
-        get { return choices; }
-        set { choices = value; }
-    }
+    public string? QuestionPrompt { get; set; }
+    public Dictionary<string, AnswerChoice>? Choices { get; set; }
 }
 
 // The Question class represents a question with multiple choices.
@@ -24,25 +13,9 @@ public class Question
 
 public class AnswerChoice
 {
-    private string description;
-    private bool correct;
-    private Action<Context> action;
-
-    public string Description
-    {
-        get { return description; }
-        set { description = value; }
-    }
-    public bool Correct
-    {
-        get { return correct; }
-        set { correct = value; }
-    }
-    public Action<Context> Action
-    {
-        get { return action; }
-        set { action = value; }
-    }
+    public string? Description { get; set; }
+    public bool Correct { get; set; }
+    public Action<Context>? Action { get; set; }
 }
 
 // The AnswerChoice class represents a possible answer to a question.

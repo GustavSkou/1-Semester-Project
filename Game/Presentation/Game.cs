@@ -1,24 +1,23 @@
 public class Game
 {
-    static World world = new World();
-    static Context context = new Context(world);
-    static ICommand fallback = new CommandUnknown();
-    static Registry registry = new Registry(context, fallback);
-    static UiHandler uiHandler = new UiHandler();
+    static readonly World world = new World();
+    static readonly Context context = new Context(world);
+    static readonly ICommand fallback = new CommandUnknown();
+    static readonly Registry registry = new Registry(context, fallback);
+    static readonly UiHandler uiHandler = new UiHandler();
 
     static void Main()
     {
-        context.Done = false;
+        uiHandler.DisplayMessage(UiMessages.Welcome);
 
-        WelcomeAndExitMessage.DisplayWelcome();
         uiHandler.PendingMessagesHandler(context);
 
-        while (context.Done == false)
+        while (uiHandler.Done == false)
         {
             string? line = uiHandler.GetUserInput();
             if (line != null) registry.Dispatch(line);
             uiHandler.PendingMessagesHandler(context);
         }
-        WelcomeAndExitMessage.DisplayFinalMessage();
+        uiHandler.DisplayMessage(UiMessages.Goodbye);
     }
 }

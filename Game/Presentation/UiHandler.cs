@@ -1,12 +1,21 @@
 public class UiHandler
 {
-    private Dictionary<string, IUiCommand> UiCommands;
+    private bool done;
+    private readonly Dictionary<string, IUiCommand> UiCommands;
+
+    public bool Done
+    {
+        get { return done; }
+        set { done = value; }
+    }
 
     public UiHandler()
     {
+        done = false;
         UiCommands = new Dictionary<string, IUiCommand>
         {
-            { "(CONSOLE_CLEAR)", new UiClear() }
+            { "(CONSOLE_CLEAR)", new UiCommandClear() },
+            { "(DONE)", new UiCommandDone(this) }
         };
     }
 
@@ -25,7 +34,7 @@ public class UiHandler
         else PrettyPrint.Print(message);
     }
 
-    public void ExecuteCommand(String message)
+    public void ExecuteCommand(string message)
     {
         UiCommands[message].Execute();
     }

@@ -2,16 +2,12 @@
 
 public class Space : Node
 {
-    private string description, biome;
-    private Question quest;
+    private string biome;
+    private Question? quest;
     private bool complete;
     private Npc? npc;
 
-    public string Description
-    {
-        get { return description; }
-        set { description = value; }
-    }
+    public required string Description { get; set; }
 
     public bool Complete
     {
@@ -25,7 +21,7 @@ public class Space : Node
         set { npc = value; }
     }
 
-    public Question Quest
+    public Question? Quest
     {
         get { return quest; }
         set
@@ -44,12 +40,12 @@ public class Space : Node
         set { biome = value; }
     }
 
-    public void DisplayWelcome(Context context)
+    public void WelcomeMessage(Context context)
     {
         context.AddMessage($"You are now at {name} in {biome}");
     }
 
-    public void DisplayExits(Context context)
+    public void ExitsMessage(Context context)
     {
         context.AddMessage("Current paths are:");
 
@@ -60,12 +56,12 @@ public class Space : Node
         }
     }
 
-    public void DisplayDescription(Context context)
+    public void DescriptionMessage(Context context)
     {
-        context.AddMessage(description);
+        context.AddMessage(Description);
     }
 
-    public void DisplayGoodbye(Context context)
+    public void GoodbyeMessage(Context context)
     {
         context.AddMessage($"You left the {name}\n");
     }
