@@ -1,3 +1,5 @@
+using System.ComponentModel.Design.Serialization;
+
 public class Context
 {
     private Space currentSpace;
@@ -7,13 +9,13 @@ public class Context
     private Question? currentQuestion;
     private Npc? currentNpc;
     private bool done, inQuestion;
-    private int points;
+    private int stars;
     private readonly Queue<string> messages = new Queue<string>();
 
-    public int Points
+    public int Stars
     {
-        get { return points; }
-        set { points = value; }
+        get { return stars; }
+        set { stars = value; }
     }
 
     public Space CurrentSpace
@@ -65,7 +67,7 @@ public class Context
 
     public Context(World world)
     {
-        points = 0;
+        stars = 0;
         this.world = world;
         currentSpace = world.StartSpace;
         currentBiome = world.StartBiome;
@@ -116,5 +118,10 @@ public class Context
         string[] messages = this.messages.ToArray();
         this.messages.Clear();
         return messages;
+    }
+
+    public void EarnStar() {
+        stars++;
+        AddMessage($"Good Job! You earned a Star ({stars}/20)");
     }
 }
