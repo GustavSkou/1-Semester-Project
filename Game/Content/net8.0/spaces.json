@@ -22,7 +22,7 @@
         },
         "Npc": {
             "Name": "Local Ranger",
-            "Dialogue": "This waterhole used to be full of life, but the rains have been unreliable lately. Both animals and people need a dependable water source, but it has to work even during the driest seasons. What could help us achieve that?"
+            "Dialogue": "This waterhole used to be full of life, but the rains have been unreliable lately. Both animals and people need a dependable water source, but it has to work even during the driest seasons."
         }
     },
     "Trees": {
@@ -48,7 +48,7 @@
         },
         "Npc": {
             "Name": "Fire Expert",
-            "Dialogue": "You see those blackened patches? Wildfires are a big threat here, but leaving dry grass lying around makes things worse. Some fires, though, can actually help if they're controlled. Can you figure out the best way to manage this?"
+            "Dialogue": "You see those blackened patches? Wildfires are a big threat here, but leaving dry grass lying around makes things worse. Some fires, though, can actually help if they're controlled."
         }
     },
     "Sunset Ridge": {
@@ -74,7 +74,7 @@
         },
         "Npc": {
             "Name": "Wildlife Biologist",
-            "Dialogue": "Look at those zebras grazing down there. Their stripes aren't just beautiful; they serve a practical purpose. They help with survival in ways that might surprise you. Do you know how?"
+            "Dialogue": "Look at those zebras grazing down there. Their stripes aren't just beautiful; they serve a practical purpose. They help with survival in ways that might surprise you."
         }
     },
     "Hidden WaterHole": {
@@ -100,7 +100,7 @@
         },
         "Npc": {
             "Name": "Conservationist",
-            "Dialogue": "This secluded waterhole is a lifeline for animals, but the trash people leave behind is poisoning the water. Cleaning up can make a huge difference. What do you think is the right thing to do here?"
+            "Dialogue": "This secluded waterhole is a lifeline for animals, but the trash people leave behind is poisoning the water. Cleaning up can make a huge difference."
         }
     },
     "The Trees": {
@@ -126,7 +126,7 @@
         },
         "Npc": {
             "Name": "Forest Guardian",
-            "Dialogue": "This area has suffered greatly from deforestation. The soil is exposed, and animals have nowhere to go. Planting the right trees could restore the balance here. What action will bring this forest back to life?"
+            "Dialogue": "This area has suffered greatly from deforestation. The soil is exposed, and animals have nowhere to go. Planting the right trees could restore the balance here."
         }
     },
     "Forgotten Path": {
@@ -152,7 +152,7 @@
         },
         "Npc": {
             "Name": "Elder Tracker",
-            "Dialogue": "This path used to teem with life, but it’s been neglected and damaged over the years. Nature can heal if we take the right steps. What would you do to bring it back?"
+            "Dialogue": "This path used to teem with life, but it’s been neglected and damaged over the years. Nature can heal if we take the right steps."
         }
     },
     "Shallow Waters": {
@@ -178,7 +178,7 @@
         },
         "Npc": {
             "Name": "Marine Biologist",
-            "Dialogue": "Plastic waste in our oceans can be deadly for marine creatures. By removing it carefully and disposing of it properly, we can help protect these vulnerable species. What do you think should be done here?"
+            "Dialogue": "Plastic waste in our oceans can be deadly for marine creatures. By removing it carefully and disposing of it properly, we can help protect these vulnerable species."
         }
     },
     "Sea Turtle NestingSite": {
@@ -204,7 +204,7 @@
         },
         "Npc": {
             "Name": "Beach Ranger",
-            "Dialogue": "Sea turtle nests are vulnerable, and even a small disturbance can harm the eggs. We need to make sure this site is protected without causing further stress. What would you do to keep it safe?"
+            "Dialogue": "Sea turtle nests are vulnerable, and even a small disturbance can harm the eggs. We need to make sure this site is protected without causing further stress."
         }
     },
     "Seagull NestingArea": {
@@ -230,7 +230,7 @@
         },
         "Npc": {
             "Name": "Eco Volunteer",
-            "Dialogue": "Seagulls are scavengers, but when trash piles up, it harms them and other animals. Keeping the area clean and properly disposing of trash helps prevent more danger. What do you think we should do here?"
+            "Dialogue": "Seagulls are scavengers, but when trash piles up, it harms them and other animals. Keeping the area clean and properly disposing of trash helps prevent more danger."
         }
     },
     "TidePools": {
@@ -256,7 +256,7 @@
         },
         "Npc": {
             "Name": "Tidepool Educator",
-            "Dialogue": "Tidepools are delicate ecosystems, home to many small creatures. Sharp debris can harm them, and trash only makes things worse. Keeping the habitat clean is essential for their survival. What do you think would be the best way to protect them?"
+            "Dialogue": "Tidepools are delicate ecosystems, home to many small creatures. Sharp debris can harm them, and trash only makes things worse. Keeping the habitat clean is essential for their survival."
         }
     },
     "The Barn": {
@@ -282,7 +282,7 @@
         },
         "Npc": {
             "Name": "Farm Caretaker",
-            "Dialogue": "These animals are showing signs of distress—something’s clearly wrong. Ignoring it won’t make it better, and just getting rid of them isn’t the solution. What do you think we should do to make sure they get the right care?"
+            "Dialogue": "These animals are showing signs of distress—something’s clearly wrong. Ignoring it won’t make it better, and just getting rid of them isn’t the solution."
         }
     },
     "Crop Field": {
@@ -308,7 +308,7 @@
         },
         "Npc": {
             "Name": "Agricultural Specialist",
-            "Dialogue": "The soil here is cracked and lifeless, a sign of overuse and neglect. Chemical fixes might seem easy, but they won’t solve the problem long-term. Restoring the soil’s health takes natural methods, like compost and crop rotation. What do you think will work best?"
+            "Dialogue": "The soil here is cracked and lifeless, a sign of overuse and neglect. Chemical fixes might seem easy, but they won’t solve the problem long-term. Restoring the soil’s health takes natural methods, like compost and crop rotation."
         }
     },
     "Highway": {
@@ -438,7 +438,7 @@
         },
         "Npc": {
             "Name": "Marine Biologist",
-            "Dialogue": "Hi! Did you know trash on a pond blocks sunlight, stopping plants from making oxygen that pond animals need?"
+            "Dialogue": "Did you know trash on a pond blocks sunlight, stopping plants from making oxygen that pond animals need? Without oxygen, fish and other aquatic creatures struggle to survive."
         }
     },
     "The Stable": {
