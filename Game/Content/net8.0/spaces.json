@@ -179,7 +179,7 @@
         },
         "Npc": {
             "Name": "Marine Biologist",
-            "Dialogue": "Plastic pollution is a growing threat to marine life. Every piece of trash removed makes a difference!"
+            "Dialogue": "Plastic waste in our oceans can be deadly for marine creatures. By removing it carefully and disposing of it properly, we can help protect these vulnerable species. What do you think should be done here?"
         }
     },
     "Sea Turtle NestingSite": {
@@ -205,7 +205,7 @@
         },
         "Npc": {
             "Name": "Beach Ranger",
-            "Dialogue": "Sea turtles are endangered, and protecting their nesting sites is critical. Do you know the right steps?"
+            "Dialogue": "Sea turtle nests are vulnerable, and even a small disturbance can harm the eggs. We need to make sure this site is protected without causing further stress. What would you do to keep it safe?"
         }
     },
     "Seagull NestingArea": {
@@ -231,7 +231,7 @@
         },
         "Npc": {
             "Name": "Eco Volunteer",
-            "Dialogue": "Overflowing trash bins harm wildlife. A simple cleanup can save many animals from danger."
+            "Dialogue": "Seagulls are scavengers, but when trash piles up, it harms them and other animals. Keeping the area clean and properly disposing of trash helps prevent more danger. What do you think we should do here?"
         }
     },
     "TidePools": {
@@ -257,7 +257,7 @@
         },
         "Npc": {
             "Name": "Tidepool Educator",
-            "Dialogue": "Tidepools are fragile ecosystems. Keeping them clean ensures the survival of countless species."
+            "Dialogue": "Tidepools are delicate ecosystems, home to many small creatures. Sharp debris can harm them, and trash only makes things worse. Keeping the habitat clean is essential for their survival. What do you think would be the best way to protect them?"
         }
     },
     "The Barn": {
@@ -283,7 +283,7 @@
         },
         "Npc": {
             "Name": "Farm Caretaker",
-            "Dialogue": "Healthy livestock are essential for sustainable farming. Proper care is the first step."
+            "Dialogue": "These animals are showing signs of distress—something’s clearly wrong. Ignoring it won’t make it better, and just getting rid of them isn’t the solution. What do you think we should do to make sure they get the right care?"
         }
     },
     "Crop Field": {
@@ -309,7 +309,7 @@
         },
         "Npc": {
             "Name": "Agricultural Specialist",
-            "Dialogue": "Healthy soil is the foundation of farming. Sustainable practices can restore even the most degraded land."
+            "Dialogue": "The soil here is cracked and lifeless, a sign of overuse and neglect. Chemical fixes might seem easy, but they won’t solve the problem long-term. Restoring the soil’s health takes natural methods, like compost and crop rotation. What do you think will work best?"
         }
     },
     "Highway": {
@@ -471,7 +471,7 @@
     "Distant Horizon": {
         "Name": "Distant Horizon",
         "Biome": "Forest",
-        "Description": "",
+        "Description": "From a high vantage point, you see a vast forest stretching out before you, with a dry riverbed cutting through the landscape. In the distance, a lone deer limps, searching for water.",
         "Quest": {
             "QuestionPromt": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. What can you do to help animals like this deer survive in a changing environment?",
             "Choices": {
