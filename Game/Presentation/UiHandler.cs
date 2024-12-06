@@ -23,8 +23,11 @@ public class UiHandler
     {
         foreach (var message in context.GetAllMessages())
         {
-            if (UiCommands.ContainsKey(message)) ExecuteCommand(message);
-            else DisplayMessage(message);
+            if (message != null)
+
+                if (UiCommands.ContainsKey(message)) ExecuteCommand(message);
+                else DisplayMessage(message);
+
         }
     }
 

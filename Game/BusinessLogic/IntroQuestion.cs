@@ -28,7 +28,7 @@ public class IntroQuestion
 
     private static void AnswerYes(Context context)
     {
-        context.AddMessage("(CONSOLE_CLEAR)");
+        context.AddMessage("(CLEAR)");
         context.CurrentSpace.WelcomeMessage(context);
         context.CurrentQuestion = context.CurrentSpace.Quest;
         context.InQuestion = false;
@@ -37,7 +37,7 @@ public class IntroQuestion
 
     private static void AnswerNo(Context context)
     {
-        context.AddMessage("(CONSOLE_CLEAR)");
+        context.AddMessage("(CLEAR)");
         context.AddMessage(context.CurrentQuestion.QuestionPrompt);
     }
 }
