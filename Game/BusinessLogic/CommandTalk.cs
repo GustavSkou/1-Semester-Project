@@ -24,7 +24,7 @@ public class CommandTalk : BaseCommand, ICommand
         else
         {
             context.AddMessage("(CLEAR)");
-            context.AddMessage("Please answer the question");
+            context.AddMessage("Please answer the question\n");
             context.AddMessage(context.CurrentQuestion.QuestionPrompt);
 
             foreach (var choice in context.CurrentQuestion.Choices)

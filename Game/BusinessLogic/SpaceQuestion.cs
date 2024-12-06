@@ -4,7 +4,8 @@ public class SpaceQuestion
     {
         context.AddMessage("Correct answer");
 
-        if (!context.CurrentBiome.SpacesDict[context.CurrentSpace.Name].Complete == true) {
+        if (!context.CurrentBiome.SpacesDict[context.CurrentSpace.Name].Complete == true)
+        {
             context.EarnStar();
         }
 
@@ -12,23 +13,23 @@ public class SpaceQuestion
         context.InQuestion = false;
         context.CurrentQuestion = null;
 
-        if (!context.IsAllSpacesComplete())
+        if (context.IsAllSpacesComplete())
         {
-            context.CurrentSpace.ExitsMessage(context);
-        }
-        if (!context.CurrentBiome.Complete)
-        {
-            context.World.BiomesSet[context.CurrentBiome.Name].Complete = true;
-            if (context.IsAllBiomesComplete())
+            if (!context.CurrentBiome.Complete)
             {
-                context.AddMessage("(DONE)");
-                return;
-            }
-            else
-            {
-                context.NextBiome = context.World.SetNextBiome(context.CurrentBiome, context.CurrentSpace);
+                context.World.BiomesSet[context.CurrentBiome.Name].Complete = true;
+                if (context.IsAllBiomesComplete())
+                {
+                    context.AddMessage("(DONE)");
+                    return;
+                }
+                else
+                {
+                    context.NextBiome = context.World.SetNextBiome(context.CurrentBiome, context.CurrentSpace);
+                }
             }
         }
+        context.CurrentSpace.ExitsMessage(context);
     }
 
     public static void WrongAnswer(Context context)

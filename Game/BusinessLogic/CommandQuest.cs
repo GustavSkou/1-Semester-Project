@@ -7,7 +7,13 @@ public class CommandQuest : BaseCommand, ICommand
 
     public void Execute(Context context, string command, string[] parameters)
     {
+
+
         if (context.CurrentQuestion == null) context.AddMessage("No questions available");
+        else if (context.CurrentSpace.Complete)
+        {
+            context.AddMessage("This space is completed");
+        }
         else
         {
             context.AddMessage("(CLEAR)");
