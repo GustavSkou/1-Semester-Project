@@ -360,7 +360,7 @@
         },
         "Npc": {
             "Name": "Community Volunteer",
-            "Dialogue": "Parks are shared spaces for all living beings. A small effort can make a huge difference!"
+            "Dialogue": "Parks are shared spaces for all living beings. A small effort can make a huge difference if enough people do it!"
         }
     },
     "Bikelane": {
@@ -412,7 +412,7 @@
         },
         "Npc": {
             "Name": "Concerned Resident",
-            "Dialogue": "This alley is becoming a mess with trash flying everywhere and rats showing up. Someone needs to step up and clean it before it gets worse. Can you help?"
+            "Dialogue": "This alley is becoming a mess with trash flying everywhere and rats showing up. Someone needs to step up and clean it before it gets worse."
         }
     },
     "Pond": {
@@ -472,7 +472,7 @@
         "Biome": "Forest",
         "Description": "From a high vantage point, you see a vast forest stretching out before you, with a dry riverbed cutting through the landscape. In the distance, a lone deer limps, searching for water.",
         "Quest": {
-            "QuestionPrompt": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. What can you do to help animals like this deer survive in a changing environment?",
+            "QuestionPromt": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. I hope you can help animals like this deer survive in a changing environment.",
             "Choices": {
                 "1": {
                     "Description": "Try to guide the deer toward the nearest town for help.",
