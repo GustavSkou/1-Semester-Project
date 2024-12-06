@@ -2,7 +2,6 @@
 
 public class World
 {
-    private readonly DataLoader dataLoader = new DataLoader();
     public Space startSpace;
     private Biome startBiome;
     private Dictionary<string, Biome> biomesSet = [];
@@ -77,6 +76,7 @@ public class World
 
     private void DataHandler()
     {
+        DataLoader dataLoader = new DataLoader();
         spacesDict = dataLoader.LoadSpaces();
     }
 }
