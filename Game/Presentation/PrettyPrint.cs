@@ -6,7 +6,7 @@ public class PrettyPrint
         foreach (char letter in someString)
         {
             Console.Write(letter);
-            Thread.Sleep(10);
+            Thread.Sleep(0);
             index++;
 
             if (letter == '\n') index = 0;

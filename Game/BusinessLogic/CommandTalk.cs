@@ -14,7 +14,7 @@ public class CommandTalk : BaseCommand, ICommand
                 context.AddMessage("(CLEAR)");
                 context.AddMessage($"You talk to {context.CurrentNpc.Name}.");
                 context.AddMessage(context.CurrentNpc.Dialogue);
-            
+
             }
             else
             {
@@ -23,7 +23,14 @@ public class CommandTalk : BaseCommand, ICommand
         }
         else
         {
+            context.AddMessage("(CLEAR)");
             context.AddMessage("Please answer the question");
+            context.AddMessage(context.CurrentQuestion.QuestionPrompt);
+
+            foreach (var choice in context.CurrentQuestion.Choices)
+            {
+                context.AddMessage($" - {choice.Key} {choice.Value.Description}");
+            }
         }
     }
 }

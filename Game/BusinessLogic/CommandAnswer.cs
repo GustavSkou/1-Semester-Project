@@ -23,6 +23,10 @@ class CommandAnswer : BaseCommand, ICommand
         {
             context.AddMessage("No question to answer");
         }
+        else if (context.CurrentSpace.Complete)
+        {
+            context.AddMessage("This space is completed");
+        }
         else
         {
             /* The if statement being false would then imply that we are currently in a question. 
@@ -33,10 +37,6 @@ class CommandAnswer : BaseCommand, ICommand
             {
                 context.CurrentQuestion.Choices[parameters[0]].
                     Action.Invoke(context);
-
-
-
-
             }
             catch (KeyNotFoundException)
             {

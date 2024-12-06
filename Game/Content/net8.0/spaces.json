@@ -7,15 +7,15 @@
             "QuestionPrompt": "What is the most effective way to ensure consistent access to water for wildlife and local communities in the savannah?",
             "Choices": {
                 "1": {
-                    "Description": "Build sustainable water storage systems like dams and reservoirs.",
+                    "Description": "Build sustainable water storage systems like dams and reservoirs",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Pray for rainfall.",
+                    "Description": "Pray for rainfall",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Redirect rivers for farming, ignoring the needs of wildlife.",
+                    "Description": "Redirect rivers for farming, ignoring the needs of wildlife",
                     "Correct": false
                 }
             }
@@ -33,15 +33,15 @@
             "QuestionPrompt": "What is the most effective strategy to prevent wildfires in the savannah?",
             "Choices": {
                 "1": {
-                    "Description": "Conduct controlled burns to manage dry vegetation.",
+                    "Description": "Conduct controlled burns to manage dry vegetation",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Avoid clearing dry grass or debris.",
+                    "Description": "Avoid clearing dry grass or debris",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Ban all fires, including for essential activities like cooking.",
+                    "Description": "Ban all fires, including for essential activities like cooking",
                     "Correct": false
                 }
             }
@@ -59,15 +59,15 @@
             "QuestionPrompt": "Zebras' stripes are not just for decoration. What purpose do they serve?",
             "Choices": {
                 "1": {
-                    "Description": "To confuse predators and regulate body temperature.",
+                    "Description": "To confuse predators and regulate body temperature",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "To climb trees.",
+                    "Description": "To climb trees",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "To scare other zebras.",
+                    "Description": "To scare other zebras",
                     "Correct": false
                 }
             }
@@ -85,15 +85,15 @@
             "QuestionPrompt": "What should you do to protect the waterhole and the animals that rely on it?",
             "Choices": {
                 "1": {
-                    "Description": "Clean up the trash to keep the water safe for animals.",
+                    "Description": "Clean up the trash to keep the water safe for animals",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Leave the trash to avoid disturbing the area.",
+                    "Description": "Leave the trash to avoid disturbing the area",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Add signs to attract more visitors to the waterhole.",
+                    "Description": "Add signs to attract more visitors to the waterhole",
                     "Correct": false
                 }
             }
@@ -111,15 +111,15 @@
             "QuestionPrompt": "What is the best course of action to restore this part of the forest?",
             "Choices": {
                 "1": {
-                    "Description": "Plant native trees to replace the ones that were cut down.",
+                    "Description": "Plant native trees to replace the ones that were cut down",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Build a road through the forest for easier access.",
+                    "Description": "Build a road through the forest for easier access",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Clear the remaining trees for development.",
+                    "Description": "Clear the remaining trees for development",
                     "Correct": false
                 }
             }
@@ -137,15 +137,15 @@
             "QuestionPrompt": "Why might animals be disappearing from this area?",
             "Choices": {
                 "1": {
-                    "Description": "Deforestation is destroying their habitats.",
+                    "Description": "Deforestation is destroying their habitats",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "The animals are migrating for better scenery.",
+                    "Description": "The animals are migrating for better scenery",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Animals are becoming less active because of cooler temperatures.",
+                    "Description": "Animals are becoming less active because of cooler temperatures",
                     "Correct": false
                 }
             }
@@ -163,15 +163,15 @@
             "QuestionPrompt": "What should you do to help protect marine life like this fish?",
             "Choices": {
                 "1": {
-                    "Description": "Carefully remove the plastic and dispose of it properly.",
+                    "Description": "Carefully remove the plastic and dispose of it properly",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Leave it alone; nature will resolve the issue.",
+                    "Description": "Leave it alone; nature will resolve the issue",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Use the fish to attract predators as part of the food chain.",
+                    "Description": "Use the fish to attract predators as part of the food chain",
                     "Correct": false
                 }
             }
@@ -189,15 +189,15 @@
             "QuestionPrompt": "How should you handle this delicate situation?",
             "Choices": {
                 "1": {
-                    "Description": "Mark the nesting site to warn others and ensure the eggs are not disturbed.",
+                    "Description": "Mark the nesting site to warn others and ensure the eggs are not disturbed",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Take photos from up close for educational purposes.",
+                    "Description": "Take photos from up close for educational purposes",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Move the eggs to a safer location.",
+                    "Description": "Move the eggs to a safer location",
                     "Correct": false
                 }
             }
@@ -215,15 +215,15 @@
             "QuestionPrompt": "What action can reduce harm to wildlife in this scenario?",
             "Choices": {
                 "1": {
-                    "Description": "Dispose of the trash in a nearby bin and secure the lid.",
+                    "Description": "Dispose of the trash in a nearby bin and secure the lid",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Ignore it; the birds will clean up the area naturally.",
+                    "Description": "Ignore it; the birds will clean up the area naturally",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Scare the seagulls away and leave the trash.",
+                    "Description": "Scare the seagulls away and leave the trash",
                     "Correct": false
                 }
             }
@@ -241,15 +241,15 @@
             "QuestionPrompt": "How can you ensure this tidepool remains a safe habitat for marine life?",
             "Choices": {
                 "1": {
-                    "Description": "Carefully remove sharp objects and ensure no one leaves trash behind.",
+                    "Description": "Carefully remove sharp objects and ensure no one leaves trash behind",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Relocate the animals to another tidepool.",
+                    "Description": "Relocate the animals to another tidepool",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Take photos of the debris to document the issue, but leave it as is.",
+                    "Description": "Take photos of the debris to document the issue, but leave it as is",
                     "Correct": false
                 }
             }
@@ -267,15 +267,15 @@
             "QuestionPrompt": "What is the most responsible action to take for the unwell animals?",
             "Choices": {
                 "1": {
-                    "Description": "Provide clean water, inspect their conditions, and call a vet.",
+                    "Description": "Provide clean water, inspect their conditions, and call a vet",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Sell the animals to minimize costs.",
+                    "Description": "Sell the animals to minimize costs",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Ignore the issue and hope the animals recover on their own.",
+                    "Description": "Ignore the issue and hope the animals recover on their own",
                     "Correct": false
                 }
             }
@@ -293,15 +293,15 @@
             "QuestionPrompt": "How can you restore the health of this soil?",
             "Choices": {
                 "1": {
-                    "Description": "Use compost and implement crop rotation techniques.",
+                    "Description": "Use compost and implement crop rotation techniques",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Continue using chemical fertilizers for a quick fix.",
+                    "Description": "Continue using chemical fertilizers for a quick fix",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Abandon the field and focus on untouched lands.",
+                    "Description": "Abandon the field and focus on untouched lands",
                     "Correct": false
                 }
             }
@@ -319,15 +319,15 @@
             "QuestionPrompt": "What action should you take to address this issue?",
             "Choices": {
                 "1": {
-                    "Description": "Safely collect the waste and dispose of it in a designated area.",
+                    "Description": "Safely collect the waste and dispose of it in a designated area",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Ignore the trash; someone else will clean it eventually.",
+                    "Description": "Ignore the trash; someone else will clean it eventually",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Push the trash further away from the road.",
+                    "Description": "Push the trash further away from the road",
                     "Correct": false
                 }
             }
@@ -345,15 +345,15 @@
             "QuestionPrompt": "How can you help maintain this park as a safe space for nature and people?",
             "Choices": {
                 "1": {
-                    "Description": "Organize a cleanup and educate visitors on proper disposal.",
+                    "Description": "Organize a cleanup and educate visitors on proper disposal",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Avoid the area; the trash is too overwhelming.",
+                    "Description": "Avoid the area; the trash is too overwhelming",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Blame park authorities and wait for them to act.",
+                    "Description": "Blame park authorities and wait for them to act",
                     "Correct": false
                 }
             }
@@ -423,15 +423,15 @@
             "QuestionPrompt": "The pond is polluted with trash. What will you do?",
             "Choices": {
                 "1": {
-                    "Description": "Add more water to dilute the pollution.",
+                    "Description": "Add more water to dilute the pollution",
                     "Correct": false
                 },
                 "2": {
-                    "Description": "Ignore it, nature will fix itself.",
+                    "Description": "Ignore it, nature will fix itself",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Clean the pond and add plants to filter the water.",
+                    "Description": "Clean the pond and add plants to filter the water",
                     "Correct": true
                 }
             }
@@ -449,15 +449,15 @@
             "QuestionPrompt": "The stable floor is dirty, and the animals seem uncomfortable. What will you do?",
             "Choices": {
                 "1": {
-                    "Description": "Clean the floor and add fresh bedding.",
+                    "Description": "Clean the floor and add fresh bedding",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Leave it the animals will manage.",
+                    "Description": "Leave it the animals will manage",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Move the animals outside permanently.",
+                    "Description": "Move the animals outside permanently",
                     "Correct": false
                 }
             }
@@ -475,15 +475,15 @@
             "QuestionPromt": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. I hope you can help animals like this deer survive in a changing environment.",
             "Choices": {
                 "1": {
-                    "Description": "Try to guide the deer toward the nearest town for help.",
+                    "Description": "Try to guide the deer toward the nearest town for help",
                     "Correct": false
                 },
                 "2": {
-                    "Description": "Feed the deer some food you have with you to help it regain strength.",
+                    "Description": "Feed the deer some food you have with you to help it regain strength",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Support efforts to restore water sources, so animals have a place to drink.",
+                    "Description": "Support efforts to restore water sources, so animals have a place to drink",
                     "Correct": true
                 }
             }
@@ -501,15 +501,15 @@
             "QuestionPrompt": "What can be done to help maintain a balanced ecosystem in the savannah, ensuring predators like lions have enough food and the land remains healthy?",
             "Choices": {
                 "1": {
-                    "Description": "Support sustainable wildlife management and prevent overhunting of herbivores.",
+                    "Description": "Support sustainable wildlife management and prevent overhunting of herbivores",
                     "Correct": true
                 },
                 "2": {
-                    "Description": "Introduce more predators to control herbivore populations.",
+                    "Description": "Introduce more predators to control herbivore populations",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Allow uncontrolled hunting to reduce herbivore numbers.",
+                    "Description": "Allow uncontrolled hunting to reduce herbivore numbers",
                     "Correct": false
                 }
             }

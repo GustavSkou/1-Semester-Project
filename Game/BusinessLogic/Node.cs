@@ -6,7 +6,7 @@ abstract public class Node
     public string Name
     {
         get { return name; }
-        set { name = value; }
+        set { name = value.ToLower(); }
     }
 
     protected Dictionary<string, Node> edges = [];

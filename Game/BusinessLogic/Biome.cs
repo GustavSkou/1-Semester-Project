@@ -48,7 +48,12 @@ public class Biome : Node
 
     private Space[] SortOutCurrentEdges(Space currentSpace, Space[] spaces)
     {
-        return spaces.Where(space => currentSpace.Edges.ContainsKey(space.Name) == false).ToArray();
+        /*foreach (Space space in spaces)
+        {
+            currentSpace.Edges.ContainsKey(space.Name);
+        }*/
+
+        return spaces.Where(space => currentSpace.Edges.ContainsKey(space.Name.ToLower()) == false).ToArray();
     }
 
     private void SetPreviousSpace(Space currentSpace, Space nextSpace)

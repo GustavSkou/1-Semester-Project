@@ -20,14 +20,16 @@ public class CommandGo : BaseCommand, ICommand
             catch (KeyNotFoundException)
             {
                 context.AddMessage($"You search for the path {parameter}, but you could not find it");
-                List<string> exitNames = new List<string>(context.CurrentSpace.Edges.Keys);
-                if (exitNames.Count > 0)
+
+                string[] pathNames = context.CurrentSpace.Edges.Keys.ToArray();
+
+                if (pathNames.Length > 0)
                 {
                     context.AddMessage("Current paths are:");
-                    foreach (var exit in exitNames)
+                    foreach (string path in pathNames)
                     {
-                        string status = context.CurrentSpace.Complete ? "Completed" : "Not complete";
-                        context.AddMessage($" - [{status}] {exit}");
+                        string status = context.CurrentBiome.SpacesDict[path].Complete ? "Completed" : "Not complete";
+                        context.AddMessage($" - {path} [{status}]");
                     }
                 }
                 else
@@ -38,7 +40,14 @@ public class CommandGo : BaseCommand, ICommand
         }
         else
         {
+            context.AddMessage("(CLEAR)");
             context.AddMessage("You could not find any paths to follow while in a question.");
+
+            context.AddMessage(context.CurrentQuestion.QuestionPrompt);
+            foreach (var choice in context.CurrentQuestion.Choices)
+            {
+                context.AddMessage($" - {choice.Key} {choice.Value.Description}");
+            }
         }
     }
 }

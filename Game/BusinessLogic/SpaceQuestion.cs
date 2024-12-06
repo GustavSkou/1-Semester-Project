@@ -17,7 +17,6 @@ public class SpaceQuestion
             if (context.IsAllBiomesComplete())
             {
                 context.AddMessage("(DONE)");
-                //context.QuitGame();
                 return;
             }
             else
