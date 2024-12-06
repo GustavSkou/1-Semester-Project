@@ -501,15 +501,16 @@
             "QuestionPrompt": "What can be done to help maintain a balanced ecosystem in the savannah, ensuring predators like lions have enough food and the land remains healthy?",
             "Choices": {
                 "1": {
-                    "Choice": "Support sustainable wildlife management and prevent overhunting of herbivores."
+                    "Choice": "Support sustainable wildlife management and prevent overhunting of herbivores.",
+                    "Correct": true
                 },
                 "2": {
                     "Choice": "Introduce more predators to control herbivore populations.",
-                    "Correct": "False"
+                    "Correct": false
                 },
                 "3": {
                     "Choice": "Allow uncontrolled hunting to reduce herbivore numbers.",
-                    "Correct": "False"
+                    "Correct": false
                 }
             },
             "Npc": {
