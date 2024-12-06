@@ -385,8 +385,8 @@
                 }
             },
             "Npc": {
-                "Name": "",
-                "Dialogue": ""
+                "Name": "Police Biker",
+                "Dialogue": "Whew, I've never seen so many shards of glass laying on the bikelane in one day. I sure hope no animals have stepped on them yet. I better put them aside!"
             }
         }
     },
@@ -412,8 +412,8 @@
             }
         },
         "Npc": {
-            "Name": "",
-            "Dialogue": ""
+            "Name": "Concerned Resident",
+            "Dialogue": "This alley is becoming a mess with trash flying everywhere and rats showing up. Someone needs to step up and clean it before it gets worse. Can you help?"
         }
     },
     "Pond": {
@@ -438,8 +438,8 @@
             }
         },
         "Npc": {
-            "Name": "",
-            "Dialogue": ""
+            "Name": "Marine Biologist",
+            "Dialogue": "Hi! Did you know trash on a pond blocks sunlight, stopping plants from making oxygen that pond animals need?"
         }
     },
     "The Stable": {

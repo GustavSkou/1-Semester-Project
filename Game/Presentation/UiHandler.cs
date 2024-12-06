@@ -14,7 +14,7 @@ public class UiHandler
         done = false;
         UiCommands = new Dictionary<string, IUiCommand>
         {
-            { "(CONSOLE_CLEAR)", new UiCommandClear() },
+            { "(CLEAR)", new UiCommandClear() },
             { "(DONE)", new UiCommandDone(this) }
         };
     }

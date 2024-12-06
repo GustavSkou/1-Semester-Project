@@ -34,14 +34,17 @@ class Tests
         /* A description of the room to give the player a sense of the surroundings. */
 
         World world = new World();
+        List<string> failedSpaces = new List<string>();
 
         foreach (Biome biome in world.BiomesSet.Values)
         {
             foreach (Space space in biome.SpacesDict.Values)
             {
-                if (space.Quest.QuestionPrompt == null || space.Quest.QuestionPrompt.Length == 0) Assert.Fail();
+                if (space.Description == null || space.Description.Length == 0) failedSpaces.Add($"{space.Name}");
             }
         }
+        if (failedSpaces.Count > 0) Assert.Fail($"{string.Join(" ", failedSpaces)}");
+
         Assert.Pass();
     }
 
