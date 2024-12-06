@@ -464,8 +464,8 @@
             }
         },
         "Npc": {
-            "Name": "",
-            "Dialogue": ""
+            "Name": "The Ethologist",
+            "Dialogue": "This is where we care for our animals and ensure the farm remains productive and sustainable."
         }
     },
     "Distant Horizon": {
@@ -490,8 +490,8 @@
             }
         },
         "Npc": {
-            "Name": "",
-            "Dialogue": ""
+            "Name": "The Woodland Keeper",
+            "Dialogue": "These animals are deeply affected by the scars of time and human actions, from habitat loss to exploitation, leaving them in need of urgent restoration and care."
         }
     }
 }
