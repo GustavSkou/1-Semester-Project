@@ -35,8 +35,7 @@ class CommandAnswer : BaseCommand, ICommand
 
             try
             {
-                context.CurrentQuestion.Choices[parameters[0]].
-                    Action.Invoke(context);
+                context.CurrentQuestion.Choices[parameters[0]].Action.Invoke(context);
             }
             catch (KeyNotFoundException)
             {

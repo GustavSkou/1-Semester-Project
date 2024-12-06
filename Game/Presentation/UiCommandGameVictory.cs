@@ -1,8 +1,8 @@
 public class UiCommandGameVictory(UiHandler uiHandler) : IUiCommand
 {
-    public void Execute()
+    public void Execute(string[] parameter)
     {
-        uiHandler.DisplayMessage(UiMessages.Victory);
+        uiHandler.DisplayMessage(UiMessages.Victory(parameter[0]));
         uiHandler.Done = true;
     }
 }

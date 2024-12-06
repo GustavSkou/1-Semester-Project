@@ -20,8 +20,7 @@ public class SpaceQuestion
                 context.World.BiomesSet[context.CurrentBiome.Name].Complete = true;
                 if (context.IsAllBiomesComplete())
                 {
-                    context.AddMessage($"Congratulations on collecting {context.Stars} stars!");
-                    context.AddMessage("(VICTORY)");
+                    context.AddMessage($"(VICTORY) {context.Stars}");
                     return;
                 }
                 else

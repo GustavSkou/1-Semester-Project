@@ -70,7 +70,6 @@ class Registry
         return commands.Keys.ToArray();
     }
 
-    // helpers
     private string[] GetParameters(string[] input)
     {
         string[] output = new string[input.Length - 1];

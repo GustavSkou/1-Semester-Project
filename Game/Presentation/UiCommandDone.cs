@@ -1,6 +1,6 @@
 public class UiCommandDone(UiHandler uiHandler) : IUiCommand
 {
-    public void Execute()
+    public void Execute(string[] parameter)
     {
         uiHandler.Done = true;
     }

@@ -5,8 +5,8 @@ public class Question
 }
 
 // The Question class represents a question with multiple choices.
-// It has two properties: "QuestionPromt" and "Choices".
-// - "QuestionPromt" is a string that contains the text of the question.
+// It has two properties: "QuestionPrompt" and "Choices".
+// - "QuestionPrompt" is a string that contains the text of the question.
 // - "Choices" is a dictionary where the key is a string representing the player's choice (e.g., "1", "2", "3"),
 //   and the value is an instance of the AnswerChoice class.
 //   This class is also used for deserializing questions from a JSON file that contains the spaces.

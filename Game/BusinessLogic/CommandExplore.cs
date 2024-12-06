@@ -37,7 +37,7 @@ public class CommandExplore : BaseCommand, ICommand
             foreach (string path in pathNames)
             {
                 string status = context.CurrentBiome.SpacesDict[path].Complete ? "Completed" : "Not complete";
-                options.Add($"{path} [{status}]");
+                options.Add($"go {path} [{status}]");
             }
 
             if (options.Count > 0)

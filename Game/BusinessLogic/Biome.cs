@@ -32,8 +32,7 @@ public class Biome : Node
 
         if (possibleNextSpaces.Length > 0)
         {
-            Space nextSpace = possibleNextSpaces[
-                random.Next(0, possibleNextSpaces.Length)];
+            Space nextSpace = possibleNextSpaces[random.Next(0, possibleNextSpaces.Length)];
             currentSpace.AddEdge(nextSpace.Name, nextSpace);
             SetPreviousSpace(currentSpace, nextSpace);
         }
@@ -48,11 +47,6 @@ public class Biome : Node
 
     private Space[] SortOutCurrentEdges(Space currentSpace, Space[] spaces)
     {
-        /*foreach (Space space in spaces)
-        {
-            currentSpace.Edges.ContainsKey(space.Name);
-        }*/
-
         return spaces.Where(space => currentSpace.Edges.ContainsKey(space.Name.ToLower()) == false).ToArray();
     }
 

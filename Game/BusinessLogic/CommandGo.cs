@@ -4,7 +4,7 @@ public class CommandGo : BaseCommand, ICommand
 {
     public CommandGo()
     {
-        description = "Use: go (path name)";
+        description = "Go down path";
     }
 
     public void Execute(Context context, string command, string[] parameters)

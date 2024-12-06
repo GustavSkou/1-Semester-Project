@@ -21,13 +21,13 @@ abstract public class Node
         edges = new Dictionary<string, Node>();
     }
 
-    public void AddEdge(string name, Node node)         // Add egde that lead to some other Node object
+    public void AddEdge(string name, Node node)         // Add edge that lead to some other Node object
     {
         name = name.ToLower();
         edges.Add(name, node);
     }
 
-    public virtual Node FollowEdge(string direction)    // Follow egde of this node object node object
+    public virtual Node FollowEdge(string direction)    // Follow edge of this node object node object
     {
         return edges[direction];
     }

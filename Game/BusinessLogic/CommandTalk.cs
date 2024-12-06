@@ -2,7 +2,7 @@ public class CommandTalk : BaseCommand, ICommand
 {
     public CommandTalk()
     {
-        description = "Talk to an NPC in the current room.";
+        description = "Talk to an NPC in the current space.";
     }
 
     public void Execute(Context context, string command, string[] parameters)

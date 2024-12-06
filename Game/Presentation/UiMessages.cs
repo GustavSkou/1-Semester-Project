@@ -10,8 +10,8 @@ public class UiMessages
         get { return "Thank you for playing."; }
     }
 
-    public static string Victory
+    public static string Victory(string stars)
     {
-        get { return "Congratulations on collecting all 20 stars! You've navigated the wild and fascinating world of Eco Quests and have reached the end of your journey. 🌍✨ While not every question had a single solution, your thoughtful decisions have contributed to important steps toward preserving life on land. Your actions matter — thank you for making a difference in protecting our planet's ecosystems! Keep exploring, learning, and taking care of the world around you! 🌱🌿"; }
+        return $"Congratulations on collecting {stars} stars! You've navigated the wild and fascinating world of Eco Quests and have reached the end of your journey. 🌍✨ While not every question had a single solution, your thoughtful decisions have contributed to important steps toward preserving life on land. Your actions matter — thank you for making a difference in protecting our planet's ecosystems! Keep exploring, learning, and taking care of the world around you! 🌱🌿";
     }
 }

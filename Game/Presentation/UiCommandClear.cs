@@ -1,7 +1,7 @@
 class UiCommandClear : IUiCommand
 {
-    public void Execute()
+    public void Execute(string[] parameter)
     {
-        //Console.Clear();
+        Console.Clear();
     }
 }

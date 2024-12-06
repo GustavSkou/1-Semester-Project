@@ -2,13 +2,11 @@ public class CommandQuest : BaseCommand, ICommand
 {
     public CommandQuest()
     {
-        description = "";
+        description = "Get current question";
     }
 
     public void Execute(Context context, string command, string[] parameters)
     {
-
-
         if (context.CurrentQuestion == null) context.AddMessage("No questions available");
         else if (context.CurrentSpace.Complete)
         {

@@ -1,4 +1,4 @@
 interface IUiCommand
 {
-    void Execute();
+    void Execute(string[] parameter);
 }
