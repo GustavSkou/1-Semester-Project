@@ -493,5 +493,31 @@
             "Name": "The Woodland Keeper",
             "Dialogue": "These animals are deeply affected by the scars of time and human actions, from habitat loss to exploitation, leaving them in need of urgent restoration and care."
         }
+    },
+    "Lion's Den": {
+        "Name": "Lion's Den",
+        "Biome": "Savannah",
+        "Description": "In the golden grasslands, you spot a lion resting under the shade of an acacia tree. Its powerful presence contrasts with the quiet surroundings, but there's a sense of vulnerability as you notice the lack of prey nearby.",
+        "Quest": {
+            "QuestionPrompt": "What can be done to help maintain a balanced ecosystem in the savannah, ensuring predators like lions have enough food and the land remains healthy?",
+            "Choices": {
+                "1": {
+                    "Choice": "Support sustainable wildlife management and prevent overhunting of herbivores.",
+                },
+                "2": {
+                    "Choice": "Introduce more predators to control herbivore populations.",
+                    "Correct": "False"
+                },
+                "3": {
+                    "Choice": "Allow uncontrolled hunting to reduce herbivore numbers.",
+                    "Correct": "False"
+                }
+            },
+            "Npc": {
+                "Name": "Wildlife Conservationist",
+                "Dialogue": "Lions are crucial to the balance of the savannah, but their prey is being overhunted, and the land is suffering. Sustainable practices are the key to maintaining the ecosystem."
+            }
+        }
+        
     }
 }
