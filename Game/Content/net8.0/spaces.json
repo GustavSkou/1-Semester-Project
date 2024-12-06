@@ -155,7 +155,6 @@
             "Dialogue": "This path used to teem with life, but it’s been neglected and damaged over the years. Nature can heal if we take the right steps. What would you do to bring it back?"
         }
     },
-    
     "Shallow Waters": {
         "Name": "Shallow Waters",
         "Biome": "Beach",
@@ -502,7 +501,7 @@
             "QuestionPrompt": "What can be done to help maintain a balanced ecosystem in the savannah, ensuring predators like lions have enough food and the land remains healthy?",
             "Choices": {
                 "1": {
-                    "Choice": "Support sustainable wildlife management and prevent overhunting of herbivores.",
+                    "Choice": "Support sustainable wildlife management and prevent overhunting of herbivores."
                 },
                 "2": {
                     "Choice": "Introduce more predators to control herbivore populations.",
@@ -518,6 +517,5 @@
                 "Dialogue": "Lions are crucial to the balance of the savannah, but their prey is being overhunted, and the land is suffering. Sustainable practices are the key to maintaining the ecosystem."
             }
         }
-        
     }
 }
