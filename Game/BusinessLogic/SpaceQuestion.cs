@@ -3,6 +3,11 @@ public class SpaceQuestion
     public static void CorrectAnswer(Context context)
     {
         context.AddMessage("Correct answer");
+
+        if (!context.CurrentBiome.SpacesDict[context.CurrentSpace.Name].Complete == true) {
+            context.EarnStar();
+        }
+
         context.CurrentBiome.SpacesDict[context.CurrentSpace.Name].Complete = true;
         context.InQuestion = false;
         context.CurrentQuestion = null;
