@@ -4,7 +4,7 @@
         "Biome": "Savannah",
         "Description": "You arrive at a dried-up waterhole surrounded by parched land. A small group of animals anxiously waits for water to return.",
         "Quest": {
-            "QuestionPromt": "What is the most effective way to ensure consistent access to water for wildlife and local communities in the savannah?",
+            "QuestionPrompt": "What is the most effective way to ensure consistent access to water for wildlife and local communities in the savannah?",
             "Choices": {
                 "1": {
                     "Description": "Build sustainable water storage systems like dams and reservoirs.",
@@ -22,7 +22,7 @@
         },
         "Npc": {
             "Name": "Local Ranger",
-            "Dialogue": "This waterhole used to be full of life, but the rains have been unreliable lately. Both animals and people need a dependable water source, but it has to work even during the driest seasons. What could help us achieve that?"
+            "Dialogue": "This waterhole used to be full of life, but the rains have been unreliable lately. Both animals and people need a dependable water source, but it has to work even during the driest seasons."
         }
     },
     "Trees": {
@@ -30,7 +30,7 @@
         "Biome": "Savannah",
         "Description": "You find yourself under a cluster of acacia trees. Burnt patches on the ground indicate recent wildfires.",
         "Quest": {
-            "QuestionPromt": "What is the most effective strategy to prevent wildfires in the savannah?",
+            "QuestionPrompt": "What is the most effective strategy to prevent wildfires in the savannah?",
             "Choices": {
                 "1": {
                     "Description": "Conduct controlled burns to manage dry vegetation.",
@@ -48,7 +48,7 @@
         },
         "Npc": {
             "Name": "Fire Expert",
-            "Dialogue": "You see those blackened patches? Wildfires are a big threat here, but leaving dry grass lying around makes things worse. Some fires, though, can actually help if they're controlled. Can you figure out the best way to manage this?"
+            "Dialogue": "You see those blackened patches? Wildfires are a big threat here, but leaving dry grass lying around makes things worse. Some fires, though, can actually help if they're controlled."
         }
     },
     "Sunset Ridge": {
@@ -56,7 +56,7 @@
         "Biome": "Savannah",
         "Description": "From the ridge, you see a herd of zebras grazing below. A lioness lurks in the tall grass.",
         "Quest": {
-            "QuestionPromt": "Zebras' stripes are not just for decoration. What purpose do they serve?",
+            "QuestionPrompt": "Zebras' stripes are not just for decoration. What purpose do they serve?",
             "Choices": {
                 "1": {
                     "Description": "To confuse predators and regulate body temperature.",
@@ -74,7 +74,7 @@
         },
         "Npc": {
             "Name": "Wildlife Biologist",
-            "Dialogue": "Look at those zebras grazing down there. Their stripes aren't just beautiful; they serve a practical purpose. They help with survival in ways that might surprise you. Do you know how?"
+            "Dialogue": "Look at those zebras grazing down there. Their stripes aren't just beautiful; they serve a practical purpose. They help with survival in ways that might surprise you."
         }
     },
     "Hidden WaterHole": {
@@ -82,7 +82,7 @@
         "Biome": "Forest",
         "Description": "You find a secluded waterhole in the dense forest. Trash is scattered around, threatening the delicate ecosystem.",
         "Quest": {
-            "QuestionPromt": "What should you do to protect the waterhole and the animals that rely on it?",
+            "QuestionPrompt": "What should you do to protect the waterhole and the animals that rely on it?",
             "Choices": {
                 "1": {
                     "Description": "Clean up the trash to keep the water safe for animals.",
@@ -100,7 +100,7 @@
         },
         "Npc": {
             "Name": "Conservationist",
-            "Dialogue": "This secluded waterhole is a lifeline for animals, but the trash people leave behind is poisoning the water. Cleaning up can make a huge difference. What do you think is the right thing to do here?"
+            "Dialogue": "This secluded waterhole is a lifeline for animals, but the trash people leave behind is poisoning the water. Cleaning up can make a huge difference."
         }
     },
     "The Trees": {
@@ -108,7 +108,7 @@
         "Biome": "Forest",
         "Description": "You stand in a part of the forest where many trees have been cut down. The soil is eroding, and wildlife is scarce.",
         "Quest": {
-            "QuestionPromt": "What is the best course of action to restore this part of the forest?",
+            "QuestionPrompt": "What is the best course of action to restore this part of the forest?",
             "Choices": {
                 "1": {
                     "Description": "Plant native trees to replace the ones that were cut down.",
@@ -126,7 +126,7 @@
         },
         "Npc": {
             "Name": "Forest Guardian",
-            "Dialogue": "This area has suffered greatly from deforestation. The soil is exposed, and animals have nowhere to go. Planting the right trees could restore the balance here. What action will bring this forest back to life?"
+            "Dialogue": "This area has suffered greatly from deforestation. The soil is exposed, and animals have nowhere to go. Planting the right trees could restore the balance here."
         }
     },
     "Forgotten Path": {
@@ -134,7 +134,7 @@
         "Biome": "Forest",
         "Description": "As you walk along a trail, you notice fewer animals and an eerie silence.",
         "Quest": {
-            "QuestionPromt": "Why might animals be disappearing from this area?",
+            "QuestionPrompt": "Why might animals be disappearing from this area?",
             "Choices": {
                 "1": {
                     "Description": "Deforestation is destroying their habitats.",
@@ -152,7 +152,7 @@
         },
         "Npc": {
             "Name": "Elder Tracker",
-            "Dialogue": "This path used to teem with life, but it’s been neglected and damaged over the years. Nature can heal if we take the right steps. What would you do to bring it back?"
+            "Dialogue": "This path used to teem with life, but it’s been neglected and damaged over the years. Nature can heal if we take the right steps."
         }
     },
     "Shallow Waters": {
@@ -160,7 +160,7 @@
         "Biome": "Beach",
         "Description": "You step into a serene tidepool, but something catches your eye—a fish tangled in a plastic bag struggles to swim.",
         "Quest": {
-            "QuestionPromt": "What should you do to help protect marine life like this fish?",
+            "QuestionPrompt": "What should you do to help protect marine life like this fish?",
             "Choices": {
                 "1": {
                     "Description": "Carefully remove the plastic and dispose of it properly.",
@@ -178,7 +178,7 @@
         },
         "Npc": {
             "Name": "Marine Biologist",
-            "Dialogue": "Plastic waste in our oceans can be deadly for marine creatures. By removing it carefully and disposing of it properly, we can help protect these vulnerable species. What do you think should be done here?"
+            "Dialogue": "Plastic waste in our oceans can be deadly for marine creatures. By removing it carefully and disposing of it properly, we can help protect these vulnerable species."
         }
     },
     "Sea Turtle NestingSite": {
@@ -186,7 +186,7 @@
         "Biome": "Beach",
         "Description": "You stumble upon a sea turtle carefully laying its eggs in the sand. Nearby, footprints suggest someone was here recently.",
         "Quest": {
-            "QuestionPromt": "How should you handle this delicate situation?",
+            "QuestionPrompt": "How should you handle this delicate situation?",
             "Choices": {
                 "1": {
                     "Description": "Mark the nesting site to warn others and ensure the eggs are not disturbed.",
@@ -204,7 +204,7 @@
         },
         "Npc": {
             "Name": "Beach Ranger",
-            "Dialogue": "Sea turtle nests are vulnerable, and even a small disturbance can harm the eggs. We need to make sure this site is protected without causing further stress. What would you do to keep it safe?"
+            "Dialogue": "Sea turtle nests are vulnerable, and even a small disturbance can harm the eggs. We need to make sure this site is protected without causing further stress."
         }
     },
     "Seagull NestingArea": {
@@ -212,7 +212,7 @@
         "Biome": "Beach",
         "Description": "You find a flock of seagulls pecking at trash scattered near an overflowing bin.",
         "Quest": {
-            "QuestionPromt": "What action can reduce harm to wildlife in this scenario?",
+            "QuestionPrompt": "What action can reduce harm to wildlife in this scenario?",
             "Choices": {
                 "1": {
                     "Description": "Dispose of the trash in a nearby bin and secure the lid.",
@@ -230,7 +230,7 @@
         },
         "Npc": {
             "Name": "Eco Volunteer",
-            "Dialogue": "Seagulls are scavengers, but when trash piles up, it harms them and other animals. Keeping the area clean and properly disposing of trash helps prevent more danger. What do you think we should do here?"
+            "Dialogue": "Seagulls are scavengers, but when trash piles up, it harms them and other animals. Keeping the area clean and properly disposing of trash helps prevent more danger."
         }
     },
     "TidePools": {
@@ -238,7 +238,7 @@
         "Biome": "Beach",
         "Description": "The tidepools shimmer under the sunlight, teeming with small crabs and sea anemones. But you notice some sharp debris hidden in the water.",
         "Quest": {
-            "QuestionPromt": "How can you ensure this tidepool remains a safe habitat for marine life?",
+            "QuestionPrompt": "How can you ensure this tidepool remains a safe habitat for marine life?",
             "Choices": {
                 "1": {
                     "Description": "Carefully remove sharp objects and ensure no one leaves trash behind.",
@@ -256,7 +256,7 @@
         },
         "Npc": {
             "Name": "Tidepool Educator",
-            "Dialogue": "Tidepools are delicate ecosystems, home to many small creatures. Sharp debris can harm them, and trash only makes things worse. Keeping the habitat clean is essential for their survival. What do you think would be the best way to protect them?"
+            "Dialogue": "Tidepools are delicate ecosystems, home to many small creatures. Sharp debris can harm them, and trash only makes things worse. Keeping the habitat clean is essential for their survival."
         }
     },
     "The Barn": {
@@ -264,7 +264,7 @@
         "Biome": "Farm",
         "Description": "A cozy barn filled with livestock. However, some animals seem unwell, and you hear distressed sounds.",
         "Quest": {
-            "QuestionPromt": "What is the most responsible action to take for the unwell animals?",
+            "QuestionPrompt": "What is the most responsible action to take for the unwell animals?",
             "Choices": {
                 "1": {
                     "Description": "Provide clean water, inspect their conditions, and call a vet.",
@@ -282,7 +282,7 @@
         },
         "Npc": {
             "Name": "Farm Caretaker",
-            "Dialogue": "These animals are showing signs of distress—something’s clearly wrong. Ignoring it won’t make it better, and just getting rid of them isn’t the solution. What do you think we should do to make sure they get the right care?"
+            "Dialogue": "These animals are showing signs of distress—something’s clearly wrong. Ignoring it won’t make it better, and just getting rid of them isn’t the solution."
         }
     },
     "Crop Field": {
@@ -290,7 +290,7 @@
         "Biome": "Farm",
         "Description": "A vast crop field stretches before you, but the soil looks dry and cracked, hinting at years of poor farming practices.",
         "Quest": {
-            "QuestionPromt": "How can you restore the health of this soil?",
+            "QuestionPrompt": "How can you restore the health of this soil?",
             "Choices": {
                 "1": {
                     "Description": "Use compost and implement crop rotation techniques.",
@@ -308,7 +308,7 @@
         },
         "Npc": {
             "Name": "Agricultural Specialist",
-            "Dialogue": "The soil here is cracked and lifeless, a sign of overuse and neglect. Chemical fixes might seem easy, but they won’t solve the problem long-term. Restoring the soil’s health takes natural methods, like compost and crop rotation. What do you think will work best?"
+            "Dialogue": "The soil here is cracked and lifeless, a sign of overuse and neglect. Chemical fixes might seem easy, but they won’t solve the problem long-term. Restoring the soil’s health takes natural methods, like compost and crop rotation."
         }
     },
     "Highway": {
@@ -316,7 +316,7 @@
         "Biome": "City",
         "Description": "The busy highway is littered with plastic waste, creating a hazard for wildlife and an eyesore for travelers.",
         "Quest": {
-            "QuestionPromt": "What action should you take to address this issue?",
+            "QuestionPrompt": "What action should you take to address this issue?",
             "Choices": {
                 "1": {
                     "Description": "Safely collect the waste and dispose of it in a designated area.",
@@ -342,7 +342,7 @@
         "Biome": "City",
         "Description": "A peaceful park marred by scattered plastic straws and food wrappers left behind by careless visitors.",
         "Quest": {
-            "QuestionPromt": "How can you help maintain this park as a safe space for nature and people?",
+            "QuestionPrompt": "How can you help maintain this park as a safe space for nature and people?",
             "Choices": {
                 "1": {
                     "Description": "Organize a cleanup and educate visitors on proper disposal.",
@@ -368,7 +368,7 @@
         "Biome": "City",
         "Description": "Your favorite bikelane",
         "Quest": {
-            "QuestionPromt": "You're on your way to school and see shards of glass on the lane. What do you do?",
+            "QuestionPrompt": "You're on your way to school and see shards of glass on the lane. What do you do?",
             "Choices": {
                 "1": {
                     "Description": "You prioritize your deck and bike as much around it as possible",
@@ -382,11 +382,11 @@
                     "Description": "You put it to the side and contact the authorities",
                     "Correct": true
                 }
-            },
-            "Npc": {
-                "Name": "Police Biker",
-                "Dialogue": "Whew, I've never seen so many shards of glass laying on the bikelane in one day. I sure hope no animals have stepped on them yet. I better put them aside!"
             }
+        },
+        "Npc": {
+            "Name": "Police Biker",
+            "Dialogue": "Whew, I've never seen so many shards of glass laying on the bikelane in one day. I sure hope no animals have stepped on them yet. I better put them aside!"
         }
     },
     "Alley": {
@@ -394,7 +394,7 @@
         "Biome": "City",
         "Description": "Windy day",
         "Quest": {
-            "QuestionPromt": "You see an open trash bag on a windy day. Not only is it attracting rats, but the plastic also flies out.\n What do you do?",
+            "QuestionPrompt": "You see an open trash bag on a windy day. Not only is it attracting rats, but the plastic also flies out.\n What do you do?",
             "Choices": {
                 "1": {
                     "Description": "You cover your nose with your hand and say \"Whats that foul smell?!\"",
@@ -420,7 +420,7 @@
         "Biome": "Farm",
         "Description": "A small pond providing water for animals and crops.",
         "Quest": {
-            "QuestionPromt": "The pond is polluted with trash. What will you do?",
+            "QuestionPrompt": "The pond is polluted with trash. What will you do?",
             "Choices": {
                 "1": {
                     "Description": "Add more water to dilute the pollution.",
@@ -438,7 +438,7 @@
         },
         "Npc": {
             "Name": "Marine Biologist",
-            "Dialogue": "Hi! Did you know trash on a pond blocks sunlight, stopping plants from making oxygen that pond animals need?"
+            "Dialogue": "Did you know trash on a pond blocks sunlight, stopping plants from making oxygen that pond animals need? Without oxygen, fish and other aquatic creatures struggle to survive."
         }
     },
     "The Stable": {
@@ -446,7 +446,7 @@
         "Biome": "Farm",
         "Description": "A stable for horses and other animals. It's peaceful, but something needs attention.",
         "Quest": {
-            "QuestionPromt": "The stable floor is dirty, and the animals seem uncomfortable. What will you do?",
+            "QuestionPrompt": "The stable floor is dirty, and the animals seem uncomfortable. What will you do?",
             "Choices": {
                 "1": {
                     "Description": "Clean the floor and add fresh bedding.",
@@ -472,18 +472,18 @@
         "Biome": "Forest",
         "Description": "From a high vantage point, you see a vast forest stretching out before you, with a dry riverbed cutting through the landscape. In the distance, a lone deer limps, searching for water.",
         "Quest": {
-            "QuestionPromt": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. What can you do to help animals like this deer survive in a changing environment?",
+            "QuestionPrompt": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. What can you do to help animals like this deer survive in a changing environment?",
             "Choices": {
                 "1": {
-                    "Choice": "Try to guide the deer toward the nearest town for help.",
+                    "Description": "Try to guide the deer toward the nearest town for help.",
                     "Correct": false
                 },
                 "2": {
-                    "Choice": "Feed the deer some food you have with you to help it regain strength.",
+                    "Description": "Feed the deer some food you have with you to help it regain strength.",
                     "Correct": false
                 },
                 "3": {
-                    "Choice": "Support efforts to restore water sources, so animals have a place to drink.",
+                    "Description": "Support efforts to restore water sources, so animals have a place to drink.",
                     "Correct": true
                 }
             }
@@ -501,22 +501,22 @@
             "QuestionPrompt": "What can be done to help maintain a balanced ecosystem in the savannah, ensuring predators like lions have enough food and the land remains healthy?",
             "Choices": {
                 "1": {
-                    "Choice": "Support sustainable wildlife management and prevent overhunting of herbivores.",
-                    "Correct": "True"
+                    "Description": "Support sustainable wildlife management and prevent overhunting of herbivores.",
+                    "Correct": true
                 },
                 "2": {
-                    "Choice": "Introduce more predators to control herbivore populations.",
-                    "Correct": "False"
+                    "Description": "Introduce more predators to control herbivore populations.",
+                    "Correct": false
                 },
                 "3": {
-                    "Choice": "Allow uncontrolled hunting to reduce herbivore numbers.",
-                    "Correct": "False"
+                    "Description": "Allow uncontrolled hunting to reduce herbivore numbers.",
+                    "Correct": false
                 }
-            },
-            "Npc": {
-                "Name": "Wildlife Conservationist",
-                "Dialogue": "Lions are crucial to the balance of the savannah, but their prey is being overhunted, and the land is suffering. Sustainable practices are the key to maintaining the ecosystem."
             }
+        },
+        "Npc": {
+            "Name": "Wildlife Conservationist",
+            "Dialogue": "Lions are crucial to the balance of the savannah, but their prey is being overhunted, and the land is suffering. Sustainable practices are the key to maintaining the ecosystem."
         }
     }
 }

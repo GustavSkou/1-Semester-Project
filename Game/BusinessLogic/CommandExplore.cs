@@ -2,7 +2,7 @@ public class CommandExplore : BaseCommand, ICommand
 {
     public CommandExplore()
     {
-        description = "Explore rooms within the current biome.";
+        description = "Explore current space.";
     }
 
     public void Execute(Context context, string command, string[] parameters)
@@ -14,6 +14,7 @@ public class CommandExplore : BaseCommand, ICommand
 
         List<string> options = [];
 
+        // this is 2 since we want an edge back and to next space
         if (context.CurrentSpace.Edges.Count < 2) context.CurrentBiome.SetNextSpace(context.CurrentSpace);
 
         if (context.CurrentSpace.Quest != null)

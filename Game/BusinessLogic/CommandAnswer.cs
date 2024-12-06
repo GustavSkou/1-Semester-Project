@@ -1,5 +1,7 @@
 /* Command for Answering questions */
 
+using System.Reflection.Metadata;
+
 class CommandAnswer : BaseCommand, ICommand
 {
     /* We have implemented a command for answering questions. This is done  
@@ -31,6 +33,10 @@ class CommandAnswer : BaseCommand, ICommand
             {
                 context.CurrentQuestion.Choices[parameters[0]].
                     Action.Invoke(context);
+
+
+
+
             }
             catch (KeyNotFoundException)
             {

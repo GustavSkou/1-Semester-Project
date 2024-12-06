@@ -14,7 +14,7 @@ public class CommandTalk : BaseCommand, ICommand
                 context.AddMessage("(CLEAR)");
                 context.AddMessage($"You talk to {context.CurrentNpc.Name}.");
                 context.AddMessage(context.CurrentNpc.Dialogue);
-                context.AddMessage("");
+            
             }
             else
             {

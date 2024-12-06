@@ -24,17 +24,31 @@ public class Biome : Node
     public void SetNextSpace(Space currentSpace)
     {
         Random random = new Random();
-        Space[] nonCompletedSpaces = spacesDict.Values.Where(
-            space => space.Complete == false).Where(
-            space => space != currentSpace).ToArray();
+        Space[] possibleNextSpaces = spacesDict.Values.ToArray();
 
-        if (nonCompletedSpaces.Length > 0)
+        possibleNextSpaces = SortOutCompletedSpaces(currentSpace, possibleNextSpaces);
+
+        possibleNextSpaces = SortOutCurrentEdges(currentSpace, possibleNextSpaces);
+
+        if (possibleNextSpaces.Length > 0)
         {
-            Space nextSpace = nonCompletedSpaces[
-                random.Next(0, nonCompletedSpaces.Length)];
+            Space nextSpace = possibleNextSpaces[
+                random.Next(0, possibleNextSpaces.Length)];
             currentSpace.AddEdge(nextSpace.Name, nextSpace);
             SetPreviousSpace(currentSpace, nextSpace);
         }
+    }
+
+    private Space[] SortOutCompletedSpaces(Space currentSpace, Space[] spaces)
+    {
+        return spaces.Where(
+            space => space.Complete == false).Where(
+            space => space != currentSpace).ToArray();
+    }
+
+    private Space[] SortOutCurrentEdges(Space currentSpace, Space[] spaces)
+    {
+        return spaces.Where(space => currentSpace.Edges.ContainsKey(space.Name) == false).ToArray();
     }
 
     private void SetPreviousSpace(Space currentSpace, Space nextSpace)

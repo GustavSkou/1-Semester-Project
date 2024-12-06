@@ -7,7 +7,14 @@ public class Context
     private Question? currentQuestion;
     private Npc? currentNpc;
     private bool done, inQuestion;
+    private int points;
     private readonly Queue<string> messages = new Queue<string>();
+
+    public int Points
+    {
+        get { return points; }
+        set { points = value; }
+    }
 
     public Space CurrentSpace
     {
@@ -58,6 +65,7 @@ public class Context
 
     public Context(World world)
     {
+        points = 0;
         this.world = world;
         currentSpace = world.StartSpace;
         currentBiome = world.StartBiome;
@@ -96,12 +104,6 @@ public class Context
             if (!biome.Complete) return false;
         }
         return true;
-    }
-
-    public void QuitGame()
-    {
-        done = true;
-        return;
     }
 
     public void AddMessage(string message)
