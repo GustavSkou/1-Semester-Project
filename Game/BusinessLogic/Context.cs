@@ -122,6 +122,6 @@ public class Context
 
     public void EarnStar() {
         stars++;
-        AddMessage($"Good Job! You earned a Star ({stars}/20)1");
+        AddMessage($"Good Job! You earned a Star ({stars}/20)");
     }
 }
