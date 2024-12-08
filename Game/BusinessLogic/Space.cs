@@ -45,16 +45,7 @@ public class Space : Node
         context.AddMessage($"You are now at {name} in {biome}");
     }
 
-    public void ExitsMessage(Context context)
-    {
-        context.AddMessage("Current paths are:");
 
-        foreach (var edge in edges)
-        {
-            string edgeComplete = ((Space)edge.Value).Complete ? "Completed" : "Not complete";
-            context.AddMessage($" - go {edge.Key} [{edgeComplete}]");
-        }
-    }
 
     public void DescriptionMessage(Context context)
     {
@@ -64,6 +55,23 @@ public class Space : Node
     public void GoodbyeMessage(Context context)
     {
         context.AddMessage($"You left the {name}\n");
+    }
+
+    public void ExitsMessage(Context context)
+    {
+        if (edges.Count > 0)
+        {
+            context.AddMessage("Current paths are:");
+            foreach (var edge in edges)
+            {
+                string edgeComplete = ((Space)edge.Value).Complete ? "Completed" : "Not complete";
+                context.AddMessage($" - go {edge.Key} [{edgeComplete}]");
+            }
+        }
+        else
+        {
+            context.AddMessage("There are no available paths from this location.");
+        }
     }
 
     public override Space FollowEdge(string direction)

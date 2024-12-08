@@ -33,21 +33,15 @@ public class CommandExplore : BaseCommand, ICommand
                 options.Add("talk");
             }
 
-            string[] pathNames = context.CurrentSpace.Edges.Keys.ToArray();
-            foreach (string path in pathNames)
-            {
-                string status = context.CurrentBiome.SpacesDict[path].Complete ? "Completed" : "Not complete";
-                options.Add($"go {path} [{status}]");
-            }
-
             if (options.Count > 0)
             {
-                context.AddMessage("What would you like to do?\n Use");
+                context.AddMessage("What would you like to do?");
                 foreach (string option in options)
                 {
                     context.AddMessage($" - {option}");
                 }
             }
+            context.CurrentSpace.ExitsMessage(context);
         }
         else
         {

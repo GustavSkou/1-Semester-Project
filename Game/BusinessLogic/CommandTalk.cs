@@ -15,6 +15,10 @@ public class CommandTalk : BaseCommand, ICommand
                 context.AddMessage($"You talk to {context.CurrentNpc.Name}.");
                 context.AddMessage(context.CurrentNpc.Dialogue);
 
+                context.AddMessage("What would you like to do?");
+                if (context.CurrentSpace.Quest != null) context.AddMessage("- quest");
+                if (context.CurrentSpace.Npc != null) context.AddMessage("- talk");
+                context.CurrentSpace.ExitsMessage(context);
             }
             else
             {
