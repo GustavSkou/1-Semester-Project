@@ -33,12 +33,12 @@
             "QuestionPrompt": "What is the most effective strategy to prevent wildfires in the savannah?",
             "Choices": {
                 "1": {
-                    "Description": "Conduct controlled burns to manage dry vegetation",
-                    "Correct": true
-                },
-                "2": {
                     "Description": "Avoid clearing dry grass or debris",
                     "Correct": false
+                },
+                "2": {
+                    "Description": "Conduct controlled burns to manage dry vegetation",
+                    "Correct": true
                 },
                 "3": {
                     "Description": "Ban all fires, including for essential activities like cooking",
@@ -59,16 +59,16 @@
             "QuestionPrompt": "Zebras' stripes are not just for decoration. What purpose do they serve?",
             "Choices": {
                 "1": {
-                    "Description": "To confuse predators and regulate body temperature",
-                    "Correct": true
+                    "Description": "To scare other zebras",
+                    "Correct": false
                 },
                 "2": {
                     "Description": "To climb trees",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "To scare other zebras",
-                    "Correct": false
+                    "Description": "To confuse predators and regulate body temperature",
+                    "Correct": true
                 }
             }
         },
