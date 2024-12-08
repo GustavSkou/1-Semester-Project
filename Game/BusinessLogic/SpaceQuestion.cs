@@ -67,13 +67,24 @@ public class SpaceQuestion
     private static void AnswerYes(Context context)
     {
         context.CurrentQuestion = context.CurrentSpace.Quest;
+        context.AddMessage("(CLEAR)");
+        context.AddMessage(context.CurrentQuestion.QuestionPrompt);
+
+        foreach (var choice in context.CurrentQuestion.Choices)
+        {
+            context.AddMessage($" - {choice.Key} {choice.Value.Description}");
+        }
         context.InQuestion = true;
+
     }
 
     private static void AnswerNo(Context context)
     {
-        context.CurrentQuestion = null;
+        context.CurrentQuestion = context.CurrentSpace.Quest;
         context.InQuestion = false;
-        context.CurrentBiome.SetNextSpace(context.CurrentSpace);
+        context.AddMessage("What would you like to do?");
+        if (context.CurrentSpace.Quest != null) context.AddMessage("- quest");
+        if (context.CurrentSpace.Npc != null) context.AddMessage("- talk");
+        context.CurrentSpace.ExitsMessage(context);
     }
 }

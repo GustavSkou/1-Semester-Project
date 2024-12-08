@@ -472,7 +472,7 @@
         "Biome": "Forest",
         "Description": "From a high vantage point, you see a vast forest stretching out before you, with a dry riverbed cutting through the landscape. In the distance, a lone deer limps, searching for water.",
         "Quest": {
-            "QuestionPromt": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. I hope you can help animals like this deer survive in a changing environment.",
+            "QuestionPrompt": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. I hope you can help animals like this deer survive in a changing environment.",
             "Choices": {
                 "1": {
                     "Description": "Try to guide the deer toward the nearest town for help",
@@ -501,7 +501,7 @@
             "QuestionPrompt": "What can be done to help maintain a balanced ecosystem in the savannah, ensuring predators like lions have enough food and the land remains healthy?",
             "Choices": {
                 "1": {
-                    "Description": "Support sustainable wildlife management and prevent overhunting of herbivores",
+                    "Description": "Support sustainable wildlife management and prevent over hunting of herbivores",
                     "Correct": true
                 },
                 "2": {
@@ -516,7 +516,7 @@
         },
         "Npc": {
             "Name": "Wildlife Conservationist",
-            "Dialogue": "Lions are crucial to the balance of the savannah, but their prey is being overhunted, and the land is suffering. Sustainable practices are the key to maintaining the ecosystem."
+            "Dialogue": "Lions are crucial to the balance of the savannah, but their prey is being over hunted, and the land is suffering. Sustainable practices are the key to maintaining the ecosystem."
         }
     }
 }

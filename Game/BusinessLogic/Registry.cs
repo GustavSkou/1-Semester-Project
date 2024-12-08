@@ -43,7 +43,7 @@ class Registry
         string[] elements = line.Split(" ");
         elements = elements.Where(element => element != "").ToArray();
         string command = elements[0];
-        string[] parameters = GetParameters(elements);
+        string[] parameters = elements.Length > 0 ? GetParameters(elements) : [];
 
         /* This is achieved by,
          1. Setting the string the lowercase

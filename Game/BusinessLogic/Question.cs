@@ -1,7 +1,7 @@
 public class Question
 {
-    public string? QuestionPrompt { get; set; }
-    public Dictionary<string, AnswerChoice>? Choices { get; set; }
+    public required string QuestionPrompt { get; set; }
+    public required Dictionary<string, AnswerChoice> Choices { get; set; }
 }
 
 // The Question class represents a question with multiple choices.
