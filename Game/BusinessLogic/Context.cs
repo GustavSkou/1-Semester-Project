@@ -120,7 +120,8 @@ public class Context
         return messages;
     }
 
-    public void EarnStar() {
+    public void EarnStar()
+    {
         stars++;
         AddMessage($"Good Job! You earned a Star ({stars}/20)");
     }
