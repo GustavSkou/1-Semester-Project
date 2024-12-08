@@ -1,23 +1,40 @@
-# VS Code
 .vscode/
 *.code-workspace
 
-# Build results
 [Bb]in/
 [Oo]bj/
 [Dd]ebug/
 [Rr]elease/
 
-
-# .NET
 *.dll
 *.exe
 *.pdb
 *.user
 *.cache
 
-# IDE
 .vs/
 *.suo
 *.userprefs
 *.idea
+
+TestResult/
+*.trx
+
+*.coverage
+*.coveragexml
+coverage/
+CoverageReport/
+
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+*.log
+
+*.tmp
+*.temp
+
+*~
+*.bak
+*.backup
