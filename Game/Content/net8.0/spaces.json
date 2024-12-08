@@ -215,12 +215,13 @@
             "QuestionPrompt": "What action can reduce harm to wildlife in this scenario?",
             "Choices": {
                 "1": {
-                    "Description": "Dispose of the trash in a nearby bin and secure the lid",
-                    "Correct": true
-                },
-                "2": {
                     "Description": "Ignore it; the birds will clean up the area naturally",
                     "Correct": false
+                    
+                },
+                "2": {
+                    "Description": "Dispose of the trash in a nearby bin and secure the lid",
+                    "Correct": true
                 },
                 "3": {
                     "Description": "Scare the seagulls away and leave the trash",
@@ -241,16 +242,17 @@
             "QuestionPrompt": "How can you ensure this tidepool remains a safe habitat for marine life?",
             "Choices": {
                 "1": {
-                    "Description": "Carefully remove sharp objects and ensure no one leaves trash behind",
-                    "Correct": true
+                    "Description": "Take photos of the debris to document the issue, but leave it as is",
+                    "Correct": false
                 },
                 "2": {
                     "Description": "Relocate the animals to another tidepool",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Take photos of the debris to document the issue, but leave it as is",
-                    "Correct": false
+                    "Description": "Carefully remove sharp objects and ensure no one leaves trash behind",
+                    "Correct": true
+                    
                 }
             }
         },
@@ -319,16 +321,17 @@
             "QuestionPrompt": "What action should you take to address this issue?",
             "Choices": {
                 "1": {
-                    "Description": "Safely collect the waste and dispose of it in a designated area",
-                    "Correct": true
+                    "Description": "Push the trash further away from the road",
+                    "Correct": false
+                    
                 },
                 "2": {
                     "Description": "Ignore the trash; someone else will clean it eventually",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Push the trash further away from the road",
-                    "Correct": false
+                    "Description": "Safely collect the waste and dispose of it in a designated area",
+                    "Correct": true
                 }
             }
         },
@@ -345,16 +348,17 @@
             "QuestionPrompt": "How can you help maintain this park as a safe space for nature and people?",
             "Choices": {
                 "1": {
-                    "Description": "Organize a cleanup and educate visitors on proper disposal",
-                    "Correct": true
+                    "Description": "Blame park authorities and wait for them to act",
+                    "Correct": false
                 },
                 "2": {
                     "Description": "Avoid the area; the trash is too overwhelming",
                     "Correct": false
                 },
                 "3": {
-                    "Description": "Blame park authorities and wait for them to act",
-                    "Correct": false
+                    "Description": "Organize a cleanup and educate visitors on proper disposal",
+                    "Correct": true
+                    
                 }
             }
         },
@@ -423,12 +427,13 @@
             "QuestionPrompt": "The pond is polluted with trash. What will you do?",
             "Choices": {
                 "1": {
-                    "Description": "Add more water to dilute the pollution",
+                    "Description": "Ignore it, nature will fix itself",
                     "Correct": false
                 },
                 "2": {
-                    "Description": "Ignore it, nature will fix itself",
+                    "Description": "Add more water to dilute the pollution",
                     "Correct": false
+                    
                 },
                 "3": {
                     "Description": "Clean the pond and add plants to filter the water",
