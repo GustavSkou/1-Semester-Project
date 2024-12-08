@@ -14,7 +14,6 @@ public class PrettyPrint
             }
             else newLine = false;
 
-
             Console.Write(letter);
             Thread.Sleep(10);
             index++;

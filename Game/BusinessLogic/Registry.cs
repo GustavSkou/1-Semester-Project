@@ -37,18 +37,11 @@ class Registry
 
     public void Dispatch(string line)
     {
-        /* Dispatch method take in a string as a parameter, this string is from the players input. Here it is impotent to parse the input to make it homogeneous, this should insure us that all input are handled the correct way */
-
         line = line.ToLower();
         string[] elements = line.Split(" ");
         elements = elements.Where(element => element != "").ToArray();
         string command = elements[0];
         string[] parameters = elements.Length > 0 ? GetParameters(elements) : [];
-
-        /* This is achieved by,
-         1. Setting the string the lowercase
-         2. We spilt the string into a array by its spaces, by doing this we spilt up the command from the parameters, making handling the command easier.
-         3. */
 
         if (commands.ContainsKey(command))
         {

@@ -1,3 +1,5 @@
+/* Model of the corresponding action to the chosen answer from the space */
+
 public class SpaceQuestion
 {
     public static void CorrectAnswer(Context context)

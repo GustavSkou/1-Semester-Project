@@ -59,8 +59,6 @@ public class World
             differentBiomes[i].SpacesDict.Values.ToArray()
                 [random.Next(0, differentBiomes[i].SpacesDict.Count)]);
 
-        /* The SetNextBiome method makes used of the "GetDifferentNonCompletedBiome" method and the Random class to return biome that is both different not completed of randomly selected */
-
         return differentBiomes[i];
     }
 
@@ -69,9 +67,6 @@ public class World
         return biomesSet.Values.Where(biome =>
             biome.Name != currentBiome.Name &&
             !biome.Complete).ToArray();
-
-        /* To return an array of biomes that are different from the current biome and are not completed, we have to sort out all the biomes that would fit those two criteria.
-        This is done by using the linq operator Where, this will return an IEnumerable that satisfies our conditions. By doing this we can comperes the biomes in biomesSet.Values to the current biome, using Biome's Name property to insure it is not the same Biome and by making use of the Complete property to insure it has not been completed. */
     }
 
     private void DataHandler()

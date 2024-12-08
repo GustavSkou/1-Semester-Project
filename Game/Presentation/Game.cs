@@ -1,3 +1,4 @@
+/* Game class for starting application*/
 public class Game
 {
     static readonly World world = new World();
