@@ -472,7 +472,7 @@
         "Biome": "Forest",
         "Description": "From a high vantage point, you see a vast forest stretching out before you, with a dry riverbed cutting through the landscape. In the distance, a lone deer limps, searching for water.",
         "Quest": {
-            "QuestionPromt": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. I hope you can help animals like this deer survive in a changing environment.",
+            "QuestionPrompt": "From the distant horizon, you spot a deer limping near a dry riverbed. It seems to be searching for water. I hope you can help animals like this deer survive in a changing environment.",
             "Choices": {
                 "1": {
                     "Description": "Try to guide the deer toward the nearest town for help",
