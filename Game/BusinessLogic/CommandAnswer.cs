@@ -13,8 +13,8 @@ class CommandAnswer : BaseCommand, ICommand
 
     public void Execute(Context context, string command, string[] parameters)
     {
-        /* In the CommandAnswer class the Execute method is implement, so that when it is executed, it start by checking weather or not the context is currently in a question, and if the question is null. 
-        This is done by getting the InQuestion property from the context object passed in as a parameter. This insures us that there question is not null, and the question has been presented to the player. */
+        /* In the CommandAnswer class the Execute method is implement, so that when it is executed, it start by checking weather or not the context is currently in a question if the question is null and if the question has been answered correctly before. 
+        This is done by getting the corresponding properties from the context object passed in as a parameter. This insures us that there question is not null, and the question has been presented to the player. */
 
         if (!context.InQuestion || context.CurrentQuestion == null)
         {

@@ -45,8 +45,6 @@ public class Space : Node
         context.AddMessage($"You are now at {name} in {biome}");
     }
 
-
-
     public void DescriptionMessage(Context context)
     {
         context.AddMessage(Description);

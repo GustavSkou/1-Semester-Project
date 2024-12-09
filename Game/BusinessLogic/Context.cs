@@ -78,13 +78,18 @@ public class Context
 
     public void Transition(string direction)
     {
+        /* Transition is used to handle the movement of the player from one space to another.
+        Insuring that the context is up to date with what space and biome the player is currently in. 
+        This is important to insure that the correct messages will be displayed to the user, and so that the inputs values from the user will correspond to the correct values */
+
         currentSpace.GoodbyeMessage(this);
 
+        /* This is achieved by changing the "currentSpace" to "nextSpace" which is the one edge from the current space that corresponds to the "direction" given by the user.
+        The biome is change by comparing "currentSpace" to "nextSpace" if it has changed currentBiome will be changed */
         Space nextSpace = currentSpace.FollowEdge(direction);
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
-
         currentSpace = nextSpace;
-        currentQuestion = currentSpace.Quest;
+
         currentSpace.WelcomeMessage(this);
     }
 

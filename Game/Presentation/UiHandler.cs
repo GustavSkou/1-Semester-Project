@@ -35,20 +35,25 @@ public class UiHandler
         }
     }
 
+    public string? GetUserInput()
+    {
+        /* To get the users input this method is used in the game loop. 
+        This both displays to the user though "Console.Write" that the game is ready to handle an input. And retrieves the input though 
+        "Console.Readline */
+
+        Console.Write("> ");
+        return Console.ReadLine();
+    }
+
     public void DisplayMessage(string message)
     {
+        // The "DisplayMessage" method is use display some message to the user
         PrettyPrint.Print(message);
     }
 
     public void ExecuteCommand(string command, string[] parameters)
     {
         UiCommands[command].Execute(parameters);
-    }
-
-    public string? GetUserInput()
-    {
-        Console.Write("> ");
-        return Console.ReadLine();
     }
 
     private string[] GetParameters(string[] input)
