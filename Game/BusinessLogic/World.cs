@@ -27,11 +27,25 @@ public class World
     {
         DataHandler();
 
-        biomesSet.Add("Savannah", new Biome("Savannah", spacesDict.Where(space => space.Value.Biome == "Savannah").ToDictionary()));
-        biomesSet.Add("City", new Biome("City", spacesDict.Where(space => space.Value.Biome == "City").ToDictionary()));
-        biomesSet.Add("Beach", new Biome("Beach", spacesDict.Where(space => space.Value.Biome == "Beach").ToDictionary()));
-        biomesSet.Add("Forest", new Biome("Forest", spacesDict.Where(space => space.Value.Biome == "Forest").ToDictionary()));
-        biomesSet.Add("Farm", new Biome("Farm", spacesDict.Where(space => space.Value.Biome == "Farm").ToDictionary()));
+        biomesSet.Add("Savannah", new Biome("Savannah",
+        spacesDict.Where(space => space.Value.Biome == "Savannah").ToDictionary()));
+
+        /* We add to our biomesSet, which is a dictionary with a string key and a Biome value. A key with the name of the Biome, 
+        and we initialize a new instance of Biome, with the parameter being the Name of the biome, and a the spacesDict sorted so that it only contains spaces with the corresponding Biome tag */
+
+        biomesSet.Add("City", new Biome("City", spacesDict.Where(
+            space => space.Value.Biome == "City").ToDictionary()));
+
+        biomesSet.Add("Beach", new Biome("Beach", spacesDict.Where(
+            space => space.Value.Biome == "Beach").ToDictionary()));
+
+        biomesSet.Add("Forest", new Biome("Forest", spacesDict.Where(
+            space => space.Value.Biome == "Forest").ToDictionary()));
+
+        biomesSet.Add("Farm", new Biome("Farm", spacesDict.Where(
+            space => space.Value.Biome == "Farm").ToDictionary()));
+
+
 
         startBiome = SetStartBiome();
         startSpace = SetStartSpace();
@@ -73,5 +87,6 @@ public class World
     {
         DataLoader dataLoader = new DataLoader();
         spacesDict = dataLoader.LoadSpaces();
+        // all the spaces are contained in this "spacesDict" dictionary
     }
 }

@@ -41,11 +41,16 @@ class Registry
         string[] elements = line.Split(" ");
         elements = elements.Where(element => element != "").ToArray();
         string command = elements[0];
-        string[] parameters = elements.Length > 0 ? GetParameters(elements) : [];
+        string[] parameters = elements.Length > 0 ? 
+            GetParameters(elements) : [];
 
+        /* The line is first converted into two parts 
+        command and parameters*/
         if (commands.ContainsKey(command))
         {
             GetCommand(command).Execute(context, command, parameters);
+            /* if this command exists the corresponding command will 
+            be executed */
         }
         else
         {

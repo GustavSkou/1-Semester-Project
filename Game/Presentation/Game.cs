@@ -9,6 +9,7 @@ public class Game
 
     static void Main()
     {
+        Console.Clear();
         uiHandler.DisplayMessage(UiMessages.Welcome);
 
         uiHandler.PendingMessagesHandler(context);

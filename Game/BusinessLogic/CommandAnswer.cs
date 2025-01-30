@@ -1,7 +1,5 @@
 /* Command for Answering questions */
 
-using System.Reflection.Metadata;
-
 class CommandAnswer : BaseCommand, ICommand
 {
     public CommandAnswer()

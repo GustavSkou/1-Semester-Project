@@ -17,8 +17,8 @@ public class Biome : Node
     public Biome(string name, Dictionary<string, Space> spacesDict)
     {
         this.name = name;
-        complete = false;
         this.spacesDict = spacesDict;
+        complete = false;
     }
 
     public void SetNextSpace(Space currentSpace)

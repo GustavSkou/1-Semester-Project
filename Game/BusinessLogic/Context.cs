@@ -1,4 +1,3 @@
-using System.ComponentModel.Design.Serialization;
 
 public class Context
 {
@@ -86,7 +85,8 @@ public class Context
         if (currentSpace.Biome != nextSpace.Biome) currentBiome = nextBiome;
 
         currentSpace = nextSpace;
-        currentQuestion = currentSpace.Quest;
+        currentQuestion = null;//currentSpace.Quest;
+        currentNpc = null;
         currentSpace.WelcomeMessage(this);
     }
 
